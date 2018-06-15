@@ -1,0 +1,4 @@
+{
+  "login_scenario.py::TestLogInApp": true,
+  "login_scenario.py::TestLogOutApp": true
+}

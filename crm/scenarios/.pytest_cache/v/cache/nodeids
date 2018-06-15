@@ -1,0 +1,8 @@
+[
+  "login_scenario.py::TestLogInApp::()::test_open_url",
+  "login_scenario.py::TestLogInApp::()::test_add_credentials",
+  "login_scenario.py::TestLogInApp::()::test_submit_form",
+  "login_scenario.py::TestLogInApp::()::test_verify_url",
+  "login_scenario.py::TestLogOutApp::()::test_logout",
+  "login_scenario.py::TestLogOutApp::()::test_verify_logout"
+]
