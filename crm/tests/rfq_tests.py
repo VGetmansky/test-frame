@@ -231,7 +231,7 @@ def fill_in_pn_description(driver):
 def select_exchange_type(driver):
     value = data.spli_sales_type_id
     text = 'Exchange'
-    time.sleep(5)
+    time.sleep(8)
     additional.change_sales_type(driver, value, text)
     additional.wait_element(driver, data.ex_fee_cost_id, 'id')
 
@@ -239,7 +239,7 @@ def select_exchange_type(driver):
 def select_repair_type(driver):
     value = data.spli_sales_type_id
     text = 'Repair/OH'
-    time.sleep(5)
+    time.sleep(8)
     additional.change_sales_type(driver, value, text)
     additional.wait_element(driver, data.repair_b_check_price_id, 'id')
 
