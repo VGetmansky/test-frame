@@ -43,12 +43,12 @@ def select_first_cell(driver, element_id, account):
         elem = elem[1]
     elem.click()
 
-    WebDriverWait(driver, 10).until(
+    WebDriverWait(driver, 30).until(
         lambda driver: len(windowhandler) != len(driver.window_handles))
 
     window_after = driver.window_handles[1]
 
-    time.sleep(1)  # crutch remake it later
+    time.sleep(2)  # crutch remake it later
 
     WebDriverWait(driver, 10).until(
         lambda driver: driver.title != "New Tab"
@@ -194,7 +194,9 @@ def wait_element(driver, value, type):
 
 
 def wait_element_by(driver, value, type):
+    wait = WebDriverWait(driver, 10)
     time.sleep(0.2)
+
     if type == 'xpath':
         return driver.wait.until(EC.presence_of_element_located(By.XPATH, value))
     else:

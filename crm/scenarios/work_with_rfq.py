@@ -181,7 +181,7 @@ class TestCreateRfq:
 
     def test_fill_exchange_cust_rtrn_days(self, driver):
         with pytest.allure.step('Fill exchange cust rtrn days'):
-            tests.fill_in_exchange_cust_RTRN_days(driver)
+            tests.fill_in_exchange_cust_rtrn_days(driver)
 
     def test_fill_exchange_service_prive(self, driver):
         with pytest.allure.step('Fill exchange service price'):

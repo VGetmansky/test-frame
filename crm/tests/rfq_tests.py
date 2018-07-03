@@ -4,6 +4,7 @@ import common_functions as additional
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+import time
 
 
 def select_rfq(driver):
@@ -165,6 +166,7 @@ def click_alt_offer(driver):
     value = data.save_and_alt_offer_id
     type = "id"
     additional.wait_element(driver, value, type).click()
+    additional.wait_element(driver, '//a[contains(., "Create New line")]', 'xpath')
     additional.click_element_by_xpath(driver, '//a[contains(., "Create New line")]')
 
 
@@ -196,33 +198,56 @@ def fill_in_stock_outright_delivery_time(driver):
     text = '14'
     additional.fill_text_field(driver, value, text)
 
+
 def click_insert_pn(driver):
-    #wait = WebDriverWait(driver,10)
     value = data.insert_part_number_id
     text = None
     additional.fill_pn_fields(driver, value, text)
-    #driver.wait.until(EC.invisibility_of_element_located(By.XPATH, value))
-    # additional.wait_element(driver, data.offer_id, 'id')
-
     additional.wait_element_vanishing(driver, value)
+    time.sleep(3)
+
+# def click_search_vendor_button(driver):
+#     value = data.vendor_search_id
+#     driver.find_element(By.ID, value).click()
+
+
+def fill_in_vendor(driver):
+    element_id = data.rfq_vendor_id
+    # time.sleep(5)
+    additional.select_first_cell(driver, element_id, False)
+    try:
+        driver.find_element(By.XPATH, data.contact).click()
+    except:
+        return
+
+
+def fill_in_pn_description(driver):
+    field = data.pn_description_id
+    text = "Test description"
+    additional.fill_text_field(driver, field, text)
 
 
 # exchange
 def select_exchange_type(driver):
     value = data.spli_sales_type_id
     text = 'Exchange'
+    time.sleep(5)
     additional.change_sales_type(driver, value, text)
+    additional.wait_element(driver, data.ex_fee_cost_id, 'id')
 
 
 def select_repair_type(driver):
     value = data.spli_sales_type_id
     text = 'Repair/OH'
+    time.sleep(5)
     additional.change_sales_type(driver, value, text)
+    additional.wait_element(driver, data.repair_b_check_price_id, 'id')
 
 
 def fill_in_exchange_fee_cost(driver):
     value = data.ex_fee_cost_id
     text = '13'
+    additional.wait_element(driver, data.ex_fee_cost_id, 'id')
     additional.fill_text_field(driver, value, text)
 
 
@@ -268,7 +293,7 @@ def fill_in_exchange_fee_price(driver):
     additional.fill_text_field(driver, value, text)
 
 
-def fill_in_exchange_cust_RTRN_days(driver):
+def fill_in_exchange_cust_rtrn_days(driver):
     value = data.ex_cust_rtnr_days_id
     text = '8'
     additional.fill_text_field(driver, value, text)
@@ -362,3 +387,4 @@ def fill_in_repair_delivery_time(driver):
 
 def click_save_rfq(driver):
     additional.click_element_by_id(driver, data.save_rfq_id)
+    additional.wait_element(driver, data.rfq_create_quote_id, 'id')

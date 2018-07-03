@@ -119,6 +119,14 @@ class TestCreateRfq:
         with pytest.allure.step('Click insert pn'):
             rfq_tests.click_insert_pn(driver)
 
+    def test_fill_pn_vendor(self, driver):
+        with pytest.allure.step('Fill PN Vendor'):
+            rfq_tests.fill_in_vendor(driver)
+
+    def test_fill_pn_description(self, driver):
+        with pytest.allure.step('Fill PN Description'):
+            rfq_tests.fill_in_pn_description(driver)
+
 # Stock Outright
     def test_click_offer(self, driver):
         with pytest.allure.step('Click offer'):
@@ -194,7 +202,7 @@ class TestCreateRfq:
 
     def test_fill_exchange_cust_rtrn_days(self, driver):
         with pytest.allure.step('Fill exchange cust rtrn days'):
-            rfq_tests.fill_in_exchange_cust_RTRN_days(driver)
+            rfq_tests.fill_in_exchange_cust_rtrn_days(driver)
 
     def test_fill_exchange_service_prive(self, driver):
         with pytest.allure.step('Fill exchange service price'):
@@ -276,9 +284,9 @@ class TestClickAddQuoteButton:
 @pytest.mark.test
 class TestCreateQuote:
 
-    def test_select_account(self, driver):
-        with pytest.allure.step('Fill Account'):
-            quotest_tests.fill_in_account_field(driver)
+    # def test_select_account(self, driver):
+    #     with pytest.allure.step('Fill Account'):
+    #         quotest_tests.fill_in_account_field(driver)
 
     def test_fill_in_cust_ref(self, driver):
         with pytest.allure.step('Fill cust ref'):
@@ -312,9 +320,13 @@ class TestCreateQuote:
         with pytest.allure.step('Select terms sale'):
             quotest_tests.select_terms_sale(driver)
 
-    def test_add_product(self, driver):
-        with pytest.allure.step('Add product'):
-            quotest_tests.add_product(driver)
+
+
+    # def test_add_product(self, driver):
+    #     with pytest.allure.step('Add product'):
+    #         quotest_tests.add_product(driver)
+
+
 
     # def test_close_alert(self, driver):
     #     tests.close_alert(driver)
@@ -386,13 +398,13 @@ class TestCreateSO:
         with pytest.allure.step('Fill shipping address'):
             so_tests.fill_in_shipping_address(driver)
 
-    def test_select_account(self, driver):
-        with pytest.allure.step('Fill account field'):
-            so_tests.fill_in_account_field(driver)
+    # def test_select_account(self, driver):
+    #     with pytest.allure.step('Fill account field'):
+    #         so_tests.fill_in_account_field(driver)
 
-    def test_add_product(self, driver):
-        with pytest.allure.step('Add product'):
-            so_tests.add_product(driver)
+    # def test_add_product(self, driver):
+    #     with pytest.allure.step('Add product'):
+    #         so_tests.add_product(driver)
 
     def test_fill_in_client_po(self, driver):
         with pytest.allure.step('Fill client PO'):
@@ -464,9 +476,9 @@ class TestClickEditPO:
 @pytest.mark.test
 class TestCreatePO:
 
-    def test_select_vendor(self, driver):
-        with pytest.allure.step('Select Vendor'):
-            po_tests.select_vendor(driver)
+    # def test_select_vendor(self, driver):
+    #     with pytest.allure.step('Select Vendor'):
+    #         po_tests.select_vendor(driver)
 
     def test_copy_vendor_address(self, driver):
         with pytest.allure.step('Copy Vendor Address'):
@@ -488,9 +500,9 @@ class TestCreatePO:
         with pytest.allure.step('Select priority'):
             po_tests.select_priority(driver)
 
-    def test_fill_account(self, driver):
-        with pytest.allure.step('Fill account'):
-            po_tests.fill_in_account(driver)
+    # def test_fill_account(self, driver):
+    #     with pytest.allure.step('Fill account'):
+    #         po_tests.fill_in_account(driver)
 
     # def test_select_status(self, driver):
     #     with pytest.allure.step('Select Status'):

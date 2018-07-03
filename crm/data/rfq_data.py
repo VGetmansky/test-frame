@@ -36,6 +36,7 @@ insert_part_number_id = "pl_ins_but"
 # -----Information/Address-----
 rfq_account_id = "Rfq_editView_fieldName_account_id_select"
 rfq_contact_id = "Rfq_editView_fieldName_parent_id_select"
+rfq_vendor_id = "vendor_searh"
 contact_id = "ui-id-5"
 contact = '//li[contains(., "Autotest User")]'
 
@@ -128,6 +129,7 @@ spli_uom_id = "pn_uom_chzn"
 spli_condition_id = "pn_condition_chzn"
 spli_location_id = "pn_location"
 
+pn_description_id = "pn_description"
 
 # -----Offer Line-----
 offer_id = "btn_offer"
@@ -188,7 +190,7 @@ repair_delivery_time_id="repair_deliverytime"
 repair_mgm_id = "repair_mgm_price"
 repair_mgm_percent_id = "mgm_percent_repair"
 
-
+rfq_create_quote_id = "Rfq_detailView_basicAction_LBL_CREATEQUOTE"
 # -----Notes I/c & V.Quote-----
 notes_id = "notes"
 non_printed_notes_id = "np_notes"

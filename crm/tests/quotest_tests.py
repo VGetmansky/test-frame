@@ -16,6 +16,7 @@ def click_add_quote(driver, url):
 
 def fill_in_account_field(driver):
     element_id = data.account_selector_id
+    additional.wait_element(driver, data.account_selector_id, 'id')
     additional.select_first_cell(driver, element_id, True)
 
 
@@ -68,8 +69,8 @@ def select_terms_sale(driver):
 
 
 def add_product(driver):
-    element_id = data.product_list_button
-    additional.select_first_cell(driver, element_id, False)
+    value = data.product_list_button
+    additional.select_first_cell(driver, value, False)
 
 
 # text fields

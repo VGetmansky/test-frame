@@ -115,7 +115,7 @@ class TestCreateQuote:
             tests.save_so(driver)
 
 
-@pytest.mark.test
+#@pytest.mark.test
 class TestClickCreateQuoteButton:
     def test_click_add_button(self, driver, url):
         with pytest.allure.step('Click add quote'):

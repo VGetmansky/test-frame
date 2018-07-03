@@ -6,6 +6,8 @@ import common_functions as additional
 def test_click_add_quote_from_rfq(driver):
     additional.wait_element(driver, rfq_to_po_data.rfq_create_quote_id, "id")
     driver.find_element(By.ID, rfq_to_po_data.rfq_create_quote_id).click()
+    additional.wait_element(driver, rfq_to_po_data.save_button_id, 'id')
+    additional.wait_element(driver, rfq_to_po_data.quote_account_id, 'id')
 
 
 def test_click_add_so_from_quote(driver):
@@ -13,6 +15,7 @@ def test_click_add_so_from_quote(driver):
     driver.find_element(By.ID, rfq_to_po_data.quote_generate_so_id).click()
     additional.wait_element(driver, rfq_to_po_data.create_quote_button, "xpath")
     driver.find_element(By.XPATH, rfq_to_po_data.create_quote_button).click()
+    additional.wait_element(driver, rfq_to_po_data.save_button_id, 'id')
 
 
 def test_click_add_po_from_so(driver):
