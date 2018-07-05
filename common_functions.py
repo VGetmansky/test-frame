@@ -12,6 +12,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from crm.data import rfq_data, quotes_data, po_data, so_data, authorization_data
+import socket, errno, time
 
 
 def get_name():
@@ -30,7 +31,8 @@ def get_name():
 
 
 def select_first_cell(driver, element_id, account):
-   try:
+
+    try:
         windowhandler = driver.window_handles
         assert ConnectionResetError
     except ConnectionResetError:
@@ -229,7 +231,6 @@ def change_sales_type(driver, value, text):
             Select(driver.find_element_by_id(value)).select_by_visible_text(text)  # EPIPE error
         else:
             Select(driver.find_element_by_id(value)).select_by_visible_text(text)  # Other error
-
 
 
 def wait_product_field_selection(driver):
