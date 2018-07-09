@@ -48,6 +48,7 @@ def add_product(driver):
 
 
 def save_so(driver):
+    driver.execute_script("window.scrollTo(0, 0)")
     driver.find_element(By.ID, data.save_so_button_id).click()
 
 
