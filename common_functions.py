@@ -12,6 +12,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from crm.data import rfq_data, quotes_data, po_data, so_data, authorization_data
+import socket, errno, time
 
 
 def get_name():
@@ -30,7 +31,13 @@ def get_name():
 
 
 def select_first_cell(driver, element_id, account):
-    windowhandler = driver.window_handles
+
+    try:
+        windowhandler = driver.window_handles
+        assert ConnectionResetError
+    except ConnectionResetError:
+        windowhandler = driver.window_handles
+
     window_before = driver.window_handles[0]
 
     try:
@@ -210,9 +217,20 @@ def select_value_from_dropdown(driver, value, text):
 
 
 def change_sales_type(driver, value, text):
-    driver.find_element(By.ID, value)
-    select = Select(driver.find_element_by_id(value))
-    select.select_by_visible_text(text)
+    # driver.find_element(By.ID, value)
+    # select = Select(driver.find_element_by_id(value))
+    # select.select_by_visible_text(text)
+
+    try:
+        Select(driver.find_element_by_id(value)).select_by_visible_text(text)  # do something
+    except socket.error as e:
+        Select(driver.find_element_by_id(value)).select_by_visible_text(text)  # A socket error
+    except IOError as e:
+        Select(driver.find_element_by_id(value)).select_by_visible_text(text)
+        if e.errno == errno.EPIPE:
+            Select(driver.find_element_by_id(value)).select_by_visible_text(text)  # EPIPE error
+        else:
+            Select(driver.find_element_by_id(value)).select_by_visible_text(text)  # Other error
 
 
 def wait_product_field_selection(driver):
