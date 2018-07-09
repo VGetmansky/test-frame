@@ -713,13 +713,13 @@ class TestCreateInvoice:
         with pytest.allure.step('Select order date'):
             invoice_tests.select_order_date(driver)
 
-    def test_fill_total_payments(self, driver):
-        with pytest.allure.step('Fill total payments'):
-            invoice_tests.fill_in_total_payments(driver)
+    # def test_fill_total_payments(self, driver):
+    #    with pytest.allure.step('Fill total payments'):
+    #        invoice_tests.fill_in_total_payments(driver)
 
-    def test_fill_percent_paid(self, driver):
-        with pytest.allure.step('Fill percent paid'):
-            invoice_tests.fill_in_percent_paid(driver)
+    #def test_fill_percent_paid(self, driver):
+    #   with pytest.allure.step('Fill percent paid'):
+    #      invoice_tests.fill_in_percent_paid(driver)
 
     def test_fill_special_notes(self, driver):
         with pytest.allure.step('Fill special note'):
