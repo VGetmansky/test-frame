@@ -127,6 +127,10 @@ class TestCreateRfq:
         with pytest.allure.step('Fill PN Description'):
             rfq_tests.fill_in_pn_description(driver)
 
+    def test_fill_stock_outright_plli_aval_qty(self, driver):
+        with pytest.allure.step('Fill Stock Outright Aval.Qty'):
+            rfq_tests.fill_in_plli_aval_qty(driver)
+
 # Stock Outright
     def test_click_offer(self, driver):
         with pytest.allure.step('Click offer'):
@@ -158,6 +162,18 @@ class TestCreateRfq:
 
     # def test_fill_min_vendor_order(self, driver):
     #     tests.fill_in_min_vendor_order(driver)
+
+    def test_fill_stock_outright_notes(self, driver):
+        with pytest.allure.step('Fill stock outright notes'):
+            rfq_tests.fill_note(driver)
+
+    def test_fill_stock_outright_non_print_notes(self, driver):
+        with pytest.allure.step('Fill stock outright non-printed notes'):
+            rfq_tests.fill_non_printed_note(driver)
+
+    def test_fill_stock_outright_vquotes(self, driver):
+        with pytest.allure.step('Fill V.Quote'):
+            rfq_tests.fill_v_quote(driver)
 
 # Exchange
     def test_click_alt_offer_exchange(self, driver):
@@ -216,6 +232,22 @@ class TestCreateRfq:
         with pytest.allure.step('Fill exchange delivery time'):
             rfq_tests.fill_in_exchange_delivery_time(driver)
 
+    def test_fill_exchange_plli_aval_qty(self, driver):
+        with pytest.allure.step('Fill Exchange Aval.Qty'):
+            rfq_tests.fill_in_plli_aval_qty(driver)
+
+    def test_fill_exchange_notes(self, driver):
+        with pytest.allure.step('Fill stock outright notes'):
+            rfq_tests.fill_note(driver)
+
+    def test_fill_exchange_non_print_notes(self, driver):
+        with pytest.allure.step('Fill non printed notes'):
+            rfq_tests.fill_non_printed_note(driver)
+
+    def test_fill_exchange_v_quote_notes(self, driver):
+        with pytest.allure.step('Fill Exchange V.Quote'):
+            rfq_tests.fill_v_quote(driver)
+
 # Repair
     def test_click_alt_offer_repair(self, driver):
         with pytest.allure.step('Click alt offer'):
@@ -268,6 +300,22 @@ class TestCreateRfq:
     def test_fill_repair_delivery_time(self, driver):
         with pytest.allure.step('Fill repair delivery time'):
             rfq_tests.fill_in_repair_delivery_time(driver)
+
+    def test_fill_repair_plli_aval_qty(self, driver):
+        with pytest.allure.step('Fill Repair Aval.Qtyu'):
+            rfq_tests.fill_in_plli_aval_qty(driver)
+
+    def test_fill_repair_notes(self, driver):
+        with pytest.allure.step('Fill repair notes'):
+            rfq_tests.fill_note(driver)
+
+    def test_fill_repair_non_print_notes(self, driver):
+        with pytest.allure.step('Fill repair notes'):
+            rfq_tests.fill_non_printed_note(driver)
+
+    def test_fill_repair_v_quote_notes(self, driver):
+        with pytest.allure.step('Fill Repair V.Quote'):
+            rfq_tests.fill_v_quote(driver)
 
     def test_click_save_rfq(self, driver):
         with pytest.allure.step('Click save rfq'):
@@ -552,7 +600,7 @@ class TestCreatePO:
         #     tests.select_assigned_to(driver)
 
     def test_select_terms_of_delivery(self, driver):
-         with pytest.allure.step('Select terms of delivery'):
+        with pytest.allure.step('Select terms of delivery'):
             po_tests.select_terms_of_delivery(driver)
 
     def test_select_territory(self, driver):

@@ -14,6 +14,7 @@ def select_rfq(driver):
 
 
 def click_add_rfq(driver, url):
+    additional.wait_element(driver, data.add_rfq_id, 'id')
     driver.find_element(By.ID, data.add_rfq_id).click()
     assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)
 
@@ -106,6 +107,24 @@ def select_priority(driver):
     value = data.priority_id
     text = data.priority
     additional.select_value_from_dropdown(driver, value, text)
+
+
+def fill_note(driver):
+    value = data.notes_id
+    text = "Note"
+    additional.fill_text_field(driver, value, text)
+
+
+def fill_non_printed_note(driver):
+    value = data.non_printed_notes_id
+    text = "Note"
+    additional.fill_text_field(driver, value, text)
+
+
+def fill_v_quote(driver):
+    value = data.v_quote_id
+    text = "V.Quote"
+    additional.fill_text_field(driver, value, text)
 
 
 # stock outright
@@ -224,6 +243,12 @@ def fill_in_vendor(driver):
 def fill_in_pn_description(driver):
     field = data.pn_description_id
     text = "Test description"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_plli_aval_qty(driver):
+    field = data.spli_aval_qty_id
+    text = "10"
     additional.fill_text_field(driver, field, text)
 
 
@@ -386,5 +411,6 @@ def fill_in_repair_delivery_time(driver):
 
 
 def click_save_rfq(driver):
+    driver.execute_script("window.scrollTo(0, 0)")
     additional.click_element_by_id(driver, data.save_rfq_id)
     additional.wait_element(driver, data.rfq_create_quote_id, 'id')
