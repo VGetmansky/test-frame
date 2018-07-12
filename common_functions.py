@@ -308,3 +308,15 @@ def wait_element_for_click(driver, value):
         except:
             time.sleep(1)
             i += 1
+
+
+def select_element_with_text_from_list(driver, value):
+    i = 0
+    wait_element(driver, value, 'id')
+    qtyelements = len(driver.find_elements(By.ID, value))
+    while i < qtyelements:
+        if driver.find_elements(By.ID, value)[i].text != '':
+            driver.find_elements(By.ID, value)[i].click()
+            i = qtyelements
+        else:
+            i = i + 1

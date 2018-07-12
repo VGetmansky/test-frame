@@ -368,13 +368,9 @@ class TestCreateQuote:
         with pytest.allure.step('Select terms sale'):
             quotest_tests.select_terms_sale(driver)
 
-
-
     # def test_add_product(self, driver):
     #     with pytest.allure.step('Add product'):
     #         quotest_tests.add_product(driver)
-
-
 
     # def test_close_alert(self, driver):
     #     tests.close_alert(driver)
