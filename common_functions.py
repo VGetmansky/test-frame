@@ -4,6 +4,7 @@ import string
 import datetime
 import math
 import random
+import re
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -310,13 +311,20 @@ def wait_element_for_click(driver, value):
             i += 1
 
 
-def select_element_with_text_from_list(driver, value):
+def select_element_with_text_from_list(driver, value, type):
     i = 0
-    wait_element(driver, value, 'id')
-    qtyelements = len(driver.find_elements(By.ID, value))
+    if type == 'id':
+        wait_element(driver, value, 'id')
+        qtyelements = len(driver.find_elements(By.ID, value))
+        identificator = By.ID
+    elif type == 'xpath':
+        wait_element(driver, value, 'xpath')
+        qtyelements = len(driver.find_elements(By.XPATH, value))
+        identificator = By.XPATH
+
     while i < qtyelements:
-        if driver.find_elements(By.ID, value)[i].text != '':
-            driver.find_elements(By.ID, value)[i].click()
+        if driver.find_elements(identificator, value)[i].text != '' and (driver.find_elements(identificator, value)[i].text.find('/n') == -1) is True:
+            driver.find_elements(identificator, value)[i].click()
             i = qtyelements
         else:
             i = i + 1
