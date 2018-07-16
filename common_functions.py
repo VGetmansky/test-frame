@@ -311,7 +311,7 @@ def wait_element_for_click(driver, value):
             i += 1
 
 
-def select_element_with_text_from_list(driver, value, type):
+def select_element_with_text_from_list(driver, value, type, text):
     i = 0
     if type == 'id':
         wait_element(driver, value, 'id')
@@ -323,7 +323,7 @@ def select_element_with_text_from_list(driver, value, type):
         identificator = By.XPATH
 
     while i < qtyelements:
-        if driver.find_elements(identificator, value)[i].text != '' and (driver.find_elements(identificator, value)[i].text.find('/n') == -1) is True:
+        if driver.find_elements(identificator, value)[i].text == text and (driver.find_elements(identificator, value)[i].text.find('\n') == -1) is True:
             driver.find_elements(identificator, value)[i].click()
             i = qtyelements
         else:
