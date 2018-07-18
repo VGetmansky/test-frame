@@ -1,5 +1,5 @@
 # -----Additional data-----
-#http://crmtst_us.bai-inc.eu/index.php?module=Rfq&view=List
+# http://crmtst_us.bai-inc.eu/index.php?module=Rfq&view=List
 expected_url = "index.php?module=Rfq&view=Edit"
 
 
@@ -191,6 +191,8 @@ repair_mgm_id = "repair_mgm_price"
 repair_mgm_percent_id = "mgm_percent_repair"
 
 rfq_create_quote_id = "Rfq_detailView_basicAction_LBL_CREATEQUOTE"
+
+
 # -----Notes I/c & V.Quote-----
 notes_id = "notes"
 non_printed_notes_id = "np_notes"

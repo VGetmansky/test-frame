@@ -179,6 +179,7 @@ def fill_in_min_vendor_order(driver):
 def click_offer(driver):
     value = data.offer_id
     additional.wait_element_for_click(driver, value)
+    driver.find_element(By.XPATH, '//label[@class="checkbox-label" and @for="line_check_1"]').click()
 
 
 def click_alt_offer(driver):
