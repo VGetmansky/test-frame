@@ -64,7 +64,7 @@ class TestCreateRfq:
 
     def test_delivery_terms(self, driver):
         with pytest.allure.step('Select sale terms'):
-            tests.select_sale_terms(driver)
+            tests.select_delivery_terms(driver)
 
     def test_delivery_terms_test_field(self, driver):
         with pytest.allure.step('Fill delivery terms'):

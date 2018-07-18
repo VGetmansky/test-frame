@@ -4,7 +4,6 @@ import string
 import datetime
 import math
 import random
-import re
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -13,7 +12,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from crm.data import rfq_data, quotes_data, po_data, so_data, authorization_data
-import socket, errno, time
+import socket, errno
 
 
 def get_name():

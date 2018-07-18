@@ -77,7 +77,7 @@ class TestCreateRfq:
 
     def test_delivery_terms(self, driver):
         with pytest.allure.step('Select sale terms'):
-            rfq_tests.select_sale_terms(driver)
+            rfq_tests.select_delivery_terms(driver)
 
     def test_delivery_terms_test_field(self, driver):
         with pytest.allure.step('Fill delivery terms'):
@@ -332,9 +332,9 @@ class TestClickAddQuoteButton:
 @pytest.mark.test
 class TestCreateQuote:
 
-    # def test_select_account(self, driver):
-    #     with pytest.allure.step('Fill Account'):
-    #         quotest_tests.fill_in_account_field(driver)
+    def test_select_account(self, driver):
+        with pytest.allure.step('Fill Account'):
+            quotest_tests.fill_in_account_field(driver)
 
     def test_fill_in_cust_ref(self, driver):
         with pytest.allure.step('Fill cust ref'):
