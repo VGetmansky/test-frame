@@ -327,3 +327,14 @@ def select_element_with_text_from_list(driver, value, type, text):
             i = qtyelements
         else:
             i = i + 1
+
+
+def select_category_all(driver):
+    wait_element(driver, data.all_categories_id, 'id')
+    try:
+        driver.find_element(By.ID, data.all_categories_id).click()
+        assert bool(driver.find_element(By.XPATH, '//li[@class="dropdown open" and @id="moreMenu"]')) == True
+    except:
+        time.sleep(1)
+        driver.find_element(By.ID, data.all_categories_id).click()
+        assert bool(driver.find_element(By.XPATH, '//li[@class="dropdown open" and @id="moreMenu"]')) == True
