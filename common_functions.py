@@ -148,16 +148,22 @@ def fill_text_field(driver, value, text):
     except:
         elem = driver.find_element(By.XPATH, value)
         assert NoSuchElementException
+    elem_before = elem.get_attribute("value")
 
     elem.click()
     elem.send_keys(Keys.CONTROL + "a")
     elem.send_keys(Keys.DELETE)
     elem.send_keys(text)
 
+    while elem == elem_before:
+        time.sleep(1)
+
     if elem.get_attribute("id") == "PurchaseOrder_editView_fieldName_purchaseorder_no":
         assert (elem.get_attribute('value') == "P" + text)
     elif elem.get_attribute("id") == "Invoice_editView_fieldName_invoice_no":
         assert (elem.get_attribute('value') == "INV" + text)
+    elif elem.get_attribute("id") == "Products_editView_fieldName_productname":
+        assert (elem.get_attribute('value') == "_" + text)
     else:
         assert (elem.get_attribute('value') == text)
 
