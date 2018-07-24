@@ -23,6 +23,9 @@ def click_add_product(driver, url):
     assert (url + data.expected_product_url) == driver.current_url
 
 
+# ------------------ Product details ------------------
+
+
 def select_support_start_date(driver):
     value = data.support_start_date_id
     date = '01-04-2018'
@@ -82,6 +85,12 @@ def select_sales_end_date(driver):
     additional.select_calendar_date(driver, value, date)
 
 
+def select_hardware_product_category(driver):
+    value = data.product_category_id
+    text = data.hardware_product
+    additional.select_value_from_dropdown(driver, value, text)
+
+
 def fill_in_vendor_name(driver):
     element_id = data.vendor_name_id
     additional.select_first_cell(driver, element_id, False)
@@ -109,6 +118,15 @@ def fill_product_sheet(driver):
     value = data.product_sheet_id
     text = "PN1"
     additional.fill_text_field(driver, value, text)
+
+
+def select_gl_account(driver):
+    value = data.gl_account_id
+    text = data.gl_account_freight_in
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+# ------------------ Pricing Information ------------------
 
 
 def check_vat_percent(driver):
@@ -139,3 +157,98 @@ def check_tax_for_shipping(driver):
     value = data.tax_for_shipping_id
     additional.wait_element(driver, value, 'id')
     additional.click_element_by_id(driver, value)
+
+
+# ------------------ Stock Information ------------------
+
+
+def select_usage_unit(driver):
+    value = data.usage_unit_id
+    text = data.ea_usage_unit
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def fill_qty_in_stock(driver):
+    value = data.qty_in_stock_id
+    text = "123"
+    additional.fill_text_field(driver, value, text)
+
+
+def select_handler(driver):
+    value = data.handler_id
+    text = data.administrator_handler
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def fill_qty_optimal_level(driver):
+    value = data.optimal_level_id
+    text = "123"
+    additional.fill_text_field(driver, value, text)
+
+
+def fill_qty_unit(driver):
+    value = data.qty_unit_id
+    text = "10"
+    additional.fill_text_field(driver, value, text)
+
+
+def fill_reorder_level(driver):
+    value = data.reorder_level_id
+    text = "10"
+    additional.fill_text_field(driver, value, text)
+
+
+def fill_qty_in_demand(driver):
+    value = data.qty_in_demand_id
+    text = "10"
+    additional.fill_text_field(driver, value, text)
+
+
+# ------------------ Custom Information ------------------
+
+
+def select_qb_account(driver):
+    value = data.qb_account_id
+    text = data.qb_default_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_qb_company(driver):
+    value = data.qb_company_id
+    text = data.qb_default_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_qb_cogs_account(driver):
+    value = data.qb_cogs_account_id
+    text = data.qb_default_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_qb_item_type(driver):
+    value = data.qb_item_type_id
+    text = data.qb_default_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_qb_asset_account(driver):
+    value = data.qb_asset_account_id
+    text = data.qb_default_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def check_sync_to_qb(driver):
+    value = data.sync_to_qb_id
+    additional.wait_element(driver, value, 'id')
+    additional.click_element_by_id(driver, value)
+
+
+def check_sent_to_qb(driver):
+    value = data.sent_to_qb_id
+    additional.wait_element(driver, value, 'id')
+    additional.click_element_by_id(driver, value)
+
+# ------------------ Product Image Information ------------------
+# ------------------ Description Details ------------------
+# ------------------ Locale ------------------
+

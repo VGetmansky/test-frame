@@ -16,12 +16,13 @@ serial_no_id = "Products_editView_fieldName_serial_no"
 product_active_id = "Products_editView_fieldName_discontinued"
 sales_start_date_id = "Products_editView_fieldName_sales_start_date"
 product_category_id = "productcategory__chzn"
+hardware_product = '//li[contains(.,"Hardware")]'
 sales_end_date_id = "Products_editView_fieldName_sales_end_date"
 vendor_name_id = "Products_editView_fieldName_vendor_id_select"
 vendor_parnno_id = "Products_editView_fieldName_vendor_part_no"
 product_sheet_id = "Products_editView_fieldName_productsheet"
 gl_account_id = "glacct__chzn"
-
+gl_account_freight_in = '//li[contains(.,"5050-Freight In")]'
 # Pricing Information
 unit_price_id = "Products-editview-fieldname-unit_price"
 vat_percent_tax_check_id = "tax1_check"
@@ -38,8 +39,10 @@ commission_rate_id = "Products_editView_fieldName_commissionrate"
 
 # Stock Information
 usage_unit_id = "usageunit__chzn"
+ea_usage_unit = '//li[contains(.,"EA")]'
 qty_in_stock_id = "Products_editView_fieldName_qtyinstock"
 handler_id = "assigned_user_id_chzn"
+administrator_handler = '//li[contains(.,"Administrator")]'
 optimal_level_id = "Products_editView_fieldName_optimallevel"
 qty_unit_id = "Products_editView_fieldName_qty_per_unit"
 reorder_level_id = "Products_editView_fieldName_reorderlevel"
@@ -48,8 +51,11 @@ qty_in_demand_id = "Products_editView_fieldName_qtyindemand"
 # Custom Information
 sync_to_qb_id = "Products_editView_fieldName_qb"
 qb_account_id = "qbaccount__chzn"
+qb_playroll = '//li[contains(.,"Playroll Expenses")]'
 qb_company_id = "cf_qb_company__chzn"
+qb_default_value = '//li[contains(.,"Select an Option")]'
 qb_cogs_account_id = "cf_qb_cogs_account__chzn"
+
 sent_to_qb_id = "Products_editView_fieldName_cf_sent_to_qb"
 qb_item_type_id = "qbitemtype__chzn"
 qb_asset_account_id = "cf_qb_asset_account__chzn"
