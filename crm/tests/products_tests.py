@@ -129,6 +129,12 @@ def select_gl_account(driver):
 # ------------------ Pricing Information ------------------
 
 
+def fill_unit_price(driver):
+    value = data.unit_price_id
+    text = "20"
+    additional.fill_text_field(driver, value, text)
+
+
 def check_vat_percent(driver):
     value = data.vat_percent_tax_check_id
     additional.wait_element(driver, value, 'id')
@@ -145,6 +151,12 @@ def check_tax_non_percent(driver):
     value = data.tax_non_percent_id
     additional.wait_element(driver, value, 'id')
     additional.click_element_by_id(driver, value)
+
+
+def fill_commission_rate(driver):
+    value = data.commission_rate_id
+    text = "4"
+    additional.fill_text_field(driver, value, text)
 
 
 def check_sales(driver):
@@ -248,7 +260,22 @@ def check_sent_to_qb(driver):
     additional.wait_element(driver, value, 'id')
     additional.click_element_by_id(driver, value)
 
+
 # ------------------ Product Image Information ------------------
 # ------------------ Description Details ------------------
+
+
+def fill_description(driver):
+    value = data.description_id
+    text = "Autotest Description"
+    additional.fill_text_field(driver, value, text)
+
+
 # ------------------ Locale ------------------
 
+
+def click_save_product(driver):
+    driver.execute_script("window.scrollTo(0, 0)")
+    value = data.save_button
+    text = "Save"
+    additional.select_element_with_text_from_list(driver, value, 'xpath', text)

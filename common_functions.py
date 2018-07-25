@@ -4,6 +4,9 @@ import string
 import datetime
 import math
 import random
+import socket
+import errno
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,7 +15,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from crm.data import rfq_data, quotes_data, po_data, so_data, authorization_data
-import socket, errno
 
 
 def get_name():
@@ -26,12 +28,11 @@ def get_name():
             i += 1
         else:
             i += 1
-    name = int(math.sqrt(math.sqrt(int(s)*random.randint(2, 5))))
+    name = int(math.sqrt(math.sqrt(int(s) * random.randint(2, 5))))
     return name
 
 
 def select_first_cell(driver, element_id, account):
-
     try:
         windowhandler = driver.window_handles
         assert ConnectionResetError
@@ -60,9 +61,8 @@ def select_first_cell(driver, element_id, account):
     WebDriverWait(driver, 10).until(
         lambda driver: driver.title != "New Tab"
     )
-    #
+
     time.sleep(0.2)
-    #
     driver.switch_to.window(window_after)
 
     i = 1
@@ -77,9 +77,7 @@ def select_first_cell(driver, element_id, account):
             try:
                 wait_element(driver, data.first_account_row_id, 'id')
                 wait = WebDriverWait(driver, 10)
-
                 wait.until(EC.invisibility_of_element_located((By.ID, data.check_account_row_id)))
-
                 click_element_by_id(driver, data.first_account_row_id)
                 i = 10
             except:
@@ -128,7 +126,6 @@ def select_first_cell(driver, element_id, account):
 def click_element_by_id(driver, value):
     wait = WebDriverWait(driver, 10)
     elem = wait.until(EC.element_to_be_clickable((By.ID, value)))
-
     builder = ActionChains(driver)
     builder.move_to_element(elem).click(elem).perform()
 
@@ -136,7 +133,6 @@ def click_element_by_id(driver, value):
 def click_element_by_xpath(driver, value):
     wait = WebDriverWait(driver, 10)
     elem = wait.until(EC.element_to_be_clickable((By.XPATH, value)))
-
     builder = ActionChains(driver)
     builder.move_to_element(elem).click(elem).perform()
 
@@ -166,6 +162,7 @@ def fill_text_field(driver, value, text):
         assert (elem.get_attribute('value') == "_" + text)
     else:
         assert (elem.get_attribute('value') == text)
+
 
 # Лютейший стыд!!
 
@@ -217,15 +214,13 @@ def wait_element_by(driver, value, type):
 
 
 def select_value_from_dropdown(driver, value, text):
-
+    # driver.wait.until(EC.presence_of_element_located(By.ID, value))
     driver.find_element(By.ID, value).click()
     driver.find_element(By.XPATH, text).click()
+    assert str(driver.find_element(By.ID, value).text).split("\n")[0] == text.split('\"')[1]
 
 
 def change_sales_type(driver, value, text):
-    # driver.find_element(By.ID, value)
-    # select = Select(driver.find_element_by_id(value))
-    # select.select_by_visible_text(text)
 
     try:
         Select(driver.find_element_by_id(value)).select_by_visible_text(text)  # do something
@@ -272,7 +267,7 @@ def select_table_cell(driver, field, tab, url):
 
 
 def get_so_number(driver, value):
-    so_num = (driver.find_element(By.ID, "SalesOrder_listView_row_1").text).split(' ')[0]
+    so_num = driver.find_element(By.ID, "SalesOrder_listView_row_1").text.split(' ')[0]
     return so_num
 
 
@@ -328,7 +323,8 @@ def select_element_with_text_from_list(driver, value, type, text):
         identificator = By.XPATH
 
     while i < qtyelements:
-        if driver.find_elements(identificator, value)[i].text == text and (driver.find_elements(identificator, value)[i].text.find('\n') == -1) is True:
+        if driver.find_elements(identificator, value)[i].text == text and (
+                driver.find_elements(identificator, value)[i].text.find('\n') == -1) is True:
             driver.find_elements(identificator, value)[i].click()
             i = qtyelements
         else:
@@ -339,8 +335,8 @@ def select_category_all(driver):
     wait_element(driver, data.all_categories_id, 'id')
     try:
         driver.find_element(By.ID, data.all_categories_id).click()
-        assert bool(driver.find_element(By.XPATH, '//li[@class="dropdown open" and @id="moreMenu"]')) == True
+        assert bool(driver.find_element(By.XPATH, '//li[@class="dropdown open" and @id="moreMenu"]')) is True
     except:
         time.sleep(1)
         driver.find_element(By.ID, data.all_categories_id).click()
-        assert bool(driver.find_element(By.XPATH, '//li[@class="dropdown open" and @id="moreMenu"]')) == True
+        assert bool(driver.find_element(By.XPATH, '//li[@class="dropdown open" and @id="moreMenu"]')) is True

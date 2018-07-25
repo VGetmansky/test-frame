@@ -63,9 +63,9 @@ class TestFillProductProfile:
         with pytest.allure.step('Select category for product'):
             tests.select_hardware_product_category(driver)
 
-    def test_fill_website(self, driver):
-        with pytest.allure.step('Fill Website'):
-            tests.fill_website(driver)
+    # def test_fill_website(self, driver):
+    #     with pytest.allure.step('Fill Website'):
+    #         tests.fill_website(driver)
 
     def test_fill_vendor(self, driver):
         with pytest.allure.step('Fill Vendor'):
@@ -93,6 +93,10 @@ class TestFillProductProfile:
 
     # ------------------ Pricing Information ------------------
 
+    def test_fill_unit_price(self, driver):
+        with pytest.allure.step('Fill Unit Price'):
+            tests.fill_unit_price(driver)
+
     def test_check_vat_percent(self, driver):
         with pytest.allure.step('Check VAT Percent'):
             tests.check_vat_percent(driver)
@@ -105,8 +109,12 @@ class TestFillProductProfile:
         with pytest.allure.step('Check Tax NON Percent'):
             tests.check_tax_non_percent(driver)
 
+    def test_fill_commission_rate(self, driver):
+        with pytest.allure.step('Fill Commission Rate'):
+            tests.fill_commission_rate(driver)
+
     def test_check_sales(self, driver):
-        with pytest.allure.step('Check Tax for shipping'):
+        with pytest.allure.step('Check Sales'):
             tests.check_sales(driver)
 
     def test_check_tax_for_shipping(self, driver):
@@ -172,3 +180,13 @@ class TestFillProductProfile:
     def test_check_sent_to_qb(self, driver):
         with pytest.allure.step('QB COGS Account'):
             tests.check_sent_to_qb(driver)
+
+    # ------------------ Description Details ------------------
+
+    def test_fill_description(self, driver):
+        with pytest.allure.step('Fill Description'):
+            tests.fill_description(driver)
+
+    def test_save_product(self, driver):
+        with pytest.allure.step('Save Product'):
+            tests.click_save_product(driver)

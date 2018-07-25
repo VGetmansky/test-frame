@@ -72,3 +72,4 @@ description_id = "Products_editView_fieldName_description"
 # Need IDF ull Description(EN)
 # Need ID Full Description(RU)
 
+save_button = '//button[contains(.,"Save")]'
