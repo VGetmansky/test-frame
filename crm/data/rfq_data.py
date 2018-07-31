@@ -97,7 +97,8 @@ date_id = "Rfq_editView_fieldName_rfqdate"
 priority_id = "rpriority__chzn"
 priority = '//li[contains(.,"Routine")]'
 
-sale_terms = '//li[contains(.,"Pre-payment")]'
+tst_sale_terms = '//li[contains(., "NET-30")]'
+qa_sale_terms = '//li[contains(.,"Pre-payment")]'
 delivery_terms = '//li[contains(.,"CIF")]'
 
 pl_status_id = "rfqstatus__chzn"
