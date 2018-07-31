@@ -114,9 +114,12 @@ def select_status(driver):
     additional.select_value_from_dropdown(driver, value, text)
 
 
-def select_terms_of_payment(driver):
+def select_terms_of_payment(driver, url):
     value = data.terms_of_payment_id
-    text = data.terms_of_payment
+    if url == "http://crmtst_us.bai-inc.eu/":
+        text = data.tst_terms_of_payment
+    else:
+        text = data.qa_terms_of_payment
     additional.select_value_from_dropdown(driver, value, text)
 
 

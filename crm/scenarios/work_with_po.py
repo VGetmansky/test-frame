@@ -3,9 +3,6 @@ from crm.tests import po_tests as tests
 from crm.scenarios.login_scenario import TestLogInApp
 import allure
 
-
-#TestLogInApp()
-
 @pytest.allure.testcase('Work With SO')
 @pytest.mark.test
 class TestWorkWithSOList:
@@ -56,9 +53,9 @@ class TestCreatePO:
         with pytest.allure.step('Select Status'):
             tests.select_status(driver)
 
-    def test_select_terms_of_payment(self, driver):
+    def test_select_terms_of_payment(self, driver, url):
         with pytest.allure.step('select terms of payment'):
-            tests.select_terms_of_payment(driver)
+            tests.select_terms_of_payment(driver, url)
 
     def test_fill_delivery_place(self, driver):
         with pytest.allure.step('Fill delivery place'):

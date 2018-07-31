@@ -57,9 +57,12 @@ def fill_in_received_via(driver):
     additional.fill_text_field(driver, value, text)
 
 
-def select_sale_terms(driver):
+def select_sale_terms(driver, url):
     value = data.sale_terms_id
-    text = data.sale_terms
+    if url == "http://crmtst_us.bai-inc.eu/":
+        text = data.tst_sale_terms
+    else:
+        text = data.qa_sale_terms
     additional.select_value_from_dropdown(driver, value, text)
 
 

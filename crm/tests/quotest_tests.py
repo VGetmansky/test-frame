@@ -44,9 +44,12 @@ def fill_in_place_of_delivery(driver):
     additional.fill_text_field(driver, field, text)
 
 
-def select_quote_status(driver):
+def select_quote_status(driver, url):
     value = data.quote_stage_id
-    text = data.quote_stage
+    if url == "http://crmtst_us.bai-inc.eu/":
+        text = data.tst_quote_stage
+    else:
+        text = data.qa_quote_stage
     additional.select_value_from_dropdown(driver, value, text)
 
 
@@ -62,9 +65,12 @@ def select_terms_of_delivery(driver):
     additional.select_value_from_dropdown(driver, value, text)
 
 
-def select_terms_sale(driver):
+def select_terms_sale(driver, url):
     value = data.terms_of_sale_id
-    text = data.terms_of_sale
+    if url == "http://crmtst_us.bai-inc.eu/":
+        text = data.tst_terms_of_sale
+    else:
+        text = data.qa_terms_of_sale
     additional.select_value_from_dropdown(driver, value, text)
 
 

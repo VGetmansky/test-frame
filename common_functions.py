@@ -340,3 +340,12 @@ def select_category_all(driver):
         time.sleep(1)
         driver.find_element(By.ID, data.all_categories_id).click()
         assert bool(driver.find_element(By.XPATH, '//li[@class="dropdown open" and @id="moreMenu"]')) is True
+
+
+def check_all_item_checkbuttons(driver):
+    i = 0
+    if i < len(driver.find_elements(By.XPATH, '//input[@type="checkbox"]')) and driver.find_elements(By.XPATH, '//input[@type="checkbox"]')[i].size == {'height': 20.0, 'width': 20.0}:
+        driver.find_elements(By.XPATH, '//input[@type="checkbox"]')[i].click()
+        i = len(driver.find_elements(By.XPATH, '//input[@type="checkbox"]'))
+    else:
+        i += 1

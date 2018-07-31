@@ -43,9 +43,9 @@ class TestCreateQuote:
         with pytest.allure.step('Fill place of delivery'):
             tests.fill_in_place_of_delivery(driver)
 
-    def test_select_quote_status(self,driver):
+    def test_select_quote_status(self,driver, url):
         with pytest.allure.step('Select quote status'):
-            tests.select_quote_status(driver)
+            tests.select_quote_status(driver, url)
 
     def test_select_priority(self, driver):
         with pytest.allure.step('Select priority'):
@@ -55,9 +55,9 @@ class TestCreateQuote:
         with pytest.allure.step('Select terms of delivery'):
             tests.select_terms_of_delivery(driver)
 
-    def test_select_terms_of_sale(self, driver):
+    def test_select_terms_of_sale(self, driver, url):
         with pytest.allure.step('Select terms sale'):
-            tests.select_terms_sale(driver)
+            tests.select_terms_sale(driver, url)
 
     def test_add_product(self, driver):
         with pytest.allure.step('Add product'):

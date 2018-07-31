@@ -9,7 +9,7 @@ import time
 
 def select_contacts(driver):
     if driver.title != "Contacts":
-        driver.find_element(By.ID, auth_data.contacts_main_button_id).click()
+        additional.wait_element_for_click(driver, auth_data.contacts_main_button_id)
     assert "Contacts", driver.title
 
 

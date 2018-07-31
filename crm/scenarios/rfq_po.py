@@ -71,9 +71,9 @@ class TestCreateRfq:
         with pytest.allure.step('Fill recieved via'):
             rfq_tests.fill_in_received_via(driver)
 
-    def test_select_sale_terms(self, driver):
+    def test_select_sale_terms(self, driver, url):
         with pytest.allure.step('Select sale terms'):
-            rfq_tests.select_sale_terms(driver)
+            rfq_tests.select_sale_terms(driver, url)
 
     def test_delivery_terms(self, driver):
         with pytest.allure.step('Select sale terms'):
@@ -340,6 +340,10 @@ class TestCreateQuote:
         with pytest.allure.step('Fill cust ref'):
             quotest_tests.fill_in_cust_ref(driver)
 
+    def test_fill_in_place_of_delivery(self, driver):
+        with pytest.allure.step('Fill place of delivery'):
+            quotest_tests.fill_in_place_of_delivery(driver)
+
     def test_fill_in_billing_address(self, driver):
         with pytest.allure.step('Fill billing address'):
             quotest_tests.fill_in_billing_address(driver)
@@ -348,13 +352,9 @@ class TestCreateQuote:
         with pytest.allure.step('Fill shipping address'):
             quotest_tests.fill_in_shipping_address(driver)
 
-    def test_fill_in_place_of_delivery(self, driver):
-        with pytest.allure.step('Fill place of delivery'):
-            quotest_tests.fill_in_place_of_delivery(driver)
-
-    def test_select_quote_status(self,driver):
+    def test_select_quote_status(self,driver, url):
         with pytest.allure.step('Select quote status'):
-            quotest_tests.select_quote_status(driver)
+            quotest_tests.select_quote_status(driver, url)
 
     def test_select_priority(self, driver):
         with pytest.allure.step('Select priority'):
@@ -364,9 +364,9 @@ class TestCreateQuote:
         with pytest.allure.step('Select terms of delivery'):
             quotest_tests.select_terms_of_delivery(driver)
 
-    def test_select_terms_of_sale(self, driver):
+    def test_select_terms_of_sale(self, driver, url):
         with pytest.allure.step('Select terms sale'):
-            quotest_tests.select_terms_sale(driver)
+            quotest_tests.select_terms_sale(driver, url)
 
     # def test_add_product(self, driver):
     #     with pytest.allure.step('Add product'):
@@ -426,7 +426,7 @@ class TestCreateQuote:
 
 @pytest.mark.test
 class TestClickAddSoButton:
-    def test_click_add_quote_button(self, driver, url):
+    def test_click_add_so_button(self, driver, url):
         with pytest.allure.step('Click add SO'):
             addnewentity_tests.test_click_add_so_from_quote(driver)
 
@@ -552,9 +552,9 @@ class TestCreatePO:
     #     with pytest.allure.step('Select Status'):
     #         po_tests.select_status(driver)
 
-    def test_select_terms_of_payment(self, driver):
+    def test_select_terms_of_payment(self, driver, url):
         with pytest.allure.step('select terms of payment'):
-            po_tests.select_terms_of_payment(driver)
+            po_tests.select_terms_of_payment(driver, url)
 
     def test_fill_delivery_place(self, driver):
         with pytest.allure.step('Fill delivery place'):

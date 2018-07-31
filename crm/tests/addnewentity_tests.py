@@ -13,6 +13,8 @@ def test_click_add_quote_from_rfq(driver):
 def test_click_add_so_from_quote(driver):
     additional.wait_element(driver, rfq_to_po_data.quote_generate_so_id, "id")
     driver.find_element(By.ID, rfq_to_po_data.quote_generate_so_id).click()
+    # bool(driver.find_elements(By.XPATH, '//input[@type="checkbox"]')[8].size == {'height': 20.0, 'width': 20.0})
+    additional.check_all_item_checkbuttons(driver)
     additional.wait_element(driver, rfq_to_po_data.create_quote_button, "xpath")
     driver.find_element(By.XPATH, rfq_to_po_data.create_quote_button).click()
     additional.wait_element(driver, rfq_to_po_data.save_button_id, 'id')
