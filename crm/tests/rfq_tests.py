@@ -9,7 +9,8 @@ import time
 
 def select_rfq(driver):
     if driver.title != "Rfq":
-        driver.find_element(By.ID, auth_data.rfq_main_button_id).click()
+        #driver.find_element(By.ID, auth_data.rfq_main_button_id).click()
+        additional.wait_element_for_click(driver, auth_data.rfq_main_button_id)
     assert "Rfq", driver.title
 
 
@@ -21,6 +22,7 @@ def click_add_rfq(driver, url):
 
 def fill_in_vendor_field(driver):
     element_id = data.vendor_list_id
+    additional.wait_element(driver, element_id, 'id')
     additional.select_first_cell(driver, element_id, False)
 
 
@@ -33,6 +35,8 @@ def filter_by_creator(driver):
 
 def fill_in_account_field(driver):
     element_id = data.rfq_account_id
+    time.sleep(3)
+    #additional.wait_element(driver, element_id, 'id')
     additional.select_first_cell(driver, element_id, False)
     try:
         driver.find_element(By.XPATH, data.contact).click()

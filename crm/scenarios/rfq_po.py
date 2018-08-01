@@ -34,6 +34,7 @@ class TestLogInApp:
 class TestWorkWithRFQList:
     def test_open_rfq_tab(self, driver):
         with pytest.allure.step('Select RFQ'):
+
             rfq_tests.select_rfq(driver)
 
 
@@ -47,9 +48,10 @@ class TestClickAddButton:
 @pytest.mark.test
 class TestCreateRfq:
 
-    def test_select_vendor(self, driver):
-        with pytest.allure.step('Fill vendor field'):
-            rfq_tests.fill_in_vendor_field(driver)
+    #
+    # def test_select_vendor(self, driver):
+    #     with pytest.allure.step('Fill vendor field'):
+    #         rfq_tests.fill_in_vendor_field(driver)
 
     def test_priority(self, driver):
         with pytest.allure.step('Select priority'):
@@ -434,6 +436,10 @@ class TestClickAddSoButton:
 @pytest.mark.test
 class TestCreateSO:
 
+    def test_fill_in_client_po(self, driver):
+        with pytest.allure.step('Fill client PO'):
+            so_tests.fill_in_client_po(driver)
+
     def test_fill_in_billing_address(self, driver):
         with pytest.allure.step('Fill billing address'):
             so_tests.fill_in_billing_address(driver)
@@ -449,10 +455,6 @@ class TestCreateSO:
     # def test_add_product(self, driver):
     #     with pytest.allure.step('Add product'):
     #         so_tests.add_product(driver)
-
-    def test_fill_in_client_po(self, driver):
-        with pytest.allure.step('Fill client PO'):
-            so_tests.fill_in_client_po(driver)
 
     def test_fill_in_billing_po_box(self, driver):
         with pytest.allure.step('Fill billing po box'):
@@ -693,9 +695,9 @@ class TestCreateInvoice:
         with pytest.allure.step('Fill customer no'):
             invoice_tests.fill_in_customer_no(driver)
 
-    def test_select_terms_of_sale(self, driver):
+    def test_select_terms_of_sale(self, driver, url):
         with pytest.allure.step('Select terms of sale'):
-            invoice_tests.select_terms_of_sale(driver)
+            invoice_tests.select_terms_of_sale(driver, url)
 
     def test_select_terms_of_delivery(self, driver):
         with pytest.allure.step('Select terms of delivery'):
@@ -725,9 +727,9 @@ class TestCreateInvoice:
         with pytest.allure.step('Select due date'):
             invoice_tests.select_due_date(driver)
 
-    def test_select_status(self, driver):
+    def test_select_status(self, driver, url):
         with pytest.allure.step('Select status'):
-            invoice_tests.select_status(driver)
+            invoice_tests.select_status(driver, url)
 
     def test_select_priority(self, driver):
         with pytest.allure.step('Select priority'):

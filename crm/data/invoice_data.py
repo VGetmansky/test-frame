@@ -13,7 +13,10 @@ customer_po_id = "Invoice_editView_fieldName_subject"
 customer_no_id = "Invoice_editView_fieldName_customerno"
 contact_name_id = "Invoice_editView_fieldName_contact_id_select"
 terms_of_sale_id = "tsale__chzn"
-terms_of_sale = '//li[contains(.,"Pre-payment")]'
+
+qa_terms_of_sale = '//li[contains(.,"Pre-payment")]'
+tst_terms_of_sale = '//li[contains(.,"NET-30")]'
+
 terms_of_delivery_id = "tdelivery__chzn"
 terms_of_delivery = '//li[contains(.,"CIP")]'
 
@@ -26,7 +29,9 @@ territory_id = "territory__chzn"
 territory = '//li[contains(.,"EES")]'
 
 status_id = "invoicestatus__chzn"
-status = '//li[contains(.,"Created")]'
+qa_status = '//li[contains(.,"Created")]'
+tst_status = '//li[contains(.,"Unpaid")]'
+
 # Assigned To - need ID
 assigned_to = '//li[contains(.,"Administrator")]'
 priority_id = "rpriority__chzn"

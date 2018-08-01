@@ -30,9 +30,12 @@ def fill_in_customer_po(driver):
     additional.fill_text_field(driver, value, text)
 
 
-def select_terms_of_sale(driver):
+def select_terms_of_sale(driver, url):
     value = data.terms_of_sale_id
-    text = data.terms_of_sale
+    if url == "http://crmtst_us.bai-inc.eu/":
+        text = data.tst_terms_of_sale
+    else:
+        text = data.qa_terms_of_sale
     additional.select_value_from_dropdown(driver, value, text)
 
 
@@ -84,9 +87,12 @@ def select_due_date(driver):
     additional.select_calendar_date(driver, value, date)
 
 
-def select_status(driver):
+def select_status(driver, url):
     value = data.status_id
-    text = data.status
+    if url == "http://crmtst_us.bai-inc.eu/":
+        text = data.tst_status
+    else:
+        text = data.qa_status
     additional.select_value_from_dropdown(driver, value, text)
 
 

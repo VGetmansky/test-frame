@@ -139,9 +139,11 @@ def click_element_by_xpath(driver, value):
 
 def fill_text_field(driver, value, text):
     try:
+        wait_element(driver, value, 'id')
         elem = driver.find_element(By.ID, value)
         assert NoSuchElementException
     except:
+        wait_element(driver, value, 'xpath')
         elem = driver.find_element(By.XPATH, value)
         assert NoSuchElementException
     elem_before = elem.get_attribute("value")
@@ -153,6 +155,7 @@ def fill_text_field(driver, value, text):
 
     while elem == elem_before:
         time.sleep(1)
+        continue
 
     if elem.get_attribute("id") == "PurchaseOrder_editView_fieldName_purchaseorder_no":
         assert (elem.get_attribute('value') == "P" + text)
@@ -189,6 +192,7 @@ def fill_pn_fields(driver, value, text):
 
 def wait_element(driver, value, type):
     elem = None
+    time.sleep(0.5)
     while not elem:
         if type == 'xpath':
             try:
@@ -344,8 +348,9 @@ def select_category_all(driver):
 
 def check_all_item_checkbuttons(driver):
     i = 0
-    if i < len(driver.find_elements(By.XPATH, '//input[@type="checkbox"]')) and driver.find_elements(By.XPATH, '//input[@type="checkbox"]')[i].size == {'height': 20.0, 'width': 20.0}:
-        driver.find_elements(By.XPATH, '//input[@type="checkbox"]')[i].click()
-        i = len(driver.find_elements(By.XPATH, '//input[@type="checkbox"]'))
-    else:
-        i += 1
+    while i < len(driver.find_elements(By.XPATH, '//input[@type="checkbox"]')):
+        if driver.find_elements(By.XPATH, '//input[@type="checkbox"]')[i].size == {'height': 20.0, 'width': 20.0}:
+            driver.find_elements(By.XPATH, '//input[@type="checkbox"]')[i].click()
+            i = len(driver.find_elements(By.XPATH, '//input[@type="checkbox"]'))
+        else:
+            i += 1
