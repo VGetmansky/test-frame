@@ -8,15 +8,18 @@ import time
 
 
 def select_rfq(driver):
+    new_url = driver.current_url
     if driver.title != "Rfq":
-        #driver.find_element(By.ID, auth_data.rfq_main_button_id).click()
         additional.wait_element_for_click(driver, auth_data.rfq_main_button_id)
+        additional.wait_new_page(driver,  new_url)
     assert "Rfq", driver.title
 
 
 def click_add_rfq(driver, url):
+    new_url = driver.current_url
     additional.wait_element(driver, data.add_rfq_id, 'id')
     driver.find_element(By.ID, data.add_rfq_id).click()
+    additional.wait_new_page(driver, new_url)
     assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)
 
 

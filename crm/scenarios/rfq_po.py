@@ -34,9 +34,11 @@ class TestLogInApp:
 class TestWorkWithRFQList:
     def test_open_rfq_tab(self, driver):
         with pytest.allure.step('Select RFQ'):
-
             rfq_tests.select_rfq(driver)
-
+    #
+    # def test_wait_rfq_list(self, driver, url):
+    #     with pytest.allure.step('Wait RFQ'):
+    #         common_functions.wait_new_page(driver, url)
 
 @pytest.mark.test
 class TestClickAddButton:
@@ -323,6 +325,9 @@ class TestCreateRfq:
         with pytest.allure.step('Click save rfq'):
             rfq_tests.click_save_rfq(driver)
 
+    # def test_wait_quote_list(self, driver, url):
+    #     with pytest.allure.step('Wait Quote'):
+    #         common_functions.wait_new_page(driver, url)
 
 @pytest.mark.test
 class TestClickAddQuoteButton:
@@ -425,6 +430,9 @@ class TestCreateQuote:
         with pytest.allure.step('Save SO'):
             quotest_tests.save_so(driver)
 
+    # def test_wait_so_list(self, driver, url):
+    #     with pytest.allure.step('Wait SO'):
+    #         common_functions.wait_new_page(driver, url)
 
 @pytest.mark.test
 class TestClickAddSoButton:
@@ -500,6 +508,9 @@ class TestCreateSO:
         with pytest.allure.step('Save SO'):
             so_tests.save_so(driver)
 
+    # def test_wait_po_list(self, driver, url):
+    #     with pytest.allure.step('Wait PO'):
+    #         common_functions.wait_new_page(driver, url)
 
 @pytest.mark.test
 class TestClickAddPoButton:

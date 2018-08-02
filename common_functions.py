@@ -354,3 +354,9 @@ def check_all_item_checkbuttons(driver):
             i = len(driver.find_elements(By.XPATH, '//input[@type="checkbox"]'))
         else:
             i += 1
+
+
+def wait_new_page(driver, new_url):
+    while driver.current_url == new_url:
+        time.sleep(0.2)
+        continue

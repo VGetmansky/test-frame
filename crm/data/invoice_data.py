@@ -29,7 +29,7 @@ territory_id = "territory__chzn"
 territory = '//li[contains(.,"EES")]'
 
 status_id = "invoicestatus__chzn"
-qa_status = '//li[contains(.,"Created")]'
+qa_status = '//li[contains(.,"Unpaid")]'
 tst_status = '//li[contains(.,"Unpaid")]'
 
 # Assigned To - need ID
