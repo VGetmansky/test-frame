@@ -111,6 +111,10 @@ def select_first_cell(driver, element_id, account):
             click_element_by_id(driver, data.first_location_row_id)
             i = 10
 
+        elif driver.title == "Relationships":
+            click_element_by_id(driver, data.first_relationship_row_id)
+            i = 10
+
         else:
             time.sleep(0.3)
             i += 1
@@ -163,6 +167,8 @@ def fill_text_field(driver, value, text):
         assert (elem.get_attribute('value') == "INV" + text)
     elif elem.get_attribute("id") == "Products_editView_fieldName_productname":
         assert (elem.get_attribute('value') == "_" + text)
+    elif elem.get_attribute("id") == "Contacts_editView_fieldName_contact_no":
+        assert (elem.get_attribute('value') == "CON" + text)
     else:
         assert (elem.get_attribute('value') == text)
 

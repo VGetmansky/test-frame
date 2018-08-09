@@ -17,5 +17,6 @@ first_quote_row_id = "Quotes_popUpListView_row_1"
 first_fleet_row_id = "Fleet_popUpListView_row_1"
 first_vendor_row_id = "Vendors_popUpListView_row_1"
 first_po_row_id = "PurchaseOrder_popUpListView_row_1"
+first_relationship_row_id = "Relationships_popUpListView_row_1"
 
 all_categories_id = "commonMoreMenu"
