@@ -28,9 +28,9 @@ class TestClickAddContactsButton:
         with pytest.allure.step('Fill First Name'):
             tests.fill_contact_first_name(driver)
 
-    def test_select_contact_location_name(self, driver):
+    def test_select_contact_location(self, driver):
         with pytest.allure.step('Select Location name'):
-            tests.fill_contact_last_name(driver)
+            tests.select_locations(driver)
 
     def test_select_contact_relationships(self, driver):
         with pytest.allure.step('Select relationship'):
@@ -108,9 +108,13 @@ class TestClickAddContactsButton:
         with pytest.allure.step('Fill Fax'):
             tests.fill_contact_fax(driver)
 
-    def test_fill_secondary_email(self, driver):
-        with pytest.allure.step('Fill Secondary Email'):
-            tests.fill_contact_secondary_email(driver)
+    def test_select_daate_of_birth(self, driver):
+        with pytest.allure.step('Select Date Of Birth'):
+            tests.select_date_of_birth(driver)
+
+    # def test_fill_secondary_email(self, driver):
+    #     with pytest.allure.step('Fill Secondary Email'):
+    #         tests.fill_contact_secondary_email(driver)
 
     def test_check_do_not_call_checkbox(self, driver):
         with pytest.allure.step('Check Do Not Call'):
@@ -124,13 +128,21 @@ class TestClickAddContactsButton:
         with pytest.allure.step('Check Sent To QA'):
             tests.check_seny_to_qb(driver)
 
-    def test_check_portal_user_checkbox(self, driver):
-        with pytest.allure.step('Check Portal User'):
-            tests.check_portal_user_checkbox(driver)
+    def test_select_support_start_date(self, driver):
+        with pytest.allure.step('Select Support Start Date'):
+            tests.select_support_start_date(driver)
+
+    def test_select_support_end_date(self, driver):
+        with pytest.allure.step('Select Support End Date'):
+            tests.select_support_end_date(driver)
 
     def test_fill_mailing_street(self, driver):
         with pytest.allure.step('Fill Mailing Street'):
             tests.fill_contact_mailing_street(driver)
+
+    def test_check_portal_user_checkbox(self, driver):
+        with pytest.allure.step('Check Portal User'):
+            tests.check_portal_user_checkbox(driver)
 
     def test_fill_mailing_po_box(self, driver):
         with pytest.allure.step('Fill Mailing PO Box'):
@@ -179,3 +191,7 @@ class TestClickAddContactsButton:
     def test_fill_description(self, driver):
         with pytest.allure.step('Fill Description'):
             tests.fill_description(driver)
+
+    def test_save_account(self, driver):
+        with pytest.allure.step('Click Save Contact'):
+            tests.click_save_account(driver)

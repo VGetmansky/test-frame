@@ -46,7 +46,7 @@ def fill_in_accounts_name(driver):
     additional.select_first_cell(driver, element_id, True)
 
 
-def fill_in_locations(driver):
+def select_locations(driver):
     element_id = data.contact_locations_id
     additional.wait_element(driver, data.contact_locations_id, 'id')
     additional.select_first_cell(driver, element_id, False)
@@ -155,6 +155,12 @@ def fill_contact_fax(driver):
     additional.fill_text_field(driver, value, text)
 
 
+def select_date_of_birth(driver):
+    value = data.date_birth_id
+    date = '01-04-1980'
+    additional.select_calendar_date(driver, value, date)
+
+
 def fill_in_reports_to(driver):
     element_id = data.reports_to_id
     additional.wait_element(driver, data.reports_to_id, 'id')
@@ -215,6 +221,18 @@ def check_portal_user_checkbox(driver):
     value = data.portal_user_checkbox_id
     additional.wait_element(driver, value, 'id')
     additional.click_element_by_id(driver, value)
+
+
+def select_support_start_date(driver):
+    value = data.support_start_date_id
+    date = '01-04-1980'
+    additional.select_calendar_date(driver, value, date)
+
+
+def select_support_end_date(driver):
+    value = data.support_end_date_id
+    date = '31-12-2020'
+    additional.select_calendar_date(driver, value, date)
 
 
 # ------------------ Address Details ------------------
@@ -301,4 +319,10 @@ def fill_description(driver):
 
 
 # ------------------ Profile Picture ------------------
-
+#
+#
+# def click_save_account(driver):
+#     driver.execute_script("window.scrollTo(0, 0)")
+#     value = data.save_button
+#     text = "Save"
+#     additional.select_element_with_text_from_list(driver, value, 'xpath', text)

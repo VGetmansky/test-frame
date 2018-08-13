@@ -173,9 +173,6 @@ def fill_text_field(driver, value, text):
         assert (elem.get_attribute('value') == text)
 
 
-# Лютейший стыд!!
-
-
 def fill_pn_fields(driver, value, text):
     if value != "pl_ins_but":
         try:
