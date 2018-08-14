@@ -1,0 +1,6 @@
+material_arrival_id = "menubar_item_WHStock"
+shipping_notice_id = "menubar_item_WHStock_Notice"
+inspection_id = "menubar_item_WHStock_Inspection"
+receiving_id = "menubar_item_WHStock_Receiving"
+packing_id = "menubar_item_WHStock_Packing"
+cargo_sign_off_form_id = "menubar_item_WHStock_Shipping"
