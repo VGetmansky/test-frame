@@ -368,11 +368,20 @@ def wait_new_page(driver, new_url):
             continue
         else:
             break
+        time.sleep(2)
 
-   #
-   # i = 0
-   #  if i < 60 and driver.current_url == new_url:
-   #      time.sleep(0.2)
-   #      i += 1
-   #  else:
-   #      i = 60
+
+def select_last_element_from_list(driver, value):
+    Select(driver.find_element_by_id(value)).select_by_visible_text(
+        driver.find_element(By.ID, value).text.split("\n")[
+            len(driver.find_element(By.ID, value).text.split("\n")) - 1])
+
+
+def check_all_item_checkbuttonspo(driver, value):
+    i = 0
+    while i < len(driver.find_elements(By.XPATH, value)):
+        if driver.find_elements(By.XPATH, value)[i].size == {'height': 24.0, 'width': 24.0}:
+            driver.find_elements(By.XPATH, value)[i].click()
+            i += 1
+        else:
+            i += 1

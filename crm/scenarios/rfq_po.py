@@ -774,7 +774,7 @@ class TestCreateInvoice:
     #    with pytest.allure.step('Fill total payments'):
     #        invoice_tests.fill_in_total_payments(driver)
 
-    #def test_fill_percent_paid(self, driver):
+    # def test_fill_percent_paid(self, driver):
     #   with pytest.allure.step('Fill percent paid'):
     #      invoice_tests.fill_in_percent_paid(driver)
 
@@ -785,3 +785,11 @@ class TestCreateInvoice:
     def test_click_save_button(self, driver):
         with pytest.allure.step('Click save invoice button'):
             invoice_tests.click_save_button(driver)
+
+    def test_logout(self, driver):
+        with pytest.allure.step('logout'):
+            login_tests.logout(driver)
+
+    def test_cerify_logout(self, driver):
+        with pytest.allure.step('Verify logout'):
+            login_tests.verify_logout(driver)
