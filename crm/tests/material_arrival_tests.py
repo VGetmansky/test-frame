@@ -30,7 +30,7 @@ def filter_by_last_po(driver):
 
 
 def check_po_checkboxes(driver):
-    value = data.po_checkboxes
+    value = data.material_arrival_checkboxes
     additional.check_all_item_checkbuttonspo(driver, value)
 
 
@@ -49,3 +49,20 @@ def select_account(driver):
 def filter_by_last_so(driver):
     value = data.so_filter_id
     additional.select_last_element_from_list(driver, value)
+
+
+def filter_add_note(driver):
+    value = data.notes_id
+    text = "Autotest Filled Notes"
+    additional.fill_text_field(driver, value, text)
+
+
+def check_shipping_notice_so_checkboxes(driver):
+    value = data.material_arrival_checkboxes
+    additional.check_all_item_checkbuttonspo(driver, value)
+
+
+def select_inspection_category(driver, url):
+    additional.wait_element(driver, data.inspection_id, 'id')
+    driver.find_elements(By.ID, data.inspection_id)[1].click()
+    assert (url + data.inspection_expected_url) == driver.current_url and ("WHStock", driver.title)

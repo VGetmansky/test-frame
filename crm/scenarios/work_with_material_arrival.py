@@ -43,3 +43,23 @@ class TestWorkWithMaterialArrival:
     def test_filter_by_last_so(self, driver):
         with pytest.allure.step('Filter List by Last SO'):
             tests.filter_by_last_so(driver)
+
+    def test_shipping_notice_add_note(self, driver):
+        with pytest.allure.step('Add note'):
+            tests.filter_add_note(driver)
+
+    def test_check_po_checkboxes(self, driver):
+        with pytest.allure.step('Check SO Checkboxes'):
+            tests.check_shipping_notice_so_checkboxes(driver)
+
+    def test_click_category_all_inspection(self, driver):
+        with pytest.allure.step('Select all'):
+            tests.click_all_category(driver)
+
+    def test_click_inspection(self, driver, url):
+        with pytest.allure.step('Select Inspection'):
+            tests.select_shipping_notice_category(driver, url)
+
+    def test_inspection_add_note(self, driver):
+        with pytest.allure.step('Add Inspection note'):
+            tests.filter_add_note(driver)

@@ -16,10 +16,11 @@ vendor_check_id = "vendor_check_label"
 vendor_select_id = "vendor_select_chzn"
 po_filter_id = "po_filter"
 so_filter_id = "so_filter"
-po_checkboxes = '//div[@class="checkbox po-line-item-checkbox"]'
+material_arrival_checkboxes = '//div[@class="checkbox po-line-item-checkbox"]'
 deliver_button = '//div[contains(.,"Deliver")]'
 clear_button = '//div[contains(.,"Clear")]'
 cancel_button = '//div[contains(.,"Cancel")]'
+notes_id = "notes"
 
 select_account_id = "account_select_chzn"
 notice_id = "notes"
