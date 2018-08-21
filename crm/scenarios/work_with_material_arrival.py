@@ -58,8 +58,20 @@ class TestWorkWithMaterialArrival:
 
     def test_click_inspection(self, driver, url):
         with pytest.allure.step('Select Inspection'):
-            tests.select_shipping_notice_category(driver, url)
+            tests.select_inspection_category(driver, url)
 
-    def test_inspection_add_note(self, driver):
-        with pytest.allure.step('Add Inspection note'):
-            tests.filter_add_note(driver)
+    # def test_inspection_add_note(self, driver):
+    #     with pytest.allure.step('Add Inspection note'):
+    #         tests.filter_add_note(driver)
+
+    def test_select_last_inspection(self, driver, url):
+        with pytest.allure.step('Select Last Inspection'):
+            tests.filter_by_last_inspection(driver)
+
+    def test_filter_inspection_by_last_so(self, driver):
+        with pytest.allure.step('Filter Inspection List by newest SO'):
+            tests.filter_by_last_so(driver)
+
+    def test_check_inspection_checkboxes(self, driver):
+        with pytest.allure.step('Check inspection SO Checkboxes'):
+            tests.check_shipping_notice_so_checkboxes(driver)

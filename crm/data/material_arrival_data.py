@@ -29,5 +29,9 @@ urgent_status_id = "urgent"
 routine_status_id = "rountine"
 on_or_by_id = "on_or_by"
 
+inspection_select_id = "inspection_select_chzn"
+select_all_button_id = "select_all_label"
+deselact_all_button_id = "deselect_all_label"
+
 autotest_vendor = '//li[contains(., "Autotest User")]'
 autotest_account = '//li[contains(., "Account for autotests")]'

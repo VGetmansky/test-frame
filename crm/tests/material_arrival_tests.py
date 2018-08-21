@@ -48,6 +48,7 @@ def select_account(driver):
 
 def filter_by_last_so(driver):
     value = data.so_filter_id
+    additional.wait_element(driver, value, 'id')
     additional.select_last_element_from_list(driver, value)
 
 
@@ -66,3 +67,8 @@ def select_inspection_category(driver, url):
     additional.wait_element(driver, data.inspection_id, 'id')
     driver.find_elements(By.ID, data.inspection_id)[1].click()
     assert (url + data.inspection_expected_url) == driver.current_url and ("WHStock", driver.title)
+
+
+def filter_by_last_inspection(driver):
+    value = data.inspection_select_id
+    additional.select_last_material_arrival_inspection(driver, value)
