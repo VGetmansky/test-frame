@@ -66,7 +66,7 @@ class TestWorkWithMaterialArrival:
 
     def test_select_last_inspection(self, driver, url):
         with pytest.allure.step('Select Last Inspection'):
-            tests.filter_by_last_inspection(driver)
+            tests.filter_by_last_inspection(driver, "inspection")
 
     def test_filter_inspection_by_last_so(self, driver):
         with pytest.allure.step('Filter Inspection List by newest SO'):
@@ -74,4 +74,20 @@ class TestWorkWithMaterialArrival:
 
     def test_check_inspection_checkboxes(self, driver):
         with pytest.allure.step('Check inspection SO Checkboxes'):
-            tests.check_shipping_notice_so_checkboxes(driver)
+            tests.select_all_material_arrival_inspection(driver)
+
+    def test_click_category_all_receiving(self, driver):
+        with pytest.allure.step('Select all'):
+            tests.click_all_category(driver)
+
+    def test_click_receiving(self, driver, url):
+        with pytest.allure.step('Select Receiving'):
+            tests.select_receiving(driver, url)
+
+    def test_select_last_receiving(self, driver, url):
+        with pytest.allure.step('Select Last Receiving'):
+            tests.filter_by_last_inspection(driver, "receiving")
+
+    def test_filter_receiving_by_last_so(self, driver):
+        with pytest.allure.step('Filter Receiving List by newest SO'):
+            tests.filter_by_last_so(driver)

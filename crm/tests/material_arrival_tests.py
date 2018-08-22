@@ -69,6 +69,21 @@ def select_inspection_category(driver, url):
     assert (url + data.inspection_expected_url) == driver.current_url and ("WHStock", driver.title)
 
 
-def filter_by_last_inspection(driver):
+def filter_by_last_inspection(driver, page):
     value = data.inspection_select_id
-    additional.select_last_material_arrival_inspection(driver, value)
+    additional.select_last_material_arrival_inspection(driver, value, page)
+
+
+def select_all_material_arrival_inspection(driver):
+    value = data.select_all_button_id
+    driver.find_element(By.ID, value).click()
+    driver.find_element(By.ID, value).click()
+
+
+def select_receiving(driver, url):
+    additional.wait_element(driver, data.receiving_id, 'id')
+    # driver.find_element(By.ID, data.material_arrival_id).click()
+    driver.find_elements(By.ID, data.receiving_id)[1].click()
+    assert (url + data.receiving_expected_url) == driver.current_url and ("WHStock", driver.title)
+
+

@@ -32,6 +32,7 @@ on_or_by_id = "on_or_by"
 inspection_select_id = "inspection_select_chzn"
 select_all_button_id = "select_all_label"
 deselact_all_button_id = "deselect_all_label"
+material_arrival_inspection_checkboxes = '//div[@class="whstc-checkbox-label inspected-label"]'
 
 autotest_vendor = '//li[contains(., "Autotest User")]'
 autotest_account = '//li[contains(., "Account for autotests")]'
