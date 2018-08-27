@@ -9,6 +9,8 @@ material_arrival_expected_url = "index.php?module=WHStock&view=Income"
 shipping_notice_expected_url = "index.php?module=WHStock&view=Notice"
 inspection_expected_url = "index.php?module=WHStock&view=Inspection"
 receiving_expected_url = "index.php?module=WHStock&view=Receiving"
+packing_expected_url = "index.php?module=WHStock&view=Packing"
+cargo_sign_off_expected_url = "index.php?module=WHStock&view=Shipping"
 
 awb_check_id = "awb_check_label"
 type_awb_id = "awb_input"
@@ -36,3 +38,12 @@ material_arrival_inspection_checkboxes = '//div[@class="whstc-checkbox-label ins
 
 autotest_vendor = '//li[contains(., "Autotest User")]'
 autotest_account = '//li[contains(., "Account for autotests")]'
+
+isle_id = "bin_isle_1"
+shelf_id = "bin_shelf_1"
+holder_id = "bin_holder_1"
+
+deliver_button = '//div[contains(., "Deliver")]'
+send_notice_button = '//div[contains(., "Send Notice")]'
+approve_button = '//div[contains(., "Approve")]'
+receive_button = '//div[contains(., "Receive")]'

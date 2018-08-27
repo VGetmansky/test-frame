@@ -82,8 +82,42 @@ def select_all_material_arrival_inspection(driver):
 
 def select_receiving(driver, url):
     additional.wait_element(driver, data.receiving_id, 'id')
-    # driver.find_element(By.ID, data.material_arrival_id).click()
     driver.find_elements(By.ID, data.receiving_id)[1].click()
     assert (url + data.receiving_expected_url) == driver.current_url and ("WHStock", driver.title)
 
 
+def select_all_material_arrival_chkboxes(driver):
+    value = data.select_all_button_id
+    driver.find_element(By.ID, value).click()
+
+
+def select_packing(driver, url):
+    additional.wait_element(driver, data.packing_id, 'id')
+    driver.find_elements(By.ID, data.packing_id)[1].click()
+    assert (url + data.receiving_expected_url) == driver.current_url and ("WHStock", driver.title)
+
+
+def fill_material_arrival_warehouse_index(driver):
+    text = "2"
+    value = data.isle_id
+    additional.fill_text_field(driver, value, text)
+    value = data.shelf_id
+    additional.fill_text_field(driver, value, text)
+    value = data.holder_id
+    additional.fill_text_field(driver, value, text)
+
+
+def click_material_arrival_deliver(driver):
+    additional.click_material_arrival_buttons(driver, data.deliver_button)
+
+
+def click_material_arrival_send_notice(driver):
+    additional.click_material_arrival_buttons(driver, data.send_notice_button)
+
+
+def click_material_arrival_approve(driver):
+    additional.click_material_arrival_buttons(driver, data.approve_button)
+
+
+def click_material_arrival_receive(driver):
+    additional.click_material_arrival_buttons(driver, data.receive_button)
