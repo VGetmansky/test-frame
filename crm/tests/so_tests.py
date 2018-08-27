@@ -41,6 +41,101 @@ def fill_in_client_po(driver):
     text = "Autotest_Client_PO_" + str(datetime.datetime.now())
     additional.fill_text_field(driver, clientpoid, text)
 
+#   ------------------------------------------
+
+
+def select_contact_name(driver):
+    value = data.contact_name_selector_id
+    additional.select_first_cell(driver, value, False)
+    driver.find_element(By.XPATH, data.contact_name_overwrite_adress).click()
+
+
+def select_customer_quote(driver):
+    value = data.customer_quote_id
+    additional.select_first_cell(driver, value, False)
+
+
+def select_location(driver):
+    value = data.location_selector_id
+    additional.select_first_cell(driver, value, False)
+
+
+def select_aircraft(driver):
+    value = data.aircraft_id
+    additional.select_first_cell(driver, value, False)
+
+
+def select_assets(driver):
+    value = data.assets_id
+    additional.select_first_cell(driver, value, False)
+
+
+def select_sold_by(driver):
+    value = data.sold_by_id
+    additional.select_first_cell(driver, value, False)
+
+
+def select_status(driver):
+    value = data.status_selector_id
+    text = data.status_approved_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_terms_of_payment(driver):
+    value = data.terms_of_payment_id
+    text = data.terms_of_payment_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_priority(driver):
+    value = data.priority_id
+    text = data.priority_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_ship_via(driver):
+    value = data.ship_via_selector_id
+    text = data.ship_via_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_assigned_to(driver):
+    value = data.assigned_to_selector_id
+    text = data.assigned_to_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_terms_of_delivery(driver):
+    value = data.terms_of_delivery_selector_id
+    text = data.terms_of_delivery_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_territory(driver):
+    value = data.territory_selector_id
+    text = data.territory_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def fill_in_sales_commission(driver):
+    value = data.sales_commission_id
+    text = "2"
+    additional.fill_text_field(driver, value, text)
+
+
+def fill_in_account_number(driver):
+    value = data.account_num_id
+    text = "221"
+    additional.fill_text_field(driver, value, text)
+
+
+def fill_in_place_of_delivery(driver):
+    value = data.place_of_delivery_id
+    text = "Autotest Place of Delivery"
+    additional.fill_text_field(driver, value, text)
+
+#   ------------------------------------------
+
 
 def add_product(driver):
     element_id = data.product_list_button

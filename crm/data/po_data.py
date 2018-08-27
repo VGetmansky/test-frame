@@ -66,7 +66,7 @@ description_details_field = '//textarea[@name="description")]'
 
 # Fields values
 priority = '//li[contains(.,"Routine")]'
-status = '//li[contains(.,"Created")]'
+status = '//li[contains(.,"Approved")]'
 tst_terms_of_payment = '//li[contains(.,"NET-30")]'
 qa_terms_of_payment = '//li[contains(.,"Pre-payment")]'
 ship_via = '//li[contains(.,"DHL")]'

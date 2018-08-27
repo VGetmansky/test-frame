@@ -36,6 +36,10 @@ class TestCreateSO:
         with pytest.allure.step('Fill account field'):
             tests.fill_in_account_field(driver)
 
+    def test_select_contact_name(self, driver):
+        with pytest.allure.step('Select Contact Name'):
+            tests.select_contact_name(driver)
+
     def test_add_product(self, driver):
         with pytest.allure.step('Add product'):
             tests.add_product(driver)

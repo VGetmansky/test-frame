@@ -385,3 +385,22 @@ def check_all_item_checkbuttonspo(driver, value):
             i += 1
         else:
             i += 1
+
+
+def select_last_material_arrival_inspection(driver, value, page):
+    wait_element(driver, value, 'id')
+    driver.find_element(By.ID, value).click()
+    time.sleep(10)
+    if page == "inspection":
+        driver.find_elements(By.XPATH, '//input[@class="chzn-search-input" and @type="text"]')[1].click()
+        driver.find_elements(By.XPATH, '//input[@class="chzn-search-input" and @type="text"]')[1].send_keys("getmansky")
+    else:
+        driver.find_elements(By.XPATH, '//input[@class="chzn-search-input" and @type="text"]')[1].click()
+    driver.find_elements(By.XPATH, '//li[@class="active-result"]')[len(driver.find_elements(By.XPATH, '//li[@class="active-result"]')) - 1].click()
+
+
+def click_material_arrival_buttons(driver, value):
+    #value = data.deliver_button
+    driver.find_elements(By.XPATH, value)[
+        len(driver.find_elements(By.XPATH, value)) - 1].click()
+

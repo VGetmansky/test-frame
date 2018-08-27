@@ -40,6 +40,7 @@ class TestWorkWithRFQList:
     #     with pytest.allure.step('Wait RFQ'):
     #         common_functions.wait_new_page(driver, url)
 
+
 @pytest.mark.test
 class TestClickAddButton:
     def test_click_add_button(self, driver, url):
@@ -329,6 +330,7 @@ class TestCreateRfq:
     #     with pytest.allure.step('Wait Quote'):
     #         common_functions.wait_new_page(driver, url)
 
+
 @pytest.mark.test
 class TestClickAddQuoteButton:
     def test_click_add_quote_button(self, driver, url):
@@ -434,6 +436,7 @@ class TestCreateQuote:
     #     with pytest.allure.step('Wait SO'):
     #         common_functions.wait_new_page(driver, url)
 
+
 @pytest.mark.test
 class TestClickAddSoButton:
     def test_click_add_so_button(self, driver, url):
@@ -511,6 +514,7 @@ class TestCreateSO:
     # def test_wait_po_list(self, driver, url):
     #     with pytest.allure.step('Wait PO'):
     #         common_functions.wait_new_page(driver, url)
+
 
 @pytest.mark.test
 class TestClickAddPoButton:
@@ -596,6 +600,10 @@ class TestCreatePO:
     def test_select_ship_via(self, driver):
         with pytest.allure.step('Select ship via'):
             po_tests.select_ship_via(driver)
+
+    def test_select_status(self, driver):
+        with pytest.allure.step('Select ship via'):
+            po_tests.select_status(driver)
 
     def test_fill_sales_commission(self, driver):
         with pytest.allure.step('Fill sales commission'):

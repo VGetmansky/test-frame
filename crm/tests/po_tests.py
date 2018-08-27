@@ -90,6 +90,12 @@ def select_ship_via(driver):
     additional.select_value_from_dropdown(driver, value, text)
 
 
+def select_status(driver):
+    value = data.status_id
+    text = data.status
+    additional.select_value_from_dropdown(driver, value, text)
+
+
 def fill_in_sales_commission(driver):
     value = data.sales_commission_id
     text = "10"
