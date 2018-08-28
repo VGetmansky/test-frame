@@ -115,6 +115,14 @@ def select_first_cell(driver, element_id, account):
             click_element_by_id(driver, data.first_relationship_row_id)
             i = 10
 
+        elif driver.title == "Users":
+            click_element_by_id(driver, data.first_user_row_id)
+            i = 10
+
+        elif driver.title == "Assets":
+            click_element_by_id(driver, data.first_asset_row_id)
+            i = 10
+
         else:
             time.sleep(0.3)
             i += 1

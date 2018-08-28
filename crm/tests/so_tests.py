@@ -20,8 +20,9 @@ def click_add_so(driver, url):
 
 
 def fill_in_account_field(driver):
-    element_id = data.account_selector_id
-    additional.select_first_cell(driver, element_id, True)
+    value = data.account_selector_id
+    additional.wait_element(driver, value, 'id')
+    additional.select_first_cell(driver, value, True)
 
 
 def fill_in_billing_address(driver):
@@ -47,7 +48,9 @@ def fill_in_client_po(driver):
 def select_contact_name(driver):
     value = data.contact_name_selector_id
     additional.select_first_cell(driver, value, False)
-    driver.find_element(By.XPATH, data.contact_name_overwrite_adress).click()
+    additional.wait_element(driver, data.contact_name_overwrite_adress, "xpath")
+    driver.find_elements(By.XPATH, data.contact_name_overwrite_adress)[
+        len(driver.find_elements(By.XPATH, data.contact_name_overwrite_adress)) - 1].click()
 
 
 def select_customer_quote(driver):
@@ -72,6 +75,7 @@ def select_assets(driver):
 
 def select_sold_by(driver):
     value = data.sold_by_id
+    additional.wait_element(driver, value, 'id')
     additional.select_first_cell(driver, value, False)
 
 
@@ -138,8 +142,9 @@ def fill_in_place_of_delivery(driver):
 
 
 def add_product(driver):
-    element_id = data.product_list_button
-    additional.select_first_cell(driver, element_id, False)
+    value = data.product_list_button
+    additional.wait_element(driver, data.part_number_field_id, 'id')  #  additional.wait_element(driver, value, 'id')
+    additional.select_first_cell(driver, value, False)
 
 
 def save_so(driver):
@@ -211,6 +216,12 @@ def fill_in_shipping_post_code(driver):
 def fill_in_shipping_country(driver):
     field = data.shipping_country_id
     text = "Test Shipping Country"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_so_notes(driver):
+    field = data.notes_id
+    text = "Test Note"
     additional.fill_text_field(driver, field, text)
 
 

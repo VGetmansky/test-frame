@@ -1,7 +1,7 @@
 import pytest
 from crm.tests import invoice_tests as tests
 from crm.scenarios.login_scenario import TestLogInApp
-from crm.scenarios.work_with_SO import TestWorkWithSOList
+from crm.scenarios.work_with_so import TestWorkWithSOList
 
 TestLogInApp()
 TestWorkWithSOList()

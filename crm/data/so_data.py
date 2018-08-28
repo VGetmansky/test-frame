@@ -26,12 +26,12 @@ created_status = '//li[@class[contains(.,"Created")]'
 terms_of_delivery_value = '//li[@class[contains(.,"CIP")]'
 territory_value = '//li[@class[contains(.,"US")]'
 status_approved_value = '//li[contains(.,"Approved")]'
-terms_of_delivery_value = '//li[contains(.,"CIF")]'
+terms_of_delivery_value = '//li[contains(.,"US")]'
 terms_of_payment_value = '//li[contains(.,"NET-60")]'
 assigned_to_value = '//li[contains(.,"EEO")]'
 priority_value = '//li[contains(.,"Routine")]'
 ship_via_value = '//li[contains(.,"FEDEX")]'
-contact_name_overwrite_adress = '//a[contains(.,"Yes")]'
+contact_name_overwrite_adress = '//a[contains(.,"No")]'
 terms_of_payment_id = "tsale__chzn"
 priority_id = "rpriority__chzn"
 
