@@ -24,14 +24,6 @@ class TestClickAddButton:
 @pytest.mark.test
 class TestCreateSO:
 
-    def test_fill_in_billing_address(self, driver):
-        with pytest.allure.step('Fill billing address'):
-            tests.fill_in_billing_address(driver)
-
-    def test_fill_in_shipping_address(self, driver):
-        with pytest.allure.step('Fill shipping address'):
-            tests.fill_in_shipping_address(driver)
-
     def test_select_account(self, driver):
         with pytest.allure.step('Fill account field'):
             tests.fill_in_account_field(driver)
@@ -80,21 +72,21 @@ class TestCreateSO:
         with pytest.allure.step('Select Assigned To'):
             tests.select_assigned_to(driver)
 
-    def test_select_terms_of_delivery(self, driver):
-        with pytest.allure.step('Select Terms Of Delivery'):
-            tests.select_terms_of_delivery(driver)
-
     def test_fill_place_of_delivery(self, driver):
         with pytest.allure.step('FIll Place of Delivery'):
             tests.fill_in_place_of_delivery(driver)
 
-    def test_select_territory(self, driver):
-        with pytest.allure.step('Select Territory'):
-            tests.select_territory(driver)
+    def test_select_terms_of_delivery(self, driver):
+        with pytest.allure.step('Select Terms Of Delivery'):
+            tests.select_terms_of_delivery(driver)
 
     def test_fill_sales_commission(self, driver):
         with pytest.allure.step('FIll Sales Commission'):
             tests.fill_in_sales_commission(driver)
+
+    def test_select_territory(self, driver):
+        with pytest.allure.step('Select Territory'):
+            tests.select_territory(driver)
 
     def test_fill_account_number(self, driver):
         with pytest.allure.step('FIll Account Number'):
@@ -103,6 +95,14 @@ class TestCreateSO:
     def test_fill_in_client_po(self, driver):
         with pytest.allure.step('Fill client PO'):
             tests.fill_in_client_po(driver)
+
+    def test_fill_in_billing_address(self, driver):
+        with pytest.allure.step('Fill billing address'):
+            tests.fill_in_billing_address(driver)
+
+    def test_fill_in_shipping_address(self, driver):
+        with pytest.allure.step('Fill shipping address'):
+            tests.fill_in_shipping_address(driver)
 
     def test_fill_in_billing_po_box(self, driver):
         with pytest.allure.step('Fill billing po box'):

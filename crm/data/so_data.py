@@ -24,9 +24,9 @@ save_so_button_id = "save_but"
 created_status = '//li[@class[contains(.,"Created")]'
 #   Values
 terms_of_delivery_value = '//li[@class[contains(.,"CIP")]'
-territory_value = '//li[@class[contains(.,"US")]'
+territory_value = '//a[contains(.,"EES")]'
 status_approved_value = '//li[contains(.,"Approved")]'
-terms_of_delivery_value = '//li[contains(.,"US")]'
+terms_of_delivery_value = '//li[contains(.,"CFR")]'
 terms_of_payment_value = '//li[contains(.,"NET-60")]'
 assigned_to_value = '//li[contains(.,"EEO")]'
 priority_value = '//li[contains(.,"Routine")]'
