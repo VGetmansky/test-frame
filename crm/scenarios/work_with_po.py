@@ -3,6 +3,7 @@ from crm.tests import po_tests as tests
 from crm.scenarios.login_scenario import TestLogInApp
 import allure
 
+
 @pytest.allure.testcase('Work With SO')
 @pytest.mark.test
 class TestWorkWithSOList:

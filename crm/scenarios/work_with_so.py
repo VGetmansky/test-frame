@@ -24,6 +24,10 @@ class TestClickAddButton:
 @pytest.mark.test
 class TestCreateSO:
 
+    def test_fill_in_client_po(self, driver):
+        with pytest.allure.step('Fill client PO'):
+            tests.fill_in_client_po(driver)
+
     def test_select_account(self, driver):
         with pytest.allure.step('Fill account field'):
             tests.fill_in_account_field(driver)

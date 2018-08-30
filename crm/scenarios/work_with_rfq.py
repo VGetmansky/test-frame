@@ -58,9 +58,9 @@ class TestCreateRfq:
         with pytest.allure.step('Fill recieved via'):
             tests.fill_in_received_via(driver)
 
-    def test_select_sale_terms(self, driver):
+    def test_select_sale_terms(self, driver, url):
         with pytest.allure.step('Select sale terms'):
-            tests.select_sale_terms(driver)
+            tests.select_sale_terms(driver, url)
 
     def test_delivery_terms(self, driver):
         with pytest.allure.step('Select sale terms'):

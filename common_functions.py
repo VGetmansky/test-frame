@@ -64,71 +64,74 @@ def select_first_cell(driver, element_id, account):
 
     time.sleep(0.2)
     driver.switch_to.window(window_after)
+    while len(driver.window_handles) != 1:
+        i = 1
+        while i <= 9 :
 
-    i = 1
-    while i <= 9:
+            if driver.title == "Accounts":
+                wait_element(driver, data.search_value_id, 'id')
+                driver.find_element(By.ID, data.search_value_id).send_keys("Account for autotests")
+                wait_element(driver, data.search_value_button_id, 'id')
+                driver.find_element(By.ID, data.search_value_button_id).click()
 
-        if driver.title == "Accounts":
-            wait_element(driver, data.search_value_id, 'id')
-            driver.find_element(By.ID, data.search_value_id).send_keys("Account for autotests")
-            wait_element(driver, data.search_value_button_id, 'id')
-            driver.find_element(By.ID, data.search_value_button_id).click()
+                try:
+                    wait_element(driver, data.first_account_row_id, 'id')
+                    wait = WebDriverWait(driver, 10)
+                    wait.until(EC.invisibility_of_element_located((By.ID, data.check_account_row_id)))
+                    click_element_by_id(driver, data.first_account_row_id)
+                    i = 10
+                except:
+                    i = i
 
-            try:
-                wait_element(driver, data.first_account_row_id, 'id')
-                wait = WebDriverWait(driver, 10)
-                wait.until(EC.invisibility_of_element_located((By.ID, data.check_account_row_id)))
-                click_element_by_id(driver, data.first_account_row_id)
+            elif driver.title == "Sales Order":
+                click_element_by_id(driver, data.first_product_row_id)
                 i = 10
-            except:
-                i = i
 
-        elif driver.title == "Sales Order":
-            click_element_by_id(driver, data.first_product_row_id)
-            i = 10
+            elif driver.title == "Purchase Order":
+                click_element_by_id(driver, data.first_po_row_id)
+                i = 10
 
-        elif driver.title == "Purchase Order":
-            click_element_by_id(driver, data.first_po_row_id)
-            i = 10
+            elif driver.title == "Vendors":
+                click_element_by_id(driver, data.first_vendor_row_id)
+                i = 10
 
-        elif driver.title == "Vendors":
-            click_element_by_id(driver, data.first_vendor_row_id)
-            i = 10
+            elif driver.title == "Quotes":
+                click_element_by_id(driver, data.first_quote_row_id)
+                i = 10
 
-        elif driver.title == "Quotes":
-            click_element_by_id(driver, data.first_quote_row_id)
-            i = 10
+            elif driver.title == "Contacts":
+                click_element_by_id(driver, data.first_contact_row_id)
+                i = 10
 
-        elif driver.title == "Contacts":
-            click_element_by_id(driver, data.first_contact_row_id)
-            i = 10
+            elif driver.title == "Fleet":
+                click_element_by_id(driver, data.first_fleet_row_id)
+                i = 10
 
-        elif driver.title == "Fleet":
-            click_element_by_id(driver, data.first_fleet_row_id)
-            i = 10
+            elif driver.title == "Locations":
+                click_element_by_id(driver, data.first_location_row_id)
+                i = 10
 
-        elif driver.title == "Locations":
-            click_element_by_id(driver, data.first_location_row_id)
-            i = 10
+            elif driver.title == "Relationships":
+                click_element_by_id(driver, data.first_relationship_row_id)
+                i = 10
 
-        elif driver.title == "Relationships":
-            click_element_by_id(driver, data.first_relationship_row_id)
-            i = 10
+            elif driver.title == "Users":
+                click_element_by_id(driver, data.first_user_row_id)
+                i = 10
 
-        elif driver.title == "Users":
-            click_element_by_id(driver, data.first_user_row_id)
-            i = 10
+            elif driver.title == "Assets":
+                click_element_by_id(driver, data.first_asset_row_id)
+                i = 10
 
-        elif driver.title == "Assets":
-            click_element_by_id(driver, data.first_asset_row_id)
-            i = 10
-
-        else:
-            time.sleep(0.3)
-            i += 1
+            else:
+                time.sleep(0.3)
+                i += 1
 
     driver.switch_to.window(window_before)
 
+    # WebDriverWait(driver, 30).until(
+    #     lambda driver: len(driver.window_handles) == 1)
+    #    wait.until(lambda driver: driver.getWindowHandles().size() == 1)
     if account is True:
         click_element_by_xpath(driver, data.no_dialog_button)
     else:

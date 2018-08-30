@@ -9,7 +9,7 @@ from crm.scenarios.work_with_rfq import TestWorkWithRFQList
 from crm.scenarios.work_with_rfq import TestClickAddButton
 from crm.scenarios.work_with_rfq import TestCreateRfq
 from crm.scenarios.work_with_quotes import TestCreateQuote
-from crm.scenarios.work_with_SO import TestCreateSO
+from crm.scenarios.work_with_so import TestCreateSO
 from crm.scenarios.work_with_po import TestCreatePO
 
 # TestLogInApp()
