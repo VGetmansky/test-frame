@@ -10,7 +10,7 @@ def click_edit_po(driver, value):
 def select_po(driver):
     if driver.title != "Purchase Order":
         driver.find_element(By.ID, auth_data.po_main_button_id).click()
-    assert "Purchase Order", driver.title
+    assert "Sales Order", driver.title
 
 
 def click_add_po(driver, url):

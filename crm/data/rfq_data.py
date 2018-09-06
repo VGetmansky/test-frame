@@ -43,7 +43,7 @@ contact = '//li[contains(., "Autotest User")]'
 # -----Information/Address details-----
 rfq_aircraft_id = "Rfq_editView_fieldName_fleetid_select"
 rfq_location_id = "locationid_display"
-
+rfq_number_id = "rfq_number"
 
 # Rfq tabs
 information_address_tab_id = "tab_1"

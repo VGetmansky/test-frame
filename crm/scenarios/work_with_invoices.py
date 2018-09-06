@@ -6,8 +6,13 @@ from crm.scenarios.work_with_so import TestWorkWithSOList
 TestLogInApp()
 TestWorkWithSOList()
 
+
 @pytest.mark.test
 class TestOpenSODetails:
+    def test_open_so_tab(self, driver):
+        with pytest.allure.step('Open URL'):
+            tests.select_so(driver)
+
     def test_open_so_details(self, driver, url):
         with pytest.allure.step('Open SO details'):
             tests.open_so_details(driver, url)
@@ -33,9 +38,9 @@ class TestCreateInvoice:
         with pytest.allure.step('Fill customer no'):
             tests.fill_in_customer_no(driver)
 
-    def test_select_terms_of_sale(self, driver):
+    def test_select_terms_of_sale(self, driver, url):
         with pytest.allure.step('Select terms of sale'):
-            tests.select_terms_of_sale(driver)
+            tests.select_terms_of_sale(driver, url)
 
     def test_select_terms_of_delivery(self, driver):
         with pytest.allure.step('Select terms of delivery'):
@@ -65,9 +70,9 @@ class TestCreateInvoice:
         with pytest.allure.step('Select due date'):
             tests.select_due_date(driver)
 
-    def test_select_status(self, driver):
+    def test_select_status(self, driver, url):
         with pytest.allure.step('Select status'):
-            tests.select_status(driver)
+            tests.select_status(driver, url)
 
     def test_select_priority(self, driver):
         with pytest.allure.step('Select priority'):

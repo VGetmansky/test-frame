@@ -60,6 +60,10 @@ class TestCreateRfq:
         with pytest.allure.step('Select priority'):
             rfq_tests.select_priority(driver)
 
+    def test_fill_customer_quote(self, driver):
+        with pytest.allure.step('Fill customer quote'):
+            rfq_tests.fill_in_customer_quote(driver)
+
     def test_select_account(self, driver):
         with pytest.allure.step('Fill account'):
             rfq_tests.fill_in_account_field(driver)
@@ -67,10 +71,6 @@ class TestCreateRfq:
     def test_select_contact(self, driver):
         with pytest.allure.step('Contact field'):
             rfq_tests.fill_in_contact_field(driver)
-
-    def test_fill_customer_quote(self, driver):
-        with pytest.allure.step('Fill customer quote'):
-            rfq_tests.fill_in_customer_quote(driver)
 
     def test_fill_received_via(self, driver):
         with pytest.allure.step('Fill recieved via'):
@@ -451,6 +451,82 @@ class TestCreateSO:
         with pytest.allure.step('Fill client PO'):
             so_tests.fill_in_client_po(driver)
 
+#   --------------- NEW ----------------
+
+    def test_select_account(self, driver):
+        with pytest.allure.step('Fill account field'):
+            so_tests.fill_in_account_field(driver)
+
+    def test_select_contact_name(self, driver):
+        with pytest.allure.step('Select Contact Name'):
+            so_tests.select_contact_name(driver)
+
+    def test_select_customer_quote(self, driver):
+        with pytest.allure.step('Select Customer Quote'):
+            so_tests.select_customer_quote(driver)
+
+    def test_select_location(self, driver):
+        with pytest.allure.step('Select Location'):
+            so_tests.select_location(driver)
+
+    def test_select_aircraft(self, driver):
+        with pytest.allure.step('Select Aircraft'):
+            so_tests.select_aircraft(driver)
+
+    def test_select_assets(self, driver):
+        with pytest.allure.step('Select Assets'):
+            so_tests.select_assets(driver)
+
+    def test_select_sold_by(self, driver):
+        with pytest.allure.step('Select Sold By'):
+            so_tests.select_sold_by(driver)
+
+    def test_select_status(self, driver):
+        with pytest.allure.step('Select Status'):
+            so_tests.select_status(driver)
+
+    def test_select_terms_of_payment(self, driver):
+        with pytest.allure.step('Select Terms Of Payment'):
+            so_tests.select_terms_of_payment(driver)
+
+    def test_select_priority(self, driver):
+        with pytest.allure.step('Select priority'):
+            so_tests.select_priority(driver)
+
+    def test_select_ship_via(self, driver):
+        with pytest.allure.step('Select Ship Via'):
+            so_tests.select_ship_via(driver)
+
+    def test_select_assigned_to(self, driver):
+        with pytest.allure.step('Select Assigned To'):
+            so_tests.select_assigned_to(driver)
+
+    def test_fill_place_of_delivery(self, driver):
+        with pytest.allure.step('FIll Place of Delivery'):
+            so_tests.fill_in_place_of_delivery(driver)
+
+    def test_select_terms_of_delivery(self, driver):
+        with pytest.allure.step('Select Terms Of Delivery'):
+            so_tests.select_terms_of_delivery(driver)
+
+    def test_fill_sales_commission(self, driver):
+        with pytest.allure.step('FIll Sales Commission'):
+            so_tests.fill_in_sales_commission(driver)
+
+    def test_select_territory(self, driver):
+        with pytest.allure.step('Select Territory'):
+            so_tests.select_territory(driver)
+
+    def test_fill_account_number(self, driver):
+        with pytest.allure.step('FIll Account Number'):
+            so_tests.fill_in_account_number(driver)
+
+    def test_fill_in_client_po(self, driver):
+        with pytest.allure.step('Fill client PO'):
+            so_tests.fill_in_client_po(driver)
+
+    #   -------------------------------
+
     def test_fill_in_billing_address(self, driver):
         with pytest.allure.step('Fill billing address'):
             so_tests.fill_in_billing_address(driver)
@@ -557,6 +633,10 @@ class TestCreatePO:
         with pytest.allure.step('Fill tracking number'):
             po_tests.fill_in_tracking_number(driver)
 
+    def test_select_contact_name(self, driver):
+        with pytest.allure.step('Select contact name'):
+            po_tests.select_contact_name(driver)
+
     def test_select_priority(self, driver):
         with pytest.allure.step('Select priority'):
             po_tests.select_priority(driver)
@@ -593,9 +673,7 @@ class TestCreatePO:
         with pytest.allure.step('Fill requisition number'):
             po_tests.fill_in_requisition_number(driver)
 
-    def test_select_contact_name(self, driver):
-        with pytest.allure.step('Select contact name'):
-            po_tests.select_contact_name(driver)
+
 
     def test_select_ship_via(self, driver):
         with pytest.allure.step('Select ship via'):
@@ -718,17 +796,33 @@ class TestCreateInvoice:
         with pytest.allure.step('Select terms of sale'):
             invoice_tests.select_terms_of_sale(driver, url)
 
+    def test_fill_awb(self, driver):
+        with pytest.allure.step('Fill awb'):
+            invoice_tests.fill_in_awb(driver)
+
     def test_select_terms_of_delivery(self, driver):
         with pytest.allure.step('Select terms of delivery'):
             invoice_tests.select_terms_of_delivery(driver)
+
+    def test_select_priority(self, driver):
+        with pytest.allure.step('Select priority'):
+            invoice_tests.select_priority(driver)
 
     def test_fill_sales_commission(self, driver):
         with pytest.allure.step('Fill sales commission'):
             invoice_tests.fill_in_sales_commision(driver)
 
+    def test_fill_place_of_delivery(self, driver):
+        with pytest.allure.step('Fill place of delivery'):
+            invoice_tests.fill_in_place_of_delivery(driver)
+
     def test_fill_account(self, driver):
         with pytest.allure.step('Fill account'):
             invoice_tests.fill_in_account(driver)
+
+    def test_select_ship_via(self, driver):
+        with pytest.allure.step('Select ship via'):
+            invoice_tests.select_ship_via(driver)
 
     def test_fill_boxes(self, driver):
         with pytest.allure.step('Fill boxes'):
@@ -750,21 +844,6 @@ class TestCreateInvoice:
         with pytest.allure.step('Select status'):
             invoice_tests.select_status(driver, url)
 
-    def test_select_priority(self, driver):
-        with pytest.allure.step('Select priority'):
-            invoice_tests.select_priority(driver)
-
-    def test_fill_place_of_delivery(self, driver):
-        with pytest.allure.step('Fill place of delivery'):
-            invoice_tests.fill_in_place_of_delivery(driver)
-
-    def test_select_ship_via(self, driver):
-        with pytest.allure.step('Select ship via'):
-            invoice_tests.select_ship_via(driver)
-
-    def test_fill_awb(self, driver):
-        with pytest.allure.step('Fill awb'):
-            invoice_tests.fill_in_awb(driver)
 
     def test_fill_weight(self, driver):
         with pytest.allure.step('Fill weight'):

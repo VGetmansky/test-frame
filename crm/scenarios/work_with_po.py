@@ -6,7 +6,7 @@ import allure
 
 @pytest.allure.testcase('Work With SO')
 @pytest.mark.test
-class TestWorkWithSOList:
+class TestWorkWithPOList:
     def test_open_po_tab(self, driver):
         with pytest.allure.step('Open URL'):
             tests.select_po(driver)

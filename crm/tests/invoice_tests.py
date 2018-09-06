@@ -3,6 +3,12 @@ from selenium.webdriver.common.by import By
 import common_functions as additional
 
 
+def select_so(driver):
+    if driver.title != "Sales Order":
+        driver.find_element(By.ID, auth_data.so_main_button_id).click()
+    assert "Sales Order", driver.title
+
+
 def open_so_details(driver, url):
     additional.select_table_cell(driver, data.first_so_cell_id, "so", url)
 
