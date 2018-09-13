@@ -160,6 +160,10 @@ class TestCreateSO:
         with pytest.allure.step('Save SO'):
             tests.save_so(driver)
 
+    def test_check_values(self, driver):
+        with pytest.allure.step('Check Values'):
+            tests.check_values(driver)
+
 # go to home page
 
     # def test_close_alert(self, driver):

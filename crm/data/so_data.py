@@ -46,7 +46,8 @@ copy_billing_address_from_shipping_address_right = '//input[@name="copyAddressFr
 
 product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" and @title="Products"]'
 
-# Sales Order profile ID's
+#   Edit Sales Order profile ID's
+
 save_button_id = "save_but"
 client_po_id = "SalesOrder_editView_fieldName_subject"
 so_number_id = "SalesOrder_editView_fieldName_salesorder_no"
@@ -79,7 +80,51 @@ shipping_state_id = "SalesOrder_editView_fieldName_ship_state"
 shipping_post_code_id = "SalesOrder_editView_fieldName_ship_code"
 shipping_country_id = "SalesOrder_editView_fieldName_ship_country"
 
+part_number_field_id = "products_popup"
+
 terms_and_conditions_id = "SalesOrder_editView_fieldName_terms_conditions"
 notes_id = "SalesOrder_editView_fieldName_description"
 
-part_number_field_id = "products_popup"
+#   Details Sales Order profile ID's
+client_po = "SalesOrder_detailView_fieldValue_subject"
+so_numbers = "SalesOrder_detailView_fieldValue_salesorder_no"
+contact_name = "SalesOrder_detailView_fieldValue_contact_id"
+ship_via = "SalesOrder_detailView_fieldValue_carrier"
+status = "SalesOrder_detailView_fieldValue_sostatus"
+sales_commission = "SalesOrder_detailView_fieldValue_salescommission"
+assigned_to = "SalesOrder_detailView_fieldValue_assigned_user_id"
+modified_time = "SalesOrder_detailView_fieldValue_modifiedtime"
+terms_of_delivery = "SalesOrder_detailView_fieldValue_tdelivery"
+created_by = "SalesOrder_detailView_fieldValue_create_user_id"
+aircraft = "SalesOrder_detailView_fieldValue_fleetid"
+sold_by = "SalesOrder_detailView_fieldValue_soldbyid"
+
+customer_order_date = "SalesOrder_detailView_fieldValue_customerdate"
+customer_quote = "SalesOrder_detailView_fieldValue_quote_id"
+ue_date = "SalesOrder_detailView_fieldValue_duedate"
+priority = "SalesOrder_detailView_fieldValue_rpriority"
+account_num = "SalesOrder_detailView_fieldValue_accarrier"
+account = "SalesOrder_detailView_fieldValue_account_id"
+created_time = "SalesOrder_detailView_fieldValue_createdtime"
+terms_of_sale = "SalesOrder_detailView_fieldValue_tsale"
+place_of_delivery = "SalesOrder_detailView_fieldValue_pdelivery"
+territory = "SalesOrder_detailView_fieldValue_territory"
+location = "SalesOrder_detailView_fieldValue_locationid"
+assets = "SalesOrder_detailView_fieldValue_assestid"
+
+billing_address = "SalesOrder_detailView_fieldValue_bill_street"
+billing_po_box = "SalesOrder_detailView_fieldValue_bill_pobox"
+billing_city = "SalesOrder_detailView_fieldValue_bill_city"
+billing_state = "SalesOrder_detailView_fieldValue_bill_state"
+billing_post_code = "SalesOrder_detailView_fieldValue_bill_code"
+billing_country = "SalesOrder_detailView_fieldValue_bill_country"
+shipping_address = "SalesOrder_detailView_fieldValue_ship_street"
+shipping_po_box = "SalesOrder_detailView_fieldValue_ship_pobox"
+shipping_city = "SalesOrder_detailView_fieldValue_ship_city"
+shipping_state = "SalesOrder_detailView_fieldValue_ship_state"
+shipping_country = "SalesOrder_detailView_fieldValue_ship_country"
+shipping_post_code = "SalesOrder_detailView_fieldValue_ship_code"
+
+
+
+

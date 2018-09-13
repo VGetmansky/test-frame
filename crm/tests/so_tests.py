@@ -1,7 +1,9 @@
-from crm.data import so_data as data, authorization_data as auth_data
+from crm.data import so_data as data, authorization_data as auth_data, values_data as values
 from selenium.webdriver.common.by import By
 import common_functions as additional
 import datetime
+
+global clientpo
 
 
 def click_edit_so(driver, value):
@@ -41,8 +43,26 @@ def fill_in_client_po(driver):
     clientpoid = data.client_po_id
     text = "Autotest_Client_PO_" + str(datetime.datetime.now())
     additional.fill_text_field(driver, clientpoid, text)
+    clientpo = text
+    return clientpo
 
-#   ------------------------------------------
+
+def check_values(driver):
+    assert driver.find_element(By.ID, data.billing_address).text == values.billing_address
+    assert driver.find_element(By.ID, data.billing_po_box).text == values.billing_po_box
+    assert driver.find_element(By.ID, data.billing_city).text == values.billing_city
+    assert driver.find_element(By.ID, data.billing_state).text == values.billing_state
+    assert driver.find_element(By.ID, data.billing_post_code).text == values.billing_post_code
+    assert driver.find_element(By.ID, data.billing_country).text == values.billing_country
+
+    assert driver.find_element(By.ID, data.shipping_address).text == values.shipping_address
+    assert driver.find_element(By.ID, data.shipping_po_box).text == values.shipping_po_box
+    assert driver.find_element(By.ID, data.shipping_city).text == values.shipping_city
+    assert driver.find_element(By.ID, data.shipping_state).text == values.shipping_state
+    assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
+    assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
+
+    assert driver.find_element(By.ID, data.client_po).text == fill_in_client_po(driver).text
 
 
 def select_contact_name(driver):
@@ -137,8 +157,6 @@ def fill_in_place_of_delivery(driver):
     value = data.place_of_delivery_id
     text = "Autotest Place of Delivery"
     additional.fill_text_field(driver, value, text)
-
-#   ------------------------------------------
 
 
 def add_product(driver):

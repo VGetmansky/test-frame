@@ -232,7 +232,7 @@ def wait_element_by(driver, value, type):
 
 
 def select_value_from_dropdown(driver, value, text):
-    # driver.wait.until(EC.presence_of_element_located(By.ID, value))
+
     driver.find_element(By.ID, value).click()
     driver.find_element(By.XPATH, text).click()
     assert str(driver.find_element(By.ID, value).text).split("\n")[0] == text.split('\"')[1]
@@ -284,23 +284,23 @@ def select_table_cell(driver, field, tab, url):
         assert url + "index.php?module=PurchaseOrder&view=Detail&record=" + data_id == driver.current_url
 
 
-def get_so_number(driver, value):
-    so_num = driver.find_element(By.ID, "SalesOrder_listView_row_1").text.split(' ')[0]
-    return so_num
+# def get_so_number(driver, value):
+#     so_num = driver.find_element(By.ID, "SalesOrder_listView_row_1").text.split(' ')[0]
+#     return so_num
 
 
-def change_data_file(value):
-    if value == "rfq":
-        data = rfq_data
-    elif value == "quote":
-        data = quotes_data
-    elif value == "so":
-        data = so_data
-    elif value == "auth":
-        data = authorization_data
-    else:
-        data = po_data
-    return data
+# def change_data_file(value):
+#     if value == "rfq":
+#         data = rfq_data
+#     elif value == "quote":
+#         data = quotes_data
+#     elif value == "so":
+#         data = so_data
+#     elif value == "auth":
+#         data = authorization_data
+#     else:
+#         data = po_data
+#     return data
 
 
 def overwrite_elements(driver, value, button):
