@@ -66,6 +66,7 @@ assets_id = "SalesOrder_editView_fieldName_assestid_select"
 sold_by_id = "SalesOrder_editView_fieldName_soldbyid_select"
 aircraft_id = "SalesOrder_editView_fieldName_fleetid_select"
 customer_quote_id = "SalesOrder_editView_fieldName_quote_id_select"
+account_id_display_id = "account_id_display"
 
 billing_address_id = "SalesOrder_editView_fieldName_bill_street"
 billing_po_box_id = "SalesOrder_editView_fieldName_bill_pobox"

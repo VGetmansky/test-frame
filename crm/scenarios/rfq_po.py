@@ -92,13 +92,13 @@ class TestCreateRfq:
         with pytest.allure.step('Fill description'):
             rfq_tests.fill_in_description(driver)
 
-    def test_select_territory(self, driver):
-        with pytest.allure.step('Select territory'):
-            rfq_tests.select_territory(driver)
-
     def test_select_aircraft(self, driver):
         with pytest.allure.step('Fill aircraft'):
             rfq_tests.fill_in_aircraft_field(driver)
+
+    def test_select_territory(self, driver):
+        with pytest.allure.step('Select territory'):
+            rfq_tests.select_territory(driver)
 
     def test_select_location(self, driver):
         with pytest.allure.step('Fill contact'):
@@ -447,7 +447,7 @@ class TestClickAddSoButton:
 @pytest.mark.test
 class TestCreateSO:
 
-    def test_fill_in_client_po(self, driver):
+    def test_fill_in_so_client_po(self, driver):
         with pytest.allure.step('Fill client PO'):
             so_tests.fill_in_client_po(driver)
 
@@ -673,8 +673,6 @@ class TestCreatePO:
         with pytest.allure.step('Fill requisition number'):
             po_tests.fill_in_requisition_number(driver)
 
-
-
     def test_select_ship_via(self, driver):
         with pytest.allure.step('Select ship via'):
             po_tests.select_ship_via(driver)
@@ -843,7 +841,6 @@ class TestCreateInvoice:
     def test_select_status(self, driver, url):
         with pytest.allure.step('Select status'):
             invoice_tests.select_status(driver, url)
-
 
     def test_fill_weight(self, driver):
         with pytest.allure.step('Fill weight'):

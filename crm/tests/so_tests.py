@@ -3,8 +3,6 @@ from selenium.webdriver.common.by import By
 import common_functions as additional
 import datetime
 
-global clientpo
-
 
 def click_edit_so(driver, value):
     driver.find_element(By.ID, value).click()
@@ -43,8 +41,9 @@ def fill_in_client_po(driver):
     clientpoid = data.client_po_id
     text = "Autotest_Client_PO_" + str(datetime.datetime.now())
     additional.fill_text_field(driver, clientpoid, text)
-    clientpo = text
-    return clientpo
+    global gclientpo
+    gclientpo = text
+    # return gclientpo
 
 
 def check_values(driver):
@@ -62,7 +61,9 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
     assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
 
-    assert driver.find_element(By.ID, data.client_po).text == fill_in_client_po(driver).text
+    assert driver.find_element(By.ID, data.client_po).text == gclientpo
+    # global gaccount
+    # assert driver.find_element(By.ID, data.account).text == gaccount
 
 
 def select_contact_name(driver):
