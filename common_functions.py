@@ -66,7 +66,7 @@ def select_first_cell(driver, element_id, account):
     driver.switch_to.window(window_after)
     while len(driver.window_handles) != 1:
         i = 1
-        while i <= 9 :
+        while i <= 9:
 
             if driver.title == "Accounts":
                 wait_element(driver, data.search_value_id, 'id')
@@ -78,6 +78,8 @@ def select_first_cell(driver, element_id, account):
                     wait_element(driver, data.first_account_row_id, 'id')
                     wait = WebDriverWait(driver, 10)
                     wait.until(EC.invisibility_of_element_located((By.ID, data.check_account_row_id)))
+                    global gaccount
+                    gaccount = str(wait_element(driver, data.first_account_row_id, 'id').get_attribute("data-name"))
                     click_element_by_id(driver, data.first_account_row_id)
                     i = 10
                 except:
@@ -104,10 +106,14 @@ def select_first_cell(driver, element_id, account):
                 i = 10
 
             elif driver.title == "Fleet":
+                global gfleet
+                gfleet = str(wait_element(driver, data.first_fleet_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_fleet_row_id)
                 i = 10
 
             elif driver.title == "Locations":
+                global glocation
+                glocation = str(wait_element(driver, data.first_location_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_location_row_id)
                 i = 10
 
@@ -116,10 +122,14 @@ def select_first_cell(driver, element_id, account):
                 i = 10
 
             elif driver.title == "Users":
+                global guser
+                guser = str(wait_element(driver, data.first_user_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_user_row_id)
                 i = 10
 
             elif driver.title == "Assets":
+                global gasset
+                gasset = str(wait_element(driver, data.first_asset_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_asset_row_id)
                 i = 10
 
