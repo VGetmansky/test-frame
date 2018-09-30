@@ -114,8 +114,13 @@ class TestCreateQuote:
         with pytest.allure.step('Save SO'):
             tests.save_so(driver)
 
+    def test_check_values(self, driver):
+        with pytest.allure.step('check values'):
+            tests.check_values(driver)
+
 
 #@pytest.mark.test
+
 class TestClickCreateQuoteButton:
     def test_click_add_button(self, driver, url):
         with pytest.allure.step('Click add quote'):

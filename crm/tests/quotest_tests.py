@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from crm.data import quotes_data as data, authorization_data as auth_data
+from crm.data import quotes_data as data, authorization_data as auth_data, values_data as values
 import common_functions as additional
 
 
@@ -24,6 +24,8 @@ def fill_in_cust_ref(driver):
     field = data.cust_ref_id
     text = "Autotest Cust ref: 1245"
     additional.fill_text_field(driver, field, text)
+    global gcustref
+    gcustref = text
 
 
 def fill_in_billing_address(driver):
@@ -64,6 +66,9 @@ def select_terms_of_delivery(driver):
     text = data.terms_of_delivery
     additional.select_value_from_dropdown(driver, value, text)
 
+    global gtermsofdelivery
+    gtermsofdelivery = driver.find_element(By.ID, data.terms_of_delivery_id).text
+
 
 def select_terms_sale(driver, url):
     value = data.terms_of_sale_id
@@ -72,6 +77,9 @@ def select_terms_sale(driver, url):
     else:
         text = data.qa_terms_of_sale
     additional.select_value_from_dropdown(driver, value, text)
+
+    global gtermsofsale
+    gtermsofsale = driver.find_element(By.ID, data.terms_of_sale_id).text
 
 
 def add_product(driver):
@@ -154,3 +162,65 @@ def close_alert(driver):
     driver.find_element(By.XPATH, auth_data.home).click()
     driver.switch_to.alert.accept()
     assert("Home", driver.title)
+
+
+def check_values(driver):
+
+    #   Text fields
+    assert driver.find_element(By.ID, data.billing_address).text == values.billing_address
+    assert driver.find_element(By.ID, data.billing_po_box).text == values.billing_po_box
+    assert driver.find_element(By.ID, data.billing_city).text == values.billing_city
+    assert driver.find_element(By.ID, data.billing_state).text == values.billing_state
+    assert driver.find_element(By.ID, data.billing_post_code).text == values.billing_post_code
+    assert driver.find_element(By.ID, data.billing_country).text == values.billing_country
+
+    assert driver.find_element(By.ID, data.shipping_address).text == values.shipping_address
+    assert driver.find_element(By.ID, data.shipping_po_box).text == values.shipping_po_box
+    assert driver.find_element(By.ID, data.shipping_city).text == values.shipping_city
+    assert driver.find_element(By.ID, data.shipping_state).text == values.shipping_state
+    assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
+    assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
+
+    assert driver.find_element(By.ID, data.client_po).text == gcustref
+
+    #   Quote number
+    #   Condition
+    #   Place of delivery
+    #   Delivery
+    #   Job
+    #   QB No
+    #   Terms & Conditions
+    #   Description Details
+
+    #   Dropdown
+
+    # assert driver.find_element(By.ID, data.status).text == gstatus
+    # assert driver.find_element(By.ID, data.assigned_to).text == gassigned
+    assert driver.find_element(By.ID, data.terms_of_delivery).text == gtermsofdelivery
+    assert driver.find_element(By.ID, data.terms_of_sale).text == gtermsofsale
+    # assert driver.find_element(By.ID, data.ship_via).text == gshipvia
+    # assert driver.find_element(By.ID, data.priority).text == gpriority
+
+    #   Quote Stage
+    #   Priority
+    #   Assigned To
+    #   Terms of delivery
+    #   Terms of Sale
+    #   Territory
+
+    #   contract
+    #   Quote Stage
+    #   Priority
+    #   Assigned To
+    #   Terms of Delivery
+    #   Terms of Sale
+    #   Terrritory
+    #   QB company
+    #   QB Class
+
+    #   Select from fields
+
+    assert driver.find_element(By.ID, data.account).text == additional.gaccount
+    assert driver.find_element(By.ID, data.location).text == additional.glocation
+    assert driver.find_element(By.ID, data.aircraft).text == additional.gfleet
+    assert driver.find_element(By.ID, data.quoted_by).text + " " == additional.guser
