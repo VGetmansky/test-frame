@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from crm.data import quotes_data as data, authorization_data as auth_data
 import common_functions as additional
+from crm.data import values_data as values
 
 
 def select_quote(driver):
@@ -154,3 +155,21 @@ def close_alert(driver):
     driver.find_element(By.XPATH, auth_data.home).click()
     driver.switch_to.alert.accept()
     assert("Home", driver.title)
+
+
+def check_values(driver):
+
+    #   Text fields
+    assert driver.find_element(By.ID, data.billing_address).text == values.billing_address
+    assert driver.find_element(By.ID, data.billing_po_box).text == values.billing_po_box
+    assert driver.find_element(By.ID, data.billing_city).text == values.billing_city
+    assert driver.find_element(By.ID, data.billing_state).text == values.billing_state
+    assert driver.find_element(By.ID, data.billing_post_code).text == values.billing_post_code
+    assert driver.find_element(By.ID, data.billing_country).text == values.billing_country
+
+    assert driver.find_element(By.ID, data.shipping_address).text == values.shipping_address
+    assert driver.find_element(By.ID, data.shipping_po_box).text == values.shipping_po_box
+    assert driver.find_element(By.ID, data.shipping_city).text == values.shipping_city
+    assert driver.find_element(By.ID, data.shipping_state).text == values.shipping_state
+    assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
+    assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
