@@ -31,6 +31,14 @@ class TestCreateQuote:
         with pytest.allure.step('Fill cust ref'):
             tests.fill_in_cust_ref(driver)
 
+    def test_fill_in_billing_address(self, driver):
+        with pytest.allure.step('Fill billing address'):
+            tests.fill_in_billing_address(driver)
+
+    def test_fill_in_shipping_address(self, driver):
+        with pytest.allure.step('Fill shipping address'):
+            tests.fill_in_shipping_address(driver)
+
     def test_fill_in_place_of_delivery(self, driver):
         with pytest.allure.step('Fill place of delivery'):
             tests.fill_in_place_of_delivery(driver)
@@ -57,13 +65,6 @@ class TestCreateQuote:
 
     # def test_close_alert(self, driver):
     #     tests.close_alert(driver)
-    def test_fill_in_billing_address(self, driver):
-        with pytest.allure.step('Fill billing address'):
-            tests.fill_in_billing_address(driver)
-
-    def test_fill_in_shipping_address(self, driver):
-        with pytest.allure.step('Fill shipping address'):
-            tests.fill_in_shipping_address(driver)
 
     def test_fill_in_billing_po_box(self, driver):
         with pytest.allure.step('Fill billing box'):
@@ -114,10 +115,12 @@ class TestCreateQuote:
             tests.save_so(driver)
 
     def test_check_values(self, driver):
-        with pytest.allure.step('Check Values'):
+        with pytest.allure.step('check values'):
             tests.check_values(driver)
 
+
 #@pytest.mark.test
+
 class TestClickCreateQuoteButton:
     def test_click_add_button(self, driver, url):
         with pytest.allure.step('Click add quote'):

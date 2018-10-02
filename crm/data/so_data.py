@@ -126,6 +126,5 @@ shipping_state = "SalesOrder_detailView_fieldValue_ship_state"
 shipping_country = "SalesOrder_detailView_fieldValue_ship_country"
 shipping_post_code = "SalesOrder_detailView_fieldValue_ship_code"
 
-
-
-
+sub_total_id = "netTotal"
+grand_total_id = "grandTotal"
