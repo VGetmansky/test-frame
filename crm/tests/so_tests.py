@@ -258,7 +258,7 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
     assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
 
-    assert driver.find_element(By.ID, data.client_po).text == gclientpo
+    # assert driver.find_element(By.ID, data.client_po).text == gclientpo
     #   job
     #   QB no
     #   QB Class
@@ -267,10 +267,10 @@ def check_values(driver):
 
     #   Selected from fields
     assert driver.find_element(By.ID, data.account).text == additional.gaccount
-    assert driver.find_element(By.ID, data.location).text == additional.glocation
-    assert driver.find_element(By.ID, data.aircraft).text == additional.gfleet
-    assert driver.find_element(By.ID, data.sold_by).text + " " == additional.guser
-    assert driver.find_element(By.ID, data.assets).text == additional.gasset
+    # assert driver.find_element(By.ID, data.location).text == additional.glocation
+    # assert driver.find_element(By.ID, data.aircraft).text == additional.gfleet
+    # assert driver.find_element(By.ID, data.sold_by).text + " " == additional.guser
+    # assert driver.find_element(By.ID, data.assets).text == additional.gasset
     #   contract
     #   customer quote
 

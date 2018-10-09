@@ -54,3 +54,31 @@ special_notes_id = "Invoice_editView_fieldName_specialnotes"
 # finally url
 after_creation_url = 'http://crmtst_us.bai-inc.eu/index.php?module=Invoice&view=Detail&record'
 invoice_details = '//li(@class[contains("Invoice Details")])'
+
+
+billing_address_id = "Invoice_editView_fieldName_bill_street"
+billing_po_box_id = "Invoice_editView_fieldName_bill_pobox"
+billing_city_id = "Invoice_editView_fieldName_bill_city"
+billing_state_id = "Invoice_editView_fieldName_bill_state"
+billing_post_code_id = "Invoice_editView_fieldName_bill_code"
+billing_country_id = "Invoice_editView_fieldName_bill_country"
+shipping_address_id = "Invoice_editView_fieldName_ship_street"
+shipping_po_box_id = "Invoice_editView_fieldName_ship_pobox"
+shipping_city_id = "Invoice_editView_fieldName_ship_city"
+shipping_state_id = "Invoice_editView_fieldName_ship_state"
+shipping_post_code_id = "Invoice_editView_fieldName_ship_code"
+shipping_country_id = "Invoice_editView_fieldName_ship_country"
+
+
+billing_address = "Invoice_detailView_fieldValue_bill_street"
+billing_po_box = "Invoice_detailView_fieldValue_bill_pobox"
+billing_city = "Invoice_detailView_fieldValue_bill_city"
+billing_state = "Invoice_detailView_fieldValue_bill_state"
+billing_post_code = "Invoice_detailView_fieldValue_bill_code"
+billing_country = "Invoice_detailView_fieldValue_bill_country"
+shipping_address = "Invoice_detailView_fieldValue_ship_street"
+shipping_po_box = "Invoice_detailView_fieldValue_ship_pobox"
+shipping_city = "Invoice_detailView_fieldValue_ship_city"
+shipping_state = "Invoice_detailView_fieldValue_ship_state"
+shipping_country = "Invoice_detailView_fieldValue_ship_country"
+shipping_post_code = "Invoice_detailView_fieldValue_ship_code"

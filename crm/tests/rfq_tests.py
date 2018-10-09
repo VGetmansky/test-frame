@@ -9,6 +9,7 @@ import time
 
 def select_rfq(driver):
     new_url = driver.current_url
+    time.sleep(40)
     if driver.title != "Rfq":
         additional.wait_element_for_click(driver, auth_data.rfq_main_button_id)
         additional.wait_new_page(driver,  new_url)
@@ -20,7 +21,11 @@ def click_add_rfq(driver, url):
     additional.wait_element(driver, data.add_rfq_id, 'id')
     driver.find_element(By.ID, data.add_rfq_id).click()
     additional.wait_new_page(driver, new_url)
-    assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)
+
+    time.sleep(10)
+    additional.wait_element(driver, data.rfq_number_id, 'id')
+
+    assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)[0]
 
 
 def fill_in_vendor_field(driver):

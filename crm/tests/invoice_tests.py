@@ -1,4 +1,4 @@
-from crm.data import invoice_data as data, authorization_data as auth_data
+from crm.data import invoice_data as data, authorization_data as auth_data, values_data as values
 from selenium.webdriver.common.by import By
 import common_functions as additional
 
@@ -156,6 +156,91 @@ def fill_in_percent_paid(driver):
     additional.fill_text_field(driver, value, text)
 
 
+def fill_in_billing_address(driver):
+    field = data.billing_address_id
+    text = "Test billing address"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_shipping_address(driver):
+    field = data.shipping_address_id
+    text = "Test Shipping Address"
+    additional.fill_text_field(driver, field, text)
+
+def fill_in_billing_address(driver):
+    field = data.billing_address_id
+    text = "Test billing address"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_shipping_address(driver):
+    field = data.shipping_address_id
+    text = "Test Shipping Address"
+    additional.fill_text_field(driver, field, text)
+
+
+# text fields
+def fill_in_billing_po_box(driver):
+    field = data.billing_po_box_id
+    text = "Test BillingPOID"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_billing_city(driver):
+    field = data.billing_city_id
+    text = "Test BillingCity ID"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_billing_state(driver):
+    field = data.billing_state_id
+    text = "Test BillingState"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_billing_post_code(driver):
+    field = data.billing_post_code_id
+    text = "Test Billing Post Code"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_billing_country(driver):
+    field = data.billing_country_id
+    text = "Test Billing Country"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_shipping_po_box(driver):
+    field = data.shipping_po_box_id
+    text = "Test ShippingPOID"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_shipping_city(driver):
+    field = data.shipping_city_id
+    text = "Test ShippingCity ID"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_shipping_state(driver):
+    field = data.shipping_state_id
+    text = "Test ShippingState"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_shipping_post_code(driver):
+    field = data.shipping_post_code_id
+    text = "Test Shipping Post Code"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_shipping_country(driver):
+    field = data.shipping_country_id
+    text = "Test Shipping Country"
+    additional.fill_text_field(driver, field, text)
+
+
+
 def fill_in_special_note(driver):
     value = data.special_notes_id
     text = "Test special notes"
@@ -165,3 +250,21 @@ def fill_in_special_note(driver):
 def click_save_button(driver):
     driver.find_element(By.ID, "save_but").click()
     # assert driver.current_url.split('=3')[0] == data.after_creation_url
+
+
+def check_values(driver):
+
+    #   Text fields
+    assert driver.find_element(By.ID, data.billing_address).text == values.billing_address
+    assert driver.find_element(By.ID, data.billing_po_box).text == values.billing_po_box
+    assert driver.find_element(By.ID, data.billing_city).text == values.billing_city
+    assert driver.find_element(By.ID, data.billing_state).text == values.billing_state
+    assert driver.find_element(By.ID, data.billing_post_code).text == values.billing_post_code
+    assert driver.find_element(By.ID, data.billing_country).text == values.billing_country
+
+    assert driver.find_element(By.ID, data.shipping_address).text == values.shipping_address
+    assert driver.find_element(By.ID, data.shipping_po_box).text == values.shipping_po_box
+    assert driver.find_element(By.ID, data.shipping_city).text == values.shipping_city
+    assert driver.find_element(By.ID, data.shipping_state).text == values.shipping_state
+    assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
+    assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country

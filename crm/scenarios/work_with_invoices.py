@@ -110,6 +110,54 @@ class TestCreateInvoice:
         with pytest.allure.step('Fill percent paid'):
             tests.fill_in_percent_paid(driver)
 
+    def test_fill_in_billing_address(self, driver):
+        with pytest.allure.step('Fill billing address'):
+            tests.fill_in_billing_address(driver)
+
+    def test_fill_in_shipping_address(self, driver):
+        with pytest.allure.step('Fill shipping address'):
+            tests.fill_in_shipping_address(driver)
+
+    def test_fill_in_billing_po_box(self, driver):
+        with pytest.allure.step('Fill billing po box'):
+            tests.fill_in_billing_po_box(driver)
+
+    def test_fill_in_billing_city(self, driver):
+        with pytest.allure.step('Fill billing city'):
+            tests.fill_in_billing_city(driver)
+
+    def test_fill_in_billing_state(self, driver):
+        with pytest.allure.step('Fill billing state'):
+            tests.fill_in_billing_state(driver)
+
+    def test_fill_in_billing_post_code(self, driver):
+        with pytest.allure.step('Fill billing post code'):
+            tests.fill_in_billing_post_code(driver)
+
+    def test_fill_in_billing_post_country(self, driver):
+        with pytest.allure.step('Fill billing country'):
+            tests.fill_in_billing_country(driver)
+
+    def test_fill_in_shipping_po_box(self, driver):
+        with pytest.allure.step('Fill shipping po box'):
+            tests.fill_in_shipping_po_box(driver)
+
+    def test_fill_in_shipping_city(self, driver):
+        with pytest.allure.step('Fill shipping city'):
+            tests.fill_in_shipping_city(driver)
+
+    def test_fill_in_shipping_state(self, driver):
+        with pytest.allure.step('Fill shipping state'):
+            tests.fill_in_shipping_state(driver)
+
+    def test_fill_in_shipping_post_code(self, driver):
+        with pytest.allure.step('Fill shipping post code'):
+            tests.fill_in_shipping_post_code(driver)
+
+    def test_fill_in_shipping_post_country(self, driver):
+        with pytest.allure.step('Fill shipping country'):
+            tests.fill_in_shipping_country(driver)
+
     def test_fill_special_notes(self, driver):
         with pytest.allure.step('Fill special note'):
             tests.fill_in_special_note(driver)
@@ -117,3 +165,7 @@ class TestCreateInvoice:
     def test_click_save_button(self, driver):
         with pytest.allure.step('Click save invoice button'):
             tests.click_save_button(driver)
+
+    def test_check_values(self, driver):
+        with pytest.allure.step('check values'):
+            tests.check_values(driver)
