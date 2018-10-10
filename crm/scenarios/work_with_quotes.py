@@ -47,6 +47,10 @@ class TestCreateQuote:
         with pytest.allure.step('Select quote status'):
             tests.select_quote_status(driver, url)
 
+    def test_fill_delivery(self, driver):
+        with pytest.allure.step('Fill delivery'):
+            tests.fill_in_delivery(driver)
+
     def test_select_priority(self, driver):
         with pytest.allure.step('Select priority'):
             tests.select_proirity(driver)

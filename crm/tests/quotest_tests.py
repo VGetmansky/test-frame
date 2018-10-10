@@ -54,11 +54,23 @@ def select_quote_status(driver, url):
         text = data.qa_quote_stage
     additional.select_value_from_dropdown(driver, value, text)
 
+    global gquotestage
+    gquotestage = driver.find_element(By.ID, data.quote_stage_id).text
+
+
+def fill_in_delivery(driver):
+    field = data.delivery_id
+    text = "Test delivery"
+    additional.fill_text_field(driver, field, text)
+
 
 def select_proirity(driver):
     value = data.priority_id
     text = data.priority
     additional.select_value_from_dropdown(driver, value, text)
+
+    global gpriority
+    gpriority = driver.find_element(By.ID, data.priority_id).text
 
 
 def select_terms_of_delivery(driver):
@@ -91,10 +103,17 @@ def select_location(driver):
     value = data.location_selector_id
     additional.select_first_cell(driver, value, False)
 
+    # global gtermsofsale
+    # gtermsofsale = driver.find_element(By.ID, data.location_id).text
+
 
 def select_aircraft(driver):
     value = data.aircraft_selector_id
     additional.select_first_cell(driver, value, False)
+
+    # global gaircraft
+    # gaircraft = driver.find_element(By.ID, data.terms_of_sale_id).text
+
 
 # text fields
 def fill_in_billing_po_box(driver):
@@ -205,25 +224,16 @@ def check_values(driver):
 
     # assert driver.find_element(By.ID, data.status).text == gstatus
     # assert driver.find_element(By.ID, data.assigned_to).text == gassigned
-    assert driver.find_element(By.ID, data.terms_of_delivery).text == gtermsofdelivery
-    assert driver.find_element(By.ID, data.terms_of_sale).text == gtermsofsale
+    assert driver.find_element(By.ID, data.terms_of_delivery_details_id).text == gtermsofdelivery
+    assert driver.find_element(By.ID, data.terms_of_sale_details_id).text == gtermsofsale
     # assert driver.find_element(By.ID, data.ship_via).text == gshipvia
-    # assert driver.find_element(By.ID, data.priority).text == gpriority
+    assert driver.find_element(By.ID, data.priority_details_id).text == gpriority
+    assert driver.find_element(By.ID, data.quote_stage_details_id).text == gquotestage
 
-    #   Quote Stage
-    #   Priority
-    #   Assigned To
-    #   Terms of delivery
-    #   Terms of Sale
-    #   Territory
-
-    #   contract
-    #   Quote Stage
-    #   Priority
     #   Assigned To
     #   Terms of Delivery
     #   Terms of Sale
-    #   Terrritory
+    #   Territory
     #   QB company
     #   QB Class
 
@@ -232,4 +242,4 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.account).text == additional.gaccount
     assert driver.find_element(By.ID, data.location).text == additional.glocation
     assert driver.find_element(By.ID, data.aircraft).text == additional.gfleet
-    assert driver.find_element(By.ID, data.quoted_by).text + " " == additional.guser
+    # assert driver.find_element(By.ID, data.quoted_by).text + " " == additional.guser
