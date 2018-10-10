@@ -4,7 +4,8 @@ from selenium import webdriver
 
 def pytest_addoption(parser):
     parser.addoption("--driver", action="store", default="firefox", help="Type in browser type")
-    parser.addoption("--url", action="store", default="http://crmtst_us.bai-inc.eu/", help="url") # http://wwwtst_us.bai-inc.eu/
+    parser.addoption("--url", action="store", default="https://crmtst.bai-inc.eu/", help="url") # http://wwwtst_us.bai-inc.eu/
+    # parser.addoption("--url", action="store", default="http://crmtst_us.bai-inc.eu/", help="url") # http://wwwtst_us.bai-inc.eu/
     parser.addoption("--username", action="store", default="vladislav.getmanskiy@zimad.com", help="username")
     parser.addoption("--password", action="store", default="Welcome2018!", help="password")
 

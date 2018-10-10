@@ -48,7 +48,7 @@ def fill_in_place_of_delivery(driver):
 
 def select_quote_status(driver, url):
     value = data.quote_stage_id
-    if url == "http://crmtst_us.bai-inc.eu/":
+    if url == "https://crmtst.bai-inc.eu/":
         text = data.tst_quote_stage
     else:
         text = data.qa_quote_stage
@@ -72,7 +72,7 @@ def select_terms_of_delivery(driver):
 
 def select_terms_sale(driver, url):
     value = data.terms_of_sale_id
-    if url == "http://crmtst_us.bai-inc.eu/":
+    if url == "https://crmtst.bai-inc.eu/":
         text = data.tst_terms_of_sale
     else:
         text = data.qa_terms_of_sale
@@ -86,6 +86,15 @@ def add_product(driver):
     value = data.product_list_button
     additional.select_first_cell(driver, value, False)
 
+
+def select_location(driver):
+    value = data.location_selector_id
+    additional.select_first_cell(driver, value, False)
+
+
+def select_aircraft(driver):
+    value = data.aircraft_selector_id
+    additional.select_first_cell(driver, value, False)
 
 # text fields
 def fill_in_billing_po_box(driver):
@@ -181,7 +190,7 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
     assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
 
-    assert driver.find_element(By.ID, data.client_po).text == gcustref
+    # assert driver.find_element(By.ID, data.client_po).text == gcustref
 
     #   Quote number
     #   Condition

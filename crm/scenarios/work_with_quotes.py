@@ -59,6 +59,14 @@ class TestCreateQuote:
         with pytest.allure.step('Select terms sale'):
             tests.select_terms_sale(driver, url)
 
+    def test_select_location(self, driver):
+        with pytest.allure.step('Select location'):
+            tests.select_location(driver)
+
+    def test_select_aircraft(self, driver):
+        with pytest.allure.step('Select aircraft'):
+            tests.select_aircraft(driver)
+
     def test_add_product(self, driver):
         with pytest.allure.step('Add product'):
             tests.add_product(driver)
