@@ -68,6 +68,14 @@ class TestCreateSO:
         with pytest.allure.step('Select priority'):
             tests.select_priority(driver)
 
+    def test_select_terms_of_sale(self, driver):
+        with pytest.allure.step('Select Terms_of_sale'):
+            tests.select_terms_of_sale(driver)
+
+    def test_select_source(self, driver):
+        with pytest.allure.step('Select Source'):
+            tests.select_source(driver)
+
     def test_select_ship_via(self, driver):
         with pytest.allure.step('Select Ship Via'):
             tests.select_ship_via(driver)

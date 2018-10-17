@@ -103,6 +103,24 @@ def select_priority(driver):
     gpriority = driver.find_element(By.ID, data.priority_id).text
 
 
+def select_terms_of_sale(driver):
+    value = data.terms_of_sale_id
+    text = data.terms_of_sale_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+    global gtermsofsale
+    gtermsofsale = driver.find_element(By.ID, data.terms_of_sale_id).text
+
+
+def select_source(driver):
+    value = data.source_id
+    text = data.source_value
+    additional.select_value_from_dropdown(driver, value, text)
+
+    global gsource
+    gsource = driver.find_element(By.ID, data.source_id).text
+
+
 def select_ship_via(driver):
     value = data.ship_via_selector_id
     text = data.ship_via_value
@@ -267,10 +285,10 @@ def check_values(driver):
 
     #   Selected from fields
     assert driver.find_element(By.ID, data.account).text == additional.gaccount
-    # assert driver.find_element(By.ID, data.location).text == additional.glocation
-    # assert driver.find_element(By.ID, data.aircraft).text == additional.gfleet
-    # assert driver.find_element(By.ID, data.sold_by).text + " " == additional.guser
-    # assert driver.find_element(By.ID, data.assets).text == additional.gasset
+    assert driver.find_element(By.ID, data.location).text == additional.glocation
+    assert driver.find_element(By.ID, data.aircraft).text == additional.gfleet
+    assert driver.find_element(By.ID, data.sold_by).text + " " == additional.guser
+    assert driver.find_element(By.ID, data.assets).text == additional.gasset
     #   contract
     #   customer quote
 
@@ -281,6 +299,7 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.territory).text == gterritory
     assert driver.find_element(By.ID, data.ship_via).text == gshipvia
     assert driver.find_element(By.ID, data.priority).text == gpriority
-    #   terms of sale
-    #   source
+    assert driver.find_element(By.ID, data.terms_of_sale).text == gtermsofsale
+    assert driver.find_element(By.ID, data.source_details).text == gsource
+
     #   QB Company

@@ -34,8 +34,8 @@ ship_via_value = '//li[contains(.,"FEDEX")]'
 contact_name_overwrite_adress = '//a[contains(.,"No")]'
 terms_of_payment_id = "tsale__chzn"
 priority_id = "rpriority__chzn"
-
-
+terms_of_sale_value = '//li[contains(.,"NET-30")]'
+source_value = '//li[contains(.,"Fax")]'
 item_selector = '//img[@class="lineItemPopup cursorPointer alignMiddle" and @data-popup="ProductsPopup"]'
 copy_billing_address_from_contact_left = '//input[@name="copyAddressFromRight" and @class="contactAddress"]'
 copy_billing_address_from_account_left = '//input[@name="copyAddressFromRight" and @class="accountAddress"]'
@@ -108,6 +108,7 @@ account_num = "SalesOrder_detailView_fieldValue_accarrier"
 account = "SalesOrder_detailView_fieldValue_account_id"
 created_time = "SalesOrder_detailView_fieldValue_createdtime"
 terms_of_sale = "SalesOrder_detailView_fieldValue_tsale"
+
 place_of_delivery = "SalesOrder_detailView_fieldValue_pdelivery"
 territory = "SalesOrder_detailView_fieldValue_territory"
 location = "SalesOrder_detailView_fieldValue_locationid"
@@ -125,6 +126,10 @@ shipping_city = "SalesOrder_detailView_fieldValue_ship_city"
 shipping_state = "SalesOrder_detailView_fieldValue_ship_state"
 shipping_country = "SalesOrder_detailView_fieldValue_ship_country"
 shipping_post_code = "SalesOrder_detailView_fieldValue_ship_code"
-
+source_details = "SalesOrder_detailView_fieldValue_docsource"
 sub_total_id = "netTotal"
 grand_total_id = "grandTotal"
+
+terms_of_sale_id = "tsale__chzn"
+source_id = "docsource__chzn"
+

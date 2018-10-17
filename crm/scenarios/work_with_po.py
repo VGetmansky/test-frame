@@ -58,10 +58,6 @@ class TestCreatePO:
         with pytest.allure.step('select terms of payment'):
             tests.select_terms_of_payment(driver, url)
 
-    def test_fill_delivery_place(self, driver):
-        with pytest.allure.step('Fill delivery place'):
-            tests.fill_in_delivery_place(driver)
-
     def test_select_due_date(self, driver):
         with pytest.allure.step('Due date'):
             tests.select_due_date(driver)
@@ -100,6 +96,10 @@ class TestCreatePO:
     def test_select_terms_of_delivery(self, driver):
         with pytest.allure.step('Select terms of delivery'):
             tests.select_terms_of_delivery(driver)
+
+    def test_fill_delivery_place(self, driver):
+        with pytest.allure.step('Fill delivery place'):
+            tests.fill_in_delivery_place(driver)
 
     def test_select_territory(self, driver):
         with pytest.allure.step('select territory'):

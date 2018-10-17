@@ -122,7 +122,7 @@ def select_status(driver):
 
 def select_terms_of_payment(driver, url):
     value = data.terms_of_payment_id
-    if url == "http://crmtst_us.bai-inc.eu/":
+    if url == "https://crmtst.bai-inc.eu/":
         text = data.tst_terms_of_payment
     else:
         text = data.qa_terms_of_payment

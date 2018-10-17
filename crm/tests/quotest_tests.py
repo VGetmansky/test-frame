@@ -211,7 +211,7 @@ def check_values(driver):
 
     # assert driver.find_element(By.ID, data.client_po).text == gcustref
 
-    #   Quote number
+    #   Quote number /n
     #   Condition
     #   Place of delivery
     #   Delivery
@@ -222,17 +222,12 @@ def check_values(driver):
 
     #   Dropdown
 
-    # assert driver.find_element(By.ID, data.status).text == gstatus
-    # assert driver.find_element(By.ID, data.assigned_to).text == gassigned
     assert driver.find_element(By.ID, data.terms_of_delivery_details_id).text == gtermsofdelivery
     assert driver.find_element(By.ID, data.terms_of_sale_details_id).text == gtermsofsale
-    # assert driver.find_element(By.ID, data.ship_via).text == gshipvia
     assert driver.find_element(By.ID, data.priority_details_id).text == gpriority
     assert driver.find_element(By.ID, data.quote_stage_details_id).text == gquotestage
 
     #   Assigned To
-    #   Terms of Delivery
-    #   Terms of Sale
     #   Territory
     #   QB company
     #   QB Class
