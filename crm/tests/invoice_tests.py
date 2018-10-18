@@ -1,6 +1,7 @@
 from crm.data import invoice_data as data, authorization_data as auth_data, values_data as values
 from selenium.webdriver.common.by import By
 import common_functions as additional
+import time
 
 
 def select_so(driver):
@@ -16,12 +17,10 @@ def open_so_details(driver, url):
 def click_add_invoice(driver):
     driver.find_element(By.ID, data.generate_invoice_id).click()
     driver.find_element(By.XPATH, data.create_invoice).click()
-    if driver.current_url == "http://crmtst_us.bai-inc.eu/index.php":
-        #value = data.overwrite_chk
-        #button = data.create_new_btn
-        #additional.overwrite_elements(driver, value, button)
+    if driver.current_url == "https://crmtst.bai-inc.eu/index.php":
         driver.find_element(By.XPATH, data.create_new_btn).click()
-    #assert driver.current_url == 'http://crmtst_us.bai-inc.eu/index.php?module=Invoice&view=Edit'
+    #   assert driver.current_url == 'http://crmtst_us.bai-inc.eu/index.php?module=Invoice&view=Edit'
+    time.sleep(5)
 
 
 def fill_in_invoice_no(driver):
@@ -37,8 +36,9 @@ def fill_in_customer_po(driver):
 
 
 def select_terms_of_sale(driver, url):
+    time.sleep(3)
     value = data.terms_of_sale_id
-    if url == "http://crmtst_us.bai-inc.eu/":
+    if url == "https://crmtst.bai-inc.eu/":
         text = data.tst_terms_of_sale
     else:
         text = data.qa_terms_of_sale

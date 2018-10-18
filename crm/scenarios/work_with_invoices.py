@@ -42,6 +42,10 @@ class TestCreateInvoice:
         with pytest.allure.step('Select terms of sale'):
             tests.select_terms_of_sale(driver, url)
 
+    def test_select_priority(self, driver):
+        with pytest.allure.step('Select priority'):
+            tests.select_priority(driver)
+
     def test_select_terms_of_delivery(self, driver):
         with pytest.allure.step('Select terms of delivery'):
             tests.select_terms_of_delivery(driver)
@@ -73,10 +77,6 @@ class TestCreateInvoice:
     def test_select_status(self, driver, url):
         with pytest.allure.step('Select status'):
             tests.select_status(driver, url)
-
-    def test_select_priority(self, driver):
-        with pytest.allure.step('Select priority'):
-            tests.select_priority(driver)
 
     def test_fill_place_of_delivery(self, driver):
         with pytest.allure.step('Fill place of delivery'):

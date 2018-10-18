@@ -71,7 +71,7 @@ def fill_in_received_via(driver):
 
 def select_sale_terms(driver, url):
     value = data.sale_terms_id
-    if url == "http://crmtst_us.bai-inc.eu/":
+    if url == "https://crmtst.bai-inc.eu/":
         text = data.tst_sale_terms
     else:
         text = data.qa_sale_terms
