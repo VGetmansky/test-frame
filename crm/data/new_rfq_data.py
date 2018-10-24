@@ -29,3 +29,54 @@ rfq_location_id = "rfq-location"
 
 rfq_status_id = "rfq-status"
 rfq_created_status = "//li[contains(., 'Created')]"
+
+#   ----------  REQ LINE INFORMATION  ----------
+
+rfq_pn_req_id = "rfq-pn-req"
+rfq_req_description_id = "rfq-req-description"
+rfq_nsn_id = "rfq-req-nsn"
+rfq_sales_type_id = "rfq-req-sales-type"
+rfq_qty_req_id = "rfq-req-qty"
+rfq_req_uom_id = "rfq-req-uom"
+rfq_req_condition_id = "rfq-req-condition"
+
+#   ----------  Part Line Information   ----------
+
+rfq_vendor_name_id = "rfq-vendor-name"
+rfq_vendor_search_id = "rfq-vendor-search"
+rfq_pn_aval_id = "rfq-pn-aval"
+rfq_pn_salestype_id = "rfq-pn-salestype"
+rfq_pn_description_id = "rfq-pn-description"
+rfq_pn_rate_id = "rfq-pn-rate"
+rfq_qty_avail_id = "rfq-pn-aqty"
+rfq_pn_uom_id = "rfq-pn-uom"
+rfq_pn_condition_id = "rfq-pn-condition"
+rfq_pn_location_id = "rfq-pn-location"
+
+#   ----------  Stock Outright  ----------
+
+so_stock_unit_cost_id = "rfq-stock-unit-cost"
+so_unit_price_id = "rfq-stock-unit-price"
+
+so_vendor_moq_id = "rfq-stock-vendor-moq"
+so_stock_moq_id = "rfq-stock-moq"
+so_min_vendor_order_id = "rfq-stock-min-vendor-order"
+so_stock_qty_id = "rfq-stock-qty"
+so_stock_total_cost_id = "rfq-stock-total-cost"
+so_stock_total_price_id = "rfq-stock-total-price"
+so_lead_time_id = "rfq-stock-lead-time"
+so_mgm_id = "rfq-stock-pl-mgm"
+so_mgm_percent_id = "rfq-stock-mgm-percent"
+
+#   ----------  Exchange  ----------
+
+#   ----------  Repair  ----------
+
+#   ----------  Basic Information   ----------
+
+rfq_ic_id = "rfq-ichg"
+rfq_notes_id = "rfq-notes"
+rfq_non_printed_notes_id = "rfq-np-notes"
+rfq_v_quote_id = "rfq-vquote"
+rfq_v_date_id = "rfq-vqdate"
+
