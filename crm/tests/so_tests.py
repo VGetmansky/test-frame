@@ -2,6 +2,7 @@ from crm.data import so_data as data, authorization_data as auth_data, values_da
 from selenium.webdriver.common.by import By
 import common_functions as additional
 import datetime
+import time
 
 
 def click_edit_so(driver, value):
@@ -176,6 +177,7 @@ def fill_in_place_of_delivery(driver):
 
 
 def add_product(driver):
+    time.sleep(5)
     value = data.product_list_button
     additional.wait_element(driver, data.part_number_field_id, 'id')  #  additional.wait_element(driver, value, 'id')
     additional.select_first_cell(driver, value, False)

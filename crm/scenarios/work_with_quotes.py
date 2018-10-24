@@ -71,10 +71,6 @@ class TestCreateQuote:
         with pytest.allure.step('Select aircraft'):
             tests.select_aircraft(driver)
 
-    def test_add_product(self, driver):
-        with pytest.allure.step('Add product'):
-            tests.add_product(driver)
-
     # def test_close_alert(self, driver):
     #     tests.close_alert(driver)
 
@@ -121,6 +117,10 @@ class TestCreateQuote:
     def test_fill_in_description_details(self, driver):
         with pytest.allure.step('Fill description details'):
             tests.fill_in_description_details(driver)
+
+    def test_add_product(self, driver):
+        with pytest.allure.step('Add product'):
+            tests.add_product(driver)
 
     def test_save_so(self, driver):
         with pytest.allure.step('Save SO'):
