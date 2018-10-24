@@ -55,9 +55,10 @@ rfq_pn_location_id = "rfq-pn-location"
 
 #   ----------  Stock Outright  ----------
 
+rfq_stock_outright = "//li[contains(., 'Stock Outright')]"
+
 so_stock_unit_cost_id = "rfq-stock-unit-cost"
 so_unit_price_id = "rfq-stock-unit-price"
-
 so_vendor_moq_id = "rfq-stock-vendor-moq"
 so_stock_moq_id = "rfq-stock-moq"
 so_min_vendor_order_id = "rfq-stock-min-vendor-order"
@@ -70,7 +71,34 @@ so_mgm_percent_id = "rfq-stock-mgm-percent"
 
 #   ----------  Exchange  ----------
 
+rfq_exchange = "//li[contains(., 'Exchange')]"
+
+ex_fee_cost_id = "rfq-exchange-fee-cost"
+ex_fee_price_id = "rfq-exchange-fee-price"
+ex_ber_cost_id = "rfq-exchange-ber-cost"
+ex_ber_price_id = "rfq-exchange-ber-price"
+ex_vendor_rtrn_day_id = "rfq-exchange-rtrn-day"
+ex_cust_rtrn_price_id="rfq-exchange-rtrn-priceday"
+ex_lead_time_id = "rfq-exchange-lead-time"
+ex_delivery_time_id = "rfq-exchange-delivery-time"
+ex_service_cost_id = "rfq-exchange-service-cost"
+ex_service_price_id = "rfq-exchange-service-price"
+ex_qty_id = "rfq-exchange-qty"
+
 #   ----------  Repair  ----------
+
+rfq_repair = "//li[contains(., 'Repair/OH')]"
+
+repair_b_check_cost_id = "rfq-repair-bcost"
+repair_b_check_price_id = "rfq-repair-bprice"
+repair_lead_b_check_id = "rfq-repair-bcheck"
+repair_delivery_b_check_id = "rfq-repair-bcheck-price"
+repair_avg_repair_cost_id = "rfq-repair-avg-cost"
+repair_avg_repair_cost_id = "rfq-repair-avg-price"
+repair_lead_time_id = "rfq-repair-lead-time"
+repair_delivery_timeid = "rfq-repair-delivery-time"
+repair_max_cost_id = "rfq-repair-max-cost"
+repair_max_price_id = "rfq-repair-max-price"
 
 #   ----------  Basic Information   ----------
 
