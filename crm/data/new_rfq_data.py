@@ -29,6 +29,9 @@ rfq_location_id = "rfq-location"
 
 rfq_status_id = "rfq-status"
 rfq_created_status = "//li[contains(., 'Created')]"
+rfq_add_part_id = "rfq-add-part"
+add_part_alt_id = "rfq-add-alt"
+
 
 #   ----------  REQ LINE INFORMATION  ----------
 
@@ -39,6 +42,15 @@ rfq_sales_type_id = "rfq-req-sales-type"
 rfq_qty_req_id = "rfq-req-qty"
 rfq_req_uom_id = "rfq-req-uom"
 rfq_req_condition_id = "rfq-req-condition"
+
+#   ----------  Buttons ----------
+
+rfq_pn_offer_id = "rfq-offer"
+rfq_pn_alt_offer_id = "rfq-alt-offer"
+rfq_pn_save_pricing_id = "rfq-save-pricing"
+rfq_pn_save_and_offer_id = "rfq-save-offer"
+rfq_pn_save_and_alt_offer_id = "rfq-save-alt-offer"
+rfq_nq_line_id = "rfq-nq-line"
 
 #   ----------  Part Line Information   ----------
 
@@ -52,6 +64,13 @@ rfq_qty_avail_id = "rfq-pn-aqty"
 rfq_pn_uom_id = "rfq-pn-uom"
 rfq_pn_condition_id = "rfq-pn-condition"
 rfq_pn_location_id = "rfq-pn-location"
+rfq_pn_tags_id = "rfq-tags"
+rfq_tag_date_id = "rfq-tag-date"
+rfq_cert_type_id = "rfq-cert-type"
+rfq_trace_id = "rfq-trace"
+rfq_warranty_id = "rfq-warranty"
+rfq_shop_id = "rfq-shop"
+rfq_sn_id = "rfq-sn"
 
 #   ----------  Stock Outright  ----------
 
