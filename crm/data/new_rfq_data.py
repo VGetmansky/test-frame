@@ -1,4 +1,6 @@
 
+add_rfq_id = "Rfq_listView_basicAction_LBL_ADD_RECORD"
+
 #   ----------  Information / Address   ----------
 
 rfq_number_id = "rfq-number"
@@ -8,6 +10,8 @@ rfq_search_contact_id = "rfq-search-contact"
 
 rfq_search_value_id = "search-value"
 rfq_account_search_button_id = "search-button"
+
+rfq_account_first_field = "//td[contains(., 'Sky Gates Arilines')]"
 
 rfq_priority_id = "rfq-priority"
 
@@ -31,6 +35,10 @@ rfq_status_id = "rfq-status"
 rfq_created_status = "//li[contains(., 'Created')]"
 rfq_add_part_id = "rfq-add-part"
 add_part_alt_id = "rfq-add-alt"
+rfq_change_mode_id = "rfq-change-mode"
+part_number_cell_0_id = "part-add-number-0"
+description_cell_0_id = "part-add-desc-0"
+qty_cell_0_id = "part-add-qty-0"
 
 
 #   ----------  REQ LINE INFORMATION  ----------
