@@ -6,13 +6,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 
+from selenium.webdriver.common.keys import Keys
+
 
 def select_rfq(driver):
     new_url = driver.current_url
     time.sleep(40)
     if driver.title != "Rfq":
         additional.wait_element_for_click(driver, auth_data.rfq_main_button_id)
-        additional.wait_new_page(driver,  new_url)
+        additional.wait_new_page(driver, new_url)
     assert "Rfq", driver.title
 
 
@@ -43,45 +45,70 @@ def filter_by_creator(driver):
 
 
 def fill_in_account_field(driver):
-    element_id = data.rfq_search_acoount_id
+    element_id = data.rfq_search_account_id
     time.sleep(3)
-    #additional.wait_element(driver, element_id, 'id')
-    additional.select_first_cell(driver, element_id, False)
-    try:
-        driver.find_element(By.XPATH, data.contact).click()
-    except:
-        return
+
+    additional.wait_element(driver, element_id, 'id')
+    driver.find_element(By.ID, element_id).click()
+
+    elem = driver.find_element(By.ID, data.rfq_search_value_id)
+    text = "Autotest"
+    additional.wait_element(driver, data.rfq_search_value_id, 'id')
+    driver.find_element(By.ID, data.rfq_search_value_id).click()
+    elem.send_keys(Keys.CONTROL + "a")
+    elem.send_keys(Keys.DELETE)
+    elem.send_keys(text)
+    elem.send_keys(Keys.ENTER)
+
+    additional.wait_element(driver, data.rfq_account_first_field, 'xpath')
+    driver.find_element(By.XPATH, data.rfq_account_first_field).click()
 
 
 def fill_in_contact_field(driver):
-    element_id = data.rfq_contact_id
-    additional.select_first_cell(driver, element_id, False)
+
+    element_id = data.rfq_search_contact_id
+    time.sleep(3)
+
+    additional.wait_element(driver, element_id, 'id')
+    driver.find_element(By.ID, element_id).click()
+
+    elem = driver.find_element(By.ID, data.rfq_search_value_id)
+    text = "Autotest"
+    additional.wait_element(driver, data.rfq_search_value_id, 'id')
+    driver.find_element(By.ID, data.rfq_search_value_id).click()
+    elem.send_keys(Keys.CONTROL + "a")
+    elem.send_keys(Keys.DELETE)
+    elem.send_keys(text)
+    elem.send_keys(Keys.ENTER)
+
+    additional.wait_element(driver, data.rfq_contact_first_field, 'xpath')
+    driver.find_element(By.XPATH, data.rfq_contact_first_field).click()
 
 
 def fill_in_customer_quote(driver):
-    value = data.customer_quote_id
+    value = data.rfq_customer_quote_id
     text = "Test Customer Quote"
     additional.fill_text_field(driver, value, text)
 
 
 def fill_in_received_via(driver):
-    value = data.received_via_id
+    value = data.rfq_received_via_id
     text = "10"
     additional.fill_text_field(driver, value, text)
 
 
 def select_sale_terms(driver, url):
-    value = data.sale_terms_id
+    value = data.rfq_terms_of_sale_id
     if url == "https://crmtst.bai-inc.eu/":
-        text = data.tst_sale_terms
+        text = data.rfq_tst_sale_terms
     else:
-        text = data.qa_sale_terms
+        text = data.rfq_qa_sale_terms
     additional.select_value_from_dropdown(driver, value, text)
 
 
 def select_delivery_terms(driver):
-    value = data.delivery_terms_id
-    text = data.delivery_terms
+    value = data.rfq_terms_of_delivery_id
+    text = data.rfq_delivery_terms
     additional.select_value_from_dropdown(driver, value, text)
 
 
@@ -92,8 +119,14 @@ def fill_in_delivery_terms_text_field(driver):
 
 
 def fill_in_description(driver):
-    value = data.description_id
+    value = data.rfq_description_id
     text = "Test Description"
+    additional.fill_text_field(driver, value, text)
+
+
+def fill_in_place_of_delivery(driver):
+    value = data.rfq_place_of_delivery_id
+    text = "Test Place of Delivery"
     additional.fill_text_field(driver, value, text)
 
 
