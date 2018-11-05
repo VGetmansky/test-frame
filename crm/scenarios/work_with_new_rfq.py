@@ -35,6 +35,34 @@ class TestCreateRfq:
         with pytest.allure.step('Fill account'):
             tests.fill_in_account_field(driver)
 
+    def test_select_contact(self, driver):
+        with pytest.allure.step('Contact field'):
+            tests.fill_in_contact_field(driver)
+
+    def test_fill_customer_quote(self, driver):
+        with pytest.allure.step('Fill customer quote'):
+            tests.fill_in_customer_quote(driver)
+
+    def test_fill_received_via(self, driver):
+        with pytest.allure.step('Fill recieved via'):
+            tests.fill_in_received_via(driver)
+
+    def test_fill_description(self, driver):
+        with pytest.allure.step('Fill description'):
+            tests.fill_in_description(driver)
+
+    def test_fill_place_of_delivery(self, driver):
+        with pytest.allure.step('Fill place of delivery'):
+            tests.fill_in_place_of_delivery(driver)
+
+    def test_select_sale_terms(self, driver, url):
+        with pytest.allure.step('Select sale terms'):
+            tests.select_sale_terms(driver, url)
+
+    def test_delivery_terms(self, driver):
+        with pytest.allure.step('Select sale terms'):
+            tests.select_delivery_terms(driver)
+
 #     def test_select_vendor(self, driver):
 #         with pytest.allure.step('Fill vendor field'):
 #             tests.fill_in_vendor_field(driver)
@@ -42,19 +70,9 @@ class TestCreateRfq:
 #     def test_priority(self, driver):
 #         with pytest.allure.step('Select priority'):
 #             tests.select_priority(driver)
+
 #
-#     def test_select_contact(self, driver):
-#         with pytest.allure.step('Contact field'):
-#             tests.fill_in_contact_field(driver)
-#
-#     def test_fill_customer_quote(self, driver):
-#         with pytest.allure.step('Fill customer quote'):
-#             tests.fill_in_customer_quote(driver)
-#
-#     def test_fill_received_via(self, driver):
-#         with pytest.allure.step('Fill recieved via'):
-#             tests.fill_in_received_via(driver)
-#
+
 #     def test_select_sale_terms(self, driver, url):
 #         with pytest.allure.step('Select sale terms'):
 #             tests.select_sale_terms(driver, url)
@@ -67,9 +85,7 @@ class TestCreateRfq:
 #         with pytest.allure.step('Fill delivery terms'):
 #             tests.fill_in_delivery_terms_text_field(driver)
 #
-#     def test_fill_description(self, driver):
-#         with pytest.allure.step('Fill description'):
-#             tests.fill_in_description(driver)
+
 #
 #     def test_select_territory(self, driver):
 #         with pytest.allure.step('Select territory'):

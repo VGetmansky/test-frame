@@ -5,21 +5,24 @@ add_rfq_id = "Rfq_listView_basicAction_LBL_ADD_RECORD"
 
 rfq_number_id = "rfq-number"
 
-rfq_search_acoount_id = "rfq-search-account"
+rfq_search_account_id = "rfq-search-account"
 rfq_search_contact_id = "rfq-search-contact"
 
 rfq_search_value_id = "search-value"
 rfq_account_search_button_id = "search-button"
 
-rfq_account_first_field = "//td[contains(., 'Sky Gates Arilines')]"
-
+rfq_account_first_field = "//td[contains(., 'Account for autotests')]"
+rfq_contact_first_field = "//td[contains(., 'Autotest')]"
 rfq_priority_id = "rfq-priority"
 
+rfq_tst_sale_terms = '//li[contains(., "NET-30")]'
+rfq_qa_sale_terms = '//li[contains(.,"Pre-payment")]'
+rfq_delivery_terms = '//li[contains(.,"CIF")]'
 #   ----------  Details  ----------
 
 rfq_customer_quote_id = "rfq-customer-quote"
-expiration_date_id = "rfq-experation-date"
-received_via_id = "rfq-received-via"
+rfq_expiration_date_id = "rfq-experation-date"
+rfq_received_via_id = "rfq-received-via"
 rfq_terms_of_sale_id = "rfq-tsale"
 rfq_terms_of_delivery_id = "rfq-tdelivery"
 rfq_place_of_delivery_id = "rfq-pdelivery"

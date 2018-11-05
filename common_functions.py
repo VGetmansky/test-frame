@@ -245,7 +245,7 @@ def select_value_from_dropdown(driver, value, text):
 
     driver.find_element(By.ID, value).click()
     driver.find_element(By.XPATH, text).click()
-    assert str(driver.find_element(By.ID, value).text).split("\n")[0] == text.split('\"')[1]
+    #assert str(driver.find_element(By.ID, value).text).split("\n")[0] == text.split('\"')[1]
 
 
 def change_sales_type(driver, value, text):
