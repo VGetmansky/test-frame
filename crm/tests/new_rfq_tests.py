@@ -25,7 +25,7 @@ def click_add_rfq(driver, url):
     driver.find_element(By.ID, data.add_rfq_id).click()
     additional.wait_new_page(driver, new_url)
 
-    #time.sleep(10)
+    #ime.sleep(10)
     # additional.wait_element(driver, data.rfq_number_id, 'id')
 
     # assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)[0]
@@ -54,12 +54,14 @@ def fill_in_account_field(driver):
     elem = driver.find_element(By.ID, data.rfq_search_value_id)
     text = "Autotest"
     additional.wait_element(driver, data.rfq_search_value_id, 'id')
+    #time.sleep(3)
     driver.find_element(By.ID, data.rfq_search_value_id).click()
     elem.send_keys(Keys.CONTROL + "a")
     elem.send_keys(Keys.DELETE)
     elem.send_keys(text)
     elem.send_keys(Keys.ENTER)
 
+    time.sleep(3)
     additional.wait_element(driver, data.rfq_account_first_field, 'xpath')
     driver.find_element(By.XPATH, data.rfq_account_first_field).click()
 
@@ -81,6 +83,7 @@ def fill_in_contact_field(driver):
     elem.send_keys(text)
     elem.send_keys(Keys.ENTER)
 
+    time.sleep(3)
     additional.wait_element(driver, data.rfq_contact_first_field, 'xpath')
     driver.find_element(By.XPATH, data.rfq_contact_first_field).click()
 
@@ -131,7 +134,7 @@ def fill_in_place_of_delivery(driver):
 
 
 def select_territory(driver):
-    value = data.territory_id
+    value = data.rfq_territory_id
     text = data.territory
     additional.select_value_from_dropdown(driver, value, text)
 
@@ -153,8 +156,14 @@ def fill_in_location_field(driver):
 
 
 def select_priority(driver):
-    value = data.priority_id
-    text = data.priority
+    value = data.rfq_priority_id
+    text = data.rfq_routine_proirity
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_assigned_to(driver):
+    value = data.rfq_assigned_to_id
+    text = data.rfq_assigned_to
     additional.select_value_from_dropdown(driver, value, text)
 
 
@@ -245,9 +254,16 @@ def click_add_part_number(driver):
 
 
 def fill_part_number_name(driver):
-    value = data.partnumber_id
-    text = "PSE-301"
-    additional.fill_pn_fields(driver, value, text)
+    value = data.rfq_add_part_id
+    text = "DK120 | PN | 10"
+    pn_text_field = data.rfq_part_add_multi_id
+    addpn = data.rfq_add_to_list_button_id
+    additional.fill_new_pn_fields(driver, value, pn_text_field, addpn, text)
+
+
+def uncheck_will_advice(driver):
+    value = data.rfq_will_advice_check_id
+    driver.find_element(By.ID, value).click()
 
 
 def fill_pn_qty(driver):

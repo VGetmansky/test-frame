@@ -63,41 +63,39 @@ class TestCreateRfq:
         with pytest.allure.step('Select sale terms'):
             tests.select_delivery_terms(driver)
 
+    def test_select_territory(self, driver):
+        with pytest.allure.step('Select territory'):
+            tests.select_territory(driver)
+
+    def test_priority(self, driver):
+        with pytest.allure.step('Select priority'):
+            tests.select_priority(driver)
+
+    def test_select_assigned_to(self, driver):
+        with pytest.allure.step('Select Assigned To'):
+            tests.select_assigned_to(driver)
+
+    def test_fill_part_number(self, driver):
+        with pytest.allure.step('Fill part number name'):
+             tests.fill_part_number_name(driver)
+
+    def test_uncheck_will_advice(self, driver):
+        with pytest.allure.step('Uncheck Will Advice'):
+            tests.uncheck_will_advice(driver)
+# сменились поля на дропдаун
+    # def test_select_aircraft(self, driver):
+    #     with pytest.allure.step('Fill aircraft'):
+    #         tests.fill_in_aircraft_field(driver)
+    #
+    # def test_select_location(self, driver):
+    #     with pytest.allure.step('Fill contact'):
+    #         tests.fill_in_contact_field(driver)
+
+
 #     def test_select_vendor(self, driver):
 #         with pytest.allure.step('Fill vendor field'):
 #             tests.fill_in_vendor_field(driver)
 
-#     def test_priority(self, driver):
-#         with pytest.allure.step('Select priority'):
-#             tests.select_priority(driver)
-
-#
-
-#     def test_select_sale_terms(self, driver, url):
-#         with pytest.allure.step('Select sale terms'):
-#             tests.select_sale_terms(driver, url)
-#
-#     def test_delivery_terms(self, driver):
-#         with pytest.allure.step('Select sale terms'):
-#             tests.select_delivery_terms(driver)
-#
-#     def test_delivery_terms_test_field(self, driver):
-#         with pytest.allure.step('Fill delivery terms'):
-#             tests.fill_in_delivery_terms_text_field(driver)
-#
-
-#
-#     def test_select_territory(self, driver):
-#         with pytest.allure.step('Select territory'):
-#             tests.select_territory(driver)
-#
-#     def test_select_aircraft(self, driver):
-#         with pytest.allure.step('Fill aircraft'):
-#             tests.fill_in_aircraft_field(driver)
-#
-#     def test_select_location(self, driver):
-#         with pytest.allure.step('Fill contact'):
-#             tests.fill_in_contact_field(driver)
 #
 #     def test_select_pl_status(self, driver):
 #         with pytest.allure.step('Select pl status'):
@@ -107,9 +105,7 @@ class TestCreateRfq:
 #         with pytest.allure.step('Click Add part number'):
 #             tests.click_add_part_number(driver)
 #
-#     def test_fill_part_number(self, driver):
-#         with pytest.allure.step('Fill part number name'):
-#             tests.fill_part_number_name(driver)
+
 #
 #     def test_fill_pn_qty(self, driver):
 #         with pytest.allure.step('Fill pn qty'):

@@ -214,6 +214,30 @@ def fill_pn_fields(driver, value, text):
         elem.click()
 
 
+def fill_new_pn_fields(driver, value, pn_text_field, addpn, text):
+    if value != "pl_ins_but":
+        try:
+            elem = driver.find_element(By.ID, value)
+            assert NoSuchElementException
+        except:
+            elem = driver.find_element(By.XPATH, value)
+            assert NoSuchElementException
+
+        elem.click()
+        wait_element(driver, pn_text_field, 'id')
+        elem = driver.find_element(By.ID, pn_text_field)
+        elem.send_keys(Keys.CONTROL + "a")
+        elem.send_keys(Keys.DELETE)
+        elem.send_keys(text)
+        assert (elem.get_attribute('value') == text)
+        driver.find_element(By.ID, addpn).click()
+        driver.find_element(By.ID, addpn).click()
+    else:
+        elem = driver.find_elementt(By.ID, value)
+        assert NoSuchElementException
+        elem.click()
+
+
 def wait_element(driver, value, type):
     elem = None
     time.sleep(0.5)
@@ -244,7 +268,11 @@ def wait_element_by(driver, value, type):
 def select_value_from_dropdown(driver, value, text):
 
     driver.find_element(By.ID, value).click()
-    driver.find_element(By.XPATH, text).click()
+    i = 0
+    if driver.find_elements(By.XPATH, text)[i].text is not '':
+        driver.find_elements(By.XPATH, text)[i].click()
+    else:
+        i += 1
     #assert str(driver.find_element(By.ID, value).text).split("\n")[0] == text.split('\"')[1]
 
 
