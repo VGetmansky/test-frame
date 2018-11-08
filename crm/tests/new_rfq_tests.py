@@ -305,11 +305,11 @@ def click_offer(driver):
 
 
 def click_alt_offer(driver):
-    value = data.save_and_alt_offer_id
+    value = data.rfq_pn_alt_offer_id
     type = "id"
     additional.wait_element(driver, value, type).click()
-    additional.wait_element(driver, '//a[contains(., "Create New line")]', 'xpath')
-    additional.click_element_by_xpath(driver, '//a[contains(., "Create New line")]')
+    # additional.wait_element(driver, '//a[contains(., "Create New line")]', 'xpath')
+    # additional.click_element_by_xpath(driver, '//a[contains(., "Create New line")]')
 
 
 def click_add_part_number(driver):
@@ -396,19 +396,27 @@ def fill_in_pli_rate(driver):
 
 # exchange
 def select_exchange_type(driver):
-    value = data.spli_sales_type_id
-    text = 'Exchange'
-    time.sleep(3)
-    additional.change_sales_type(driver, value, text)
-    additional.wait_element(driver, data.ex_fee_cost_id, 'id')
+    value = data.rfq_pn_salestype_id
+    text = data.rfq_exchange
+    time.sleep(1)
+
+    # additional.wait_element(driver, value, 'id')
+    driver.find_element(By.ID, value).click()
+
+    additional.wait_element(driver, text, 'xpath')
+    length = len(driver.find_elements(By.XPATH, text))
+    driver.find_elements(By.XPATH, text)[length - 1].click()
+
+    # additional.change_sales_type(driver, value, text)
+    # additional.wait_element(driver, data.ex_fee_cost_id, 'id')
 
 
 def select_repair_type(driver):
-    value = data.spli_sales_type_id
+    value = data.rfq_pn_salestype_id
     text = 'Repair/OH'
     time.sleep(3)
     additional.change_sales_type(driver, value, text)
-    additional.wait_element(driver, data.repair_b_check_price_id, 'id')
+    # additional.wait_element(driver, data.repair_b_check_price_id, 'id')
 
 
 def fill_in_exchange_fee_cost(driver):
