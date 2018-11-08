@@ -196,15 +196,14 @@ class TestCreateRfq:
             tests.save_stock_outright_pricing(driver)
 
 
-
 # # Exchange
-#     def test_click_alt_offer_exchange(self, driver):
-#         with pytest.allure.step('Click alt offer'):
-#             tests.click_alt_offer(driver)
-#
-#     def test_select_sales_type(self, driver):
-#         with pytest.allure.step('Select exchange type'):
-#             tests.select_exchange_type(driver)
+    def test_click_alt_offer_exchange(self, driver):
+        with pytest.allure.step('Click alt offer'):
+            tests.click_alt_offer(driver)
+
+    def test_select_exchange_sales_type(self, driver):
+        with pytest.allure.step('Select exchange type'):
+            tests.select_exchange_type(driver)
 #
 #     def test_fill_ex_fee_cost(self, driver):
 #         with pytest.allure.step('Fill exchange fee cost'):
