@@ -101,13 +101,21 @@ class TestCreateRfq:
         with pytest.allure.step('Fill vendor field'):
             tests.fill_in_vendor_field(driver)
 
+    def test_select_location(self, driver):
+        with pytest.allure.step('Fill contact'):
+            tests.fill_in_pli_location(driver)
+
+    def test_fill_tag(self, driver):
+        with pytest.allure.step('Fill Tag'):
+            tests.fill_in_tags(driver)
+
     def test_fill_pn_qty(self, driver):
         with pytest.allure.step('Fill Stock Outright Aval.Qty'):
             tests.fill_in_pli_aval_qty(driver)
 
-    def test_select_location(self, driver):
-        with pytest.allure.step('Fill contact'):
-            tests.fill_in_pli_location(driver)
+    def test_fill_condition(self, driver):
+        with pytest.allure.step('Fill Tag'):
+            tests.fill_in_condition(driver)
 
     def test_select_rate(self, driver):
         with pytest.allure.step('Fill contact'):
@@ -182,7 +190,13 @@ class TestCreateRfq:
     def test_fill_stock_outright_vquotes(self, driver):
         with pytest.allure.step('Fill V.Quote'):
             tests.fill_v_quote(driver)
-#
+
+    def test_save_stock_outright_pricing(self, driver):
+        with pytest.allure.step('save stock outright pricing'):
+            tests.save_stock_outright_pricing(driver)
+
+
+
 # # Exchange
 #     def test_click_alt_offer_exchange(self, driver):
 #         with pytest.allure.step('Click alt offer'):

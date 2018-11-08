@@ -259,6 +259,45 @@ def fill_in_min_vendor_order(driver):
     additional.fill_text_field(driver, value, text)
 
 
+def fill_in_tags(driver):
+    value = data.rfq_pn_tags_id
+    certtype = data.rfq_cert_type_id
+    cert = data.rfq_pn_cert
+
+    additional.wait_element(driver, value, 'id')
+    driver.find_element(By.ID, value).click()
+
+    additional.wait_element(driver, certtype, 'id')
+    driver.find_element(By.ID, certtype).click()
+
+    additional.wait_element(driver, cert, 'xpath')
+    driver.find_element(By.XPATH, cert).click()
+
+
+def fill_in_condition(driver):
+
+    condition = data.rfq_pn_condition_id
+    conditionval = data.rfq_pn_condition
+
+    # additional.wait_element(driver, condition, 'id')
+    driver.find_element(By.ID, condition).click()
+
+    additional.wait_element(driver, conditionval, 'xpath')
+    length = len(driver.find_elements(By.XPATH, conditionval))
+    driver.find_elements(By.XPATH, conditionval)[length - 1].click()
+
+
+def save_stock_outright_pricing(driver):
+    value = data.rfq_pn_save_pricing_id
+    newline = data.rfq_create_new_line
+
+    # additional.wait_element(driver, value, 'id')
+    driver.find_element(By.ID, value).click()
+
+    additional.wait_element(driver, newline, 'xpath')
+    driver.find_element(By.XPATH, newline).click()
+
+
 def click_offer(driver):
     value = data.offer_id
     additional.wait_element_for_click(driver, value)

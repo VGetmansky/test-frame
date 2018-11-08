@@ -80,6 +80,7 @@ rfq_pn_rate_id = "rfq-pn-rate"
 rfq_qty_avail_id = "rfq-pn-aqty"
 rfq_pn_uom_id = "rfq-pn-uom"
 rfq_pn_condition_id = "rfq-pn-condition"
+rfq_pn_condition = "//li[contains(., 'FN')]"
 rfq_pn_location_id = "rfq-pn-location"
 rfq_pn_tags_id = "rfq-tags"
 rfq_tag_date_id = "rfq-tag-date"
@@ -88,7 +89,8 @@ rfq_trace_id = "rfq-trace"
 rfq_warranty_id = "rfq-warranty"
 rfq_shop_id = "rfq-shop"
 rfq_sn_id = "rfq-sn"
-
+rfq_pn_cert = "//li[contains(., 'CofC Only')]"
+rfq_create_new_line = "//button[contains(., 'Create new line')]"
 #   ----------  Stock Outright  ----------
 
 rfq_stock_outright = "//li[contains(., 'Stock Outright')]"
