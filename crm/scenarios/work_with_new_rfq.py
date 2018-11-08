@@ -79,9 +79,11 @@ class TestCreateRfq:
         with pytest.allure.step('Fill part number name'):
              tests.fill_part_number_name(driver)
 
-    def test_uncheck_will_advice(self, driver):
-        with pytest.allure.step('Uncheck Will Advice'):
-            tests.uncheck_will_advice(driver)
+#   WA checkbox Cannot scroll into view
+#     def test_uncheck_will_advice(self, driver):
+#         with pytest.allure.step('Uncheck Will Advice'):
+#             tests.uncheck_will_advice(driver)
+
 # сменились поля на дропдаун
     # def test_select_aircraft(self, driver):
     #     with pytest.allure.step('Fill aircraft'):
@@ -91,12 +93,26 @@ class TestCreateRfq:
     #     with pytest.allure.step('Fill contact'):
     #         tests.fill_in_contact_field(driver)
 
+    def test_fill_pn_description(self, driver):
+        with pytest.allure.step('Fill PN Description'):
+            tests.fill_in_pn_description(driver)
 
-#     def test_select_vendor(self, driver):
-#         with pytest.allure.step('Fill vendor field'):
-#             tests.fill_in_vendor_field(driver)
+    def test_select_vendor(self, driver):
+        with pytest.allure.step('Fill vendor field'):
+            tests.fill_in_vendor_field(driver)
 
-#
+    def test_fill_pn_qty(self, driver):
+        with pytest.allure.step('Fill Stock Outright Aval.Qty'):
+            tests.fill_in_pli_aval_qty(driver)
+
+    def test_select_location(self, driver):
+        with pytest.allure.step('Fill contact'):
+            tests.fill_in_pli_location(driver)
+
+    def test_select_rate(self, driver):
+        with pytest.allure.step('Fill contact'):
+            tests.fill_in_pli_rate(driver)
+
 #     def test_select_pl_status(self, driver):
 #         with pytest.allure.step('Select pl status'):
 #             tests.select_pl_status(driver)
@@ -104,8 +120,6 @@ class TestCreateRfq:
 #     def test_add_part_line(self, driver):
 #         with pytest.allure.step('Click Add part number'):
 #             tests.click_add_part_number(driver)
-#
-
 #
 #     def test_fill_pn_qty(self, driver):
 #         with pytest.allure.step('Fill pn qty'):
@@ -119,9 +133,6 @@ class TestCreateRfq:
 #         with pytest.allure.step('Fill PN Vendor'):
 #             tests.fill_in_vendor(driver)
 #
-#     def test_fill_pn_description(self, driver):
-#         with pytest.allure.step('Fill PN Description'):
-#             tests.fill_in_pn_description(driver)
 #
 #     def test_fill_stock_outright_plli_aval_qty(self, driver):
 #         with pytest.allure.step('Fill Stock Outright Aval.Qty'):
@@ -131,22 +142,22 @@ class TestCreateRfq:
 #     def test_click_offer(self, driver):
 #         with pytest.allure.step('Click offer'):
 #             tests.click_offer(driver)
-#
-#     def test_fill_unit_cost(self, driver):
-#         with pytest.allure.step('Fill unit cost'):
-#             tests.fill_in_unit_cost(driver)
-#
-#     def test_fill_unit_price(self, driver):
-#         with pytest.allure.step('Fill unit price'):
-#             tests.fill_in_unit_price(driver)
-#
-#     def test_fill_vendor_moq(self, driver):
-#         with pytest.allure.step('Fill vendor moq'):
-#             tests.fill_in_vendor_moq(driver)
-#
-#     def test_fill_moq(self, driver):
-#         with pytest.allure.step('Fill moq'):
-#             tests.fill_in_moq(driver)
+
+    def test_fill_unit_cost(self, driver):
+        with pytest.allure.step('Fill unit cost'):
+            tests.fill_in_unit_cost(driver)
+
+    def test_fill_unit_price(self, driver):
+        with pytest.allure.step('Fill unit price'):
+            tests.fill_in_unit_price(driver)
+
+    def test_fill_vendor_moq(self, driver):
+        with pytest.allure.step('Fill vendor moq'):
+            tests.fill_in_vendor_moq(driver)
+
+    def test_fill_moq(self, driver):
+        with pytest.allure.step('Fill moq'):
+            tests.fill_in_moq(driver)
 #
 #     def test_fill_stock_outright_lead_time(self, driver):
 #         with pytest.allure.step('Fill stock outright lead time'):
@@ -155,21 +166,22 @@ class TestCreateRfq:
 #     def test_fill_stock_outright_delivery_time(self, driver):
 #         with pytest.allure.step('Fill stock outright delivery time'):
 #             tests.fill_in_stock_outright_delivery_time(driver)
-#
-#     # def test_fill_min_vendor_order(self, driver):
-#     #     tests.fill_in_min_vendor_order(driver)
-#
-#     def test_fill_stock_outright_notes(self, driver):
-#         with pytest.allure.step('Fill stock outright notes'):
-#             tests.fill_note(driver)
-#
-#     def test_fill_stock_outright_non_print_notes(self, driver):
-#         with pytest.allure.step('Fill stock outright non-printed notes'):
-#             tests.fill_non_printed_note(driver)
-#
-#     def test_fill_stock_outright_vquotes(self, driver):
-#         with pytest.allure.step('Fill V.Quote'):
-#             tests.fill_v_quote(driver)
+
+    # def test_fill_min_vendor_order(self, driver):
+    #     with pytest.allure.step('Fill stock outright Min Ven order'):
+    #         tests.fill_in_min_vendor_order(driver)
+
+    def test_fill_stock_outright_notes(self, driver):
+        with pytest.allure.step('Fill stock outright notes'):
+            tests.fill_note(driver)
+
+    def test_fill_stock_outright_non_print_notes(self, driver):
+        with pytest.allure.step('Fill stock outright non-printed notes'):
+            tests.fill_non_printed_note(driver)
+
+    def test_fill_stock_outright_vquotes(self, driver):
+        with pytest.allure.step('Fill V.Quote'):
+            tests.fill_v_quote(driver)
 #
 # # Exchange
 #     def test_click_alt_offer_exchange(self, driver):

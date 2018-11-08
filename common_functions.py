@@ -175,7 +175,7 @@ def fill_text_field(driver, value, text):
 
     elem.click()
     elem.send_keys(Keys.CONTROL + "a")
-    elem.send_keys(Keys.DELETE)
+    #elem.send_keys(Keys.DELETE)
     elem.send_keys(text)
 
     while elem == elem_before:
@@ -191,7 +191,7 @@ def fill_text_field(driver, value, text):
     elif elem.get_attribute("id") == "Contacts_editView_fieldName_contact_no":
         assert (elem.get_attribute('value') == "CON" + text)
     else:
-        assert (elem.get_attribute('value') == text)
+        assert (elem.get_attribute('value') == text) or (elem.get_attribute('value') == text.upper())
 
 
 def fill_pn_fields(driver, value, text):

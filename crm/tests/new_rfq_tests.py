@@ -11,7 +11,7 @@ from selenium.webdriver.common.keys import Keys
 
 def select_rfq(driver):
     new_url = driver.current_url
-    time.sleep(40)
+    time.sleep(10)
     if driver.title != "Rfq":
         additional.wait_element_for_click(driver, auth_data.rfq_main_button_id)
         additional.wait_new_page(driver, new_url)
@@ -32,9 +32,28 @@ def click_add_rfq(driver, url):
 
 
 def fill_in_vendor_field(driver):
-    element_id = data.vendor_list_id
+    element_id = data.rfq_vendor_search_id
+    time.sleep(3)
+
     additional.wait_element(driver, element_id, 'id')
-    additional.select_first_cell(driver, element_id, False)
+    driver.find_element(By.ID, element_id).click()
+
+    elem = driver.find_element(By.ID, data.rfq_search_value_id)
+    text = "Autotest User"
+    additional.wait_element(driver, data.rfq_search_value_id, 'id')
+    #time.sleep(3)
+    driver.find_element(By.ID, data.rfq_search_value_id).click()
+    elem.send_keys(Keys.CONTROL + "a")
+    elem.send_keys(Keys.DELETE)
+    elem.send_keys(text)
+    elem.send_keys(Keys.ENTER)
+
+    time.sleep(3)
+
+    text = data.rfq_vendor_first_field
+    additional.wait_element(driver, text, 'xpath')
+    length = len(driver.find_elements(By.XPATH, text))
+    driver.find_elements(By.XPATH, text)[length - 1].click()
 
 
 def filter_by_creator(driver):
@@ -86,6 +105,12 @@ def fill_in_contact_field(driver):
     time.sleep(3)
     additional.wait_element(driver, data.rfq_contact_first_field, 'xpath')
     driver.find_element(By.XPATH, data.rfq_contact_first_field).click()
+
+
+def fill_in_pli_location(driver):
+    value = data.rfq_pn_location_id
+    text = "Test Location"
+    additional.fill_text_field(driver, value, text)
 
 
 def fill_in_customer_quote(driver):
@@ -168,44 +193,44 @@ def select_assigned_to(driver):
 
 
 def fill_note(driver):
-    value = data.notes_id
+    value = data.rfq_notes_id
     text = "Note"
     additional.fill_text_field(driver, value, text)
 
 
 def fill_non_printed_note(driver):
-    value = data.non_printed_notes_id
+    value = data.rfq_non_printed_notes_id
     text = "Note"
     additional.fill_text_field(driver, value, text)
 
 
 def fill_v_quote(driver):
-    value = data.v_quote_id
+    value = data.rfq_v_quote_id
     text = "V.Quote"
     additional.fill_text_field(driver, value, text)
 
 
 # stock outright
 def fill_in_unit_cost(driver):
-    value = data.unit_cost_id
+    value = data.so_stock_unit_cost_id
     text = "12"
     additional.fill_text_field(driver, value, text)
 
 
 def fill_in_unit_price(driver):
-    value = data.stock_out_unit_price_id
+    value = data.so_unit_price_id
     text = "15"
     additional.fill_text_field(driver, value, text)
 
 
 def fill_in_vendor_moq(driver):
-    value = data.vendor_moq_id
+    value = data.so_vendor_moq_id
     text = "2"
     additional.fill_text_field(driver, value, text)
 
 
 def fill_in_moq(driver):
-    value = data.moq_id
+    value = data.so_stock_moq_id
     text = "15"
     additional.fill_text_field(driver, value, text)
 
@@ -307,14 +332,26 @@ def fill_in_vendor(driver):
 
 
 def fill_in_pn_description(driver):
-    field = data.pn_description_id
+    field = data.rfq_pn_description_id
     text = "Test description"
     additional.fill_text_field(driver, field, text)
 
 
-def fill_in_plli_aval_qty(driver):
-    field = data.spli_aval_qty_id
+def fill_in_pli_aval_qty(driver):
+    field = data.rfq_qty_avail_id
     text = "10"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_pli_location(driver):
+    field = data.rfq_pn_location_id
+    text = "Test Location"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_pli_rate(driver):
+    field = data.rfq_pn_rate_id
+    text = "0.25"
     additional.fill_text_field(driver, field, text)
 
 

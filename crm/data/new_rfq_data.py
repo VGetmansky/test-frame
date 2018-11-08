@@ -13,7 +13,9 @@ rfq_account_search_button_id = "search-button"
 
 rfq_account_first_field = "//td[contains(., 'Account for autotests')]"
 rfq_contact_first_field = "//td[contains(., 'Autotest')]"
+
 rfq_priority_id = "rfq-priority"
+rfq_routine_proirity = '//li[contains(., "Routine")]'
 
 rfq_tst_sale_terms = '//li[contains(., "NET-30")]'
 rfq_qa_sale_terms = '//li[contains(.,"Pre-payment")]'
@@ -29,6 +31,7 @@ rfq_place_of_delivery_id = "rfq-pdelivery"
 rfq_description_id = "rfq-description"
 rfq_territory_id = "rfq-territory"
 rfq_assigned_to_id = "rfq-assigned"
+rfq_assigned_to = "//li[contains(., 'Administrator')]"
 rfq_aircraft_id = "rfq-aircraft"
 rfq_location_id = "rfq-location"
 
@@ -37,7 +40,9 @@ rfq_location_id = "rfq-location"
 rfq_status_id = "rfq-status"
 rfq_created_status = "//li[contains(., 'Created')]"
 rfq_add_part_id = "rfq-add-part"
+rfq_part_add_multi_id = "part-add-multi"
 add_part_alt_id = "rfq-add-alt"
+rfq_add_to_list_button_id = "rfq-add-to-list"
 rfq_change_mode_id = "rfq-change-mode"
 part_number_cell_0_id = "part-add-number-0"
 description_cell_0_id = "part-add-desc-0"
@@ -53,6 +58,7 @@ rfq_sales_type_id = "rfq-req-sales-type"
 rfq_qty_req_id = "rfq-req-qty"
 rfq_req_uom_id = "rfq-req-uom"
 rfq_req_condition_id = "rfq-req-condition"
+rfq_will_advice_check_id = "rfq-part-will-advice"
 
 #   ----------  Buttons ----------
 
@@ -64,7 +70,7 @@ rfq_pn_save_and_alt_offer_id = "rfq-save-alt-offer"
 rfq_nq_line_id = "rfq-nq-line"
 
 #   ----------  Part Line Information   ----------
-
+rfq_vendor_first_field = "//td[contains(., 'Autotest User')]"
 rfq_vendor_name_id = "rfq-vendor-name"
 rfq_vendor_search_id = "rfq-vendor-search"
 rfq_pn_aval_id = "rfq-pn-aval"
@@ -138,3 +144,7 @@ rfq_non_printed_notes_id = "rfq-np-notes"
 rfq_v_quote_id = "rfq-vquote"
 rfq_v_date_id = "rfq-vqdate"
 
+
+
+
+territory = "//li[contains(., 'US')]"
