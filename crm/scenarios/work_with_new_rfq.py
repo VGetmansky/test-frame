@@ -193,7 +193,7 @@ class TestCreateRfq:
 
     def test_save_stock_outright_pricing(self, driver):
         with pytest.allure.step('save stock outright pricing'):
-            tests.save_stock_outright_pricing(driver)
+            tests.save_and_offer(driver)
 
 
 # # Exchange
@@ -204,59 +204,59 @@ class TestCreateRfq:
     def test_select_exchange_sales_type(self, driver):
         with pytest.allure.step('Select exchange type'):
             tests.select_exchange_type(driver)
-#
-#     def test_fill_ex_fee_cost(self, driver):
-#         with pytest.allure.step('Fill exchange fee cost'):
-#             tests.fill_in_exchange_fee_cost(driver)
-#
-#     def test_fill_vendor_rtnr_days(self, driver):
-#         with pytest.allure.step('Fill exchange vendor rtrn days'):
-#             tests.fill_in_exchange_vendor_rtrn_days(driver)
-#
-#     def test_fill_exchange_service_cost(self, driver):
-#         with pytest.allure.step('Fill exchange service cost'):
-#             tests.fill_in_exchange_service_cost(driver)
-#
-#     def test_fill_exchange_ber_cost(self, driver):
-#         with pytest.allure.step('Fill exchange ber cost'):
-#             tests.fill_in_exchange_ber_cost(driver)
-#
-#     def test_fill_exchange_lead_time(self, driver):
-#         with pytest.allure.step('Fill exchange lead time'):
-#             tests.fill_in_exchange_lead_time(driver)
-#
-#     def test_fill_exchange_cost_total(self, driver):
-#         with pytest.allure.step('Fill exchange cost total'):
-#             tests.fill_in_exchange_cost_total(driver)
-#
-#     def test_fill_exchange_qty(self, driver):
-#         with pytest.allure.step('Fill exchange qty'):
-#             tests.fill_in_exchange_qty(driver)
-#
-#     def test_fill_ex_fee_price(self, driver):
-#         with pytest.allure.step('Fill exchange fee price'):
-#             tests.fill_in_exchange_fee_price(driver)
-#
-#     def test_fill_exchange_cust_rtrn_days(self, driver):
-#         with pytest.allure.step('Fill exchange cust rtrn days'):
-#             tests.fill_in_exchange_cust_rtrn_days(driver)
-#
-#     def test_fill_exchange_service_prive(self, driver):
-#         with pytest.allure.step('Fill exchange service price'):
-#             tests.fill_in_exchange_service_price(driver)
-#
-#     def test_fill_exchange_ber_price(self, driver):
-#         with pytest.allure.step('Fill exhange ber price'):
-#             tests.fill_in_exchange_ber_price(driver)
-#
-#     def test_fill_exchange_delivery_time(self, driver):
-#         with pytest.allure.step('Fill exchange delivery time'):
-#             tests.fill_in_exchange_delivery_time(driver)
-#
-#     def test_fill_exchange_plli_aval_qty(self, driver):
-#         with pytest.allure.step('Fill Exchange Aval.Qty'):
-#             tests.fill_in_plli_aval_qty(driver)
-#
+
+    def test_fill_ex_fee_cost(self, driver):
+        with pytest.allure.step('Fill exchange fee cost'):
+            tests.fill_in_exchange_fee_cost(driver)
+
+    def test_fill_vendor_rtnr_days(self, driver):
+        with pytest.allure.step('Fill exchange vendor rtrn days'):
+            tests.fill_in_exchange_vendor_rtrn_days(driver)
+
+    def test_fill_exchange_service_cost(self, driver):
+        with pytest.allure.step('Fill exchange service cost'):
+            tests.fill_in_exchange_service_cost(driver)
+
+    def test_fill_exchange_ber_cost(self, driver):
+        with pytest.allure.step('Fill exchange ber cost'):
+            tests.fill_in_exchange_ber_cost(driver)
+
+    def test_fill_exchange_lead_time(self, driver):
+        with pytest.allure.step('Fill exchange lead time'):
+            tests.fill_in_exchange_lead_time(driver)
+
+    def test_fill_exchange_cost_total(self, driver):
+        with pytest.allure.step('Fill exchange cost total'):
+            tests.fill_in_exchange_cost_total(driver)
+
+    def test_fill_exchange_qty(self, driver):
+        with pytest.allure.step('Fill exchange qty'):
+            tests.fill_in_exchange_qty(driver)
+
+    def test_fill_ex_fee_price(self, driver):
+        with pytest.allure.step('Fill exchange fee price'):
+            tests.fill_in_exchange_fee_price(driver)
+
+    def test_fill_exchange_cust_rtrn_days(self, driver):
+        with pytest.allure.step('Fill exchange cust rtrn days'):
+            tests.fill_in_exchange_cust_rtrn_days(driver)
+
+    def test_fill_exchange_service_prive(self, driver):
+        with pytest.allure.step('Fill exchange service price'):
+            tests.fill_in_exchange_service_price(driver)
+
+    def test_fill_exchange_ber_price(self, driver):
+        with pytest.allure.step('Fill exhange ber price'):
+            tests.fill_in_exchange_ber_price(driver)
+
+    def test_fill_exchange_delivery_time(self, driver):
+        with pytest.allure.step('Fill exchange delivery time'):
+            tests.fill_in_exchange_delivery_time(driver)
+
+    # def test_fill_exchange_plli_aval_qty(self, driver):
+    #     with pytest.allure.step('Fill Exchange Aval.Qty'):
+    #         tests.fill_in_pli_aval_qty(driver)
+
 #     def test_fill_exchange_notes(self, driver):
 #         with pytest.allure.step('Fill stock outright notes'):
 #             tests.fill_note(driver)
@@ -269,59 +269,65 @@ class TestCreateRfq:
 #         with pytest.allure.step('Fill Exchange V.Quote'):
 #             tests.fill_v_quote(driver)
 #
-# # Repair
-#     def test_click_alt_offer_repair(self, driver):
-#         with pytest.allure.step('Click alt offer'):
-#             tests.click_alt_offer(driver)
-#
-#     def test_select_repair(self, driver):
-#         with pytest.allure.step('Select repair type'):
-#             tests.select_repair_type(driver)
-#
-#     def test_fill_bcheck_price(self, driver):
-#         with pytest.allure.step('Fill repair bcheck cost'):
-#             tests.fill_in_repair_bcheck_cost(driver)
-#
-#     def test_fill_lead_bcheck(self, driver):
-#         with pytest.allure.step('Fill repair lead b check'):
-#             tests.fill_in_repair_lead_b_check(driver)
-#
-#     def test_fill_avg_repair_cost(self, driver):
-#         with pytest.allure.step('Fill avg repair price'):
-#             tests.fill_in_avg_repair_price(driver)
-#
-#     def test_fill_max_repair_cost(self, driver):
-#         with pytest.allure.step('Fill max repair cost'):
-#             tests.fill_in_max_repair_cost(driver)
-#
-#     def test_fill_repair_lead_time(self, driver):
-#         with pytest.allure.step('Fill repair lead time'):
-#             tests.fill_in_repair_lead_time(driver)
-#
-#     def test_fill_repair_qty(self, driver):
-#         with pytest.allure.step('Fill repair qty'):
-#             tests.fill_in_repair_qty(driver)
-#
-#     def test_repair_bcheck_price(self, driver):
-#         with pytest.allure.step('Fill repair bcheck price'):
-#             tests.fill_in_repair_bcheck_price(driver)
-#
-#     def test_fill_delivery_bcheck(self, driver):
-#         with pytest.allure.step('Fill repair delivery b check'):
-#             tests.fill_in_repair_delivery_b_check(driver)
-#
-#     def test_fill_avg_repair_price(self, driver):
-#         with pytest.allure.step('Fill avg repair price'):
-#             tests.fill_in_avg_repair_price(driver)
-#
-#     def test_fill_max_repair_price(self, driver):
-#         with pytest.allure.step('Fill max repair price'):
-#             tests.fill_in_max_repair_price(driver)
-#
-#     def test_fill_repair_delivery_time(self, driver):
-#         with pytest.allure.step('Fill repair delivery time'):
-#             tests.fill_in_repair_delivery_time(driver)
-#
+    def test_save_exchange_pricing(self, driver):
+        with pytest.allure.step('save exchange pricing'):
+            tests.save_and_offer(driver)
+
+# Repair
+
+    def test_click_alt_offer_repair(self, driver):
+        with pytest.allure.step('Click alt offer'):
+            tests.click_alt_offer(driver)
+
+    def test_select_repair_sales_type(self, driver):
+        with pytest.allure.step('Select repair type'):
+            tests.select_repair_type(driver)
+
+    def test_fill_bcheck_cost(self, driver):
+        with pytest.allure.step('Fill repair bcheck cost'):
+            tests.fill_in_repair_bcheck_cost(driver)
+
+    def test_fill_lead_bcheck(self, driver):
+        with pytest.allure.step('Fill repair lead b check'):
+            tests.fill_in_repair_lead_b_check(driver)
+
+    def test_fill_avg_repair_cost(self, driver):
+        with pytest.allure.step('Fill avg repair price'):
+            tests.fill_in_avg_repair_cost(driver)
+
+    def test_fill_max_repair_cost(self, driver):
+        with pytest.allure.step('Fill max repair cost'):
+            tests.fill_in_max_repair_cost(driver)
+
+    def test_fill_repair_lead_time(self, driver):
+        with pytest.allure.step('Fill repair lead time'):
+            tests.fill_in_repair_lead_time(driver)
+
+    # Нет в новом RFQ
+        # def test_fill_repair_qty(self, driver):
+        #     with pytest.allure.step('Fill repair qty'):
+        #         tests.fill_in_repair_qty(driver)
+
+    def test_repair_bcheck_price(self, driver):
+        with pytest.allure.step('Fill repair bcheck price'):
+            tests.fill_in_repair_bcheck_price(driver)
+
+    def test_fill_delivery_bcheck(self, driver):
+        with pytest.allure.step('Fill repair delivery b check'):
+            tests.fill_in_repair_delivery_b_check(driver)
+
+    def test_fill_avg_repair_price(self, driver):
+        with pytest.allure.step('Fill avg repair price'):
+            tests.fill_in_avg_repair_price(driver)
+
+    def test_fill_max_repair_price(self, driver):
+        with pytest.allure.step('Fill max repair price'):
+            tests.fill_in_max_repair_price(driver)
+
+    def test_fill_repair_delivery_time(self, driver):
+        with pytest.allure.step('Fill repair delivery time'):
+            tests.fill_in_repair_delivery_time(driver)
+
 #     def test_fill_repair_plli_aval_qty(self, driver):
 #         with pytest.allure.step('Fill Repair Aval.Qtyu'):
 #             tests.fill_in_plli_aval_qty(driver)
@@ -341,3 +347,11 @@ class TestCreateRfq:
 #     def test_click_save_rfq(self, driver):
 #         with pytest.allure.step('Click save rfq'):
 #             tests.click_save_rfq(driver)
+
+    def test_save_repair_pricing(self, driver):
+        with pytest.allure.step('save repair pricing'):
+            tests.save_and_offer(driver)
+
+    def test_save_and_quote(self, driver, url):
+        with pytest.allure.step('save repair pricing'):
+            tests.save_and_quote(driver, url)

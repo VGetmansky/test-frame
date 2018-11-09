@@ -115,7 +115,7 @@ ex_fee_cost_id = "rfq-exchange-fee-cost"
 ex_fee_price_id = "rfq-exchange-fee-price"
 ex_ber_cost_id = "rfq-exchange-ber-cost"
 ex_ber_price_id = "rfq-exchange-ber-price"
-ex_vendor_rtrn_day_id = "rfq-exchange-rtrn-day"
+ex_vendor_rtrn_days_id = "rfq-exchange-rtrn-day"
 ex_cust_rtrn_price_id="rfq-exchange-rtrn-priceday"
 ex_lead_time_id = "rfq-exchange-lead-time"
 ex_delivery_time_id = "rfq-exchange-delivery-time"
@@ -132,9 +132,9 @@ repair_b_check_price_id = "rfq-repair-bprice"
 repair_lead_b_check_id = "rfq-repair-bcheck"
 repair_delivery_b_check_id = "rfq-repair-bcheck-price"
 repair_avg_repair_cost_id = "rfq-repair-avg-cost"
-repair_avg_repair_cost_id = "rfq-repair-avg-price"
+repair_avg_repair_price_id = "rfq-repair-avg-price"
 repair_lead_time_id = "rfq-repair-lead-time"
-repair_delivery_timeid = "rfq-repair-delivery-time"
+repair_delivery_time_id = "rfq-repair-delivery-time"
 repair_max_cost_id = "rfq-repair-max-cost"
 repair_max_price_id = "rfq-repair-max-price"
 
@@ -146,7 +146,13 @@ rfq_non_printed_notes_id = "rfq-np-notes"
 rfq_v_quote_id = "rfq-vquote"
 rfq_v_date_id = "rfq-vqdate"
 
-
-
-
 territory = "//li[contains(., 'US')]"
+
+rfq_save_button_id = "rfq-save-buttons"
+rfq_save_and_continue_id = "rfq-save-button-0"
+rfq_save_and_quote_id = "rfq-save-button-1"
+rfq_save_and_new_id = "rfq-save-button-2"
+rfq_save_and_exit_id = "rfq-save-button-3"
+
+creqte_new_quote_button = "//button[contains(.,'Create New')]"
+created_quotes_header = "//div[contains(., 'Created quotes')]"

@@ -25,9 +25,8 @@ def click_add_rfq(driver, url):
     driver.find_element(By.ID, data.add_rfq_id).click()
     additional.wait_new_page(driver, new_url)
 
-    #ime.sleep(10)
+    # time.sleep(10)
     # additional.wait_element(driver, data.rfq_number_id, 'id')
-
     # assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)[0]
 
 
@@ -65,7 +64,7 @@ def filter_by_creator(driver):
 
 def fill_in_account_field(driver):
     element_id = data.rfq_search_account_id
-    time.sleep(3)
+    # time.sleep(30)
 
     additional.wait_element(driver, element_id, 'id')
     driver.find_element(By.ID, element_id).click()
@@ -194,13 +193,13 @@ def select_assigned_to(driver):
 
 def fill_note(driver):
     value = data.rfq_notes_id
-    text = "Note"
+    text = "Test Note"
     additional.fill_text_field(driver, value, text)
 
 
 def fill_non_printed_note(driver):
     value = data.rfq_non_printed_notes_id
-    text = "Note"
+    text = "Test non-printed Note"
     additional.fill_text_field(driver, value, text)
 
 
@@ -287,8 +286,8 @@ def fill_in_condition(driver):
     driver.find_elements(By.XPATH, conditionval)[length - 1].click()
 
 
-def save_stock_outright_pricing(driver):
-    value = data.rfq_pn_save_pricing_id
+def save_and_offer(driver):
+    value = data.rfq_pn_save_and_offer_id
     newline = data.rfq_create_new_line
 
     # additional.wait_element(driver, value, 'id')
@@ -427,7 +426,7 @@ def fill_in_exchange_fee_cost(driver):
 
 
 def fill_in_exchange_vendor_rtrn_days(driver):
-    value = data.ex_vendor_rtnr_days_id
+    value = data.ex_vendor_rtrn_days_id
     text = '3'
     additional.fill_text_field(driver, value, text)
 
@@ -469,7 +468,7 @@ def fill_in_exchange_fee_price(driver):
 
 
 def fill_in_exchange_cust_rtrn_days(driver):
-    value = data.ex_cust_rtnr_days_id
+    value = data.ex_cust_rtrn_price_id
     text = '8'
     additional.fill_text_field(driver, value, text)
 
@@ -493,27 +492,41 @@ def fill_in_exchange_delivery_time(driver):
 
 
 # repair
+
+def select_repair_type(driver):
+    value = data.rfq_pn_salestype_id
+    text = data.rfq_repair
+    time.sleep(1)
+
+    # additional.wait_element(driver, value, 'id')
+    driver.find_element(By.ID, value).click()
+
+    additional.wait_element(driver, text, 'xpath')
+    length = len(driver.find_elements(By.XPATH, text))
+    driver.find_elements(By.XPATH, text)[length - 1].click()
+
+
 def fill_in_repair_bcheck_cost(driver):
-    value = data.b_check_cost_id
+    value = data.repair_b_check_cost_id
     text = '25'
-    additional.wait_element_for_click(driver, data.b_check_cost_id)
+    additional.wait_element_for_click(driver, value)
     additional.fill_text_field(driver, value, text)
 
 
 def fill_in_repair_lead_b_check(driver):
-    value = data.lead_b_check_id
+    value = data.repair_lead_b_check_id
     text = '14'
     additional.fill_text_field(driver, value, text)
 
 
 def fill_in_avg_repair_cost(driver):
-    value = data.avg_repair_cost_id
+    value = data.repair_avg_repair_cost_id
     text = '25'
     additional.fill_text_field(driver, value, text)
 
 
 def fill_in_max_repair_cost(driver):
-    value = data.max_repair_cost_id
+    value = data.repair_max_cost_id
     text = '30'
     additional.fill_text_field(driver, value, text)
 
@@ -543,13 +556,13 @@ def fill_in_repair_delivery_b_check(driver):
 
 
 def fill_in_avg_repair_price(driver):
-    value = data.avg_repair_price_id
+    value = data.repair_avg_repair_price_id
     text = '7'
     additional.fill_text_field(driver, value, text)
 
 
 def fill_in_max_repair_price(driver):
-    value = data.max_repair_price_id
+    value = data.repair_max_price_id
     text = '25'
     additional.fill_text_field(driver, value, text)
 
@@ -564,3 +577,26 @@ def click_save_rfq(driver):
     driver.execute_script("window.scrollTo(0, 0)")
     additional.click_element_by_id(driver, data.save_rfq_id)
     additional.wait_element(driver, data.rfq_create_quote_id, 'id')
+
+
+def save_and_quote(driver, url):
+    value = data.rfq_save_button_id
+    action = data.rfq_save_and_quote_id
+    quote = data.creqte_new_quote_button
+    created_quotes = data.created_quotes_header
+
+    time.sleep(1)
+
+    driver.find_element(By.ID, value).click()
+    #additional.wait_element(driver, action, 'xpath')
+    driver.find_element(By.ID, action).click()
+
+    #additional.wait_element(driver, created_quotes, 'xpath')
+    additional.wait_element(driver, quote, 'xpath')
+    time.sleep(2)
+
+    url_before = driver.current_url
+    driver.find_element(By.XPATH, quote).click()
+
+
+    assert driver.current_url.split('=')[1] == "Quotes&view"
