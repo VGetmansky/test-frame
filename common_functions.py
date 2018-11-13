@@ -411,7 +411,7 @@ def check_all_item_checkbuttons(driver):
 def wait_new_page(driver, new_url):
     i = 0
     while driver.current_url == new_url:
-        if i < 15:
+        if i < 40:
             time.sleep(0.2)
             i += 1
             continue
