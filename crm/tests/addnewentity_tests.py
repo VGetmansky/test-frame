@@ -29,6 +29,13 @@ def test_click_add_po_from_so(driver):
     additional.wait_element(driver, rfq_to_po_data.so_generate_po_id, "id")
     driver.find_element(By.ID, rfq_to_po_data.so_generate_po_id).click()
     additional.wait_element(driver, rfq_to_po_data.create_quote_button, "xpath")
+
+    #   перенести в common
+    i = 0
+    while i != len(driver.find_elements(By.XPATH, "//input[starts-with(@name, 'dropshipment')]")):
+        driver.find_elements(By.XPATH, "//input[starts-with(@name, 'dropshipment')]")[i].click()
+        i += 1
+
     driver.find_element(By.XPATH, rfq_to_po_data.create_quote_button).click()
     additional.wait_new_page(driver, new_url)
 

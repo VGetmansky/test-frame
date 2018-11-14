@@ -24,7 +24,7 @@ save_so_button_id = "save_but"
 created_status = '//li[@class[contains(.,"Created")]'
 #   Values
 terms_of_delivery_value = '//li[@class[contains(.,"CIP")]'
-territory_value = '//a[contains(.,"EES")]'
+territory_value = "//li[contains(., 'EES')]"
 status_approved_value = '//li[contains(.,"Approved")]'
 terms_of_delivery_value = '//li[contains(.,"CFR")]'
 terms_of_payment_value = '//li[contains(.,"NET-60")]'
@@ -133,3 +133,6 @@ grand_total_id = "grandTotal"
 terms_of_sale_id = "tsale__chzn"
 source_id = "docsource__chzn"
 
+from_stock_1_id = "fromstock1"
+from_stock_2_id = "fromstock2"
+from_stock_3_id = "fromstock3"

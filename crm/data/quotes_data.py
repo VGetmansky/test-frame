@@ -1,8 +1,8 @@
 expected_url = "index.php?module=Quotes&view=Edit"
 
-#product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" and @title="Products"]'
+# product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" and @title="Products"]'
 product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" and @data-module-name="Products" and @title="Products"]'
-#product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" and @title="Products"]'
+# product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" and @title="Products"]'
 # Quotes Order XPATH's
 
 required_field_error = '//div[@class="formErrorContent"]'
@@ -14,6 +14,9 @@ priority = '//li[contains(.,"Routine")]'
 terms_of_delivery = '//li[contains(.,"CFR")]'
 qa_terms_of_sale = '//li[contains(.,"Pre-payment")]'
 tst_terms_of_sale = '//li[contains(.,"NET-30")]'
+
+# Quotes details
+edit_quote_button_id = "Quotes_detailView_basicAction_LBL_EDIT"
 
 # Quotes Order list ID's
 

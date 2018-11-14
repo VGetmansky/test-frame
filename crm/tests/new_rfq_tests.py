@@ -4,18 +4,18 @@ import common_functions as additional
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import time
+import time, re
 
 from selenium.webdriver.common.keys import Keys
 
 
 def select_rfq(driver):
     new_url = driver.current_url
-    time.sleep(10)
+    time.sleep(3)
     if driver.title != "Rfq":
         additional.wait_element_for_click(driver, auth_data.rfq_main_button_id)
         additional.wait_new_page(driver, new_url)
-    assert "Rfq", driver.title
+    assert "Rfq", driver.title and driver.current_url == "http://crmqa.bai-inc.eu/index.php?module=Rfq&view=List"
 
 
 def click_add_rfq(driver, url):
@@ -25,7 +25,7 @@ def click_add_rfq(driver, url):
     driver.find_element(By.ID, data.add_rfq_id).click()
     additional.wait_new_page(driver, new_url)
 
-    # time.sleep(10)
+    time.sleep(10)
     # additional.wait_element(driver, data.rfq_number_id, 'id')
     # assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)[0]
 
@@ -64,15 +64,19 @@ def filter_by_creator(driver):
 
 def fill_in_account_field(driver):
     element_id = data.rfq_search_account_id
-    # time.sleep(30)
+    time.sleep(5)
 
     additional.wait_element(driver, element_id, 'id')
     driver.find_element(By.ID, element_id).click()
 
     elem = driver.find_element(By.ID, data.rfq_search_value_id)
     text = "Autotest"
+
+    wait = WebDriverWait(driver, 10)
+    wait.until(EC.element_to_be_clickable((By.ID, data.rfq_search_value_id)))
+
     additional.wait_element(driver, data.rfq_search_value_id, 'id')
-    #time.sleep(3)
+    time.sleep(3)
     driver.find_element(By.ID, data.rfq_search_value_id).click()
     elem.send_keys(Keys.CONTROL + "a")
     elem.send_keys(Keys.DELETE)
@@ -583,20 +587,21 @@ def save_and_quote(driver, url):
     value = data.rfq_save_button_id
     action = data.rfq_save_and_quote_id
     quote = data.creqte_new_quote_button
-    created_quotes = data.created_quotes_header
 
     time.sleep(1)
 
     driver.find_element(By.ID, value).click()
-    #additional.wait_element(driver, action, 'xpath')
     driver.find_element(By.ID, action).click()
-
-    #additional.wait_element(driver, created_quotes, 'xpath')
     additional.wait_element(driver, quote, 'xpath')
     time.sleep(2)
 
-    url_before = driver.current_url
+    #   url_before = driver.current_url
+
     driver.find_element(By.XPATH, quote).click()
 
-
+    # index = re.search("\d", driver.current_url).start()
+    # new_url = driver.current_url[0:index]
+    # quotedetailsurl = 'http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Detail&record='
+    # additional.wait_new_page(driver, new_url)
+    time.sleep(2)
     assert driver.current_url.split('=')[1] == "Quotes&view"

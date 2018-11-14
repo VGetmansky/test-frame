@@ -184,6 +184,7 @@ def add_product(driver):
 
 
 def save_so(driver):
+    time.sleep(2)
     driver.execute_script("window.scrollTo(0, 0)")
     driver.find_element(By.ID, data.save_so_button_id).click()
 
@@ -259,6 +260,13 @@ def fill_in_so_notes(driver):
     field = data.notes_id
     text = "Test Note"
     additional.fill_text_field(driver, field, text)
+
+
+def check_stk_for_products(driver):
+    product1 = data.from_stock_1_id
+    product2 = data.from_stock_2_id
+    driver.find_element(By.ID, product1).click()
+    driver.find_element(By.ID, product2).click()
 
 
 def check_values(driver):

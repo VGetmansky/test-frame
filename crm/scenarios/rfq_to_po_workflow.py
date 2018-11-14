@@ -381,7 +381,9 @@ class TestCreateRfq:
 
     def test_click_edit_quote(self, driver, url):
         with pytest.allure.step('Click edit Quote'):
-            rfq_tests.save_and_quote(driver, url)
+            quotest_tests.click_edit_quote(driver, url)
+
+
 @pytest.mark.test
 class TestCreateQuote:
 
@@ -626,6 +628,10 @@ class TestCreateSO:
     def test_fill_in_shipping_post_country(self, driver):
         with pytest.allure.step('Fill shipping country'):
             so_tests.fill_in_shipping_country(driver)
+
+    def test_check_stk_boxes(self, driver):
+        with pytest.allure.step('Selcet products from stock'):
+            so_tests.check_stk_for_products(driver)
 
     def test_save_so(self, driver):
         with pytest.allure.step('Save SO'):

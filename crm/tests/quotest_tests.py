@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from crm.data import quotes_data as data, authorization_data as auth_data, values_data as values
 import common_functions as additional
+import re, time
 
 
 def select_quote(driver):
@@ -12,6 +13,18 @@ def select_quote(driver):
 def click_add_quote(driver, url):
     driver.find_element(By.ID, data.add_quote_id).click()
     assert (url + data.expected_url) == driver.current_url and ("Quotes", driver.title)
+
+
+def click_edit_quote(driver, url):
+    driver.execute_script("window.scrollTo(0, 0)")
+    driver.find_element(By.ID, data.edit_quote_button_id).click()
+    # assert (url + data.expected_url) == driver.current_url and ("Quotes", driver.title)
+    new_url = None
+    while new_url != 'http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record=':
+        index = re.search("\d", driver.current_url).start()
+        new_url = driver.current_url[0:index]
+        time.sleep(0.2)
+    assert new_url == "http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record="
 
 
 def fill_in_account_field(driver):
