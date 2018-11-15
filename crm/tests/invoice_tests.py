@@ -16,6 +16,7 @@ def open_so_details(driver, url):
 
 def click_add_invoice(driver):
     driver.find_element(By.ID, data.generate_invoice_id).click()
+    additional.check_all_item_checkbuttons(driver)
     driver.find_element(By.XPATH, data.create_invoice).click()
     if driver.current_url == "https://crmtst.bai-inc.eu/index.php":
         driver.find_element(By.XPATH, data.create_new_btn).click()
@@ -238,7 +239,6 @@ def fill_in_shipping_country(driver):
     field = data.shipping_country_id
     text = "Test Shipping Country"
     additional.fill_text_field(driver, field, text)
-
 
 
 def fill_in_special_note(driver):
