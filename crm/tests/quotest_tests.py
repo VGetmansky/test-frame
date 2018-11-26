@@ -20,11 +20,18 @@ def click_edit_quote(driver, url):
     driver.find_element(By.ID, data.edit_quote_button_id).click()
     # assert (url + data.expected_url) == driver.current_url and ("Quotes", driver.title)
     new_url = None
-    while new_url != 'http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record=':
-        index = re.search("\d", driver.current_url).start()
-        new_url = driver.current_url[0:index]
-        time.sleep(0.2)
-    assert new_url == "http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record="
+    if url == "https://crmtst.bai-inc.eu/":
+        while new_url != 'https://crmtst.bai-inc.eu/index.php?module=Quotes&view=Edit&record=':
+            index = re.search("\d", driver.current_url).start()
+            new_url = driver.current_url[0:index]
+            time.sleep(0.2)
+        assert new_url == "https://crmtst.bai-inc.eu/index.php?module=Quotes&view=Edit&record="
+    else:
+        while new_url != 'http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record=':
+            index = re.search("\d", driver.current_url).start()
+            new_url = driver.current_url[0:index]
+            time.sleep(0.2)
+        assert new_url == "http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record="
 
 
 def fill_in_account_field(driver):

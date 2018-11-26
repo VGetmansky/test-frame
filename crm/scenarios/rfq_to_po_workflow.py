@@ -667,14 +667,6 @@ class TestCreatePO:
     #     with pytest.allure.step('Select Vendor'):
     #         po_tests.select_vendor(driver)
 
-    def test_copy_vendor_address(self, driver):
-        with pytest.allure.step('Copy Vendor Address'):
-            po_tests.copy_vendor_address(driver)
-
-    def test_copy_company_address(self, driver):
-        with pytest.allure.step('Copy Company Address'):
-            po_tests.copy_company_address(driver)
-
     def test_fill_vendor_po(self, driver):
         with pytest.allure.step('Fill Vendor PO'):
             po_tests.fill_in_vendor_po(driver)
@@ -753,6 +745,14 @@ class TestCreatePO:
     def test_select_location(self, driver):
         with pytest.allure.step('select location'):
             po_tests.select_location(driver)
+
+    def test_copy_vendor_address(self, driver):
+        with pytest.allure.step('Copy Vendor Address'):
+            po_tests.copy_vendor_address(driver)
+
+    def test_copy_company_address(self, driver):
+        with pytest.allure.step('Copy Company Address'):
+            po_tests.copy_company_address(driver)
 
     def test_fill_vendor_po_box(self, driver):
         with pytest.allure.step('Fill vendor po box'):

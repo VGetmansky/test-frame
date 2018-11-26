@@ -1,6 +1,7 @@
 from crm.data import po_data as data, authorization_data as auth_data
 from selenium.webdriver.common.by import By
 import common_functions as additional
+import time
 
 
 def click_edit_po(driver, value):
@@ -25,10 +26,16 @@ def select_vendor(driver):
 
 def copy_vendor_address(driver):
     additional.click_element_by_xpath(driver, data.copy_vendor_address)
+    # value = data.vendor_po
+    # text = "Test Vendor"
+    # additional.fill_text_field(driver, value, text)
 
 
 def copy_company_address(driver):
     additional.click_element_by_xpath(driver, data.copy_company_address)
+    # value = data.vendor_po_box_id
+    # text = "Test Vendor"
+    # additional.fill_text_field(driver, value, text)
 
 
 def add_product(driver):
@@ -229,6 +236,8 @@ def fill_in_description(driver):
 
 
 def save_po(driver):
+    driver.execute_script("window.scrollTo(0, 0)")
+    time.sleep(2)
     driver.find_element(By.ID, data.save_button_id).click()
 # def fill_in_billing_address(driver):
 #     billingid = data.billing_address_id
