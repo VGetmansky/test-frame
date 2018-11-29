@@ -46,6 +46,7 @@ copy_billing_address_from_shipping_address_right = '//input[@name="copyAddressFr
 
 product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" and @title="Products"]'
 
+due_date_id = "SalesOrder_editView_fieldName_duedate"
 #   Edit Sales Order profile ID's
 
 save_button_id = "save_but"

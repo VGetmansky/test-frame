@@ -96,6 +96,10 @@ class TestCreateSO:
         with pytest.allure.step('FIll Sales Commission'):
             tests.fill_in_sales_commission(driver)
 
+    def test_select_due_date(self, driver):
+        with pytest.allure.step('Select Due Date'):
+            tests.select_due_date(driver)
+
     def test_select_territory(self, driver):
         with pytest.allure.step('Select Territory'):
             tests.select_territory(driver)

@@ -2,6 +2,9 @@ from crm.data import po_data as data, authorization_data as auth_data
 from selenium.webdriver.common.by import By
 import common_functions as additional
 import time
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.keys import Keys
 
 
 def click_edit_po(driver, value):
@@ -25,7 +28,15 @@ def select_vendor(driver):
 
 
 def copy_vendor_address(driver):
-    additional.click_element_by_xpath(driver, data.copy_vendor_address)
+    value = data.copy_vendor_address
+    # while bool(additional.click_element_by_xpath(driver, value)) == True:
+    #     try:
+    driver.find_element(By.ID, data.vendor_po_box_id).send_keys(Keys.PAGE_DOWN)
+    additional.click_element_by_xpath(driver, value)
+
+    # except:
+        #     elem = driver.find_element(By.XPATH, value)
+        #     elem.send_keys(Keys.PAGE_DOWN)
     # value = data.vendor_po
     # text = "Test Vendor"
     # additional.fill_text_field(driver, value, text)
@@ -124,6 +135,12 @@ def select_priority(driver):
 def select_status(driver):
     value = data.status_id
     text = data.status
+    additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_risk(driver):
+    value = data.po_risk_id
+    text = data.low_risk_value
     additional.select_value_from_dropdown(driver, value, text)
 
 

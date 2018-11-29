@@ -47,6 +47,8 @@ sales_commission_id = "PurchaseOrder_editView_fieldName_salescommission"
 aircraft_id = "PurchaseOrder_editView_fieldName_fleetid_select"
 due_date_id = "PurchaseOrder_editView_fieldName_duedate"
 
+po_risk_id = "risk__chzn"
+low_risk_value = '//a[contains(., "Low")]'
 
 vendor_po_box_id = "PurchaseOrder_editView_fieldName_bill_pobox"
 vendor_city_id = "PurchaseOrder_editView_fieldName_bill_city"

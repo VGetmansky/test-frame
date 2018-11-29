@@ -109,6 +109,10 @@ class TestCreatePO:
         with pytest.allure.step('select location'):
             tests.select_location(driver)
 
+    def test_select_risk(self, driver):
+        with pytest.allure.step('Select Risk'):
+            tests.select_status(driver)
+
     def test_fill_vendor_po_box(self, driver):
         with pytest.allure.step('Fill vendor po box'):
             tests.fill_in_vendor_po_box(driver)

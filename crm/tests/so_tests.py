@@ -176,6 +176,12 @@ def fill_in_place_of_delivery(driver):
     additional.fill_text_field(driver, value, text)
 
 
+def select_due_date(driver):
+    value = data.due_date_id
+    date = '01-04-2019'
+    additional.select_calendar_date(driver, value, date)
+
+
 def add_product(driver):
     time.sleep(5)
     value = data.product_list_button

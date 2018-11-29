@@ -567,6 +567,10 @@ class TestCreateSO:
         with pytest.allure.step('FIll Account Number'):
             so_tests.fill_in_account_number(driver)
 
+    def test_select_due_date(self, driver):
+        with pytest.allure.step('Select Due Date'):
+            so_tests.select_due_date(driver)
+
     def test_fill_in_client_po(self, driver):
         with pytest.allure.step('Fill client PO'):
             so_tests.fill_in_client_po(driver)
@@ -745,6 +749,10 @@ class TestCreatePO:
     def test_select_location(self, driver):
         with pytest.allure.step('select location'):
             po_tests.select_location(driver)
+
+    def test_select_risk(self, driver):
+        with pytest.allure.step('Select Risk'):
+            po_tests.select_status(driver)
 
     def test_copy_vendor_address(self, driver):
         with pytest.allure.step('Copy Vendor Address'):
