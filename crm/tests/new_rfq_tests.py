@@ -64,7 +64,7 @@ def filter_by_creator(driver):
 
 def fill_in_account_field(driver):
     element_id = data.rfq_search_account_id
-    time.sleep(5)
+    time.sleep(15)
 
     additional.wait_element(driver, element_id, 'id')
     driver.find_element(By.ID, element_id).click()
