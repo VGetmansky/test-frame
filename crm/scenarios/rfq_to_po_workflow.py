@@ -9,7 +9,7 @@ from crm.tests import addnewentity_tests
 from crm.data import rfq_to_po_data
 
 
-@pytest.allure.testcase('login')
+# @pytest.allure.testcase('login')
 @pytest.mark.test
 class TestLogInApp:
     def test_open_url(self, driver, url):
@@ -29,7 +29,7 @@ class TestLogInApp:
             login_tests.verify_url(driver, url)
 
 
-@pytest.allure.testcase('Work With RFQ')
+# @pytest.allure.testcase('Work With RFQ')
 @pytest.mark.test
 class TestWorkWithRFQList:
     def test_open_rfq_tab(self, driver):
