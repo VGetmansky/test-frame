@@ -25,7 +25,7 @@ def click_add_rfq(driver, url):
     driver.find_element(By.ID, data.add_rfq_id).click()
     additional.wait_new_page(driver, new_url)
 
-    time.sleep(10)
+    time.sleep(15)
     # additional.wait_element(driver, data.rfq_number_id, 'id')
     # assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)[0]
 
@@ -71,12 +71,12 @@ def fill_in_account_field(driver):
 
     elem = driver.find_element(By.ID, data.rfq_search_value_id)
     text = "Autotest"
-
+    time.sleep(15)
     wait = WebDriverWait(driver, 10)
     wait.until(EC.element_to_be_clickable((By.ID, data.rfq_search_value_id)))
 
     additional.wait_element(driver, data.rfq_search_value_id, 'id')
-    time.sleep(3)
+    time.sleep(15)
     driver.find_element(By.ID, data.rfq_search_value_id).click()
     elem.send_keys(Keys.CONTROL + "a")
     elem.send_keys(Keys.DELETE)
