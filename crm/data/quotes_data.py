@@ -34,6 +34,7 @@ add_quote_id = "Quotes_listView_basicAction_LBL_ADD_RECORD"
 
 add_quote_id = "Quotes_listView_basicAction_LBL_ADD_RECORD"
 account_selector_id = "Quotes_editView_fieldName_account_id_select"
+account_display_id = "account_id_display"
 assigned_to_selector_id = "Quotes_editView_fieldName_account_id_select"
 billing_address_id = "Quotes_editView_fieldName_bill_street"
 shipping_address_id="Quotes_editView_fieldName_ship_street"
