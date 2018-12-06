@@ -75,12 +75,15 @@ billing_city_id = "SalesOrder_editView_fieldName_bill_city"
 billing_state_id = "SalesOrder_editView_fieldName_bill_state"
 billing_post_code_id = "SalesOrder_editView_fieldName_bill_code"
 billing_country_id = "SalesOrder_editView_fieldName_bill_country"
+billing_attention_edit_id = "SalesOrder_editView_fieldName_billaddrattention"
+
 shipping_address_id = "SalesOrder_editView_fieldName_ship_street"
 shipping_po_box_id = "SalesOrder_editView_fieldName_ship_pobox"
 shipping_city_id = "SalesOrder_editView_fieldName_ship_city"
 shipping_state_id = "SalesOrder_editView_fieldName_ship_state"
 shipping_post_code_id = "SalesOrder_editView_fieldName_ship_code"
 shipping_country_id = "SalesOrder_editView_fieldName_ship_country"
+shipping_attention_edit_id = "SalesOrder_editView_fieldName_shipaddrattention"
 
 part_number_field_id = "products_popup"
 
@@ -121,13 +124,18 @@ billing_city = "SalesOrder_detailView_fieldValue_bill_city"
 billing_state = "SalesOrder_detailView_fieldValue_bill_state"
 billing_post_code = "SalesOrder_detailView_fieldValue_bill_code"
 billing_country = "SalesOrder_detailView_fieldValue_bill_country"
+billing_attention_details_id = "SalesOrder_detailView_fieldValue_billaddrattention"
+
 shipping_address = "SalesOrder_detailView_fieldValue_ship_street"
 shipping_po_box = "SalesOrder_detailView_fieldValue_ship_pobox"
 shipping_city = "SalesOrder_detailView_fieldValue_ship_city"
 shipping_state = "SalesOrder_detailView_fieldValue_ship_state"
 shipping_country = "SalesOrder_detailView_fieldValue_ship_country"
 shipping_post_code = "SalesOrder_detailView_fieldValue_ship_code"
+shipping_attention_details_id = "SalesOrder_detailView_fieldValue_shipaddrattention"
+
 source_details = "SalesOrder_detailView_fieldValue_docsource"
+
 sub_total_id = "netTotal"
 grand_total_id = "grandTotal"
 

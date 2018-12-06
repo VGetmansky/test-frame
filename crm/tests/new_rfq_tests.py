@@ -27,7 +27,7 @@ def click_add_rfq(driver, url):
 
     time.sleep(15)
     # additional.wait_element(driver, data.rfq_number_id, 'id')
-    # assert (url + data.expected_url) == driver.current_url and ("Rfq", driver.title)[0]
+    assert (data.new_rfq_url) == driver.current_url and (data.new_rfq_title, driver.title)[0]
 
 
 def fill_in_vendor_field(driver):
@@ -275,6 +275,8 @@ def fill_in_tags(driver):
 
     additional.wait_element(driver, cert, 'xpath')
     driver.find_element(By.XPATH, cert).click()
+
+    assert driver.find_element(By.XPATH, '//span[contains(., "CofC Only")]')
 
 
 def fill_in_condition(driver):

@@ -399,6 +399,14 @@ class TestCreateQuote:
         with pytest.allure.step('Fill place of delivery'):
             quotest_tests.fill_in_place_of_delivery(driver)
 
+    def test_select_location(self, driver):
+        with pytest.allure.step('Select location'):
+            quotest_tests.select_location(driver)
+
+    def test_select_aircraft(self, driver):
+        with pytest.allure.step('Select aircraft'):
+            quotest_tests.select_aircraft(driver)
+
     def test_fill_in_billing_address(self, driver):
         with pytest.allure.step('Fill billing address'):
             quotest_tests.fill_in_billing_address(driver)
@@ -637,6 +645,14 @@ class TestCreateSO:
         with pytest.allure.step('Fill shipping country'):
             so_tests.fill_in_shipping_country(driver)
 
+    def test_fill_in_billing_attention(self, driver):
+        with pytest.allure.step('Fill Billing Attention'):
+            so_tests.fill_in_billing_attention(driver)
+
+    def test_fill_in_shipping_attention(self, driver):
+        with pytest.allure.step('Fill Shipping Attention'):
+            so_tests.fill_in_shipping_attention(driver)
+
     def test_check_stk_boxes(self, driver):
         with pytest.allure.step('Selcet products from stock'):
             so_tests.check_stk_for_products(driver)
@@ -645,6 +661,9 @@ class TestCreateSO:
         with pytest.allure.step('Save SO'):
             so_tests.save_so(driver)
 
+    def test_check_so_values(self, driver):
+        with pytest.allure.step('Save SO'):
+            so_tests.check_values(driver)
     # def test_wait_po_list(self, driver, url):
     #     with pytest.allure.step('Wait PO'):
     #         common_functions.wait_new_page(driver, url)

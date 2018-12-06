@@ -262,6 +262,18 @@ def fill_in_shipping_country(driver):
     additional.fill_text_field(driver, field, text)
 
 
+def fill_in_billing_attention(driver):
+    field = data.billing_attention_edit_id
+    text = "Test Billing Attention"
+    additional.fill_text_field(driver, field, text)
+
+
+def fill_in_shipping_attention(driver):
+    field = data.shipping_attention_edit_id
+    text = "Test Shipping Attention"
+    additional.fill_text_field(driver, field, text)
+
+
 def fill_in_so_notes(driver):
     field = data.notes_id
     text = "Test Note"
@@ -284,6 +296,7 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.billing_state).text == values.billing_state
     assert driver.find_element(By.ID, data.billing_post_code).text == values.billing_post_code
     assert driver.find_element(By.ID, data.billing_country).text == values.billing_country
+    assert driver.find_element(By.ID, data.billing_attention_details_id).text == values.billing_attention
 
     assert driver.find_element(By.ID, data.shipping_address).text == values.shipping_address
     assert driver.find_element(By.ID, data.shipping_po_box).text == values.shipping_po_box
@@ -291,6 +304,7 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.shipping_state).text == values.shipping_state
     assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
     assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
+    assert driver.find_element(By.ID, data.shipping_attention_details_id).text == values.shipping_attention
 
     # assert driver.find_element(By.ID, data.client_po).text == gclientpo
     #   job

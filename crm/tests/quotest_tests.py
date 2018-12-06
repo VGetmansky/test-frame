@@ -38,6 +38,7 @@ def fill_in_account_field(driver):
     element_id = data.account_selector_id
     additional.wait_element(driver, data.account_selector_id, 'id')
     additional.select_first_cell(driver, element_id, True)
+    assert driver.find_element(By.ID, data.account_display_id).get_attribute('value') == 'Account for autotests'
 
 
 def fill_in_cust_ref(driver):
@@ -61,9 +62,12 @@ def fill_in_shipping_address(driver):
 
 
 def fill_in_place_of_delivery(driver):
-    field = data.place_of_delivery_id
+    field = data.place_of_delivery_edit_id
     text = "Test delivery location"
     additional.fill_text_field(driver, field, text)
+
+    global gplaceofdelivery
+    gplaceofdelivery = driver.find_element(By.ID, data.place_of_delivery_edit_id).get_attribute('value')
 
 
 def select_quote_status(driver, url):
@@ -82,6 +86,9 @@ def fill_in_delivery(driver):
     field = data.delivery_id
     text = "Test delivery"
     additional.fill_text_field(driver, field, text)
+
+    # global gdelivery
+    # gdelivery = driver.find_element(By.ID, data.delivery_edit_id).get_attribute('value')
 
 
 def select_proirity(driver):
@@ -123,8 +130,8 @@ def select_location(driver):
     value = data.location_selector_id
     additional.select_first_cell(driver, value, False)
 
-    # global gtermsofsale
-    # gtermsofsale = driver.find_element(By.ID, data.location_id).text
+    # global glocation
+    # glocation = driver.find_element(By.ID, data.location_edit_id).text
 
 
 def select_aircraft(driver):
@@ -132,7 +139,7 @@ def select_aircraft(driver):
     additional.select_first_cell(driver, value, False)
 
     # global gaircraft
-    # gaircraft = driver.find_element(By.ID, data.terms_of_sale_id).text
+    # gaircraft = driver.find_element(By.ID, data.aircraft_edit_id).text
 
 
 # text fields
@@ -229,8 +236,8 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
     assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
 
-    # assert driver.find_element(By.ID, data.client_po).text == gcustref
-
+    assert driver.find_element(By.ID, data.cust_ref_details_id).text == gcustref
+    assert driver.find_element(By.ID, data.place_of_delivery_details_id).text == gplaceofdelivery
     #   Quote number /n
     #   Condition
     #   Place of delivery
@@ -246,6 +253,7 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.terms_of_sale_details_id).text == gtermsofsale
     assert driver.find_element(By.ID, data.priority_details_id).text == gpriority
     assert driver.find_element(By.ID, data.quote_stage_details_id).text == gquotestage
+    # assert driver.find_element(By.ID, data.delivery_details_id).text == gdelivery
 
     #   Assigned To
     #   Territory
