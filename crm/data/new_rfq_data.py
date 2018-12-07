@@ -1,3 +1,5 @@
+new_rfq_url = 'http://crmqa.bai-inc.eu/crm/#/rfq/'
+new_rfq_title = 'New RFQ'
 
 add_rfq_id = "Rfq_listView_basicAction_LBL_ADD_RECORD"
 
@@ -13,6 +15,8 @@ rfq_account_search_button_id = "search-button"
 
 rfq_account_first_field = "//td[contains(., 'Account for autotests')]"
 rfq_contact_first_field = "//td[contains(., 'Autotest')]"
+rfq_account_id = "rfq-account"
+rfq_contact_id = "rfq-contact"
 
 rfq_priority_id = "rfq-priority"
 rfq_routine_proirity = '//li[contains(., "Routine")]'
