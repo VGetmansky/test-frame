@@ -124,7 +124,7 @@ class TestCreateQuote:
 
     def test_save_so(self, driver):
         with pytest.allure.step('Save SO'):
-            tests.save_so(driver)
+            tests.save_quote(driver)
 
     def test_check_values(self, driver):
         with pytest.allure.step('check values'):

@@ -430,7 +430,7 @@ class TestCreateQuote:
 
     def test_save_so(self, driver):
         with pytest.allure.step('Save SO'):
-            quotest_tests.save_so(driver)
+            quotest_tests.save_quote(driver)
 
     # def test_wait_so_list(self, driver, url):
     #     with pytest.allure.step('Wait SO'):

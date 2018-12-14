@@ -34,6 +34,10 @@ def click_edit_quote(driver, url):
         assert new_url == "http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record="
 
 
+def cancel_quote(driver):
+    driver.find_element(By.ID, data.cancel_quote_id).click()
+
+
 def fill_in_account_field(driver):
     element_id = data.account_selector_id
     additional.wait_element(driver, data.account_selector_id, 'id')
@@ -63,7 +67,7 @@ def fill_in_shipping_address(driver):
 
 def fill_in_place_of_delivery(driver):
     field = data.place_of_delivery_edit_id
-    text = "Test delivery location"
+    text = "Test Place of Delivery"
     additional.fill_text_field(driver, field, text)
 
     global gplaceofdelivery
@@ -209,7 +213,7 @@ def fill_in_description_details(driver):
     additional.fill_text_field(driver, field, text)
 
 
-def save_so(driver):
+def save_quote(driver):
     driver.find_element(By.ID, data.save_quote_button_id).click()
 
 

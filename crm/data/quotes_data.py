@@ -102,3 +102,5 @@ priority_details_id = "Quotes_detailView_fieldValue_rpriority"
 qb_company_details_id = "Quotes_detailView_fieldValue_cf_qb_company"
 qb_class_details_id = "Quotes_detailView_fieldValue_cf_qb_class"
 place_of_delivery_details_id = "Quotes_detailView_fieldValue_pdelivery"
+
+cancel_quote_id = "cancelLink"

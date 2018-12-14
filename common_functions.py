@@ -86,22 +86,32 @@ def select_first_cell(driver, element_id, account):
                     i = i
 
             elif driver.title == "Sales Order":
+                global gsales
+                gsales = str(wait_element(driver, data.first_product_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_product_row_id)
                 i = 10
 
             elif driver.title == "Purchase Order":
+                global gpurchaseorder
+                gpurchaseorder = str(wait_element(driver, data.first_po_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_po_row_id)
                 i = 10
 
             elif driver.title == "Vendors":
+                global gvendor
+                gvendor = str(wait_element(driver, data.first_vendor_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_vendor_row_id)
                 i = 10
 
             elif driver.title == "Quotes":
+                global gquote
+                gquote = str(wait_element(driver, data.first_quote_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_quote_row_id)
                 i = 10
 
             elif driver.title == "Contacts":
+                global gcontacts
+                gcontacts = str(wait_element(driver, data.first_contact_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_contact_row_id)
                 i = 10
 
@@ -118,6 +128,8 @@ def select_first_cell(driver, element_id, account):
                 i = 10
 
             elif driver.title == "Relationships":
+                global grelationship
+                grelationship = str(wait_element(driver, data.first_relationship_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_relationship_row_id)
                 i = 10
 
