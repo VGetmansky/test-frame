@@ -21,9 +21,10 @@ rfq_contact_id = "rfq-contact"
 
 rfq_priority_id = "rfq-priority"
 rfq_routine_proirity = '//li[contains(., "Routine")]'
+rfq_planning_status = '//li[contains(., "Planning")]'
 
 rfq_tst_sale_terms = '//li[contains(., "NET-30")]'
-rfq_qa_sale_terms = '//li[contains(.,"Pre-payment")]'
+rfq_qa_sale_terms = '//li[contains(.,"NET-30")]'
 rfq_delivery_terms = '//li[contains(.,"CIF")]'
 #   ----------  Details  ----------
 

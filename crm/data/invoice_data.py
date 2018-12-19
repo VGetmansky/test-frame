@@ -14,7 +14,7 @@ customer_no_id = "Invoice_editView_fieldName_customerno"
 contact_name_id = "Invoice_editView_fieldName_contact_id_select"
 terms_of_sale_id = "tsale__chzn"
 
-qa_terms_of_sale = '//li[contains(.,"Pre-payment")]'
+qa_terms_of_sale = '//li[contains(.,"NET-30")]'
 tst_terms_of_sale = '//li[contains(.,"NET-30")]'
 
 terms_of_delivery_id = "tdelivery__chzn"

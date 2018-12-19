@@ -8,11 +8,11 @@ product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" an
 required_field_error = '//div[@class="formErrorContent"]'
 actions = '//button[contains(.,"Actions")]'
 
-qa_quote_stage = '//li[contains(.,"In Progress")]'
+qa_quote_stage = '//li[contains(.,"Accepted")]'
 tst_quote_stage = '//li[contains(.,"Accepted")]'
 priority = '//li[contains(.,"Routine")]'
 terms_of_delivery = '//li[contains(.,"CFR")]'
-qa_terms_of_sale = '//li[contains(.,"Pre-payment")]'
+qa_terms_of_sale = '//li[contains(.,"NET-30")]'
 tst_terms_of_sale = '//li[contains(.,"NET-30")]'
 
 # Quotes details

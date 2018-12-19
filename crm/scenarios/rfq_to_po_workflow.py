@@ -98,6 +98,10 @@ class TestCreateRfq:
         with pytest.allure.step('Select Assigned To'):
             rfq_tests.select_assigned_to(driver)
 
+    def test_select_status(self, driver):
+        with pytest.allure.step('Select status'):
+            rfq_tests.select_status(driver)
+
     def test_fill_part_number(self, driver):
         with pytest.allure.step('Fill part number name'):
             rfq_tests.fill_part_number_name(driver)
@@ -415,17 +419,13 @@ class TestCreateQuote:
         with pytest.allure.step('Select aircraft'):
             quotest_tests.select_aircraft(driver)
 
-    def test_fill_in_billing_address(self, driver):
-        with pytest.allure.step('Fill billing address'):
-            quotest_tests.fill_in_billing_address(driver)
-
-    def test_fill_in_shipping_address(self, driver):
-        with pytest.allure.step('Fill shipping address'):
-            quotest_tests.fill_in_shipping_address(driver)
-
     def test_select_quote_status(self,driver, url):
         with pytest.allure.step('Select quote status'):
             quotest_tests.select_quote_status(driver, url)
+
+    def test_select_terms_of_sale(self, driver, url):
+        with pytest.allure.step('Select terms sale'):
+            quotest_tests.select_terms_sale(driver, url)
 
     def test_select_priority(self, driver):
         with pytest.allure.step('Select priority'):
@@ -435,16 +435,20 @@ class TestCreateQuote:
         with pytest.allure.step('Select terms of delivery'):
             quotest_tests.select_terms_of_delivery(driver)
 
-    def test_select_terms_of_sale(self, driver, url):
-        with pytest.allure.step('Select terms sale'):
-            quotest_tests.select_terms_sale(driver, url)
-
     # def test_add_product(self, driver):
     #     with pytest.allure.step('Add product'):
     #         quotest_tests.add_product(driver)
 
     # def test_close_alert(self, driver):
     #     tests.close_alert(driver)
+
+    def test_fill_in_billing_address(self, driver):
+        with pytest.allure.step('Fill billing address'):
+            quotest_tests.fill_in_billing_address(driver)
+
+    def test_fill_in_shipping_address(self, driver):
+        with pytest.allure.step('Fill shipping address'):
+            quotest_tests.fill_in_shipping_address(driver)
 
     def test_fill_in_billing_po_box(self, driver):
         with pytest.allure.step('Fill billing box'):
@@ -562,6 +566,10 @@ class TestCreateSO:
     def test_select_ship_via(self, driver):
         with pytest.allure.step('Select Ship Via'):
             so_tests.select_ship_via(driver)
+
+    def test_select_source(self, driver):
+        with pytest.allure.step('Fill select source'):
+            so_tests.select_source(driver)
 
     def test_select_assigned_to(self, driver):
         with pytest.allure.step('Select Assigned To'):
@@ -730,6 +738,10 @@ class TestCreatePO:
         with pytest.allure.step('select terms of payment'):
             po_tests.select_terms_of_payment(driver, url)
 
+    def test_select_territory(self, driver):
+        with pytest.allure.step('select territory'):
+            po_tests.select_territory(driver)
+
     def test_fill_delivery_place(self, driver):
         with pytest.allure.step('Fill delivery place'):
             po_tests.fill_in_delivery_place(driver)
@@ -772,10 +784,6 @@ class TestCreatePO:
     def test_select_terms_of_delivery(self, driver):
         with pytest.allure.step('Select terms of delivery'):
             po_tests.select_terms_of_delivery(driver)
-
-    def test_select_territory(self, driver):
-        with pytest.allure.step('select territory'):
-            po_tests.select_territory(driver)
 
     def test_select_location(self, driver):
         with pytest.allure.step('select location'):
@@ -835,10 +843,10 @@ class TestCreatePO:
 
         # def test_fill_description(self, driver):
         #     tests.fill_in_description(driver)
-
-    def test_add_product(self, driver):
-        with pytest.allure.step('Add product'):
-            po_tests.add_product(driver)
+    #
+    # def test_add_product(self, driver):
+    #     with pytest.allure.step('Add product'):
+    #         po_tests.add_product(driver)
 
     def test_save_po(self, driver):
         with pytest.allure.step('save PO'):

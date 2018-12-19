@@ -189,6 +189,12 @@ def select_priority(driver):
     additional.select_value_from_dropdown(driver, value, text)
 
 
+def select_status(driver):
+    value = data.rfq_status_id
+    text = data.rfq_planning_status
+    additional.select_value_from_dropdown(driver, value, text)
+
+
 def select_assigned_to(driver):
     value = data.rfq_assigned_to_id
     text = data.rfq_assigned_to

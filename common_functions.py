@@ -155,6 +155,7 @@ def select_first_cell(driver, element_id, account):
     #     lambda driver: len(driver.window_handles) == 1)
     #    wait.until(lambda driver: driver.getWindowHandles().size() == 1)
     if account is True:
+        driver.find_element(By.XPATH, data.no_dialog_button)
         click_element_by_xpath(driver, data.no_dialog_button)
     else:
         return
