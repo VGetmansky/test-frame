@@ -52,6 +52,7 @@ def copy_company_address(driver):
 def add_product(driver):
     element_id = data.product_list_button
     additional.select_first_cell(driver, element_id, False)
+    time.sleep(2)
     additional.wait_product_field_selection(driver)
 
 

@@ -242,6 +242,7 @@ def check_values(driver):
 
     assert driver.find_element(By.ID, data.cust_ref_details_id).text == gcustref
     assert driver.find_element(By.ID, data.place_of_delivery_details_id).text == gplaceofdelivery
+
     #   Quote number /n
     #   Condition
     #   Place of delivery

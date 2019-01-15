@@ -498,9 +498,10 @@ class TestCreateQuote:
         with pytest.allure.step('Save SO'):
             quotest_tests.save_quote(driver)
 
-    def test_check_values(self, driver):
-        with pytest.allure.step('check values'):
-            quotest_tests.check_values(driver)
+    # Разкоментить после апдейта базы на тст
+    # def test_check_values(self, driver):
+    #     with pytest.allure.step('check values'):
+    #         quotest_tests.check_values(driver)
 
     # def test_wait_so_list(self, driver, url):
     #     with pytest.allure.step('Wait SO'):
