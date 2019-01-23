@@ -5,7 +5,10 @@ receiving_id = "menubar_item_WHStock_Receiving"
 packing_id = "menubar_item_WHStock_Packing"
 cargo_sign_off_form_id = "menubar_item_WHStock_Shipping"
 
-material_arrival_expected_url = "index.php?module=WHStock&view=Income"
+#   material_arrival_expected_url = "index.php?module=WHStock&view=Income"
+ma_test_url = "http://crmqa.bai-inc.eu/crmqa/#/shipping/arrival"
+
+material_arrival_expected_url = "crm/#/shipping/arrival"
 shipping_notice_expected_url = "index.php?module=WHStock&view=Notice"
 inspection_expected_url = "index.php?module=WHStock&view=Inspection"
 receiving_expected_url = "index.php?module=WHStock&view=Receiving"
@@ -15,7 +18,10 @@ cargo_sign_off_expected_url = "index.php?module=WHStock&view=Shipping"
 awb_check_id = "awb_check_label"
 type_awb_id = "awb_input"
 vendor_check_id = "vendor_check_label"
-vendor_select_id = "vendor_select_chzn"
+
+#vendor_select_id = "vendor_select_chzn"
+
+vendor_select_id = "arrival-so"
 po_filter_id = "po_filter"
 so_filter_id = "so_filter"
 material_arrival_checkboxes = '//div[@class="checkbox po-line-item-checkbox"]'

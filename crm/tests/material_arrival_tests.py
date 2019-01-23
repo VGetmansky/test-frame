@@ -18,11 +18,16 @@ def select_material_arrival_category(driver, url):
     assert (url + data.material_arrival_expected_url) == driver.current_url and ("WHStock", driver.title)
 
 
+def open_test_url(driver):
+    driver.get("http://crmqa.bai-inc.eu/crmqa/#/shipping/arrival")
+    assert ("Shipping: Material Arrival", driver.title)
+
+
 def select_vendor(driver):
     value = data.vendor_select_id
     text = data.autotest_vendor
     additional.select_value_from_dropdown(driver, value, text)
-
+    tt = data.notes_id
 
 def filter_by_last_po(driver):
     value = data.po_filter_id
