@@ -22,6 +22,7 @@ vendor_check_id = "vendor_check_label"
 #vendor_select_id = "vendor_select_chzn"
 
 vendor_select_id = "arrival-so"
+po_select_id = "arrival-po"
 po_filter_id = "po_filter"
 so_filter_id = "so_filter"
 material_arrival_checkboxes = '//div[@class="checkbox po-line-item-checkbox"]'
@@ -53,3 +54,5 @@ deliver_button = '//div[contains(., "Deliver")]'
 send_notice_button = '//div[contains(., "Send Notice")]'
 approve_button = '//div[contains(., "Approve")]'
 receive_button = '//div[contains(., "Receive")]'
+
+ma_checkbox = '//label(@class="el-checkbox")'

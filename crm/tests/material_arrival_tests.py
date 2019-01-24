@@ -27,7 +27,41 @@ def select_vendor(driver):
     value = data.vendor_select_id
     text = data.autotest_vendor
     additional.select_value_from_dropdown(driver, value, text)
-    tt = data.notes_id
+
+
+def select_po(driver, ponum):
+    value = data.po_select_id
+    text = ponum
+    element = '//li[contains(., "' + ponum +'")]'
+    additional.fill_text_field(driver, value, text)
+    driver.find_element(By.XPATH, element).click()
+
+    driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')[
+        len(driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')) - 1]
+
+
+def get_last_po_number_from_list(driver):
+    driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')[
+        len(driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')) - 1].text.split('\n')[0]
+
+
+def expand_po_list(driver, type):
+    while len(driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')) == 0:
+        time.sleep(0.1)
+    time.sleep(1)
+    driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')[
+        len(driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')) - 1].click()
+    # driver.find_element(By.XPATH, data.ma_checkbox)
+    #   driver.find_elements(By.XPATH, '//span[@class="el-checkbox__inner"]')[0].click()
+    if type == "PO":
+        driver.find_elements(By.XPATH, '//span[@class="el-checkbox__inner"]')[0].click()
+    else:
+        None
+
+
+def check_all_ma_partnumbers(driver):
+    driver.find_element(By.XPATH, data.ma_checkbox)
+
 
 def filter_by_last_po(driver):
     value = data.po_filter_id
