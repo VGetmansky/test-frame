@@ -45,22 +45,24 @@ def get_last_po_number_from_list(driver):
         len(driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')) - 1].text.split('\n')[0]
 
 
-def expand_po_list(driver, type):
+def expand_po_list(driver):
     while len(driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')) == 0:
         time.sleep(0.1)
     time.sleep(1)
     driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')[
         len(driver.find_elements(By.XPATH, '//div[@class="collapse-block-header-in"]')) - 1].click()
-    # driver.find_element(By.XPATH, data.ma_checkbox)
-    #   driver.find_elements(By.XPATH, '//span[@class="el-checkbox__inner"]')[0].click()
+
+    # if type == "PO":
+    #     driver.find_elements(By.XPATH, '//span[@class="el-checkbox__inner"]')[0].click()
+    # else:
+    #     None
+
+
+def check_all_ma_partnumbers(driver, type):
     if type == "PO":
-        driver.find_elements(By.XPATH, '//span[@class="el-checkbox__inner"]')[0].click()
+        driver.find_elements(By.XPATH, data.ma_checkbox)[0].click()
     else:
         None
-
-
-def check_all_ma_partnumbers(driver):
-    driver.find_element(By.XPATH, data.ma_checkbox)
 
 
 def filter_by_last_po(driver):
@@ -71,6 +73,16 @@ def filter_by_last_po(driver):
 def check_po_checkboxes(driver):
     value = data.material_arrival_checkboxes
     additional.check_all_item_checkbuttonspo(driver, value)
+
+
+def fill_arrived_qty(driver):
+    i = 0
+    for i in range(0, len(driver.find_elements(By.XPATH, '//input[contains(@id, "arrival-arrived-0-")]'))):
+        value = "ma_arrived_" + str(i) + "_id"
+        value = getattr(data, value)
+        text = "3"
+        additional.fill_text_field(driver, value, text)
+        i += 1
 
 
 def select_shipping_notice_category(driver, url):
@@ -146,8 +158,9 @@ def fill_material_arrival_warehouse_index(driver):
     additional.fill_text_field(driver, value, text)
 
 
-def click_material_arrival_deliver(driver):
-    additional.click_material_arrival_buttons(driver, data.deliver_button)
+def click_material_arrival_deliver(driver, url):
+    driver.find_element(By.ID, data.deliver_button_id).click()
+    assert (data.ma_arrival_history_button_id) == driver.current_url and ("Shipping: Arrival History", driver.title)
 
 
 def click_material_arrival_send_notice(driver):

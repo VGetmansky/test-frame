@@ -37,7 +37,19 @@ class TestWorkWithMaterialArrival:
 
     def test_expand_po_details(self, driver):
         with pytest.allure.step('Expand PO'):
-            tests.expand_po_list(driver, "PO")
+            tests.expand_po_list(driver)
+
+    def test_check_all_ma_partnumbers(self, driver):
+        with pytest.allure.step('Check all PN'):
+            tests.check_all_ma_partnumbers(driver, "PO")
+
+    def test_set_arrived_qty(self, driver):
+        with pytest.allure.step('Set arrived qty'):
+            tests.fill_arrived_qty(driver)
+
+    def test_click_material_arrival_deliver(self, driver):
+        with pytest.allure.step('Click Deliver MA'):
+            tests.click_material_arrival_deliver(driver)
 
     # def test_material_arrival_filter_by_recent_po(self, driver):
     #     with pytest.allure.step('Filter List by recent PO'):

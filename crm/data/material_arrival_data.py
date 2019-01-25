@@ -7,7 +7,7 @@ cargo_sign_off_form_id = "menubar_item_WHStock_Shipping"
 
 #   material_arrival_expected_url = "index.php?module=WHStock&view=Income"
 ma_test_url = "http://crmqa.bai-inc.eu/crmqa/#/shipping/arrival"
-
+ma_test_history_url = "http://crmqa.bai-inc.eu/crmqa/#/shipping/arrival/history"
 material_arrival_expected_url = "crm/#/shipping/arrival"
 shipping_notice_expected_url = "index.php?module=WHStock&view=Notice"
 inspection_expected_url = "index.php?module=WHStock&view=Inspection"
@@ -20,6 +20,20 @@ type_awb_id = "awb_input"
 vendor_check_id = "vendor_check_label"
 
 #vendor_select_id = "vendor_select_chzn"
+
+
+#   ----------  Material arrival    ----------
+
+ma_arrived_0_id = "arrival-arrived-0-0"
+ma_arrived_note_0_id = "arrival-note-0-0"
+ma_arrived_1_id = "arrival-arrived-0-1"
+ma_arrived_note_1_id = "arrival-note-0-1"
+ma_arrived_2_id = "arrival-arrived-0-2"
+ma_arrived_note_2_id = "arrival-note-0-2"
+
+ma_arrival_history_button_id = "arrival-history"
+ma_arrival_deliver_id = "arrival-deliver"
+
 
 vendor_select_id = "arrival-so"
 po_select_id = "arrival-po"
@@ -50,9 +64,10 @@ isle_id = "bin_isle_1"
 shelf_id = "bin_shelf_1"
 holder_id = "bin_holder_1"
 
-deliver_button = '//div[contains(., "Deliver")]'
+# deliver_button = '//div[contains(., "Deliver")]'
+deliver_button_id = "arrival-deliver"
 send_notice_button = '//div[contains(., "Send Notice")]'
 approve_button = '//div[contains(., "Approve")]'
 receive_button = '//div[contains(., "Receive")]'
 
-ma_checkbox = '//label(@class="el-checkbox")'
+ma_checkbox = '//span[@class="el-checkbox__inner"]'
