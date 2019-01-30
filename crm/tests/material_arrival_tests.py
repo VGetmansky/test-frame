@@ -158,9 +158,15 @@ def fill_material_arrival_warehouse_index(driver):
     additional.fill_text_field(driver, value, text)
 
 
-def click_material_arrival_deliver(driver, url):
+def click_material_arrival_deliver(driver):
+    url_before = driver.current_url
     driver.find_element(By.ID, data.deliver_button_id).click()
-    assert (data.ma_arrival_history_button_id) == driver.current_url and ("Shipping: Arrival History", driver.title)
+    url_after = driver.current_url
+    while url_before == url_after:
+        time.sleep(1)
+        url_after = driver.current_url
+    else:
+        assert (data.ma_test_history_url) == driver.current_url and ("Shipping: Arrival History", driver.title)
 
 
 def click_material_arrival_send_notice(driver):

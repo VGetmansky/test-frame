@@ -330,7 +330,7 @@ def click_add_part_number(driver):
 
 def fill_part_number_name(driver):
     value = data.rfq_add_part_id
-    text = "DK120 | PN | 10"
+    text = "DK120 , PN , 10"
     pn_text_field = data.rfq_part_add_multi_id
     addpn = data.rfq_add_to_list_button_id
     additional.fill_new_pn_fields(driver, value, pn_text_field, addpn, text)
@@ -596,12 +596,12 @@ def save_and_quote(driver, url):
     action = data.rfq_save_and_quote_id
     quote = data.creqte_new_quote_button
 
-    time.sleep(1)
+    time.sleep(3)
 
     driver.find_element(By.ID, value).click()
     driver.find_element(By.ID, action).click()
     additional.wait_element(driver, quote, 'xpath')
-    time.sleep(2)
+    time.sleep(5)
 
     #   url_before = driver.current_url
 

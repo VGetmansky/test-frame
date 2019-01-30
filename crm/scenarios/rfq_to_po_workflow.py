@@ -383,13 +383,13 @@ class TestCreateRfq:
         with pytest.allure.step('save repair pricing'):
             rfq_tests.save_and_quote(driver, url)
 
-    def test_click_edit_quote_1(self, driver, url):
-        with pytest.allure.step('Click edit Quote'):
-            quotest_tests.click_edit_quote(driver, url)
-
-    def test_click_cancel_quote(self, driver):
-        with pytest.allure.step('Click Cancel Quote'):
-            quotest_tests.cancel_quote(driver)
+    # def test_click_edit_quote_1(self, driver, url):
+    #     with pytest.allure.step('Click edit Quote'):
+    #         quotest_tests.click_edit_quote(driver, url)
+    #
+    # def test_click_cancel_quote(self, driver):
+    #     with pytest.allure.step('Click Cancel Quote'):
+    #         quotest_tests.cancel_quote(driver)
 
     def test_click_edit_quote_for_edition(self, driver, url):
         with pytest.allure.step('Click edit Quote'):
