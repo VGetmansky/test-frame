@@ -4,7 +4,7 @@ import common_functions as additional
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import time
+import time, re
 
 
 def click_all_category(driver):
@@ -18,7 +18,7 @@ def select_material_arrival_category(driver, url):
     assert (url + data.material_arrival_expected_url) == driver.current_url and ("WHStock", driver.title)
 
 
-def open_test_url(driver):
+def open_qatest_url(driver):
     driver.get("http://crmqa.bai-inc.eu/crmqa/#/shipping/arrival")
     assert ("Shipping: Material Arrival", driver.title)
 
@@ -179,3 +179,26 @@ def click_material_arrival_approve(driver):
 
 def click_material_arrival_receive(driver):
     additional.click_material_arrival_buttons(driver, data.receive_button)
+    assert driver.current_url == "http://crmqa.bai-inc.eu/crmqa/#/shipping/arrival/history"
+
+
+def click_material_arrival_notice(driver):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(1)
+    # additional.wait_element(driver, data.ah_notice_id)
+    driver.find_element(By.ID, data.ah_notice_id).click()
+    assert driver.current_url == "http://crmqa.bai-inc.eu/crmqa/#/shipping/notice"
+
+
+def click_material_arrival_inspection(driver):
+    driver.find_element(By.ID, data.ah_inspection_id).click()
+    assert driver.current_url == "http://crmqa.bai-inc.eu/crmqa/#/shipping/notice"
+
+
+def get_newest_po_number(driver):
+    driver.find_elements(By.XPATH, '//div[@class="sh-title-item"]')[len(driver.find_elements(By.XPATH, '//div[@class="sh-title-item"]')) - 1].text
+
+
+def check_delivered_material_arrival(driver):
+    # assert data.ma_arrived_x_id == ma_arrived_x
+    return None
