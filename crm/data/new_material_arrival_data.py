@@ -35,6 +35,9 @@ ah_date_1_id = "arrival-history-date-0-0"
 ah_accepted_by_id = "arrival-history-accepted-0-0"
 ah_status_1_id = "arrival-history-status-0-0"
 
+ah_inspection = "arrival-history-inspection"
+ah_notice_id = "arrival-history-notice"
+
 vendor_check_id = "vendor_check_label"
 
 po_filter_id = "po_filter"

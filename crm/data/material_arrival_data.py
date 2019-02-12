@@ -19,8 +19,7 @@ awb_check_id = "awb_check_label"
 type_awb_id = "awb_input"
 vendor_check_id = "vendor_check_label"
 
-#vendor_select_id = "vendor_select_chzn"
-
+# vendor_select_id = "vendor_select_chzn"
 
 #   ----------  Material arrival    ----------
 
@@ -34,6 +33,12 @@ ma_arrived_note_2_id = "arrival-note-0-2"
 ma_arrival_history_button_id = "arrival-history"
 ma_arrival_deliver_id = "arrival-deliver"
 
+
+#   ----------  Arrival History    ----------
+
+
+ah_inspection_id = "arrival-history-inspection"
+ah_notice_id = "arrival-history-notice"
 
 vendor_select_id = "arrival-so"
 po_select_id = "arrival-po"

@@ -21,7 +21,7 @@ class TestWorkWithMaterialArrival:
 
     def test_open_test_url(self, driver, url):
         with pytest.allure.step('Open test MA '):
-            tests.open_test_url(driver)
+            tests.open_qatest_url(driver)
 
     def test_fill_material_arrival_vendor(self, driver):
         with pytest.allure.step('Select Vendor'):
@@ -30,6 +30,10 @@ class TestWorkWithMaterialArrival:
     def test_expand_last_vendor_material_arrival_po(self, driver):
         with pytest.allure.step('Expand PO'):
             tests.expand_po_list(driver)
+
+    # def test_material_arrival_get_last_po(self, driver):
+    #     with pytest.allure.step('Get newesst PO number'):
+    #         tests.get_newest_po_number(driver)
 
     def test_fill_material_arrival_po(self, driver):
         with pytest.allure.step('Select PO'):
@@ -51,19 +55,23 @@ class TestWorkWithMaterialArrival:
         with pytest.allure.step('Click Deliver MA'):
             tests.click_material_arrival_deliver(driver)
 
-    # def test_material_arrival_filter_by_recent_po(self, driver):
-    #     with pytest.allure.step('Filter List by recent PO'):
-    #         tests.filter_by_last_po(driver)
+    #  ----------   Material Arrival History     ----------
+
+    def test_check_delivered_material_arrival(self, driver):
+        with pytest.allure.step('Check Delivered MA Values'):
+            tests.check_delivered_material_arrival(driver)
+
+    def test_click_material_arrival_notice(self, driver):
+        with pytest.allure.step('Click Go to notice button'):
+            tests.click_material_arrival_notice(driver)
     #
-    # def test_material_arrival_check_po_checkboxes(self, driver):
-    #     with pytest.allure.step('Check PO Checkboxes'):
-    #         tests.check_po_checkboxes(driver)
+    # def test_click_material_arrival_inspection(self, driver):
+    #     with pytest.allure.step('Click Notice Go to Inspection'):
+    #         tests.click_material_arrival_inspection(driver)
     #
-    # def test_deliver(self, driver):
-    #     with pytest.allure.step('Click Material Arrival Deliver'):
-    #         tests.click_material_arrival_deliver(driver)
-    #
+
     # #  ----------   Shipping Notice     ----------
+
     #
     # def test_click_category_all_shipping_notice(self, driver):
     #     with pytest.allure.step('Select all'):
