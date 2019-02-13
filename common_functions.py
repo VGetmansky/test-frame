@@ -286,7 +286,7 @@ def select_value_from_dropdown(driver, value, text):
         driver.find_elements(By.XPATH, text)[i].click()
     else:
         i += 1
-    #assert str(driver.find_element(By.ID, value).text).split("\n")[0] == text.split('\"')[1]
+    # assert str(driver.find_element(By.ID, value).text).split("\n")[0] == text.split('\"')[1]
 
 
 def change_sales_type(driver, value, text):
@@ -462,7 +462,7 @@ def select_last_material_arrival_inspection(driver, value, page):
 
 
 def click_material_arrival_buttons(driver, value):
-    #value = data.deliver_button
+    # value = data.deliver_button
     driver.find_elements(By.XPATH, value)[
         len(driver.find_elements(By.XPATH, value)) - 1].click()
 

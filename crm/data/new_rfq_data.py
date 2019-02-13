@@ -97,6 +97,7 @@ rfq_shop_id = "rfq-shop"
 rfq_sn_id = "rfq-sn"
 rfq_pn_cert = "//li[contains(., 'CofC Only')]"
 rfq_create_new_line = "//button[contains(., 'Create new line')]"
+
 #   ----------  Stock Outright  ----------
 
 rfq_stock_outright = "//li[contains(., 'Stock Outright')]"

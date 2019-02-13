@@ -37,7 +37,7 @@ class TestWorkWithMaterialArrival:
 
     def test_fill_material_arrival_po(self, driver):
         with pytest.allure.step('Select PO'):
-            tests.select_po(driver, "P53268")
+            tests.select_po(driver, "P53300")
 
     def test_expand_po_details(self, driver):
         with pytest.allure.step('Expand PO'):
