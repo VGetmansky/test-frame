@@ -301,10 +301,8 @@ def fill_in_condition(driver):
 def save_and_offer(driver):
     value = data.rfq_pn_save_and_offer_id
     newline = data.rfq_create_new_line
-
     # additional.wait_element(driver, value, 'id')
     driver.find_element(By.ID, value).click()
-
     additional.wait_element(driver, newline, 'xpath')
     driver.find_element(By.XPATH, newline).click()
 
@@ -330,7 +328,7 @@ def click_add_part_number(driver):
 
 def fill_part_number_name(driver):
     value = data.rfq_add_part_id
-    text = "DK120 , PN , 10"
+    text = "DK120 ^ PN ^ 10"
     pn_text_field = data.rfq_part_add_multi_id
     addpn = data.rfq_add_to_list_button_id
     additional.fill_new_pn_fields(driver, value, pn_text_field, addpn, text)

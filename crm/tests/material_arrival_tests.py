@@ -6,6 +6,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import time, re
 
+from selenium.webdriver.common.keys import Keys
+
 
 def click_all_category(driver):
     additional.select_category_all(driver)
@@ -25,8 +27,30 @@ def open_qatest_url(driver):
 
 def select_vendor(driver):
     value = data.vendor_select_id
-    text = data.autotest_vendor
-    additional.select_value_from_dropdown(driver, value, text)
+    # text = data.autotest_vendor
+    # additional.select_value_from_dropdown(driver, value, text)
+    element_id = value
+
+    additional.wait_element(driver, element_id, 'id')
+    driver.find_element(By.ID, element_id).click()
+
+    elem = driver.find_element(By.ID, value)
+    text = "Autotest User"
+    time.sleep(1)
+    wait = WebDriverWait(driver, 10)
+    wait.until(EC.element_to_be_clickable((By.ID, value)))
+
+    additional.wait_element(driver, value, 'id')
+    time.sleep(1)
+    driver.find_element(By.ID, value).click()
+    elem.send_keys(Keys.CONTROL + "a")
+    elem.send_keys(Keys.DELETE)
+    elem.send_keys(text)
+    elem.send_keys(Keys.ENTER)
+
+    time.sleep(1)
+    # additional.wait_element(driver, value, 'xpath')
+    driver.find_element(By.XPATH,data.autotest_vendor).click()
 
 
 def select_po(driver, ponum):
@@ -166,7 +190,7 @@ def click_material_arrival_deliver(driver):
         time.sleep(1)
         url_after = driver.current_url
     else:
-        assert (data.ma_test_history_url) == driver.current_url and ("Shipping: Arrival History", driver.title)
+        assert data.ma_test_history_url == driver.current_url and ("Shipping: Arrival History", driver.title)
 
 
 def click_material_arrival_send_notice(driver):
