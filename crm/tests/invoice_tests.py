@@ -96,7 +96,7 @@ def select_due_date(driver):
 
 def select_status(driver, url):
     value = data.status_id
-    if url == "http://crmtst_us.bai-inc.eu/":
+    if url == "https://crmtst_us.bai-inc.eu/":
         text = data.tst_status
     else:
         text = data.qa_status

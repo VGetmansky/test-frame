@@ -1,4 +1,4 @@
-new_qa_rfq_url = 'http://crmqa.bai-inc.eu/crm/#/rfq/'
+new_qa_rfq_url = 'https://crmqa.bai-inc.eu/crm/#/rfq/'
 new_tst_rfq_url = 'https://crmtst.bai-inc.eu/crm/#/rfq/'
 new_rfq_title = 'New RFQ'
 

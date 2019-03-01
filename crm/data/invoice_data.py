@@ -52,7 +52,7 @@ percent_paid_id = "Invoice_editView_fieldName_cf_percent_paid"
 special_notes_id = "Invoice_editView_fieldName_specialnotes"
 
 # finally url
-after_creation_url = 'http://crmtst_us.bai-inc.eu/index.php?module=Invoice&view=Detail&record'
+after_creation_url = 'https://crmtst_us.bai-inc.eu/index.php?module=Invoice&view=Detail&record'
 invoice_details = '//li(@class[contains("Invoice Details")])'
 
 

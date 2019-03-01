@@ -27,11 +27,11 @@ def click_edit_quote(driver, url):
             time.sleep(0.2)
         assert new_url == "https://crmtst.bai-inc.eu/index.php?module=Quotes&view=Edit&record="
     else:
-        while new_url != 'http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record=':
+        while new_url != 'https://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record=':
             index = re.search("\d", driver.current_url).start()
             new_url = driver.current_url[0:index]
             time.sleep(0.2)
-        assert new_url == "http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record="
+        assert new_url == "https://crmqa.bai-inc.eu/index.php?module=Quotes&view=Edit&record="
 
 
 def cancel_quote(driver):

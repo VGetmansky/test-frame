@@ -21,7 +21,7 @@ def select_material_arrival_category(driver, url):
 
 
 def open_qatest_url(driver):
-    driver.get("http://crmqa.bai-inc.eu/crmqa/#/shipping/arrival")
+    driver.get("https://crmqa.bai-inc.eu/crmqa/#/shipping/arrival")
     assert ("Shipping: Material Arrival", driver.title)
 
 
@@ -203,7 +203,7 @@ def click_material_arrival_approve(driver):
 
 def click_material_arrival_receive(driver):
     additional.click_material_arrival_buttons(driver, data.receive_button)
-    assert driver.current_url == "http://crmqa.bai-inc.eu/crmqa/#/shipping/arrival/history"
+    assert driver.current_url == "https://crmqa.bai-inc.eu/crmqa/#/shipping/arrival/history"
 
 
 def click_material_arrival_notice(driver):
@@ -211,12 +211,12 @@ def click_material_arrival_notice(driver):
     time.sleep(1)
     # additional.wait_element(driver, data.ah_notice_id)
     driver.find_element(By.ID, data.ah_notice_id).click()
-    assert driver.current_url == "http://crmqa.bai-inc.eu/crmqa/#/shipping/notice"
+    assert driver.current_url == "https://crmqa.bai-inc.eu/crmqa/#/shipping/notice"
 
 
 def click_material_arrival_inspection(driver):
     driver.find_element(By.ID, data.ah_inspection_id).click()
-    assert driver.current_url == "http://crmqa.bai-inc.eu/crmqa/#/shipping/notice"
+    assert driver.current_url == "https://crmqa.bai-inc.eu/crmqa/#/shipping/notice"
 
 
 def get_newest_po_number(driver):
