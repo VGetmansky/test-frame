@@ -25,7 +25,7 @@ def click_add_rfq(driver, url):
     driver.find_element(By.ID, data.add_rfq_id).click()
     additional.wait_new_page(driver, new_url)
 
-    time.sleep(15)
+    time.sleep(5)
     # additional.wait_element(driver, data.rfq_number_id, 'id')
     assert data.new_qa_rfq_url == driver.current_url or data.new_tst_rfq_url == driver.current_url and (data.new_rfq_title, driver.title)[0]
 
@@ -306,19 +306,50 @@ def save_and_offer(driver):
     additional.wait_element(driver, newline, 'xpath')
     driver.find_element(By.XPATH, newline).click()
 
+    accept_vrp_description(driver, "Current")
+
 
 def click_offer(driver):
     value = data.offer_id
     additional.wait_element_for_click(driver, value)
     driver.find_element(By.XPATH, '//label[@class="checkbox-label" and @for="line_check_1"]').click()
 
+    accept_vrp_description(driver, "Current")
+
 
 def click_alt_offer(driver):
     value = data.rfq_pn_alt_offer_id
     type = "id"
     additional.wait_element(driver, value, type).click()
-    # additional.wait_element(driver, '//a[contains(., "Create New line")]', 'xpath')
-    # additional.click_element_by_xpath(driver, '//a[contains(., "Create New line")]')
+
+    accept_vrp_description(driver, "Current")
+
+
+def accept_vrp_description(driver, description):
+    time.sleep(2)
+    if description == "Current":
+        if driver.find_element(By.ID, data.current_description_id).is_displayed():
+            driver.find_element(By.ID, data.current_description_id).click()
+            driver.find_element(By.ID, data.vrq_accept_id).click()
+        else:
+            return
+
+    elif description == "Recommended":
+        if driver.find_element(By.ID, data.current_description_id).is_displayed():
+            driver.find_element(By.ID, data.recommended_description_id).click()
+            driver.find_element(By.ID, data.vrq_accept_id).click()
+        else:
+            return
+
+    elif description == "Stored":
+        if driver.find_element(By.ID, data.stored_description_id).is_displayed():
+            driver.find_element(By.ID, data.stored_description_id).click()
+            driver.find_element(By.ID, data.vrq_accept_id).click()
+        else:
+            return
+
+    else:
+        return
 
 
 def click_add_part_number(driver):
@@ -328,7 +359,7 @@ def click_add_part_number(driver):
 
 def fill_part_number_name(driver):
     value = data.rfq_add_part_id
-    text = "DK120 ^ PN ^ 10"
+    text = "DK120 ^ DESCRIPTION ^ 10"
     pn_text_field = data.rfq_part_add_multi_id
     addpn = data.rfq_add_to_list_button_id
     additional.fill_new_pn_fields(driver, value, pn_text_field, addpn, text)

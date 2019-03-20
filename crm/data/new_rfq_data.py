@@ -1,4 +1,5 @@
 new_qa_rfq_url = 'https://crmqa.bai-inc.eu/crm/#/rfq/'
+new_qa_dev_rfq_url = 'https://crmqa.bai-inc.eu/crmqa/#/rfq/'
 new_tst_rfq_url = 'https://crmtst.bai-inc.eu/crm/#/rfq/'
 new_rfq_title = 'New RFQ'
 
@@ -26,6 +27,7 @@ rfq_planning_status = '//li[contains(., "Planning")]'
 rfq_tst_sale_terms = '//li[contains(., "NET-30")]'
 rfq_qa_sale_terms = '//li[contains(.,"NET-30")]'
 rfq_delivery_terms = '//li[contains(.,"CIF")]'
+
 #   ----------  Details  ----------
 
 rfq_customer_quote_id = "rfq-customer-quote"
@@ -76,6 +78,7 @@ rfq_pn_save_and_alt_offer_id = "rfq-save-alt-offer"
 rfq_nq_line_id = "rfq-nq-line"
 
 #   ----------  Part Line Information   ----------
+
 rfq_vendor_first_field = "//td[contains(., 'Autotest User')]"
 rfq_vendor_name_id = "rfq-vendor-name"
 rfq_vendor_search_id = "rfq-vendor-search"
@@ -97,6 +100,14 @@ rfq_shop_id = "rfq-shop"
 rfq_sn_id = "rfq-sn"
 rfq_pn_cert = "//li[contains(., 'CofC Only')]"
 rfq_create_new_line = "//button[contains(., 'Create new line')]"
+vrq_accept_id = "rfq-button-accept-description"
+
+#   ----------  Verify Requested Part  ----------
+
+recommended_description_id = "rfq-radio-recommended-description"
+stored_description_id = "rfq-radio-stored-description-1"
+current_description_id = "rfq-radio-current-description"
+vrp_cancel_id = "rfq-button-cancel-description"
 
 #   ----------  Stock Outright  ----------
 
