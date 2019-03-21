@@ -77,7 +77,7 @@ class TestCreateRfq:
 
     def test_fill_part_number(self, driver):
         with pytest.allure.step('Fill part number name'):
-             tests.fill_part_number_name(driver)
+            tests.fill_part_number_name(driver)
 
 #   WA checkbox Cannot scroll into view
 #     def test_uncheck_will_advice(self, driver):

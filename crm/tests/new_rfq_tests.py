@@ -4,6 +4,7 @@ import common_functions as additional
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException
 import time, re
 
 from selenium.webdriver.common.keys import Keys
@@ -326,26 +327,48 @@ def click_alt_offer(driver):
 
 
 def accept_vrp_description(driver, description):
+
     time.sleep(2)
     if description == "Current":
-        if driver.find_element(By.ID, data.current_description_id).is_displayed():
-            driver.find_element(By.ID, data.current_description_id).click()
-            driver.find_element(By.ID, data.vrq_accept_id).click()
-        else:
+
+        try:
+            driver.find_element(By.ID, data.current_description_id)
+
+            if driver.find_element(By.ID, data.current_description_id).is_displayed():
+                driver.find_element(By.ID, data.current_description_id).click()
+                driver.find_element(By.ID, data.vrq_accept_id).click()
+            else:
+                return
+
+        except NoSuchElementException:
             return
 
     elif description == "Recommended":
-        if driver.find_element(By.ID, data.current_description_id).is_displayed():
-            driver.find_element(By.ID, data.recommended_description_id).click()
-            driver.find_element(By.ID, data.vrq_accept_id).click()
-        else:
+
+        try:
+            driver.find_element(By.ID, data.recommended_description_id)
+
+            if driver.find_element(By.ID, data.recommended_description_id).is_displayed():
+                driver.find_element(By.ID, data.recommended_description_id).click()
+                driver.find_element(By.ID, data.vrq_accept_id).click()
+            else:
+                return
+
+        except NoSuchElementException:
             return
 
     elif description == "Stored":
-        if driver.find_element(By.ID, data.stored_description_id).is_displayed():
-            driver.find_element(By.ID, data.stored_description_id).click()
-            driver.find_element(By.ID, data.vrq_accept_id).click()
-        else:
+
+        try:
+            driver.find_element(By.ID, data.stored_description_id)
+
+            if driver.find_element(By.ID, data.stored_description_id).is_displayed():
+                driver.find_element(By.ID, data.stored_description_id).click()
+                driver.find_element(By.ID, data.vrq_accept_id).click()
+            else:
+                return
+
+        except NoSuchElementException:
             return
 
     else:
