@@ -21,16 +21,18 @@ def select_quote(driver):
 
 
 def open_quote_details(driver, url):
+    time.sleep(2)
     additional.wait_element(driver, data.first_quotes_cell_id, 'id')
     additional.select_table_cell(driver, data.first_quotes_cell_id, "quote", url)
 
 
 def expand_pdfmaker(driver):
     additional.click_element_by_xpath(driver, data.pdfmaker_tab)
-    additional.click_element_by_xpath(driver, data.edit_and_export)
+    # additional.click_element_by_xpath(driver, data.edit_and_export)
 
 
-def select_rfq(driver):
+def get_body_data(driver):
+    driver.execute_script("window.scrollTo(0, 0)")
     try:
         windowhandler = driver.window_handles
         assert ConnectionResetError
@@ -39,15 +41,15 @@ def select_rfq(driver):
 
     window_before = driver.window_handles[0]
 
-    # try:
-    #     elem = driver.find_element(By.ID, data.body_tab_id)
-    #     assert NoSuchElementException
-    # except NoSuchElementException:
-    #
-    #     elem = driver.find_elements(By.XPATH, data.body_tab_id)
-    #     assert NoSuchElementException
-    #     elem = elem[1]
-    # elem.click()
+    try:
+        elem = driver.find_element(By.ID, data.edit_and_export)
+        assert NoSuchElementException
+    except NoSuchElementException:
+
+        elem = driver.find_element(By.XPATH, data.edit_and_export)
+        assert NoSuchElementException
+
+    elem.click()
 
     WebDriverWait(driver, 30).until(
         lambda driver: len(windowhandler) != len(driver.window_handles))
@@ -56,13 +58,18 @@ def select_rfq(driver):
 
     time.sleep(2)  # crutch remake it later
 
-    WebDriverWait(driver, 10).until(
-        lambda driver: driver.title != "New Tab"
-    )
-
-    time.sleep(0.2)
+    # WebDriverWait(driver, 10).until(
+    #     lambda driver: driver.title != "Quotes"
+    # )
+    #
+    # time.sleep(0.2)
     driver.switch_to.window(window_after)
     # window 2
+    assert driver.title == "PDFMaker"
+
+    driver.find_element(By.ID, data.body_tab_id).click()
+    driver.find_element(By.ID, data.header_tab_id).click()
+    driver.find_element(By.ID, data.footer_tab_id).click()
 
     driver.switch_to.window(window_before)
     # window 1

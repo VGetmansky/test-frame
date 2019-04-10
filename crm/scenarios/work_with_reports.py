@@ -21,6 +21,6 @@ class TestWorkWithRFQList:
         with pytest.allure.step('Expand PDF maker'):
             tests.expand_pdfmaker(driver)
 
-    def test_select_rfq(self, driver):
-        with pytest.allure.step('work with'):
-            tests.select_rfq(driver)
+    def test_get_body_data(self, driver):
+        with pytest.allure.step('Get body data'):
+            tests.get_body_data(driver)
