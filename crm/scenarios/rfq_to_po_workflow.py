@@ -968,10 +968,14 @@ class TestCreateInvoice:
         with pytest.allure.step('Click save invoice button'):
             invoice_tests.click_save_button(driver)
 
+    def test_open_invoice_details(self, driver):
+        with pytest.allure.step('Open Invoice Details'):
+            invoice_tests.open_invoice_list(driver)
+
     def test_logout(self, driver):
         with pytest.allure.step('logout'):
             login_tests.logout(driver)
 
-    def test_cerify_logout(self, driver):
+    def test_verify_logout(self, driver):
         with pytest.allure.step('Verify logout'):
             login_tests.verify_logout(driver)

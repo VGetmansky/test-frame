@@ -24,6 +24,7 @@ def fill_in_account_field(driver):
     value = data.account_selector_id
     additional.wait_element(driver, value, 'id')
     additional.select_first_cell(driver, value, True)
+    # additional.not_overwrite_selection(driver)
 
 
 def fill_in_billing_address(driver):

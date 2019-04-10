@@ -82,3 +82,8 @@ shipping_city = "Invoice_detailView_fieldValue_ship_city"
 shipping_state = "Invoice_detailView_fieldValue_ship_state"
 shipping_country = "Invoice_detailView_fieldValue_ship_country"
 shipping_post_code = "Invoice_detailView_fieldValue_ship_code"
+
+invoice_menu_id = "menubar_item_Invoice"
+last_ivoice_id = "Invoice_listView_row_1"
+
+invoice_no_details_id = "Invoice_detailView_fieldValue_invoice_no"

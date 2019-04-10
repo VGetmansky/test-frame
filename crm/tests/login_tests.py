@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 def open_url(driver, url):
     driver.get(url)
-    driver.find_element(By.ID, data.page)
+    # driver.find_element(By.ID, data.page_id)
     assert ("Users", driver.title)
 
 

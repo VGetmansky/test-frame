@@ -1,11 +1,12 @@
 # Default names values
 page = "page"
+page_id = "page"
 username_el = "username"
 password_el = "password"
 expected_url = 'index.php'
 
 # XPATH's
-submit = '//button[contains(.,"Sign in")]'
+submit = '//button[contains(.,"sign in")]'
 home = '//img[contains(@src, "layouts/vlayout/skins/softed/images/home.png")]'
 
 # Main page Id's

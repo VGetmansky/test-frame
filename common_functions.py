@@ -333,6 +333,8 @@ def select_table_cell(driver, field, tab, url):
         assert url + "index.php?module=SalesOrder&view=Detail&record=" + data_id == driver.current_url
     elif tab == "po":
         assert url + "index.php?module=PurchaseOrder&view=Detail&record=" + data_id == driver.current_url
+    elif tab == "quote":
+        assert url + "index.php?module=Quotes&view=Detail&record=" + data_id == driver.current_url
 
 
 # def get_so_number(driver, value):
@@ -466,3 +468,9 @@ def click_material_arrival_buttons(driver, value):
     driver.find_elements(By.XPATH, value)[
         len(driver.find_elements(By.XPATH, value)) - 1].click()
 
+
+def not_overwrite_selection(driver):
+    try:
+        driver.find_element(By.XPATH, '//a[contains(., "No")]').click()
+    except NoSuchElementException:
+        return

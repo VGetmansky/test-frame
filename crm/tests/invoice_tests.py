@@ -268,3 +268,12 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.shipping_state).text == values.shipping_state
     assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
     assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
+
+
+def open_invoice_list(driver):
+
+    additional.click_element_by_id(driver, data.invoice_menu_id)
+    time.sleep(3)
+    additional.click_element_by_id(driver, data.last_ivoice_id)
+    additional.wait_element(driver, data.invoice_no_details_id, 'id' )
+

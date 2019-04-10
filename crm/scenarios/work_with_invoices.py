@@ -169,3 +169,7 @@ class TestCreateInvoice:
     def test_check_values(self, driver):
         with pytest.allure.step('check values'):
             tests.check_values(driver)
+
+    def test_open_invoice_details(self, driver):
+        with pytest.allure.step('Open Invoice Details'):
+            tests.open_invoice_list(driver)
