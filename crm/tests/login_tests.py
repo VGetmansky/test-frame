@@ -1,6 +1,7 @@
 import crm.data.authorization_data as data
 import common_functions as additional
 from selenium.webdriver.common.by import By
+import time
 
 
 def open_url(driver, url):
@@ -29,7 +30,11 @@ def verify_url(driver, url):
 
 
 def logout(driver):
+    time.sleep(1)
+    additional.wait_element(driver, data.account_menu_id, 'id')
     driver.find_element(By.ID, data.account_menu_id).click()
+    time.sleep(1)
+    additional.wait_element(driver, data.logout_button_id, 'id')
     driver.find_element(By.ID, data.logout_button_id).click()
 
 
