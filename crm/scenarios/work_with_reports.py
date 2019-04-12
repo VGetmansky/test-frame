@@ -9,8 +9,8 @@ TestLogInApp()
 @pytest.allure.testcase('Work With RFQ')
 @pytest.mark.test
 class TestWorkWithRFQList:
-    def test_open_invoice_tab(self, driver):
-        with pytest.allure.step('Select invoice'):
+    def test_open_quotes_tab(self, driver):
+        with pytest.allure.step('Select quote'):
             tests.select_quote(driver)
 
     def test_open_quotes_details(self, driver, url):

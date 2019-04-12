@@ -11,6 +11,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 
+
 def select_quote(driver):
     new_url = driver.current_url
     time.sleep(3)
@@ -20,10 +21,40 @@ def select_quote(driver):
     # assert "Rfq", driver.title and driver.current_url == "http://crmqa.bai-inc.eu/index.php?module=Rfq&view=List"
 
 
+def select_so(driver):
+    new_url = driver.current_url
+    time.sleep(3)
+    if driver.title != "SO":
+        additional.wait_element_for_click(driver, auth_data.so_main_button_id)
+        additional.wait_new_page(driver, new_url)
+    # assert "Rfq", driver.title and driver.current_url == "http://crmqa.bai-inc.eu/index.php?module=Rfq&view=List"
+
+
+def select_po(driver):
+    new_url = driver.current_url
+    time.sleep(3)
+    if driver.title != "PO":
+        additional.wait_element_for_click(driver, auth_data.po_main_button_id)
+        additional.wait_new_page(driver, new_url)
+    # assert "Rfq", driver.title and driver.current_url == "http://crmqa.bai-inc.eu/index.php?module=Rfq&view=List"
+
+
 def open_quote_details(driver, url):
     time.sleep(2)
     additional.wait_element(driver, data.first_quotes_cell_id, 'id')
     additional.select_table_cell(driver, data.first_quotes_cell_id, "quote", url)
+
+
+def open_so_details(driver, url):
+    time.sleep(2)
+    additional.wait_element(driver, data.first_so_cell_id, 'id')
+    additional.select_table_cell(driver, data.first_so_cell_id, "so", url)
+
+
+def open_po_details(driver, url):
+    time.sleep(2)
+    additional.wait_element(driver, data.first_po_cell_id, 'id')
+    additional.select_table_cell(driver, data.first_po_cell_id, "so", url)
 
 
 def expand_pdfmaker(driver):
