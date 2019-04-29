@@ -291,6 +291,7 @@ def fill_in_condition(driver):
     condition = data.rfq_pn_condition_id
     conditionval = data.rfq_pn_condition
 
+    conditionval = "//li[contains(., 'NE')]"
     # additional.wait_element(driver, condition, 'id')
     driver.find_element(By.ID, condition).click()
 
