@@ -1,4 +1,6 @@
 
+import sys
+
 from pdfminer.pdfparser import PDFParser, PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import PDFPageAggregator
@@ -27,14 +29,23 @@ for page in doc.get_pages():
             extracted_text += lt_obj.get_text()
             print(extracted_text)
 
-# Compare files
+file_one = '/home/rc/Downloads/test2.txt'
+file_two = '/home/rc/Downloads/test2.txt'
 
-# import sys
-# def diff(file_one, file_two):
-#     with open(file_one) as text_one, open(file_two) as text_two:
-#         one = set(text_one.read().split('\n'))
-#         two = set(text_two.read().split('\n'))
-#     return one ^ two
+
+def diff(file_one, file_two):
+    with open(file_one) as text_one, open(file_two) as text_two:
+        one = set(text_one.read().split('\n'))
+        two = set(text_two.read().split('\n'))
+    # if one != two:
+    assert one == two
+    return one.difference(two)
+    #    print (one.difference(two))
+    # else:
+    #     return
+
+
+diff(file_one, file_two)
 # if __name__ == '__main__':
 #     if len(sys.argv) > 2:
 #         print ('\n'.join(diff(sys.argv[1], sys.argv[2]))
