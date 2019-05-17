@@ -1,4 +1,6 @@
+import os
 from selenium.webdriver.common.by import By
+
 from crm.data import reports_data as data, authorization_data as auth_data, values_data as values
 import common_functions as additional
 import re, time
@@ -62,6 +64,28 @@ def expand_pdfmaker(driver):
     # additional.click_element_by_xpath(driver, data.edit_and_export)
 
 
+def export_document(driver):
+    additional.click_element_by_xpath(driver, data.export)
+
+    path = './'  # Путь к вашей папке
+
+    # Получим список имен всего содержимого папки
+    # и превратим их в абсолютные пути
+    dir_list = [os.path.join(path, x) for x in os.listdir(path)]
+
+    if dir_list:
+        # Создадим список из путей к файлам и дат их создания.
+        date_list = [[x, os.path.getctime(x)] for x in dir_list]
+
+        # Отсортируем список по дате создания в обратном порядке
+        sort_date_list = sorted(date_list, key=lambda x: x[1], reverse=True)
+
+        # Выведем первый элемент списка. Он и будет самым последним по дате
+    print (sort_date_list[0][0])
+    print("adsas")
+
+
+# Save and export
 def get_body_data(driver):
     driver.execute_script("window.scrollTo(0, 0)")
     try:
@@ -87,13 +111,8 @@ def get_body_data(driver):
 
     window_after = driver.window_handles[1]
 
-    time.sleep(2)  # crutch remake it later
+    time.sleep(2)
 
-    # WebDriverWait(driver, 10).until(
-    #     lambda driver: driver.title != "Quotes"
-    # )
-    #
-    # time.sleep(0.2)
     driver.switch_to.window(window_after)
     # window 2
     assert driver.title == "PDFMaker"

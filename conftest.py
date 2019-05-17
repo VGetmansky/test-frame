@@ -18,6 +18,12 @@ def driver(request):
         firefoxoptions = webdriver.FirefoxProfile()
         firefoxoptions.set_preference("security.insecure_password.ui.enabled", False)
         firefoxoptions.set_preference("security.insecure_field_warning.contextual.enabled", False);
+
+        firefoxoptions.set_preference("browser.download.dir", "./");
+        firefoxoptions.set_preference("browser.download.useDownloadDir", True);
+        firefoxoptions.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/pdf");
+        firefoxoptions.set_preference("pdfjs.disabled", True);
+
         browser = webdriver.Firefox(firefoxoptions)
         browser.get("about:blank")
         browser.implicitly_wait(10)

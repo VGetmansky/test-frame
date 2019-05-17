@@ -1,0 +1,79 @@
+21 Airport Blvd., Suite B
+South San Francisco, Ca 94080
+Web: www.bai-inc.com
+Fax: 650-872-1955 Ph: 650-872-1700
+Purchase Order
+P.O. #
+: P54620
+P.O. Date : 16-05-2019
+Page
+: 1 of 1
+Priority
+: Routine
+Ship To:
+Test Vendor BAI, Inc 21 AIRPORT BLVD, SUITE B
+Test City , Test State, Test Postal Code
+Test Country
+To:
+Autotest User
+Test Vendor Autotest User
+Test City, Test State , Test Postal Code
+Test Country
+Contact: Autotest User
+Phone:
+Fax:
+Email:
+CFR: Test delivery place
+Buyer: Vladislav Getmansky
+Buyer Email:
+vladislav.getmanskiy@zimad.com
+Buyer Phone:
+Vendor Quote: Test Vendor
+Ship Via: DHL
+Our Acct#:
+TERMS:NET-30
+Item
+2
+2
+TEST DESCRIPTION
+Part Number/Description
+DK120 - service price
+S53062/2
+DK120
+S53062/2
+TEST DESCRIPTION
+Q-ty
+5.00
+CD
+NE
+UM
+EA
+Due Date
+01-04-2018
+Unit Price
+$0.00
+Total Amt
+$0.00
+5.00
+NE
+EA
+01-04-2018
+$13.00
+$65.00
+Please conﬁrm acceptance of this Purchase Order.
+Ship line items complete only. "No Partials"
+Please provide only quantities as called out on our Purchase Order. Quantities are not acceptable
+for this Purchase Order.
+Originals or certiﬁed copies of manufacturer`s certiﬁcates and/or dual release FAA/EASA forms for
+each item shall be required upon shipment.
+Originals of COMPANY certiﬁcate of conformance shall be required upon shipment.
+Please do not insure.
+Sub-Total:
+$65.00
+Total:
+$65.00
+FORM NUMBER: BAI280; Rev. B; Rev. Date: 04/21/2009             www.BAI-Inc.com
+ 
+ 
+ 
+ 
