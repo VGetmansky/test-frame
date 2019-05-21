@@ -1,4 +1,4 @@
-import os
+import os, sys
 from selenium.webdriver.common.by import By
 
 from crm.data import reports_data as data, authorization_data as auth_data, values_data as values
@@ -65,24 +65,35 @@ def expand_pdfmaker(driver):
 
 
 def export_document(driver):
+    global path
+    path = os.path.expanduser(os.getenv('HOME')) + "/Downloads"  # Путь к вашей папке
+    doc_len = len([name for name in os.listdir(path)])
     additional.click_element_by_xpath(driver, data.export)
 
-    path = './'  # Путь к вашей папке
+    i = 0
+    while (i < 20):
+        if len([name for name in os.listdir(path)]) == doc_len:
 
-    # Получим список имен всего содержимого папки
-    # и превратим их в абсолютные пути
-    dir_list = [os.path.join(path, x) for x in os.listdir(path)]
+            time.sleep(1)
+            i += 1
+        else:
+            # Получим список имен всего содержимого папки
+            # и превратим их в абсолютные пути
+            dir_list = [os.path.join(path, x) for x in os.listdir(path)]
 
-    if dir_list:
-        # Создадим список из путей к файлам и дат их создания.
-        date_list = [[x, os.path.getctime(x)] for x in dir_list]
+            if dir_list:
+                # Создадим список из путей к файлам и дат их создания.
+                date_list = [[x, os.path.getctime(x)] for x in dir_list]
 
-        # Отсортируем список по дате создания в обратном порядке
-        sort_date_list = sorted(date_list, key=lambda x: x[1], reverse=True)
+                # Отсортируем список по дате создания в обратном порядке
+                sort_date_list = sorted(date_list, key=lambda x: x[1], reverse=True)
 
-        # Выведем первый элемент списка. Он и будет самым последним по дате
-    print (sort_date_list[0][0])
-    print("adsas")
+                # Выведем первый элемент списка. Он и будет самым последним по дате
+            global pdf
+            pdf = (sort_date_list[0][0])
+            print(sort_date_list[0][0])
+            i = 20
+
 
 
 # Save and export
