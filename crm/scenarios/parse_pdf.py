@@ -28,13 +28,13 @@ def parse_pdf(path, pdf):
         interpreter.process_page(page)
         layout = device.get_result()
         # text = open("Quote test reference.txt")
-        text_file = open(path + 'result.txt', "w")
+        text_file = open(path + '/result.txt', "w")
 
         for lt_obj in layout:
             if isinstance(lt_obj, LTTextBox) or isinstance(lt_obj, LTTextLine):
                 extracted_text += lt_obj.get_text()
                 print(extracted_text)
-                # extracted_text >> '/home/rc/Downloads/Quote.txt'
+                # extracted_text >> path + "result.txt"
     text_file.write(extracted_text)
 
     text_file.close()
@@ -47,19 +47,19 @@ def parse_pdf(path, pdf):
 
 def diff(path):
 
-    file_one = path + 'result.txt'
+    file_one = path + '/result.txt'
 
     file_two = "./Quote test reference.txt"  # '/home/rc/Downloads/INV Packing List reference.txt'
     with open(file_one) as text_one, open(file_two) as text_two:
         one = set(text_one.read().split('\n'))
         two = set(text_two.read().split('\n'))
-    if len(one.difference(two)) > 3:  #one != two:
-    # assert one == two
-    # return one.difference(two)
-       print(one.difference(two))
-    else:
-        print("Report is correct")
-        return
+        if len(one.difference(two)) > 5:  #one != two: #3 for account
+        # assert one == two
+        # return one.difference(two)
+           print(one.difference(two))
+        else:
+            print("The report is correct")
+
 
 
 #

@@ -868,7 +868,7 @@ class TestOpenSODetails:
             invoice_tests.open_so_details(driver, url)
 
 
-@pytest.allure.testcase('Work With Quotes')
+@pytest.allure.testcase('Work With Invoices')
 @pytest.mark.test
 class TestCreateInvoice:
 
