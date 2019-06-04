@@ -282,10 +282,11 @@ def select_value_from_dropdown(driver, value, text):
 
     driver.find_element(By.ID, value).click()
     i = 0
-    if driver.find_elements(By.XPATH, text)[i].text is not '':
-        driver.find_elements(By.XPATH, text)[i].click()
-    else:
+    while driver.find_elements(By.XPATH, text)[i].text is '':
         i += 1
+    else:
+        driver.find_elements(By.XPATH, text)[i].click()
+
     # assert str(driver.find_element(By.ID, value).text).split("\n")[0] == text.split('\"')[1]
 
 
