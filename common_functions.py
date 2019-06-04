@@ -129,7 +129,8 @@ def select_first_cell(driver, element_id, account):
 
             elif driver.title == "Relationships":
                 global grelationship
-                grelationship = str(wait_element(driver, data.first_relationship_row_id, 'id').get_attribute("data-name"))
+                grelationship = str(
+                    wait_element(driver, data.first_relationship_row_id, 'id').get_attribute("data-name"))
                 click_element_by_id(driver, data.first_relationship_row_id)
                 i = 10
 
@@ -188,7 +189,7 @@ def fill_text_field(driver, value, text):
 
     elem.click()
     elem.send_keys(Keys.CONTROL + "a")
-    #elem.send_keys(Keys.DELETE)
+    # elem.send_keys(Keys.DELETE)
     elem.send_keys(text)
 
     while elem == elem_before:
@@ -279,7 +280,6 @@ def wait_element_by(driver, value, type):
 
 
 def select_value_from_dropdown(driver, value, text):
-
     driver.find_element(By.ID, value).click()
     i = 0
     while driver.find_elements(By.XPATH, text)[i].text is '':
@@ -291,7 +291,6 @@ def select_value_from_dropdown(driver, value, text):
 
 
 def change_sales_type(driver, value, text):
-
     try:
         Select(driver.find_element_by_id(value)).select_by_visible_text(text)  # do something
     except socket.error as e:
@@ -461,7 +460,8 @@ def select_last_material_arrival_inspection(driver, value, page):
         driver.find_elements(By.XPATH, '//input[@class="chzn-search-input" and @type="text"]')[1].send_keys("getmansky")
     else:
         driver.find_elements(By.XPATH, '//input[@class="chzn-search-input" and @type="text"]')[1].click()
-    driver.find_elements(By.XPATH, '//li[@class="active-result"]')[len(driver.find_elements(By.XPATH, '//li[@class="active-result"]')) - 1].click()
+    driver.find_elements(By.XPATH, '//li[@class="active-result"]')[
+        len(driver.find_elements(By.XPATH, '//li[@class="active-result"]')) - 1].click()
 
 
 def click_material_arrival_buttons(driver, value):
@@ -475,3 +475,24 @@ def not_overwrite_selection(driver):
         driver.find_element(By.XPATH, '//a[contains(., "No")]').click()
     except NoSuchElementException:
         return
+
+
+def get_element_attributes(driver, element, type):
+    if type == "id":
+        driver.execute_script(
+            'var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;',
+            (driver.find_element(By.ID, element)))
+    else:
+        driver.execute_script(
+            'var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;',
+            (driver.find_element(By.XPATH, element)))
+
+
+# get values for redesigned fields
+def get_property_value(driver, element, tyoe):
+    if type == "id":
+        driver.find_element(By.ID, element).get_property('value')
+    else:
+        driver.find_element(By.XPATH, element).get_property('value')
+
+

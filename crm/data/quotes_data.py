@@ -8,6 +8,8 @@ product_list_button = '//img[@class="lineItemPopup cursorPointer alignMiddle" an
 required_field_error = '//div[@class="formErrorContent"]'
 actions = '//button[contains(.,"Actions")]'
 
+territory_id = "territory__chzn"
+
 qa_quote_stage = '//li[contains(.,"Accepted")]'
 tst_quote_stage = '//li[contains(.,"Accepted")]'
 priority = '//li[contains(.,"Routine")]'
@@ -27,10 +29,13 @@ import_quote_id = "Quotes_listView_advancedAction_LBL_IMPORT"
 export_quote_id = "Quotes_listView_advancedAction_LBL_EXPORT"
 add_quote_id = "Quotes_listView_basicAction_LBL_ADD_RECORD"
 
-# Purchase Order profile XPATH's
+# Quote profile XPATH's
 
+territory_ees_value = "//li[contains(., 'EES')]"
+territory_bann_i_value = "//li[contains(., 'BANN-EES-I')]"
+territory_bann_d_value = "//li[contains(., 'BANN-EES-D')]"
 
-# Purchase Order profile ID's
+# Quote profile ID's
 
 add_quote_id = "Quotes_listView_basicAction_LBL_ADD_RECORD"
 account_selector_id = "Quotes_editView_fieldName_account_id_select"

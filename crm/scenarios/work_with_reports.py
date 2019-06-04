@@ -2,6 +2,7 @@ import pytest
 from crm.tests import reports_tests as tests
 from crm.scenarios.login_scenario import TestLogInApp
 from crm.scenarios import parse_pdf as parse
+from crm.tests import quotest_tests
 
 TestLogInApp()
 
@@ -16,6 +17,66 @@ class TestWorkWithRFQList:
     def test_open_quotes_details(self, driver, url):
         with pytest.allure.step('Open quotes details'):
             tests.open_quote_details(driver, url)
+
+    def test_open_quote_to_set_ees(self, driver, url):
+        with pytest.allure.step('Open quote'):
+           quotest_tests.click_edit_quote(driver, url)
+
+    def test_fill_in_billing_address(self, driver):
+        with pytest.allure.step('Fill billing address'):
+            quotest_tests.fill_in_billing_address(driver)
+
+    def test_fill_in_shipping_address(self, driver):
+        with pytest.allure.step('Fill shipping address'):
+            quotest_tests.fill_in_shipping_address(driver)
+
+    def test_fill_in_billing_po_box(self, driver):
+        with pytest.allure.step('Fill billing box'):
+            quotest_tests.fill_in_billing_po_box(driver)
+
+    def test_fill_in_billing_city(self, driver):
+        with pytest.allure.step('Fill billing city'):
+            quotest_tests.fill_in_billing_city(driver)
+
+    def test_fill_in_billing_state(self, driver):
+        with pytest.allure.step('Fill billing state'):
+            quotest_tests.fill_in_billing_state(driver)
+
+    def test_fill_in_billing_post_code(self, driver):
+        with pytest.allure.step('Fill billing post code'):
+            quotest_tests.fill_in_billing_post_code(driver)
+
+    def test_fill_in_billing_post_country(self, driver):
+        with pytest.allure.step('Fill billing country'):
+            quotest_tests.fill_in_billing_country(driver)
+
+    def test_fill_in_shipping_po_box(self, driver):
+        with pytest.allure.step('Fill shipping box'):
+            quotest_tests.fill_in_shipping_po_box(driver)
+
+    def test_fill_in_shipping_city(self, driver):
+        with pytest.allure.step('Fill shipping city'):
+            quotest_tests.fill_in_shipping_city(driver)
+
+    def test_fill_in_shipping_state(self, driver):
+        with pytest.allure.step('Fill shipping state'):
+            quotest_tests.fill_in_shipping_state(driver)
+
+    def test_fill_in_shipping_post_code(self, driver):
+        with pytest.allure.step('Fill shipping post code'):
+            quotest_tests.fill_in_shipping_post_code(driver)
+
+    def test_fill_in_shipping_post_country(self, driver):
+        with pytest.allure.step('Fill shipping country'):
+            quotest_tests.fill_in_shipping_country(driver)
+
+    def test_set_territory_as_ees(self, driver):
+        with pytest.allure.step('change territory'):
+            quotest_tests.select_territory(driver, 'ees')
+
+    def test_save_ees_territory(self, driver):
+        with pytest.allure.step('Save ees territory quote'):
+            quotest_tests.save_quote(driver)
 
     def test_expand_pdfmaker_tab(self, driver):
         with pytest.allure.step('Expand PDF maker'):
@@ -33,6 +94,18 @@ class TestWorkWithRFQList:
         with pytest.allure.step('compare documents'):
             parse.diff(tests.path)
 
+    def test_open_quote(self, driver, url):
+        with pytest.allure.step('Open quote'):
+           quotest_tests.click_edit_quote(driver, url)
+
     # def test_get_body_data(self, driver):
     #     with pytest.allure.step('Get body data'):
     #         tests.get_body_data(driver)
+
+    def test_edit_territory(self, driver):
+        with pytest.allure.step('change territory'):
+            quotest_tests.select_territory(driver, 'bann-i')
+
+    def test_save_bann_i_territory(self, driver):
+        with pytest.allure.step('Save bann-i territory quote'):
+            quotest_tests.save_quote(driver)

@@ -1,7 +1,7 @@
 import os, sys
 from selenium.webdriver.common.by import By
 
-from crm.data import reports_data as data, authorization_data as auth_data, values_data as values
+from crm.data import reports_data as data, authorization_data as auth_data, values_data as values, quotes_data as qdata
 import common_functions as additional
 import re, time
 
@@ -93,7 +93,6 @@ def export_document(driver):
             pdf = (sort_date_list[0][0])
             print(sort_date_list[0][0])
             i = 20
-
 
 
 # Save and export

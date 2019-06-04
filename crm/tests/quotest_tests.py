@@ -104,6 +104,22 @@ def select_proirity(driver):
     gpriority = driver.find_element(By.ID, data.priority_id).text
 
 
+def select_territory(driver, territory):
+    value = data.territory_id
+
+    if territory == "ees":
+        text = data.territory_ees_value
+    elif territory == "bann-i":
+        text = data.territory_bann_i_value
+    elif territory == "bann-d":
+        text = data.territory_bann_d_value
+
+    additional.select_value_from_dropdown(driver, value, text)
+
+    global gterritory
+    gterritory = driver.find_element(By.ID, data.priority_id).text
+
+
 def select_terms_of_delivery(driver):
     value = data.terms_of_delivery_id
     text = data.terms_of_delivery
@@ -214,6 +230,7 @@ def fill_in_description_details(driver):
 
 
 def save_quote(driver):
+    driver.execute_script("window.scrollTo(0, 0)")
     driver.find_element(By.ID, data.save_quote_button_id).click()
 
 
@@ -262,6 +279,7 @@ def check_values(driver):
 
     #   Assigned To
     #   Territory
+    assert driver.find_element(By.ID, data.territory_id).text == gterritory
     #   QB company
     #   QB Class
 

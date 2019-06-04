@@ -133,6 +133,10 @@ class TestCreatePO:
         with pytest.allure.step('dill vendor country'):
             tests.fill_in_vendor_country(driver)
 
+    def test_fill_billing_attention(self, driver):
+        with pytest.allure.step('Fill billing attention'):
+            tests.fill_in_billing_attention(driver)
+
     def test_fill_shipping_po_box(self, driver):
         with pytest.allure.step('fill shipping po box'):
             tests.fill_in_shipping_po_box(driver)
@@ -152,6 +156,10 @@ class TestCreatePO:
     def test_fill_shipping_country(self, driver):
         with pytest.allure.step('Fill shipping country'):
             tests.fill_in_shipping_country(driver)
+
+    def test_fill_shipping_attention(self, driver):
+        with pytest.allure.step('Fill shipping attention'):
+            tests.fill_in_shipping_attention(driver)
 
     # def test_fill_description(self, driver):
     #     tests.fill_in_description(driver)

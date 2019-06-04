@@ -1,4 +1,4 @@
-from crm.data import po_data as data, authorization_data as auth_data
+from crm.data import po_data as data, authorization_data as auth_data, values_data as values
 from selenium.webdriver.common.by import By
 import common_functions as additional
 import time
@@ -202,6 +202,12 @@ def fill_in_vendor_country(driver):
     additional.fill_text_field(driver, value, text)
 
 
+def fill_in_billing_attention(driver):
+    value = data.billing_attention_id
+    text = "Shipping Attention"
+    additional.fill_text_field(driver, value, text)
+
+
 def fill_in_shipping_po_box(driver):
     value = data.shipping_po_box_id
     text = "Test Vendor"
@@ -232,6 +238,12 @@ def fill_in_shipping_country(driver):
     additional.fill_text_field(driver, value, text)
 
 
+def fill_in_shipping_attention(driver):
+    value = data.shipping_attention_id
+    text = "Shipping Attention"
+    additional.fill_text_field(driver, value, text)
+
+
 def select_aircraft(driver):
     element_id = data.aircraft_id
     additional.select_first_cell(driver, element_id, False)
@@ -257,7 +269,27 @@ def save_po(driver):
     driver.execute_script("window.scrollTo(0, 0)")
     time.sleep(2)
     driver.find_element(By.ID, data.save_button_id).click()
+
 # def fill_in_billing_address(driver):
 #     billingid = data.billing_address_id
 #     text = "Test billing address"
 #     additional.fill_text_field(driver, billingid, text)
+
+
+def check_values(driver):
+
+    #   Text fields
+    assert driver.find_element(By.ID, data.billing_address).text == values.billing_address
+    assert driver.find_element(By.ID, data.billing_po_box).text == values.billing_po_box
+    assert driver.find_element(By.ID, data.billing_city).text == values.billing_city
+    assert driver.find_element(By.ID, data.billing_state).text == values.billing_state
+    assert driver.find_element(By.ID, data.billing_post_code).text == values.billing_post_code
+    assert driver.find_element(By.ID, data.billing_country).text == values.billing_country
+
+    assert driver.find_element(By.ID, data.shipping_address).text == values.shipping_address
+    assert driver.find_element(By.ID, data.shipping_po_box).text == values.shipping_po_box
+    assert driver.find_element(By.ID, data.shipping_city).text == values.shipping_city
+    assert driver.find_element(By.ID, data.shipping_state).text == values.shipping_state
+    assert driver.find_element(By.ID, data.shipping_post_code).text == values.shipping_post_code
+    assert driver.find_element(By.ID, data.shipping_country).text == values.shipping_country
+
