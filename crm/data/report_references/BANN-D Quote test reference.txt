@@ -1,22 +1,30 @@
-21 Airport Blvd., Suite B
-South San Francisco, Ca 94080
-Web: www.bai-inc.com
-Fax: 650-872-1955 Ph: 650-872-1700
 Quote
-Quote # : Q282452
+Quote # : Q285614
 Date
-: 14-05-2019
+: 05-06-2019
 Page
 : 1 of 1
 Priority
 : Routine
+BANNER AIRCRAFT INTERNATIONAL
+18809 Crenshaw Blvd.
+Torrance, CA 90504
+Web: www.banner.aero
+Tel: +1-213-320-7877 Fax: +1-213-320-7867
 To:
 Account for autotests
+Test billing address
+Test BillingCity ID, Test BillingState , Test Billing Country
+Test Billing Post Code
 Contact: Autotest User
-Phone:
-Fax:
+Phone: 123213
+Fax: 312312
 Email:
 CIF:TEST PLACE OF DELIVERY
+Your Ref#: TEST CUSTOMER QUOTE
+Sales Person: Vladislav Getmansky
+Terms: NET-30
+Valid Till: 05-07-2019
 Item
 1
 1A
@@ -39,11 +47,6 @@ Cert Type: CofC Only
 Notes: TEST NOTE
 TEST DESCRIPTION
 TEST DESCRIPTION
-Your Ref#: TEST CUSTOMER QUOTE
-Sales Person: Vladislav Getmansky
-Email: vladislav.getmanskiy@zimad.com
-Terms: NET-30
-Valid Till: 13-06-2019
 CD
 NE
 Q-ty
@@ -72,7 +75,7 @@ QUOTE IS VALID FOR 30 DAYS.
 ALL LINE ITEMS ARE SUBJECT TO PRIOR SALE.
 MINIMUM LINE TOTAL: $100.00
 MINIMUM ORDER TOTAL: $250.00
-FORM NUMBER: BAI280; Rev. B; Rev. Date: 04/21/2009             www.BAI-Inc.com
+FORM NUMBER: BANN280; Rev. B; Rev. Date: 04/21/2019             www.banner.aero
 Sub-Total:
 Total:
 $320.00

@@ -1,0 +1,86 @@
+Quote
+Quote # : Q285614
+Date
+: 05-06-2019
+Page
+: 1 of 1
+Priority
+: Routine
+21 Airport Blvd., Suite B
+South San Francisco, Ca 94080
+Web: www.bai-inc.com
+Fax: 650-872-1955 Ph: 650-872-1700
+To:
+Account for autotests
+Test billing address
+Test BillingCity ID, Test BillingState , Test Billing Country
+Test Billing Post Code
+Contact: Autotest User
+Phone: 123213
+Fax: 312312
+Email:
+CIF:TEST PLACE OF DELIVERY
+Your Ref#: TEST CUSTOMER QUOTE
+Sales Person: Vladislav Getmansky
+Email: vladislav.getmanskiy@zimad.com
+Terms: NET-30
+Valid Till: 05-07-2019
+Item
+1
+1A
+1B
+Part Number/Description
+TEST DESCRIPTION
+DK120
+Cert Type: CofC Only
+Notes: TEST NOTE
+DK120 - Exchange Fee
+REPAIR: $15.0000
+EXCHANGE BER: $3.0000
+CORE RETURN: 8
+Cert Type: CofC Only
+Notes: TEST NOTE
+DK120 - service price
+Price B-Check: $7.0028
+Price MAX: $25.0000
+Cert Type: CofC Only
+Notes: TEST NOTE
+TEST DESCRIPTION
+TEST DESCRIPTION
+CD
+NE
+Q-ty
+15.00
+NE
+5.00
+UM
+EA
+EA
+Delivery
+Unit Price
+$15.00
+Extension
+$225.00
+7
+$12.00
+$60.00
+NE
+5.00
+EA
+14
+$7.00
+$35.00
+TEST DESCRIPTION
+QUOTE IS VALID FOR 30 DAYS.
+ALL LINE ITEMS ARE SUBJECT TO PRIOR SALE.
+MINIMUM LINE TOTAL: $100.00
+MINIMUM ORDER TOTAL: $250.00
+FORM NUMBER: BAI280; Rev. B; Rev. Date: 04/21/2009             www.BAI-Inc.com
+Sub-Total:
+Total:
+$320.00
+$320.00
+ 
+ 
+ 
+ 

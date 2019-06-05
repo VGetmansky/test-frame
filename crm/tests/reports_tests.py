@@ -71,28 +71,35 @@ def export_document(driver):
     additional.click_element_by_xpath(driver, data.export)
 
     i = 0
+    n = 0
     while (i < 20):
         if len([name for name in os.listdir(path)]) == doc_len:
 
             time.sleep(1)
             i += 1
         else:
-            # Получим список имен всего содержимого папки
-            # и превратим их в абсолютные пути
-            dir_list = [os.path.join(path, x) for x in os.listdir(path)]
+            while n != 1:
+                # Получим список имен всего содержимого папки
+                # и превратим их в абсолютные пути
+                dir_list = [os.path.join(path, x) for x in os.listdir(path)]
 
-            if dir_list:
-                # Создадим список из путей к файлам и дат их создания.
-                date_list = [[x, os.path.getctime(x)] for x in dir_list]
+                if dir_list:
+                    # Создадим список из путей к файлам и дат их создания.
+                    date_list = [[x, os.path.getctime(x)] for x in dir_list]
 
-                # Отсортируем список по дате создания в обратном порядке
-                sort_date_list = sorted(date_list, key=lambda x: x[1], reverse=True)
+                    # Отсортируем список по дате создания в обратном порядке
+                    sort_date_list = sorted(date_list, key=lambda x: x[1], reverse=True)
 
-                # Выведем первый элемент списка. Он и будет самым последним по дате
-            global pdf
-            pdf = (sort_date_list[0][0])
-            print(sort_date_list[0][0])
-            i = 20
+                    # Выведем первый элемент списка. Он и будет самым последним по дате
+
+                    if len((sort_date_list[0][0]).split('.')) != 2:
+                        time.sleep(1)
+                    else:
+                        global pdf
+                        pdf = (sort_date_list[0][0])
+                        print(sort_date_list[0][0])
+                        i = 20
+                        n = 1
 
 
 # Save and export

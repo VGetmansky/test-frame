@@ -92,20 +92,52 @@ class TestWorkWithRFQList:
 
     def test_compare_documents(self):
         with pytest.allure.step('compare documents'):
-            parse.diff(tests.path)
+            parse.diff(tests.path, 'quote_ees')
 
-    def test_open_quote(self, driver, url):
+    def test_open_bann_i_quote(self, driver, url):
         with pytest.allure.step('Open quote'):
            quotest_tests.click_edit_quote(driver, url)
 
-    # def test_get_body_data(self, driver):
-    #     with pytest.allure.step('Get body data'):
-    #         tests.get_body_data(driver)
-
-    def test_edit_territory(self, driver):
+    def test_edit_bann_i_territory(self, driver):
         with pytest.allure.step('change territory'):
             quotest_tests.select_territory(driver, 'bann-i')
 
     def test_save_bann_i_territory(self, driver):
         with pytest.allure.step('Save bann-i territory quote'):
             quotest_tests.save_quote(driver)
+
+    def test_click_bann_i_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_bann_i_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_bann_i_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_bann-i')
+
+    def test_open_bann_d_quote(self, driver, url):
+        with pytest.allure.step('Open quote'):
+            quotest_tests.click_edit_quote(driver, url)
+
+    def test_edit_bann_d_territory(self, driver):
+        with pytest.allure.step('change territory'):
+            quotest_tests.select_territory(driver, 'bann-d')
+
+    def test_save_bann_d_territory(self, driver):
+        with pytest.allure.step('Save bann-d territory quote'):
+            quotest_tests.save_quote(driver)
+
+    def test_click_bann_d_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_bann_d_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_bann_d_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_bann-d')

@@ -27,7 +27,7 @@ def parse_pdf(path, pdf):
     for page in doc.get_pages():
         interpreter.process_page(page)
         layout = device.get_result()
-        # text = open("Quote test reference.txt")
+        # text = open("EES Quote test reference.txt")
         text_file = open(path + '/result.txt', "w")
 
         for lt_obj in layout:
@@ -45,18 +45,22 @@ def parse_pdf(path, pdf):
     file_two = "Quote test reference"  # '/home/rc/Downloads/INV Packing List reference.txt'
 
 
-def diff(path):
+def diff(path, type):
 
     file_one = path + '/result.txt'
+    if type == 'quote_ees':
+        file_two = "./EES Quote test reference.txt"  # '/home/rc/Downloads/INV Packing List reference.txt'
+    elif type == 'quote_bann-i':
+        file_two = "./BANN-I Quote test reference.txt"  # '/home/rc/Downloads/INV Packing List reference.txt'
+    elif type == 'quote_bann-d':
+        file_two = "./BANN-D Quote test reference.txt"  # '/home/rc/Downloads/INV Packing List reference.txt'
 
-    file_two = "./Quote test reference.txt"  # '/home/rc/Downloads/INV Packing List reference.txt'
     with open(file_one) as text_one, open(file_two) as text_two:
         one = set(text_one.read().split('\n'))
         two = set(text_two.read().split('\n'))
-        if len(one.difference(two)) > 5:  #one != two: #3 for account
-        # assert one == two
-        # return one.difference(two)
-           print(one.difference(two))
+        if len(one.difference(two)) > 5:
+            print(one.difference(two))
+            assert len(one.difference(two)) <= 5
         else:
             print("The report is correct")
 
