@@ -37,6 +37,12 @@ def test_click_add_po_from_so(driver):
         i += 1
 
     driver.find_element(By.XPATH, rfq_to_po_data.create_quote_button).click()
+
+    if additional.check_exists_by_xpath('//button[@class="btn btn-success"]', driver) is True:
+        driver.find_element(By.XPATH, '//button[@class="btn btn-success"]').click()
+    else:
+        return
+
     additional.wait_new_page(driver, new_url)
 
 

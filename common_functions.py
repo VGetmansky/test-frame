@@ -496,3 +496,9 @@ def get_property_value(driver, element, tyoe):
         driver.find_element(By.XPATH, element).get_property('value')
 
 
+def check_exists_by_xpath(xpath, driver):
+    try:
+        driver.find_element_by_xpath(xpath)
+    except NoSuchElementException:
+        return False
+    return True
