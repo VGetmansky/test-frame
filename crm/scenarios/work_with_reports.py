@@ -2,7 +2,7 @@ import pytest
 from crm.tests import reports_tests as tests
 from crm.scenarios.login_scenario import TestLogInApp
 from crm.scenarios import parse_pdf as parse
-from crm.tests import quotest_tests
+from crm.tests import quotest_tests, so_tests
 
 TestLogInApp()
 
@@ -141,3 +141,41 @@ class TestWorkWithRFQList:
     def test_compare_bann_d_documents(self):
         with pytest.allure.step('compare documents'):
             parse.diff(tests.path, 'quote_bann-d')
+
+    def test_open_so_tab(self, driver):
+        with pytest.allure.step('Select SO'):
+            tests.select_so(driver)
+
+    def test_open_so_details(self, driver, url):
+        with pytest.allure.step('Open so details'):
+            tests.open_so_details(driver, url)
+
+    def test_open_so_to_set_ees(self, driver, url):
+        with pytest.allure.step('Open quote'):
+            so_tests.click_edit_so(driver, url)
+
+    def test_set_so_territory_as_ees(self, driver):
+        with pytest.allure.step('change so territory'):
+            so_tests.select_territory(driver, 'ees')
+
+    def test_save_so_ees_territory(self, driver):
+        with pytest.allure.step('Save SO ees territory quote'):
+            so_tests.save_so(driver)
+
+#
+
+    def test_expand_so_pdfmaker_tab(self, driver):
+        with pytest.allure.step('Expand SO PDF maker'):
+            tests.expand_pdfmaker(driver)
+
+    def test_click_so_ees_export(self, driver):
+        with pytest.allure.step('export ees SO file'):
+            tests.export_document(driver)
+
+    def test_parse_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')
