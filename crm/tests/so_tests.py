@@ -3,10 +3,27 @@ from selenium.webdriver.common.by import By
 import common_functions as additional
 import datetime
 import time
+import re
 
 
-def click_edit_so(driver, value):
-    driver.find_element(By.ID, value).click()
+def click_edit_so(driver, url):
+
+    driver.execute_script("window.scrollTo(0, 0)")
+    driver.find_element(By.ID, data.edit_so_button_id).click()
+    # assert (url + data.expected_url) == driver.current_url and ("Quotes", driver.title)
+    new_url = None
+    if url == "https://crmtst.bai-inc.eu/":
+        while new_url != 'https://crmtst.bai-inc.eu/index.php?module=SalesOrder&view=Edit&record=':
+            index = re.search("\d", driver.current_url).start()
+            new_url = driver.current_url[0:index]
+            time.sleep(0.2)
+        assert new_url == "https://crmtst.bai-inc.eu/index.php?module=SalesOrder&view=Edit&record="
+    else:
+        while new_url != 'https://crmqa.bai-inc.eu/index.php?module=SalesOrder&view=Edit&record=':
+            index = re.search("\d", driver.current_url).start()
+            new_url = driver.current_url[0:index]
+            time.sleep(0.2)
+        assert new_url == "https://crmqa.bai-inc.eu/index.php?module=SalesOrder&view=Edit&record="
 
 
 def select_sales_orders(driver):
@@ -150,9 +167,16 @@ def select_terms_of_delivery(driver):
     gdeliveryterms = driver.find_element(By.ID, data.terms_of_delivery_selector_id).text
 
 
-def select_territory(driver):
+def select_territory(driver, territory):
     value = data.territory_selector_id
-    text = data.territory_value
+
+    if territory == "ees":
+        text = data.territory_ees_value
+    elif territory == "bann-i":
+        text = data.territory_bann_i_value
+    elif territory == "bann-d":
+        text = data.territory_bann_d_value
+
     additional.select_value_from_dropdown(driver, value, text)
 
     global gterritory
@@ -334,3 +358,4 @@ def check_values(driver):
     assert driver.find_element(By.ID, data.source_details).text == gsource
 
     #   QB Company
+

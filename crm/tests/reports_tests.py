@@ -140,3 +140,52 @@ def get_body_data(driver):
 
     driver.switch_to.window(window_before)
     # window 1
+
+
+def select_report_type(driver, type, territory):
+    deselect_reports(driver, territory)
+
+    if type == "so_bann_proforma":
+        value = "//option[contains(., 'BANN - Proforma')]"
+
+    elif type == "so_bann_salesorder":
+        value = "//option[contains(., 'BANN - SalesOrder')]"
+
+    elif type == "so_bai_proforma":
+        value = "//option[contains(., 'BAI - Proforma')]"
+
+    elif type == "so_bai_salesorder":
+        value = "//option[contains(., 'BAI - SalesOrder')]"
+
+    driver.find_element(By.XPATH, value).click()
+
+    if driver.find_element(By.XPATH, value).get_property('selected') is False:
+        driver.find_element(By.XPATH, value).click()
+    else:
+        return
+
+
+def deselect_reports(driver, territory):
+    if territory == "bann-i" or "bann-d":
+
+        if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Proforma')]").get_property('selected') is True:
+            driver.find_element(By.XPATH, "//option[contains(., 'BANN - Proforma')]").click()
+        else:
+            return
+
+        if driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").get_property('selected') is True:
+            driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").click()
+        else:
+            return
+
+    elif territory =="ees":
+
+        if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Proforma')]").get_property('selected') is True:
+            driver.find_element(By.XPATH,"//option[contains(., 'BAI - Proforma')]").click()
+        else:
+            return
+
+        if driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").get_property('selected') is True:
+            driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").click()
+        else:
+            return
