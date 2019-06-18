@@ -16,7 +16,7 @@ delete_so_id = "SalesOrder_listView_massAction_LBL_DELETE"
 import_so_id = "SalesOrder_listView_advancedAction_LBL_IMPORT"
 export_so_id = "SalesOrder_listView_advancedAction_LBL_EXPORT"
 add_so_id = "SalesOrder_listView_basicAction_LBL_ADD_RECORD"
-
+edit_so_button_id = "SalesOrder_detailView_basicAction_LBL_EDIT"
 place_of_delivery_id = "SalesOrder_editView_fieldName_pdelivery"
 
 # Sales Order profile XPATH's
@@ -25,6 +25,10 @@ created_status = '//li[@class[contains(.,"Created")]'
 #   Values
 terms_of_delivery_value = '//li[@class[contains(.,"CIP")]'
 territory_value = '//li[contains(.,"EES")]'
+territory_ees_value = "//li[contains(., 'EES')]"
+territory_bann_i_value = "//li[contains(., 'BANN-EES-I')]"
+territory_bann_d_value = "//li[contains(., 'BANN-EES-D')]"
+
 status_approved_value = '//li[contains(.,"Approved")]'
 terms_of_delivery_value = '//li[contains(.,"CFR")]'
 terms_of_payment_value = '//li[contains(.,"NET-60")]'
