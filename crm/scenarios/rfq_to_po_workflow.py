@@ -590,7 +590,7 @@ class TestCreateSO:
 
     def test_select_territory(self, driver):
         with pytest.allure.step('Select Territory'):
-            so_tests.select_territory(driver)
+            so_tests.select_territory(driver, "ees")
 
     def test_fill_account_number(self, driver):
         with pytest.allure.step('FIll Account Number'):
