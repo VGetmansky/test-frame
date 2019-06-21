@@ -28,6 +28,10 @@ due_date_id = "Invoice_editView_fieldName_duedate"
 territory_id = "territory__chzn"
 territory = '//li[contains(.,"EES")]'
 
+territory_ees_value = "//li[contains(., 'EES')]"
+territory_bann_i_value = "//li[contains(., 'BANN-EES-I')]"
+territory_bann_d_value = "//li[contains(., 'BANN-EES-D')]"
+
 status_id = "invoicestatus__chzn"
 qa_status = '//li[contains(.,"Unpaid")]'
 tst_status = '//li[contains(.,"Unpaid")]'
@@ -87,3 +91,4 @@ invoice_menu_id = "menubar_item_Invoice"
 last_ivoice_id = "Invoice_listView_row_1"
 
 invoice_no_details_id = "Invoice_detailView_fieldValue_invoice_no"
+edit_invoice_details_id = "Invoice_detailView_basicAction_LBL_EDIT"

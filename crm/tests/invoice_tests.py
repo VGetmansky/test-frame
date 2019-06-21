@@ -1,7 +1,7 @@
 from crm.data import invoice_data as data, authorization_data as auth_data, values_data as values
 from selenium.webdriver.common.by import By
 import common_functions as additional
-import time
+import time, re
 
 
 def select_so(driver):
@@ -82,10 +82,26 @@ def fill_in_dimensions(driver):
     additional.fill_text_field(driver, value, text)
 
 
-def select_territory(driver):
+# def select_territory(driver):
+#     value = data.territory_id
+#     text = data.territory
+#     additional.select_value_from_dropdown(driver, value, text)
+
+
+def select_territory(driver, territory):
     value = data.territory_id
-    text = data.territory
+
+    if territory == "ees":
+        text = data.territory_ees_value
+    elif territory == "bann-i":
+        text = data.territory_bann_i_value
+    elif territory == "bann-d":
+        text = data.territory_bann_d_value
+
     additional.select_value_from_dropdown(driver, value, text)
+
+    global gterritory
+    gterritory = driver.find_element(By.ID, data.territory_id).text
 
 
 def select_due_date(driver):
@@ -249,6 +265,7 @@ def fill_in_special_note(driver):
 
 def click_save_button(driver):
     driver.find_element(By.ID, "save_but").click()
+    additional.wait_element(driver, data.edit_invoice_details_id, "id")
     # assert driver.current_url.split('=3')[0] == data.after_creation_url
 
 
@@ -277,3 +294,21 @@ def open_invoice_list(driver):
     additional.click_element_by_id(driver, data.last_ivoice_id)
     additional.wait_element(driver, data.invoice_no_details_id, 'id' )
 
+
+def click_edit_invoice(driver, url):
+    driver.execute_script("window.scrollTo(0, 0)")
+    driver.find_element(By.ID, data.edit_invoice_details_id).click()
+    # assert (url + data.expected_url) == driver.current_url and ("Quotes", driver.title)
+    new_url = None
+    if url == "https://crmtst.bai-inc.eu/":
+        while new_url != 'https://crmtst.bai-inc.eu/index.php?module=Invoice&view=Edit&record=':
+            index = re.search("\d", driver.current_url).start()
+            new_url = driver.current_url[0:index]
+            time.sleep(0.2)
+        assert new_url == 'https://crmtst.bai-inc.eu/index.php?module=Invoice&view=Edit&record='
+    else:
+        while new_url != 'https://crmqa.bai-inc.eu/index.php?module=Invoice&view=Edit&record=':
+            index = re.search("\d", driver.current_url).start()
+            new_url = driver.current_url[0:index]
+            time.sleep(0.2)
+        assert new_url == "https://crmqa.bai-inc.eu/index.php?module=Invoice&view=Edit&record="

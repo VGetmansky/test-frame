@@ -41,6 +41,11 @@ def select_po(driver):
     # assert "Rfq", driver.title and driver.current_url == "http://crmqa.bai-inc.eu/index.php?module=Rfq&view=List"
 
 
+def select_invoice(driver):
+    driver.get("https://crmtst.bai-inc.eu/index.php?module=Invoice&view=List")
+    assert "Invoice", driver.title and driver.current_url == "https://crmtst.bai-inc.eu/index.php?module=Invoice&view=List"
+
+
 def open_quote_details(driver, url):
     time.sleep(2)
     additional.wait_element(driver, data.first_quotes_cell_id, 'id')
@@ -56,11 +61,22 @@ def open_so_details(driver, url):
 def open_po_details(driver, url):
     time.sleep(2)
     additional.wait_element(driver, data.first_po_cell_id, 'id')
-    additional.select_table_cell(driver, data.first_po_cell_id, "so", url)
+    additional.select_table_cell(driver, data.first_po_cell_id, "po", url)
+
+
+def open_invoice_details(driver, url):
+    time.sleep(2)
+    additional.wait_element(driver, data.first_invoice_cell_id, 'id')
+    additional.select_table_cell(driver, data.first_invoice_cell_id, "invoice", url)
 
 
 def expand_pdfmaker(driver):
-    additional.click_element_by_xpath(driver, data.pdfmaker_tab)
+    if driver.title == "Invoice":
+        additional.wait_element(driver,"//h5[contains(., 'PDFMaker')]", 'xpath')
+        driver.find_element(By.XPATH, "//h5[contains(., 'PDFMaker')]").click()
+    else:
+        additional.wait_element(driver, data.pdfmaker_tab, 'xpath')
+        additional.click_element_by_xpath(driver, data.pdfmaker_tab)
     # additional.click_element_by_xpath(driver, data.edit_and_export)
 
 
@@ -142,8 +158,8 @@ def get_body_data(driver):
     # window 1
 
 
-def select_report_type(driver, type, territory):
-    deselect_reports(driver, territory)
+def select_report_type(driver, type, territory, module):
+    deselect_reports(driver, territory, module)
 
     if type == "so_bann_proforma":
         value = "//option[contains(., 'BANN - Proforma')]"
@@ -157,6 +173,24 @@ def select_report_type(driver, type, territory):
     elif type == "so_bai_salesorder":
         value = "//option[contains(., 'BAI - SalesOrder')]"
 
+    elif type == "i_bai_customs_invoice":
+        value = "//option[contains(., 'BAI - Customs Invoice')]"
+
+    elif type == "i_bai_invoice":
+        value = "//option[contains(., 'BAI - Invoice')]"
+
+    elif type == "i_bai_packing_list":
+        value = "//option[contains(., 'BAI - Packing List')]"
+
+    elif type == "i_bann_customs_invoice":
+        value = "//option[contains(., 'BANN - Customs Invoice')]"
+
+    elif type == "i_bann_invoice":
+        value = "//option[contains(., 'BANN - Invoice')]"
+
+    elif type == "i_bann_packing_list":
+        value = "//option[contains(., 'BANN - Packing List')]"
+
     driver.find_element(By.XPATH, value).click()
 
     if driver.find_element(By.XPATH, value).get_property('selected') is False:
@@ -165,27 +199,68 @@ def select_report_type(driver, type, territory):
         return
 
 
-def deselect_reports(driver, territory):
+def deselect_reports(driver, territory, module):
     if territory == "bann-i" or "bann-d":
 
-        if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Proforma')]").get_property('selected') is True:
-            driver.find_element(By.XPATH, "//option[contains(., 'BANN - Proforma')]").click()
-        else:
-            return
+        if module == "SO":
 
-        if driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").get_property('selected') is True:
-            driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").click()
-        else:
-            return
+            if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Proforma')]").get_property('selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BANN - Proforma')]").click()
+            else:
+                return
+
+            if driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").get_property('selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").click()
+            else:
+                return
+
+        elif module == "Invoice":
+
+            if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Invoice')]").get_property('selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BANN - Invoice')]").click()
+            else:
+                return
+
+            if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Customs Invoice')]").get_property('selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BANN - Customs Invoice')]").click()
+            else:
+                return
+
+            if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Packing List')]").get_property('selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BANN - Packing List')]").click()
+            else:
+                return
 
     elif territory =="ees":
 
-        if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Proforma')]").get_property('selected') is True:
-            driver.find_element(By.XPATH,"//option[contains(., 'BAI - Proforma')]").click()
-        else:
-            return
+        if module == "SO":
 
-        if driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").get_property('selected') is True:
-            driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").click()
-        else:
-            return
+            if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Proforma')]").get_property('selected') is True:
+                driver.find_element(By.XPATH,"//option[contains(., 'BAI - Proforma')]").click()
+            else:
+                return
+
+            if driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").get_property('selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").click()
+            else:
+                return
+
+        elif module == "Invoice":
+
+            if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Invoice')]").get_property(
+                    'selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BAI - Invoice')]").click()
+            else:
+                return
+
+            if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Customs Invoice')]").get_property(
+                    'selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BAI - Customs Invoice')]").click()
+            else:
+                return
+
+            if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Packing List')]").get_property(
+                    'selected') is True:
+                driver.find_element(By.XPATH, "//option[contains(., 'BAI - Packing List')]").click()
+            else:
+                return

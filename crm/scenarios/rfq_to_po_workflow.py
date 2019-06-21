@@ -699,9 +699,9 @@ class TestClickEditPO:
         with pytest.allure.step('Open PO'):
             addnewentity_tests.click_open_po(driver, url)
 
-    def test_edit_po_profile(self, driver):
+    def test_edit_po_profile(self, driver, url):
         with pytest.allure.step('edit PO'):
-            po_tests.click_edit_po(driver, rfq_to_po_data.edit_po_profile_id)
+            po_tests.click_edit_po(driver, url)
 
 
 @pytest.mark.test
@@ -741,7 +741,7 @@ class TestCreatePO:
 
     def test_select_territory(self, driver):
         with pytest.allure.step('select territory'):
-            po_tests.select_territory(driver)
+            po_tests.select_territory(driver, "ees")
 
     def test_fill_delivery_place(self, driver):
         with pytest.allure.step('Fill delivery place'):
@@ -938,7 +938,7 @@ class TestCreateInvoice:
 
     def test_select_territory(self, driver):
         with pytest.allure.step('Select territory'):
-            invoice_tests.select_territory(driver)
+            invoice_tests.select_territory(driver, 'ees')
 
     def test_select_due_date(self, driver):
         with pytest.allure.step('Select due date'):

@@ -22,6 +22,7 @@ copy_company_address = '//a[contains(.,"Copy Company Address")]'
 
 # Purchase Order profile ID's
 
+edit_po_details_id="PurchaseOrder_detailView_basicAction_LBL_EDIT"
 save_button_id = "save_but"
 add_po_id = "PurchaseOrder_listView_basicAction_LBL_ADD_RECORD"
 po_vendor_list_id = "PurchaseOrder_editView_fieldName_vendor_id_select"
@@ -31,6 +32,10 @@ terms_of_delivery_id = "tdelivery__chzn"
 territory_id = "territory__chzn"
 location_id = "PurchaseOrder_editView_fieldName_locationid_select"
 
+territory_ees_value = "//li[contains(., 'EES')]"
+territory_bann_i_value = "//li[contains(., 'BANN-EES-I')]"
+territory_bann_d_value = "//li[contains(., 'BANN-EES-D')]"
+territory_selector_id = "territory__chzn"
 # Profile fields
 vendor_po_id = "PurchaseOrder_editView_fieldName_subject"
 tracking_number_id = "PurchaseOrder_editView_fieldName_tracking_no"

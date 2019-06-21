@@ -1,14 +1,29 @@
 from crm.data import po_data as data, authorization_data as auth_data, values_data as values
 from selenium.webdriver.common.by import By
 import common_functions as additional
-import time
+import time, re
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.keys import Keys
 
 
-def click_edit_po(driver, value):
-    driver.find_element(By.ID, value).click()
+def click_edit_po(driver, url):
+    driver.execute_script("window.scrollTo(0, 0)")
+    driver.find_element(By.ID, data.edit_po_details_id).click()
+    # assert (url + data.expected_url) == driver.current_url and ("Quotes", driver.title)
+    new_url = None
+    if url == "https://crmtst.bai-inc.eu/":
+        while new_url != 'https://crmtst.bai-inc.eu/index.php?module=PurchaseOrder&view=Edit&record=':
+            index = re.search("\d", driver.current_url).start()
+            new_url = driver.current_url[0:index]
+            time.sleep(0.2)
+        assert new_url == "https://crmtst.bai-inc.eu/index.php?module=PurchaseOrder&view=Edit&record="
+    else:
+        while new_url != 'https://crmqa.bai-inc.eu/index.php?module=PurchaseOrder&view=Edit&record=':
+            index = re.search("\d", driver.current_url).start()
+            new_url = driver.current_url[0:index]
+            time.sleep(0.2)
+        assert new_url == "https://crmqa.bai-inc.eu/index.php?module=PurchaseOrder&view=Edit&record="
 
 
 def select_po(driver):
@@ -165,11 +180,27 @@ def select_terms_of_delivery(driver):
     text = data.terms_of_delivery
     additional.select_value_from_dropdown(driver, value, text)
 
+#
+# def select_territory(driver):
+#     value = data.territory_id
+#     text = data.territory
+#     additional.select_value_from_dropdown(driver, value, text)
 
-def select_territory(driver):
-    value = data.territory_id
-    text = data.territory
+
+def select_territory(driver, territory):
+    value = data.territory_selector_id
+
+    if territory == "ees":
+        text = data.territory_ees_value
+    elif territory == "bann-i":
+        text = data.territory_bann_i_value
+    elif territory == "bann-d":
+        text = data.territory_bann_d_value
+
     additional.select_value_from_dropdown(driver, value, text)
+
+    global gterritory
+    gterritory = driver.find_element(By.ID, data.territory_id).text
 
 
 def fill_in_vendor_po_box(driver):
