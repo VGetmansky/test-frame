@@ -447,9 +447,29 @@ class TestWorkWithRFQList:
         with pytest.allure.step('Expand PDF maker'):
             tests.expand_pdfmaker(driver)
 
+    # -----     BAI Customs Invoice     -----
+
     def test_select_invoice_ees_customs_invoice(self, driver):
         with pytest.allure.step('Select EES Invoice Customs Invoice'):
             tests.select_report_type(driver, "i_bai_customs_invoice", "ees", "Invoice")
+
+    def test_click_customs_invoice_ees_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_customs_invoice_ees_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_customs_invoice_ees_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')
+
+    # -----     BAI Invoice     -----
+
+    def test_select_invoice_ees_invoice(self, driver):
+        with pytest.allure.step('Select EES Invoice Customs Invoice'):
+            tests.select_report_type(driver, "i_bai_invoice", "ees", "Invoice")
 
     def test_click_invoice_ees_export(self, driver):
         with pytest.allure.step('export file'):
@@ -463,3 +483,156 @@ class TestWorkWithRFQList:
         with pytest.allure.step('compare documents'):
             parse.diff(tests.path, 'quote_ees')
 
+    # -----     BAI Packing List     -----
+
+    def test_select_invoice_ees_packing_list(self, driver):
+        with pytest.allure.step('Select EES Invoice Customs Invoice'):
+            tests.select_report_type(driver, "i_bai_packing_list", "ees", "Invoice")
+
+    def test_click_packing_list_ees_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_packing_list_ees_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_packing_list_ees_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')
+
+    # -----     BANN-I     -----
+
+    def test_open_invoice_to_set_bann_i(self, driver, url):
+        with pytest.allure.step('Open invoice'):
+            invoice_tests.click_edit_invoice(driver, url)
+
+    def test_set_invoice_territory_as_bann_i(self, driver):
+        with pytest.allure.step('change Invoice territory'):
+            invoice_tests.select_territory(driver, 'bann-i')
+
+    def test_save_bann_i_invoice_territory(self, driver):
+        with pytest.allure.step('Save bann-i territory invoice'):
+            invoice_tests.click_save_button(driver)
+
+    # -----     BANN-I Customs Invoice     -----
+
+    def test_select_invoice_bann_i_customs_invoice(self, driver):
+        with pytest.allure.step('Select BANN-I Invoice Customs Invoice'):
+            tests.select_report_type(driver, "i_bann_customs_invoice", "bann-i", "Invoice")
+
+    def test_click_customs_invoice_bann_i_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_customs_invoice_bann_i_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_customs_invoice_bann_i_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')
+
+    # -----     BANN-I Invoice     -----
+
+    def test_select_invoice_bann_i_invoice(self, driver):
+        with pytest.allure.step('Select BANN-I Invoice Customs Invoice'):
+            tests.select_report_type(driver, "i_bann_invoice", "bann-i", "Invoice")
+
+    def test_click_invoice_bann_i_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_invoice_bann_i_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_invoice_bann_i_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')
+
+    # -----     BANN-I Packing List     -----
+
+    def test_select_invoice_bann_i_packing_list(self, driver):
+        with pytest.allure.step('Select BANN-I Invoice Customs Invoice'):
+            tests.select_report_type(driver, "i_bann_packing_list", "bann-i", "Invoice")
+
+    def test_click_packing_list_bann_i_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_packing_list_bann_i_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_packing_list_bann_i_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')
+
+    # -----     BANN-D     -----
+
+    def test_open_invoice_to_set_bann_d(self, driver, url):
+        with pytest.allure.step('Open invoice'):
+            invoice_tests.click_edit_invoice(driver, url)
+
+    def test_set_invoice_territory_as_bann_d(self, driver):
+        with pytest.allure.step('change Invoice territory'):
+            invoice_tests.select_territory(driver, 'bann-d')
+
+    def test_save_bann_d_invoice_territory(self, driver):
+        with pytest.allure.step('Save bann-d territory invoice'):
+            invoice_tests.click_save_button(driver)
+
+    # -----     BANN-D Customs Invoice     -----
+
+    def test_select_invoice_bann_d_customs_invoice(self, driver):
+        with pytest.allure.step('Select BANN-D Invoice Customs Invoice'):
+            tests.select_report_type(driver, "i_bann_customs_invoice", "bann-d", "Invoice")
+
+    def test_click_customs_invoice_bann_d_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_customs_invoice_bann_d_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_customs_invoice_bann_d_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')
+
+        # -----     BANN-D Invoice     -----
+
+    def test_select_invoice_bann_d_invoice(self, driver):
+        with pytest.allure.step('Select BANN-D Invoice Customs Invoice'):
+            tests.select_report_type(driver, "i_bann_invoice", "bann-d", "Invoice")
+
+    def test_click_invoice_bann_d_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_invoice_bann_d_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_invoice_bann_d_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')
+
+        # -----     BAI Packing List     -----
+
+    def test_select_invoice_bann_d_packing_list(self, driver):
+        with pytest.allure.step('Select BANN-D Invoice Customs Invoice'):
+            tests.select_report_type(driver, "i_bann_packing_list", "bann-d", "Invoice")
+
+    def test_click_packing_list_bann_d_export(self, driver):
+        with pytest.allure.step('export file'):
+            tests.export_document(driver)
+
+    def test_parse_packing_list_bann_d_document(self, driver):
+        with pytest.allure.step('Parse PDF'):
+            parse.parse_pdf(tests.path, tests.pdf)
+
+    def test_compare_packing_list_bann_d_documents(self):
+        with pytest.allure.step('compare documents'):
+            parse.diff(tests.path, 'quote_ees')

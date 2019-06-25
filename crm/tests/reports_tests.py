@@ -71,6 +71,7 @@ def open_invoice_details(driver, url):
 
 
 def expand_pdfmaker(driver):
+    time.sleep(2)
     if driver.title == "Invoice":
         additional.wait_element(driver,"//h5[contains(., 'PDFMaker')]", 'xpath')
         driver.find_element(By.XPATH, "//h5[contains(., 'PDFMaker')]").click()
@@ -200,17 +201,16 @@ def select_report_type(driver, type, territory, module):
 
 
 def deselect_reports(driver, territory, module):
-    if territory == "bann-i" or "bann-d":
+    if territory == "bann-i" or territory == "bann-d":
 
         if module == "SO":
 
             if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Proforma')]").get_property('selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BANN - Proforma')]").click()
-            else:
-                return
 
-            if driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").get_property('selected') is True:
+            elif driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").get_property('selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BANN - SalesOrder')]").click()
+
             else:
                 return
 
@@ -218,16 +218,13 @@ def deselect_reports(driver, territory, module):
 
             if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Invoice')]").get_property('selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BANN - Invoice')]").click()
-            else:
-                return
 
-            if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Customs Invoice')]").get_property('selected') is True:
+            elif driver.find_element(By.XPATH, "//option[contains(., 'BANN - Customs Invoice')]").get_property('selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BANN - Customs Invoice')]").click()
-            else:
-                return
 
-            if driver.find_element(By.XPATH, "//option[contains(., 'BANN - Packing List')]").get_property('selected') is True:
+            elif driver.find_element(By.XPATH, "//option[contains(., 'BANN - Packing List')]").get_property('selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BANN - Packing List')]").click()
+
             else:
                 return
 
@@ -237,10 +234,8 @@ def deselect_reports(driver, territory, module):
 
             if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Proforma')]").get_property('selected') is True:
                 driver.find_element(By.XPATH,"//option[contains(., 'BAI - Proforma')]").click()
-            else:
-                return
 
-            if driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").get_property('selected') is True:
+            elif driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").get_property('selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BAI - SalesOrder')]").click()
             else:
                 return
@@ -250,16 +245,12 @@ def deselect_reports(driver, territory, module):
             if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Invoice')]").get_property(
                     'selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BAI - Invoice')]").click()
-            else:
-                return
 
-            if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Customs Invoice')]").get_property(
+            elif driver.find_element(By.XPATH, "//option[contains(., 'BAI - Customs Invoice')]").get_property(
                     'selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BAI - Customs Invoice')]").click()
-            else:
-                return
 
-            if driver.find_element(By.XPATH, "//option[contains(., 'BAI - Packing List')]").get_property(
+            elif driver.find_element(By.XPATH, "//option[contains(., 'BAI - Packing List')]").get_property(
                     'selected') is True:
                 driver.find_element(By.XPATH, "//option[contains(., 'BAI - Packing List')]").click()
             else:
