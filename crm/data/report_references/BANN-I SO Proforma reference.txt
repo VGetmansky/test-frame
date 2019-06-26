@@ -1,0 +1,101 @@
+BANNER AIRCRAFT INTERNATIONAL
+18809 Crenshaw Blvd.
+Torrance, CA 90504
+Web: www.banner.aero
+Tel: +1-213-320-7877 Fax: +1-213-320-7867
+Proforma
+Sales oreder# : S53497
+Printed
+: 25-06-2019
+Page
+: 1 of 1
+Priority
+: Routine
+Bill To:
+Account for autotests
+Test billing address
+Test BillingCity ID, Test BillingState
+Test Billing Post Code
+Test Billing Country
+Test Billing Attention
+Customer PO#:Autotest_Client_PO_2019-06-26 10:28:46.763727
+Attention: Autotest User
+Phone: 123213
+Fax: 312312
+Email:
+Ship Via: FEDEX
+Ship Acct#: 221
+CFR: Autotest Place of Delivery
+Ship To:
+Account for autotests
+Test Shipping Address
+Test ShippingCity ID, Test ShippingState
+Test Shipping Post Code
+Test Shipping Country
+Test Shipping Attention
+BAI SO: S53497
+BAI Quotes: Q285689
+Payment Terms: NET-60
+Due Date: 01-04-2019
+Sales Person: Vladislav Getmansky
+Phone:
+Email: vladislav.getmanskiy@zimad.com
+Item
+1
+2
+2
+3
+Part Number/Description
+DK120
+TEST DESCRIPTION
+DK120 - service price
+TEST DESCRIPTION
+DK120
+TEST DESCRIPTION
+TEST DESCRIPTION
+DK120 - service price
+Price B-Check: $7.0028
+Price MAX: $25.0000
+TEST DESCRIPTION
+Q-ty
+15.00
+5.00
+5.00
+5.00
+CD
+NE
+NE
+NE
+NE
+UM
+EA
+EA
+EA
+EA
+Unit Price
+$15.00
+Extension
+$225.00
+$12.00
+$60.00
+$12.00
+$60.00
+$7.00
+$35.00
+Sub-Total:
+$380.00
+Total:
+$380.00
+BANNER AIRCRAFT INT'L BANK REFERENCES:
+====================================
+UNION BANK
+400 CALIFORNIA STREET
+SAN FRANCISCO, CA 94104, USA
+ACCOUNT#: 0081185431
+SWIFT: BOFCUS33MPK
+CREDIT: BAI INC.,21 AIRPORT BLVD. SO. SAN FRANCISCO, CA 94080, USA
+FORM NUMBER: BANN280; Rev. B; Rev. Date: 04/21/2019             www.banner.aero
+
+
+
+ s

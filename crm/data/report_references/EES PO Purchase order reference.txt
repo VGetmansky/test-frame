@@ -4,8 +4,8 @@ Web: www.bai-inc.com
 Fax: 650-872-1955 Ph: 650-872-1700
 Purchase Order
 P.O. #
-: P54620
-P.O. Date : 16-05-2019
+: P55183
+P.O. Date : 25-06-2019
 Page
 : 1 of 1
 Priority
@@ -14,15 +14,17 @@ Ship To:
 Test Vendor BAI, Inc 21 AIRPORT BLVD, SUITE B
 Test City , Test State, Test Postal Code
 Test Country
+Shipping Attention
 To:
 Autotest User
 Test Vendor Autotest User
 Test City, Test State , Test Postal Code
 Test Country
+Shipping Attention
 Contact: Autotest User
-Phone:
+Phone: 213213123
 Fax:
-Email:
+Email: test123@gmail.com
 CFR: Test delivery place
 Buyer: Vladislav Getmansky
 Buyer Email:
@@ -38,9 +40,9 @@ Item
 TEST DESCRIPTION
 Part Number/Description
 DK120 - service price
-S53062/2
+S53497/2
 DK120
-S53062/2
+S53497/2
 TEST DESCRIPTION
 Q-ty
 5.00

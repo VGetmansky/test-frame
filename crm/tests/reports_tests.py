@@ -95,7 +95,7 @@ def export_document(driver):
             time.sleep(1)
             i += 1
         else:
-            while n != 1:
+            while n != 10:
                 # Получим список имен всего содержимого папки
                 # и превратим их в абсолютные пути
                 dir_list = [os.path.join(path, x) for x in os.listdir(path)]
@@ -110,13 +110,14 @@ def export_document(driver):
                     # Выведем первый элемент списка. Он и будет самым последним по дате
 
                     if len((sort_date_list[0][0]).split('.')) != 2:
-                        time.sleep(1)
+                        time.sleep(2)
+                        n += 1
                     else:
                         global pdf
                         pdf = (sort_date_list[0][0])
                         print(sort_date_list[0][0])
                         i = 20
-                        n = 1
+                        n = 10
 
 
 # Save and export

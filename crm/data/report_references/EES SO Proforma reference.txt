@@ -2,10 +2,10 @@
 South San Francisco, Ca 94080
 Web: www.bai-inc.com
 Fax: 650-872-1955 Ph: 650-872-1700
-Sales Order
-Sales order# : S53062
+Proforma
+Sales oreder# : S53497
 Printed
-: 16-05-2019
+: 25-06-2019
 Page
 : 1 of 1
 Priority
@@ -17,14 +17,14 @@ Test BillingCity ID, Test BillingState
 Test Billing Post Code
 Test Billing Country
 Test Billing Attention
-Customer PO#:Autotest_Client_PO_2019-05-16 15:34:13.227022
+Customer PO#:Autotest_Client_PO_2019-06-26 10:28:46.763727
 Attention: Autotest User
-Phone:
-Fax:
+Phone: 123213
+Fax: 312312
 Email:
 Ship Via: FEDEX
 Ship Acct#: 221
-CFR:Autotest Place of Delivery
+CFR: Autotest Place of Delivery
 Ship To:
 Account for autotests
 Test Shipping Address
@@ -32,8 +32,8 @@ Test ShippingCity ID, Test ShippingState
 Test Shipping Post Code
 Test Shipping Country
 Test Shipping Attention
-BAI SO: S53062
-BAI Quotes: Q282458
+BAI SO: S53497
+BAI Quotes: Q285689
 Payment Terms: NET-60
 Due Date: 01-04-2019
 Sales Person: Vladislav Getmansky
@@ -45,45 +45,36 @@ Item
 2
 3
 Part Number/Description
-TEST DESCRIPTION
-TEST DESCRIPTION
-TEST DESCRIPTION
 DK120
-Cert Type: CofC Only
-Notes: TEST NOTE
+TEST DESCRIPTION
 DK120 - service price
-Cert Type: CofC Only
-Notes: TEST NOTE
+TEST DESCRIPTION
 DK120
-Cert Type: CofC Only
-Notes: TEST NOTE
+TEST DESCRIPTION
+TEST DESCRIPTION
 DK120 - service price
 Price B-Check: $7.0028
 Price MAX: $25.0000
-Cert Type: CofC Only
-Notes: TEST NOTE
 TEST DESCRIPTION
-TEST DESCRIPTION
-FORM NUMBER: BAI280; Rev. B; Rev. Date: 04/21/2009             www.BAI-Inc.com
 Q-ty
 15.00
+5.00
+5.00
+5.00
 CD
 NE
+NE
+NE
+NE
 UM
+EA
+EA
+EA
 EA
 Unit Price
 $15.00
 Extension
 $225.00
-5.00
-NE
-5.00
-NE
-5.00
-NE
-EA
-EA
-EA
 $12.00
 $60.00
 $12.00
@@ -94,7 +85,16 @@ Sub-Total:
 $380.00
 Total:
 $380.00
- 
- 
- 
+BAI BANK REFERENCES:
+====================================
+UNION BANK
+400 CALIFORNIA STREET
+SAN FRANCISCO, CA 94104, USA
+ACCOUNT#: 0081185431
+SWIFT: BOFCUS33MPK
+CREDIT: BAI INC.,21 AIRPORT BLVD. SO. SAN FRANCISCO, CA 94080, USA
+FORM NUMBER: BAI280; Rev. B; Rev. Date: 04/21/2009             www.BAI-Inc.com
+
+
+
  

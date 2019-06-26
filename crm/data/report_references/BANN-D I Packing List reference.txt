@@ -1,10 +1,11 @@
-21 Airport Blvd., Suite B
-South San Francisco, Ca 94080
-Web: www.bai-inc.com
-Fax: 650-872-1955 Ph: 650-872-1700
-CUSTOMS INVOICE
+BANNER AIRCRAFT INTERNATIONAL
+18809 Crenshaw Blvd.
+Torrance, CA 90504
+Web: www.banner.aero
+Tel: +1-213-320-7877 Fax: +1-213-320-7867
+Packing List
 Invoice#
-: INV62833
+: INV63339
 Invoice Date : 01-04-2018
 Page
 : 1 of 1
@@ -18,14 +19,24 @@ Test Billing Post Code
 Test Billing Country
 Test Billing Attention
 Contact: Autotest User
-Phone:
-Fax:
+Phone: 123213
+Fax: 312312
 Email:
 Sales Person: Vladislav Getmansky
 Phone:
 Customer PO: Test Customer PO
 AWB#: Test awb
-CIP:Test place of delivery
+CIP: Test place of delivery
+Item
+1
+3
+Part Number/Description
+TEST DESCRIPTION
+DK120
+TEST NOTE
+DK120 - service price
+TEST NOTE
+TEST DESCRIPTION
 Ship To:
 Account for autotests
 Test Shipping Address
@@ -34,7 +45,7 @@ Test Shipping Post Code
 Test Shipping Country
 Test Shipping Attention
 Terms: NET-30
-BAI SO: S53062
+BAI SO: S53497
 Order Date: 01-04-2018
 Ship Acct#: Test account
 Due Date: 01-04-2018
@@ -42,16 +53,6 @@ Ship Via: FEDEX
 Weight: 5 pound(s)
 Boxes: 5
 Dimensions: Test demensions
-Item
-1
-3
-TEST DESCRIPTION
-Part Number/Description
-DK120
-TEST NOTE
-DK120 - service price
-TEST NOTE
-TEST DESCRIPTION
 Shipped
 15.00
 Q-ty
@@ -64,33 +65,18 @@ NE
 UM
 EA
 EA
-Unit Price
-Total
-$15.00
-$225.00
-(CUSTOMS VALUE ONLY)
-$7.00
-$35.00
-(CUSTOMS VALUE ONLY)
 TEST DESCRIPTION
 Test special notes
-BAI BANK REFERENCES:
+BANNER AIRCRAFT INT'L BANK REFERENCES:
 ====================================
 UNION BANK
 400 CALIFORNIA STREET
 SAN FRANCISCO, CA 94104, USA
 ACCOUNT#: 0081185431
 SWIFT: BOFCUS33MPK
-CREDIT: BAI INC.,21 AIRPORT BLVD. SO. SAN FRANCISCO,
-CA 94080, USA
-FORM NUMBER: BAI280; Rev. B; Rev. Date: 04/21/2009   www.BAI-Inc.com   Last modified: 16-05-2019
-Sub-Total:
-$260.00
-Total:
-$260.00
-(CUSTOMS VALUE ONLY)
+CREDIT: BAI INC.,21 AIRPORT BLVD. SO. SAN FRANCISCO, CA 94080, USA
+FORM NUMBER: BANN280; Rev. B; Rev. Date: 04/21/2019   www.banner.aero   Last modified: 26-06-2019
 BAI, Inc • 21 AIRPORT BLVD, SUITE B • 94080 SO. SAN FRANCISCO • CA
- 
- 
- 
- 
+
+
+

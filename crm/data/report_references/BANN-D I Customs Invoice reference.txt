@@ -1,0 +1,96 @@
+BANNER AIRCRAFT INTERNATIONAL
+18809 Crenshaw Blvd.
+Torrance, CA 90504
+Web: www.banner.aero
+Tel: +1-213-320-7877 Fax: +1-213-320-7867
+CUSTOMS INVOICE
+Invoice#
+: INV63339
+Invoice Date : 01-04-2018
+Page
+: 1 of 1
+Priority
+: Routine
+Bill To:
+Account for autotests
+Test billing address
+Test BillingCity ID, Test BillingState
+Test Billing Post Code
+Test Billing Country
+Test Billing Attention
+Contact: Autotest User
+Phone: 123213
+Fax: 312312
+Email:
+Sales Person: Vladislav Getmansky
+Phone:
+Customer PO: Test Customer PO
+AWB#: Test awb
+CIP:Test place of delivery
+Ship To:
+Account for autotests
+Test Shipping Address
+Test ShippingCity ID, Test ShippingState
+Test Shipping Post Code
+Test Shipping Country
+Test Shipping Attention
+Terms: NET-30
+BAI SO: S53497
+Order Date: 01-04-2018
+Ship Acct#: Test account
+Due Date: 01-04-2018
+Ship Via: FEDEX
+Weight: 5 pound(s)
+Boxes: 5
+Dimensions: Test demensions
+Item
+1
+3
+TEST DESCRIPTION
+Part Number/Description
+DK120
+TEST NOTE
+DK120 - service price
+TEST NOTE
+TEST DESCRIPTION
+Shipped
+15.00
+Q-ty
+15.00
+5.00
+5.00
+CD
+NE
+NE
+UM
+EA
+EA
+Unit Price
+Total
+$15.00
+$225.00
+(CUSTOMS VALUE ONLY)
+$7.00
+$35.00
+(CUSTOMS VALUE ONLY)
+TEST DESCRIPTION
+Test special notes
+BANNER BANK REFERENCES:
+====================================
+UNION BANK
+400 CALIFORNIA STREET
+SAN FRANCISCO, CA 94104, USA
+ACCOUNT#: 0081185431
+SWIFT: BOFCUS33MPK
+CREDIT: BAI INC.,21 AIRPORT BLVD. SO. SAN FRANCISCO,
+CA 94080, USA
+FORM NUMBER: BANN280; Rev. B; Rev. Date: 04/21/2019   www.banner.aero   Last modified: 26-06-2019
+Sub-Total:
+$260.00
+Total:
+$260.00
+(CUSTOMS VALUE ONLY)
+BAI, Inc • 21 AIRPORT BLVD, SUITE B • 94080 SO. SAN FRANCISCO • CA
+
+
+
