@@ -9,7 +9,6 @@ from pdfminer.layout import LAParams, LTTextBox, LTTextLine
 
 
 def parse_pdf(path, pdf):
-    # fp = open('/home/rc/Documents/PDF Report References/INV Packing List reference.pdf', 'rb')
     fp = open(pdf, 'rb')
     parser = PDFParser(fp)
     doc = PDFDocument()

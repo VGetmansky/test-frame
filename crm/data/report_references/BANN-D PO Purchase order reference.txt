@@ -16,8 +16,8 @@ Email: test123@gmail.com
 CFR: Test delivery place
 Purchase Order
 P.O. #
-: P55183
-P.O. Date : 25-06-2019
+: P55191
+P.O. Date : 26-06-2019
 Page
 : 1 of 1
 Priority
@@ -37,13 +37,13 @@ Our Acct#:
 TERMS:NET-30
 Item
 2
-2
-TEST DESCRIPTION
+2a
 Part Number/Description
-DK120 - service price
-S53497/2
+TEST DESCRIPTION
 DK120
-S53497/2
+S53519/2
+DK120 - service price
+S53519/2a
 TEST DESCRIPTION
 Q-ty
 5.00
@@ -54,15 +54,15 @@ EA
 Due Date
 01-04-2018
 Unit Price
-$0.00
+$13.00
 Total Amt
-$0.00
+$65.00
 5.00
 NE
 EA
 01-04-2018
-$13.00
-$65.00
+$0.00
+$0.00
 Please conﬁrm acceptance of this Purchase Order.
 Ship line items complete only. "No Partials"
 Please provide only quantities as called out on our Purchase Order. Quantities are not acceptable

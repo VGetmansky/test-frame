@@ -30,7 +30,7 @@ TEST NOTE
 TEST DESCRIPTION
 Packing List
 Invoice#
-: INV63339
+: INV63347
 Invoice Date : 01-04-2018
 Page
 : 1 of 1
@@ -44,7 +44,7 @@ Test Shipping Post Code
 Test Shipping Country
 Test Shipping Attention
 Terms: NET-30
-BAI SO: S53497
+BAI SO: S53519
 Order Date: 01-04-2018
 Ship Acct#: Test account
 Due Date: 01-04-2018

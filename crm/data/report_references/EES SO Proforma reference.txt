@@ -3,9 +3,9 @@ South San Francisco, Ca 94080
 Web: www.bai-inc.com
 Fax: 650-872-1955 Ph: 650-872-1700
 Proforma
-Sales oreder# : S53497
+Sales oreder# : S53519
 Printed
-: 25-06-2019
+: 26-06-2019
 Page
 : 1 of 1
 Priority
@@ -17,7 +17,7 @@ Test BillingCity ID, Test BillingState
 Test Billing Post Code
 Test Billing Country
 Test Billing Attention
-Customer PO#:Autotest_Client_PO_2019-06-26 10:28:46.763727
+Customer PO#:Autotest_Client_PO_2019-06-27 14:03:48.585166
 Attention: Autotest User
 Phone: 123213
 Fax: 312312
@@ -32,8 +32,8 @@ Test ShippingCity ID, Test ShippingState
 Test Shipping Post Code
 Test Shipping Country
 Test Shipping Attention
-BAI SO: S53497
-BAI Quotes: Q285689
+BAI SO: S53519
+BAI Quotes: Q285692
 Payment Terms: NET-60
 Due Date: 01-04-2019
 Sales Person: Vladislav Getmansky
@@ -42,14 +42,14 @@ Email: vladislav.getmanskiy@zimad.com
 Item
 1
 2
-2
+2a
 3
 Part Number/Description
 DK120
 TEST DESCRIPTION
-DK120 - service price
-TEST DESCRIPTION
 DK120
+TEST DESCRIPTION
+DK120 - service price
 TEST DESCRIPTION
 TEST DESCRIPTION
 DK120 - service price
@@ -77,14 +77,14 @@ Extension
 $225.00
 $12.00
 $60.00
-$12.00
-$60.00
+$0.00
 $7.00
+$0.00
 $35.00
 Sub-Total:
-$380.00
+$320.00
 Total:
-$380.00
+$320.00
 BAI BANK REFERENCES:
 ====================================
 UNION BANK
