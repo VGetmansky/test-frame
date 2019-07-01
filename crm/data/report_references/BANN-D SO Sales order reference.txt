@@ -10,7 +10,7 @@ Test BillingCity ID, Test BillingState
 Test Billing Post Code
 Test Billing Country
 Test Billing Attention
-Customer PO#:Autotest_Client_PO_2019-06-27 14:03:48.585166
+Customer PO#:Autotest_Client_PO_2019-07-01 14:36:12.069497
 Attention: Autotest User
 Phone: 123213
 Fax: 312312
@@ -19,9 +19,9 @@ Ship Via: FEDEX
 Ship Acct#: 221
 CFR:Autotest Place of Delivery
 Sales Order
-Sales order# : S53519
+Sales order# : S53529
 Printed
-: 26-06-2019
+: 01-07-2019
 Page
 : 1 of 1
 Priority
@@ -33,8 +33,8 @@ Test ShippingCity ID, Test ShippingState
 Test Shipping Post Code
 Test Shipping Country
 Test Shipping Attention
-BAI SO: S53519
-BAI Quotes: Q285692
+BAI SO: S53529
+BAI Quotes: Q285712
 Payment Terms: NET-60
 Due Date: 01-04-2019
 Sales Person: Vladislav Getmansky

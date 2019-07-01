@@ -119,7 +119,7 @@ class TestWorkWithRFQList:
         with pytest.allure.step('Parse PDF'):
             parse.parse_pdf(tests.path, tests.pdf)
 
-    def test_compare_bann_i_documents(self):
+    def test_compare_bann_i_quote_documents(self):
         with pytest.allure.step('compare documents'):
             parse.diff(tests.path, 'quote_bann-i')
 
@@ -145,7 +145,7 @@ class TestWorkWithRFQList:
         with pytest.allure.step('Parse PDF'):
             parse.parse_pdf(tests.path, tests.pdf)
 
-    def test_compare_bann_d_documents(self):
+    def test_compare_bann_d_quote_documents(self):
         with pytest.allure.step('compare documents'):
             parse.diff(tests.path, 'quote_bann-d')
 

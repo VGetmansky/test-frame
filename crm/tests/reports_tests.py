@@ -86,6 +86,7 @@ def export_document(driver):
     path = os.path.expanduser(os.getenv('HOME')) + "/Downloads"  # Путь к вашей папке
     doc_len = len([name for name in os.listdir(path)])
     additional.click_element_by_xpath(driver, data.export)
+    time.sleep(2)
 
     i = 0
     n = 0

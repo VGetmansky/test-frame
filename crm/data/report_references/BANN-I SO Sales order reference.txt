@@ -1,8 +1,15 @@
-BANNER AIRCRAFT INTERNATIONAL
-18809 Crenshaw Blvd.
-Torrance, CA 90504
-Web: www.banner.aero
-Tel: +1-213-320-7877 Fax: +1-213-320-7867
+21 Airport Blvd., Suite B
+South San Francisco, Ca 94080
+Web: www.bai-inc.com
+Fax: 650-872-1955 Ph: 650-872-1700
+Proforma
+Sales oreder# : S53529
+Printed
+: 01-07-2019
+Page
+: 1 of 1
+Priority
+: Routine
 Bill To:
 Account for autotests
 Test billing address
@@ -10,22 +17,14 @@ Test BillingCity ID, Test BillingState
 Test Billing Post Code
 Test Billing Country
 Test Billing Attention
-Customer PO#:Autotest_Client_PO_2019-06-27 14:03:48.585166
+Customer PO#:Autotest_Client_PO_2019-07-01 14:36:12.069497
 Attention: Autotest User
 Phone: 123213
 Fax: 312312
 Email:
 Ship Via: FEDEX
 Ship Acct#: 221
-CFR:Autotest Place of Delivery
-Sales Order
-Sales order# : S53519
-Printed
-: 26-06-2019
-Page
-: 1 of 1
-Priority
-: Routine
+CFR: Autotest Place of Delivery
 Ship To:
 Account for autotests
 Test Shipping Address
@@ -33,34 +32,30 @@ Test ShippingCity ID, Test ShippingState
 Test Shipping Post Code
 Test Shipping Country
 Test Shipping Attention
-BAI SO: S53519
-BAI Quotes: Q285692
+BAI SO: S53529
+BAI Quotes: Q285712
 Payment Terms: NET-60
 Due Date: 01-04-2019
 Sales Person: Vladislav Getmansky
 Phone:
+Email: vladislav.getmanskiy@zimad.com
 Item
 1
 2
 2a
 3
 Part Number/Description
-TEST DESCRIPTION
+DK120
 TEST DESCRIPTION
 DK120
-Notes: TEST NOTE
-DK120
-Notes: TEST NOTE
+TEST DESCRIPTION
 DK120 - service price
-Notes: TEST NOTE
+TEST DESCRIPTION
+TEST DESCRIPTION
 DK120 - service price
 Price B-Check: $7.0028
 Price MAX: $25.0000
-Notes: TEST NOTE
 TEST DESCRIPTION
-TEST DESCRIPTION
-TEST DESCRIPTION
-FORM NUMBER: BANN280; Rev. B; Rev. Date: 04/21/2019             www.banner.aero
 Q-ty
 15.00
 5.00
@@ -83,13 +78,22 @@ $225.00
 $12.00
 $60.00
 $0.00
-$0.00
 $7.00
+$0.00
 $35.00
 Sub-Total:
 $320.00
 Total:
 $320.00
+BAI BANK REFERENCES:
+====================================
+UNION BANK
+400 CALIFORNIA STREET
+SAN FRANCISCO, CA 94104, USA
+ACCOUNT#: 0081185431
+SWIFT: BOFCUS33MPK
+CREDIT: BAI INC.,21 AIRPORT BLVD. SO. SAN FRANCISCO, CA 94080, USA
+FORM NUMBER: BAI280; Rev. B; Rev. Date: 04/21/2009             www.BAI-Inc.com
  
  
  

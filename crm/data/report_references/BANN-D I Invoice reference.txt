@@ -5,7 +5,7 @@ Web: www.banner.aero
 Tel: +1-213-320-7877 Fax: +1-213-320-7867
 Invoice
 Invoice#
-: INV63347
+: INV63356
 Invoice Date : 01-04-2018
 Page
 : 1 of 1
@@ -35,7 +35,7 @@ Test Shipping Post Code
 Test Shipping Country
 Test Shipping Attention
 Terms: NET-30
-BAI SO: S53519
+BAI SO: S53529
 Order Date: 01-04-2018
 Ship Acct#: Test account
 Due Date: 01-04-2018
@@ -82,7 +82,7 @@ ACCOUNT#: 0081185431
 SWIFT: BOFCUS33MPK
 CREDIT: BAI INC.,21 AIRPORT BLVD. SO. SAN FRANCISCO,
 CA 94080, USA
-FORM NUMBER: BANN280; Rev. B; Rev. Date: 04/21/2019   www.banner.aero   Last modified: 26-06-2019
+FORM NUMBER: BANN280; Rev. B; Rev. Date: 04/21/2019   www.banner.aero   Last modified: 01-07-2019
 Sub-Total:
 $260.00
 Total:
