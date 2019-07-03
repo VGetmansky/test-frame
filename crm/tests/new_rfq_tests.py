@@ -87,6 +87,8 @@ def fill_in_account_field(driver):
     time.sleep(3)
     additional.wait_element(driver, data.rfq_account_first_field, 'xpath')
     driver.find_element(By.XPATH, data.rfq_account_first_field).click()
+    assert additional.get_property_value(driver, data.rfq_account_id, "id") == 'Account for autotests', \
+        "Wrong Account Name Value!"
 
 
 def fill_in_contact_field(driver):
@@ -109,24 +111,28 @@ def fill_in_contact_field(driver):
     time.sleep(3)
     additional.wait_element(driver, data.rfq_contact_first_field, 'xpath')
     driver.find_element(By.XPATH, data.rfq_contact_first_field).click()
+    assert additional.get_property_value(driver, data.rfq_contact_id, "id") == 'Autotest User', "Wrong Contact Value!"
 
 
 def fill_in_pli_location(driver):
     value = data.rfq_pn_location_id
     text = "Test Location"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Text Location Value!"
 
 
 def fill_in_customer_quote(driver):
     value = data.rfq_customer_quote_id
     text = "Test Customer Quote"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Customer Quote Value!"
 
 
 def fill_in_received_via(driver):
     value = data.rfq_received_via_id
     text = "10"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Received Via Value!"
 
 
 def select_sale_terms(driver, url):
@@ -136,12 +142,14 @@ def select_sale_terms(driver, url):
     else:
         text = data.rfq_qa_sale_terms
     additional.select_value_from_dropdown(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == 'NET-30', "Wrong Terms of Sale Value!"
 
 
 def select_delivery_terms(driver):
     value = data.rfq_terms_of_delivery_id
     text = data.rfq_delivery_terms
     additional.select_value_from_dropdown(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == 'CIF', "Wrong Terms of Delivery Value!"
 
 
 def fill_in_delivery_terms_text_field(driver):
@@ -154,18 +162,22 @@ def fill_in_description(driver):
     value = data.rfq_description_id
     text = "Test Description"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == "Test Description", "Wrong Test Description Value!"
 
 
 def fill_in_place_of_delivery(driver):
     value = data.rfq_place_of_delivery_id
     text = "Test Place of Delivery"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == "Test Place of Delivery", \
+        "Wrong Place of Delivery Value!"
 
 
 def select_territory(driver):
     value = data.rfq_territory_id
     text = data.territory
     additional.select_value_from_dropdown(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == 'US', "Wrong Territory Value!"
 
 
 def select_pl_status(driver):
@@ -188,36 +200,42 @@ def select_priority(driver):
     value = data.rfq_priority_id
     text = data.rfq_routine_proirity
     additional.select_value_from_dropdown(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == "Routine",  "Wrong Priority Value!"
 
 
 def select_status(driver):
     value = data.rfq_status_id
     text = data.rfq_planning_status
     additional.select_value_from_dropdown(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == 'Created',  "Wrong Status Value!"
 
 
 def select_assigned_to(driver):
     value = data.rfq_assigned_to_id
     text = data.rfq_assigned_to
     additional.select_value_from_dropdown(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == 'Administrator',  "Wrong Assigned To Value!"
 
 
 def fill_note(driver):
     value = data.rfq_notes_id
     text = "Test Note"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Note Value!"
 
 
 def fill_non_printed_note(driver):
     value = data.rfq_non_printed_notes_id
     text = "Test non-printed Note"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text,  "Wrong non-printed Note Value!"
 
 
 def fill_v_quote(driver):
     value = data.rfq_v_quote_id
     text = "V.Quote"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong V.Quote Value!"
 
 
 # stock outright
@@ -225,48 +243,56 @@ def fill_in_unit_cost(driver):
     value = data.so_stock_unit_cost_id
     text = "12"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Unit Cost Value"
 
 
 def fill_in_unit_price(driver):
     value = data.so_unit_price_id
     text = "15"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Unit Price Value!"
 
 
 def fill_in_vendor_moq(driver):
     value = data.so_vendor_moq_id
     text = "2"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Vendor MOQ Value!"
 
 
 def fill_in_moq(driver):
     value = data.so_stock_moq_id
     text = "15"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong V.Quote Value!"
 
 
 def fill_in_qty(driver):
     value = data.stock_out_qty_id
     text = "20"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text,  "Wrong Delivery Stock Out Qty Value!"
 
 
 def fill_in_lead_time(driver):
     value = data.stock_out_lead_time_id
     text = "7"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text,  "Wrong Stock Out Lead Time Value!"
 
 
 def fill_in_delivery_time(driver):
     value = data.stock_out_delivery_time_id
     text = "7"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text,  "Wrong Delivery Time Value!"
 
 
 def fill_in_min_vendor_order(driver):
     value = data.stock_out_min_vendor_order_id
     text = "1"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Min.Vendor Order Value!"
 
 
 def fill_in_tags(driver):
@@ -283,7 +309,7 @@ def fill_in_tags(driver):
     additional.wait_element(driver, cert, 'xpath')
     driver.find_element(By.XPATH, cert).click()
 
-    assert driver.find_element(By.XPATH, '//span[contains(., "CofC Only")]')
+    assert driver.find_element(By.XPATH, '//span[contains(., "CofC Only")]'),  "Can't select Cert type Value!"
 
 
 def fill_in_condition(driver):
@@ -298,6 +324,7 @@ def fill_in_condition(driver):
     additional.wait_element(driver, conditionval, 'xpath')
     length = len(driver.find_elements(By.XPATH, conditionval))
     driver.find_elements(By.XPATH, conditionval)[length - 1].click()
+    assert additional.get_property_value(driver, condition, "id") == "NE", "Wrong Min.Vendor Order Value!"
 
 
 def save_and_offer(driver):
@@ -398,18 +425,21 @@ def fill_pn_qty(driver):
     value = data.partnumber_qty_id
     text = "10"
     additional.fill_pn_fields(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong PN Qty Value!"
 
 
 def fill_in_stock_outright_lead_time(driver):
     value = data.stock_out_lead_time_id
     text = '7'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Lead TIme Value!"
 
 
 def fill_in_stock_outright_delivery_time(driver):
     value = data.stock_out_delivery_time_id
     text = '14'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Delivery Time Value!"
 
 
 def click_insert_pn(driver):
@@ -438,24 +468,28 @@ def fill_in_pn_description(driver):
     field = data.rfq_pn_description_id
     text = "Test description"
     additional.fill_text_field(driver, field, text)
+    assert additional.get_property_value(driver, field, "id") == text, "Wrong PN Description Value!"
 
 
 def fill_in_pli_aval_qty(driver):
     field = data.rfq_qty_avail_id
     text = "10"
     additional.fill_text_field(driver, field, text)
+    assert additional.get_property_value(driver, field, "id") == text, "Wrong Qty Aval Value!"
 
 
 def fill_in_pli_location(driver):
     field = data.rfq_pn_location_id
     text = "Test Location"
     additional.fill_text_field(driver, field, text)
+    assert additional.get_property_value(driver, field, "id") == text, "Wrong Location Value!"
 
 
 def fill_in_pli_rate(driver):
     field = data.rfq_pn_rate_id
     text = "0.25"
     additional.fill_text_field(driver, field, text)
+    assert additional.get_property_value(driver, field, "id") == text, "Wrong Rate Value!"
 
 
 # exchange
@@ -473,6 +507,7 @@ def select_exchange_type(driver):
 
     # additional.change_sales_type(driver, value, text)
     # additional.wait_element(driver, data.ex_fee_cost_id, 'id')
+    assert additional.get_property_value(driver, value, "id") == "Exchange", "Wrong Sales Type Value!"
 
 
 def select_repair_type(driver):
@@ -481,6 +516,7 @@ def select_repair_type(driver):
     time.sleep(3)
     additional.change_sales_type(driver, value, text)
     # additional.wait_element(driver, data.repair_b_check_price_id, 'id')
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Sales Type Value!"
 
 
 def fill_in_exchange_fee_cost(driver):
@@ -488,72 +524,84 @@ def fill_in_exchange_fee_cost(driver):
     text = '13'
     additional.wait_element(driver, data.ex_fee_cost_id, 'id')
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Exchange Fee Value!"
 
 
 def fill_in_exchange_vendor_rtrn_days(driver):
     value = data.ex_vendor_rtrn_days_id
     text = '3'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Vendor RTRN Days Value!"
 
 
 def fill_in_exchange_service_cost(driver):
     value = data.ex_service_cost_id
     text = '5'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Service Cost Value!"
 
 
 def fill_in_exchange_ber_cost(driver):
     value = data.ex_ber_cost_id
     text = '7'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Ber Cost Value!"
 
 
 def fill_in_exchange_lead_time(driver):
     value = data.ex_lead_time_id
     text = "7"
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Lead Time Value!"
 
 
 def fill_in_exchange_cost_total(driver):
     value = data.ex_lead_time_id
     text = '9'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Lead Time Value!"
 
 
 def fill_in_exchange_qty(driver):
     value = data.ex_qty_id
     text = '5'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Exchange Qty Value!"
 
 
 def fill_in_exchange_fee_price(driver):
     value = data.ex_fee_price_id
     text = '12'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Fee Price Value!"
 
 
 def fill_in_exchange_cust_rtrn_days(driver):
     value = data.ex_cust_rtrn_price_id
     text = '8'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Cust RTRN Price Value!"
 
 
 def fill_in_exchange_service_price(driver):
     value = data.ex_service_price_id
     text = '15'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Service Price Value!"
 
 
 def fill_in_exchange_ber_price(driver):
     value = data.ex_ber_price_id
     text = '3'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Ber Price Value!"
 
 
 def fill_in_exchange_delivery_time(driver):
     value = data.ex_delivery_time_id
     text = '7'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Delivery Time Value!"
 
 
 # repair
@@ -576,66 +624,77 @@ def fill_in_repair_bcheck_cost(driver):
     text = '25'
     additional.wait_element_for_click(driver, value)
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair B-Check Value!"
 
 
 def fill_in_repair_lead_b_check(driver):
     value = data.repair_lead_b_check_id
     text = '14'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair Lead B Check Value!"
 
 
 def fill_in_avg_repair_cost(driver):
     value = data.repair_avg_repair_cost_id
     text = '25'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Avg Repair Cost Value!"
 
 
 def fill_in_max_repair_cost(driver):
     value = data.repair_max_cost_id
     text = '30'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Max Repair Value!"
 
 
 def fill_in_repair_lead_time(driver):
     value = data.repair_lead_time_id
     text = '7'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair Lead Time Value!"
 
 
 def fill_in_repair_qty(driver):
     value = data.repair_qty_id
     text = '10'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair Qty Value!"
 
 
 def fill_in_repair_bcheck_price(driver):
     value = data.repair_b_check_price_id
     text = '12'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair B-Check Price Value!"
 
 
 def fill_in_repair_delivery_b_check(driver):
     value = data.repair_delivery_b_check_id
     text = '12'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair Delivery B-Check Value!"
 
 
 def fill_in_avg_repair_price(driver):
     value = data.repair_avg_repair_price_id
     text = '7'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Avg Repair Price Value!"
 
 
 def fill_in_max_repair_price(driver):
     value = data.repair_max_price_id
     text = '25'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair Max Price Value!"
 
 
 def fill_in_repair_delivery_time(driver):
     value = data.repair_delivery_time_id
     text = '14'
     additional.fill_text_field(driver, value, text)
+    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair Delivery Time Value!"
 
 
 def click_save_rfq(driver):

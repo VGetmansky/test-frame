@@ -479,21 +479,23 @@ def not_overwrite_selection(driver):
 
 def get_element_attributes(driver, element, type):
     if type == "id":
-        driver.execute_script(
+        attributes = driver.execute_script(
             'var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;',
             (driver.find_element(By.ID, element)))
     else:
-        driver.execute_script(
+        attributes = driver.execute_script(
             'var items = {}; for (index = 0; index < arguments[0].attributes.length; ++index) { items[arguments[0].attributes[index].name] = arguments[0].attributes[index].value }; return items;',
             (driver.find_element(By.XPATH, element)))
+    return attributes
 
 
 # get values for redesigned fields
-def get_property_value(driver, element, tyoe):
+def get_property_value(driver, element, type):
     if type == "id":
-        driver.find_element(By.ID, element).get_property('value')
+        value = driver.find_element(By.ID, element).get_property('value')
     else:
-        driver.find_element(By.XPATH, element).get_property('value')
+        value = driver.find_element(By.XPATH, element).get_property('value')
+    return value
 
 
 def check_exists_by_xpath(xpath, driver):
@@ -502,3 +504,4 @@ def check_exists_by_xpath(xpath, driver):
     except NoSuchElementException:
         return False
     return True
+
