@@ -140,6 +140,10 @@ ex_delivery_time_id = "rfq-exchange-delivery-time"
 ex_service_cost_id = "rfq-exchange-service-cost"
 ex_service_price_id = "rfq-exchange-service-price"
 ex_qty_id = "rfq-exchange-qty"
+ex_cost_total_id = "rfq-exchange-total-cost"
+ex_total_price_id = "rfq-exchange-total-price"
+ex_mgm_id = "rfq-exchange-mgm"
+ex_mgm_percent_id = "rfq-exchange-mgm-percent"
 
 #   ----------  Repair  ----------
 
@@ -155,6 +159,8 @@ repair_lead_time_id = "rfq-repair-lead-time"
 repair_delivery_time_id = "rfq-repair-delivery-time"
 repair_max_cost_id = "rfq-repair-max-cost"
 repair_max_price_id = "rfq-repair-max-price"
+repair_mgm_id = "rfq-repair-mgm-price"
+repair_mgm_percent_id = "rfq-repair-mgm-percent"
 
 #   ----------  Basic Information   ----------
 
