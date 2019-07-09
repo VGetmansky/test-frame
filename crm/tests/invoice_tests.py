@@ -265,7 +265,6 @@ def fill_in_special_note(driver):
 
 def click_save_button(driver):
     driver.find_element(By.ID, "save_but").click()
-    time.sleep(2)
     additional.wait_element(driver, data.edit_invoice_details_id, "id")
 
     # assert driver.current_url.split('=3')[0] == data.after_creation_url
@@ -291,10 +290,11 @@ def check_values(driver):
 
 def open_invoice_list(driver):
 
+    additional.wait_element(driver, data.invoice_menu_id, 'id')
     additional.click_element_by_id(driver, data.invoice_menu_id)
     time.sleep(3)
     additional.click_element_by_id(driver, data.last_ivoice_id)
-    additional.wait_element(driver, data.invoice_no_details_id, 'id' )
+    additional.wait_element(driver, data.invoice_no_details_id, 'id')
 
 
 def click_edit_invoice(driver, url):
