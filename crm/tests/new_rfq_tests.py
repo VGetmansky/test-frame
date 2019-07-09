@@ -681,7 +681,11 @@ def fill_in_max_repair_cost(driver):
     value = data.repair_max_cost_id
     text = '30'
     additional.fill_text_field(driver, value, text)
+    driver.find_element(By.ID, value).send_keys(Keys.ENTER)
     assert additional.get_property_value(driver, value, "id") == text, "Wrong Max Repair Value!"
+    assert float(additional.get_property_value(driver, data.repair_max_price_id, "id")) == \
+           round(float(additional.get_property_value(driver, value, "id")) / float(
+               additional.get_property_value(driver, data.rfq_pn_rate_id, "id")), 4)
 
 
 def fill_in_repair_lead_time(driver):
@@ -689,6 +693,7 @@ def fill_in_repair_lead_time(driver):
     text = '7'
     additional.fill_text_field(driver, value, text)
     assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair Lead Time Value!"
+    assert additional.get_property_value(driver, data.repair_delivery_time_id, "id") == text, "Repair Delivery Time value recalculated incorrectly!"
 
 
 def fill_in_repair_qty(driver):
@@ -716,14 +721,23 @@ def fill_in_avg_repair_price(driver):
     value = data.repair_avg_repair_price_id
     text = '7'
     additional.fill_text_field(driver, value, text)
-    assert additional.get_property_value(driver, value, "id") == text, "Wrong Avg Repair Price Value!"
+    driver.find_element(By.ID, value).send_keys(Keys.ENTER)
+    assert additional.get_property_value(driver, value, "id") == text + ".0000", "Wrong Avg Repair Price Value!"
+    assert additional.get_property_value(driver, data.repair_b_check_price_id, "id") == "7.0028", "Repair B-Check Price Value recalculated incorrectly!"
+    assert additional.get_property_value(driver, data.repair_max_price_id,
+                                         "id") == "8.4034", "Repair Max Price Value recalculated incorrectly!"
+    assert additional.get_property_value(driver, data.repair_mgm_id,
+                                         "id") == "-18.00", "Repair MGM Value recalculated incorrectly!"
+    assert additional.get_property_value(driver, data.repair_mgm_percent_id,
+                                         "id") == "-72.00", "Repair MGM Percent Value recalculated incorrectly!"
 
 
 def fill_in_max_repair_price(driver):
     value = data.repair_max_price_id
     text = '25'
     additional.fill_text_field(driver, value, text)
-    assert additional.get_property_value(driver, value, "id") == text, "Wrong Repair Max Price Value!"
+    driver.find_element(By.ID, value).send_keys(Keys.ENTER)
+    assert additional.get_property_value(driver, value, "id") == text + ".0000", "Wrong Repair Max Price Value!"
 
 
 def fill_in_repair_delivery_time(driver):
