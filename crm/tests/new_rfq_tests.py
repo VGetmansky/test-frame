@@ -244,7 +244,35 @@ def fill_in_unit_cost(driver):
     value = data.so_stock_unit_cost_id
     text = "12"
     additional.fill_text_field(driver, value, text)
-    assert additional.get_property_value(driver, value, "id") == text, "Wrong Unit Cost Value"
+    driver.find_element(By.ID, value).send_keys(Keys.ENTER)
+    assert additional.get_property_value(driver, value, "id") == text + ".0000", "Wrong Unit Cost Value"
+    # unit price
+    assert float(additional.get_property_value(driver, data.so_unit_price_id, "id")) == \
+           float((float(additional.get_property_value(driver, value, "id"))) / float(
+               additional.get_property_value(driver, data.rfq_pn_rate_id,
+                                             "id"))), " Гnit price value recalculated incorrectly!!"
+    # total cost
+    assert float(additional.get_property_value(driver, data.so_stock_total_cost_id, "id")) == \
+           float((float(additional.get_property_value(driver, value, "id"))) * float(
+               additional.get_property_value(driver, data.so_stock_qty_id,
+                                             "id"))), "Total cost Value recalculated incorrectly!!"
+    # total price
+    assert float(additional.get_property_value(driver, data.so_stock_total_price_id, "id")) == \
+           float((float(additional.get_property_value(driver, data.so_unit_price_id, "id"))) * float(
+               additional.get_property_value(driver, data.so_stock_qty_id,
+                                             "id"))), "Total Price Value recalculated incorrectly!!"
+    # MGM $
+    assert float(additional.get_property_value(driver, data.so_mgm_id, "id")) == \
+           round((float(((float(additional.get_property_value(driver, data.so_unit_price_id, "id"))) - (
+               float(additional.get_property_value(driver, value, "id")))) * float(
+               additional.get_property_value(driver, data.so_stock_qty_id, "id")))), 2), "Total MGM recalculated incorrectly!!"
+    # MGM %
+    total_price = float(additional.get_property_value(driver, data.so_unit_price_id, "id")) * float(additional.get_property_value(driver, data.so_stock_qty_id, "id"))
+    qty = float(additional.get_property_value(driver, data.so_stock_qty_id, "id"))
+    total_cost = float(additional.get_property_value(driver, data.so_stock_unit_cost_id, "id")) * float(additional.get_property_value(driver, data.so_stock_qty_id, "id"))
+
+    assert float(additional.get_property_value(driver, data.so_mgm_percent_id, "id")) == \
+           (total_price - total_cost)/total_cost * 100, "Total MGM recalculated incorrectly!!"
 
 
 def fill_in_unit_price(driver):

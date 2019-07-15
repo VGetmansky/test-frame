@@ -184,6 +184,7 @@ def fill_in_shipping_address(driver):
     text = "Test Shipping Address"
     additional.fill_text_field(driver, field, text)
 
+
 def fill_in_billing_address(driver):
     field = data.billing_address_id
     text = "Test billing address"
