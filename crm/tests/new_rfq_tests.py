@@ -65,19 +65,18 @@ def filter_by_creator(driver):
 
 def fill_in_account_field(driver):
     element_id = data.rfq_search_account_id
-    # time.sleep(15)
 
     additional.wait_element(driver, element_id, 'id')
     driver.find_element(By.ID, element_id).click()
 
     elem = driver.find_element(By.ID, data.rfq_search_value_id)
     text = "Autotest"
-    # time.sleep(15)
+
     wait = WebDriverWait(driver, 10)
     wait.until(EC.element_to_be_clickable((By.ID, data.rfq_search_value_id)))
 
     additional.wait_element(driver, data.rfq_search_value_id, 'id')
-    # time.sleep(15)
+
     driver.find_element(By.ID, data.rfq_search_value_id).click()
     elem.send_keys(Keys.CONTROL + "a")
     elem.send_keys(Keys.DELETE)
@@ -787,8 +786,8 @@ def save_and_quote(driver, url):
     quote = data.creqte_new_quote_button
 
     time.sleep(3)
-
     driver.find_element(By.ID, value).click()
+    additional.wait_element(driver, action, 'id')
     driver.find_element(By.ID, action).click()
     additional.wait_element(driver, quote, 'xpath')
     time.sleep(5)
