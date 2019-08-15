@@ -101,9 +101,9 @@ class TestCreatePO:
         with pytest.allure.step('Fill delivery place'):
             tests.fill_in_delivery_place(driver)
 
-    def test_select_territory(self, driver):
-        with pytest.allure.step('select territory'):
-            tests.select_territory(driver)
+    # def test_select_territory(self, driver):
+    #     with pytest.allure.step('select territory'):
+    #         tests.select_territory(driver)
 
     def test_select_location(self, driver):
         with pytest.allure.step('select location'):

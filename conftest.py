@@ -32,7 +32,13 @@ def driver(request):
         return browser
 
     else:
-        print('only firefox is supported at the moment')
+        # Chrome browser
+        browser = webdriver.Chrome()
+        browser.get("about:blank")
+        browser.implicitly_wait(10)
+        browser.maximize_window()
+
+        return browser
 
 
 @pytest.fixture(scope="module")

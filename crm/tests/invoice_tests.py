@@ -265,6 +265,8 @@ def fill_in_special_note(driver):
 
 
 def click_save_button(driver):
+    time.sleep(1)
+    driver.execute_script("window.scrollTo(0, 0)")
     driver.find_element(By.ID, "save_but").click()
     additional.wait_element(driver, data.edit_invoice_details_id, "id")
 

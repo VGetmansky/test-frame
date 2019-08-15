@@ -178,5 +178,5 @@ rfq_save_and_quote_id = "rfq-save-button-1"
 rfq_save_and_new_id = "rfq-save-button-2"
 rfq_save_and_exit_id = "rfq-save-button-3"
 
-creqte_new_quote_button = "//button[contains(.,'Create New')]"
+create_new_quote_button = "//button[contains(.,'Create New')]"
 created_quotes_header = "//div[contains(., 'Created quotes')]"

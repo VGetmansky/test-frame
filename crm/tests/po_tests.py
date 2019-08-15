@@ -44,17 +44,7 @@ def select_vendor(driver):
 
 def copy_vendor_address(driver):
     value = data.copy_vendor_address
-    # while bool(additional.click_element_by_xpath(driver, value)) == True:
-    #     try:
-    driver.find_element(By.ID, data.vendor_po_box_id).send_keys(Keys.PAGE_DOWN)
     additional.click_element_by_xpath(driver, value)
-
-    # except:
-        #     elem = driver.find_element(By.XPATH, value)
-        #     elem.send_keys(Keys.PAGE_DOWN)
-    # value = data.vendor_po
-    # text = "Test Vendor"
-    # additional.fill_text_field(driver, value, text)
 
 
 def copy_company_address(driver):

@@ -171,6 +171,7 @@ def click_element_by_id(driver, value):
 
 def click_element_by_xpath(driver, value):
     wait = WebDriverWait(driver, 10)
+    time.sleep(1)
     elem = wait.until(EC.element_to_be_clickable((By.XPATH, value)))
     builder = ActionChains(driver)
     builder.move_to_element(elem).click(elem).perform()
@@ -271,16 +272,18 @@ def wait_element(driver, value, type):
 
 def wait_element_by(driver, value, type):
     wait = WebDriverWait(driver, 10)
-    time.sleep(0.2)
+    time.sleep(1)
 
     if type == 'xpath':
-        return driver.wait.until(EC.presence_of_element_located(By.XPATH, value))
+        return wait.until(EC.presence_of_element_located(By.XPATH, value))
     else:
-        return driver.wait.until(EC.presence_of_element_located(By.ID, value))
+        return wait.until(EC.presence_of_element_located(By.ID, value))
 
 
 def select_value_from_dropdown(driver, value, text):
     driver.find_element(By.ID, value).click()
+    # wait_element_by(driver, text, 'xpath')
+    time.sleep(1)
     i = 0
     while driver.find_elements(By.XPATH, text)[i].text is '':
         i += 1

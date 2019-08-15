@@ -199,6 +199,7 @@ def fill_in_location_field(driver):
 def select_priority(driver):
     value = data.rfq_priority_id
     text = data.rfq_routine_proirity
+    additional.wait_element(driver, value, 'id')
     additional.select_value_from_dropdown(driver, value, text)
     assert additional.get_property_value(driver, value, "id") == "Routine",  "Wrong Priority Value!"
 
@@ -213,6 +214,7 @@ def select_status(driver):
 def select_assigned_to(driver):
     value = data.rfq_assigned_to_id
     text = data.rfq_assigned_to
+    additional.wait_element(driver, value, 'id')
     additional.select_value_from_dropdown(driver, value, text)
     assert additional.get_property_value(driver, value, "id") == 'Administrator',  "Wrong Assigned To Value!"
 
@@ -220,6 +222,7 @@ def select_assigned_to(driver):
 def fill_note(driver):
     value = data.rfq_notes_id
     text = "Test Note"
+    additional.wait_element(driver, value, 'id')
     additional.fill_text_field(driver, value, text)
     assert additional.get_property_value(driver, value, "id") == text, "Wrong Note Value!"
 
@@ -227,6 +230,7 @@ def fill_note(driver):
 def fill_non_printed_note(driver):
     value = data.rfq_non_printed_notes_id
     text = "Test non-printed Note"
+    additional.wait_element(driver, value, 'id')
     additional.fill_text_field(driver, value, text)
     assert additional.get_property_value(driver, value, "id") == text,  "Wrong non-printed Note Value!"
 
@@ -234,6 +238,7 @@ def fill_non_printed_note(driver):
 def fill_v_quote(driver):
     value = data.rfq_v_quote_id
     text = "V.Quote"
+    additional.wait_element(driver, value, 'id')
     additional.fill_text_field(driver, value, text)
     assert additional.get_property_value(driver, value, "id") == text, "Wrong V.Quote Value!"
 
@@ -271,7 +276,7 @@ def fill_in_unit_cost(driver):
     total_cost = float(additional.get_property_value(driver, data.so_stock_unit_cost_id, "id")) * float(additional.get_property_value(driver, data.so_stock_qty_id, "id"))
 
     assert float(additional.get_property_value(driver, data.so_mgm_percent_id, "id")) == \
-           (total_price - total_cost)/total_cost * 100, "Total MGM recalculated incorrectly!!"
+           (total_price - total_cost)/total_cost * 100, "Total MGM percent recalculated incorrectly!!"
 
 
 def fill_in_unit_price(driver):
@@ -280,7 +285,9 @@ def fill_in_unit_price(driver):
     additional.fill_text_field(driver, value, text)
     driver.find_element(By.ID, value).send_keys(Keys.ENTER)
     assert additional.get_property_value(driver, value, "id") == text + ".0000", "Wrong Unit Price Value!"
-    assert additional.get_property_value(driver, data.rfq_pn_rate_id, 'id') == "0.80", "Rate value recalculated incorrectly"
+    # assert additional.get_property_value(driver, data.rfq_pn_rate_id, 'id') == "0.80", "Rate value recalculated incorrectly"
+    assert float(additional.get_property_value(driver, data.rfq_pn_rate_id, 'id')) == \
+           float(additional.get_property_value(driver, data.so_stock_unit_cost_id, "id")) / float(additional.get_property_value(driver, data.so_unit_price_id, "id")), "Rate value recalculated incorrectly"
 
 
 def fill_in_vendor_moq(driver):
@@ -443,6 +450,7 @@ def fill_part_number_name(driver):
     text = "DK120 ^ DESCRIPTION ^ 10"
     pn_text_field = data.rfq_part_add_multi_id
     addpn = data.rfq_add_to_list_button_id
+    time.sleep(1)
     additional.fill_new_pn_fields(driver, value, pn_text_field, addpn, text)
 
 
@@ -556,7 +564,9 @@ def fill_in_exchange_fee_cost(driver):
     additional.fill_text_field(driver, value, text)
     driver.find_element(By.ID, value).send_keys(Keys.ENTER)
     assert additional.get_property_value(driver, value, "id") == text, "Wrong Exchange Fee Cost Value!"
-    assert additional.get_property_value(driver, data.ex_fee_price_id, "id") == "16.2500", "Exchange Fee Price Value recalculated incorrectly!!"
+    # assert additional.get_property_value(driver, data.ex_fee_price_id, "id") == "16.2500", "Exchange Fee Price Value recalculated incorrectly!!"
+    assert float(additional.get_property_value(driver, data.ex_fee_price_id, 'id')) == \
+           float(additional.get_property_value(driver, data.ex_fee_cost_id, "id")) / float(additional.get_property_value(driver, data.rfq_pn_rate_id, "id")), "Exchange Fee Price Value recalculated incorrectly!!"
 
 
 def fill_in_exchange_vendor_rtrn_days(driver):
@@ -605,9 +615,20 @@ def fill_in_exchange_qty(driver):
     additional.fill_text_field(driver, value, text)
     driver.find_element(By.ID, value).send_keys(Keys.ENTER)
     assert additional.get_property_value(driver, value, "id") == text, "Wrong Exchange Qty Value!"
-    assert additional.get_property_value(driver, data.ex_cost_total_id, "id") == "90.00", "Wrong Exchange Cost Value recalculated incorrectly!"
-    assert additional.get_property_value(driver, data.ex_total_price_id, "id") == "112.50", "Wrong Exchange Total Value recalculated incorrectly!"
-    assert additional.get_property_value(driver, data.ex_mgm_id, "id") == "22.50", "Wrong Exchange MGM Value recalculated incorrectly!"
+    # assert additional.get_property_value(driver, data.ex_cost_total_id, "id") == "90.00", "Wrong Exchange Cost Value recalculated incorrectly!"
+    assert float(additional.get_property_value(driver, data.ex_cost_total_id, "id")) == (float(additional.get_property_value(driver, data.ex_fee_cost_id, "id")) + float(
+        additional.get_property_value(driver, data.ex_service_cost_id, "id"))) * float(
+        additional.get_property_value(driver, data.ex_qty_id, 'id')), "Wrong Exchange Cost Value recalculated incorrectly!"
+    # assert additional.get_property_value(driver, data.ex_total_price_id, "id") == "112.50", "Wrong Exchange Total Value recalculated incorrectly!"
+    assert float(additional.get_property_value(driver, data.ex_total_price_id, "id")) == (float(additional.get_property_value(driver, data.ex_fee_price_id, "id")) + float(
+        additional.get_property_value(driver, data.ex_service_price_id, "id"))) * float(additional.get_property_value(driver, data.ex_qty_id, 'id')), "Wrong Exchange Cost Value recalculated incorrectly!"
+
+    # assert additional.get_property_value(driver, data.ex_mgm_id, "id") == "22.50", "Exchange MGM Value recalculated incorrectly!"
+    assert float(additional.get_property_value(driver, data.ex_total_price_id, "id")) == \
+           round(float((float(additional.get_property_value(driver, data.ex_fee_price_id, "id"))) + (
+               float(additional.get_property_value(driver, data.ex_service_price_id, "id")))) * float(
+               additional.get_property_value(driver, data.ex_qty_id,
+                                             "id")), 2), "MGM Value recalculated incorrectly!!"
 
 
 def fill_in_exchange_fee_price(driver):
@@ -616,12 +637,35 @@ def fill_in_exchange_fee_price(driver):
     additional.fill_text_field(driver, value, text)
     driver.find_element(By.ID, value).send_keys(Keys.ENTER)
     assert additional.get_property_value(driver, value, "id") == text + ".0000", "Wrong Fee Price Value!"
-    assert additional.get_property_value(driver, data.ex_ber_price_id, "id") == "6.4815", "Ber Price Value recalculated incorrectly!!"
-    assert additional.get_property_value(driver, data.ex_service_price_id, "id") == "4.6296", "Ber Price Value recalculated incorrectly!!"
+    # assert additional.get_property_value(driver, data.ex_ber_price_id, "id") == "6.4815", "Ber Price Value recalculated incorrectly!!"
+    assert float(additional.get_property_value(driver, data.ex_ber_price_id, "id")) == round(
+        float(additional.get_property_value(driver, data.ex_ber_cost_id, "id")) / float(
+            additional.get_property_value(driver, data.rfq_pn_rate_id, "id")), 4), "Ber Price Value recalculated incorrectly!!"
+    # assert additional.get_property_value(driver, data.ex_service_price_id, "id") == "4.6296", "Service Price Value recalculated incorrectly!!"
+    assert float(additional.get_property_value(driver, data.ex_service_price_id, "id")) == round(
+        float(additional.get_property_value(driver, data.ex_service_cost_id, "id")) / float(
+            additional.get_property_value(driver, data.rfq_pn_rate_id, "id")), 4), "Service Price Value recalculated incorrectly!!"
+
     assert additional.get_property_value(driver, data.ex_total_price_id, "id") == "83.15", "Total Price Value recalculated incorrectly!!"
-    assert additional.get_property_value(driver, data.ex_mgm_id, "id") == "-6.85", "MGM Value recalculated incorrectly!!"
-    assert additional.get_property_value(driver, data.ex_mgm_percent_id, "id") == "-7.61", "MGM Price Value recalculated incorrectly!!"
-    assert additional.get_property_value(driver, data.rfq_pn_rate_id, "id") == "1.08", "Rate Value recalculated incorrectly!!"
+
+    assert float(additional.get_property_value(driver, data.ex_total_price_id, "id")) == \
+           round(float((float(additional.get_property_value(driver, data.ex_fee_price_id, "id"))) + (
+               float(additional.get_property_value(driver, data.ex_service_price_id, "id")))) * float(
+               additional.get_property_value(driver, data.ex_qty_id,
+                                             "id")), 2), "MGM Value recalculated incorrectly!!"
+
+    # assert additional.get_property_value(driver, data.ex_mgm_id, "id") == "-6.85", "MGM Value recalculated incorrectly!!"
+    float(additional.get_property_value(driver, data.ex_mgm_id, "id")) == round(float(additional.get_property_value(driver, data.ex_total_price_id, "id")) - float(
+        additional.get_property_value(driver, data.ex_cost_total_id, "id")), 4), "MGM Value recalculated incorrectly!!"
+
+    # assert additional.get_property_value(driver, data.ex_mgm_percent_id, "id") == "-7.61", "MGM Percent Value recalculated incorrectly!!"
+    assert float(additional.get_property_value(driver, data.ex_mgm_percent_id, "id")) == round((float(additional.get_property_value(driver, data.ex_total_price_id, "id")) - float(
+    additional.get_property_value(driver, data.ex_cost_total_id, "id"))) / float(
+    additional.get_property_value(driver, data.ex_cost_total_id, "id")) * 100, 2), "MGM Percent Value recalculated incorrectly!!"
+
+    # assert additional.get_property_value(driver, data.rfq_pn_rate_id, "id") == "1.08", "Rate Value recalculated incorrectly!!"
+    assert float(additional.get_property_value(driver, data.rfq_pn_rate_id, "id")) == round(float(additional.get_property_value(driver, data.ex_fee_cost_id, "id")) /\
+           float(additional.get_property_value(driver, data.ex_fee_price_id, "id")), 2), "Rate Value recalculated incorrectly!!"
 
 
 def fill_in_exchange_cust_rtrn_days(driver):
@@ -637,8 +681,15 @@ def fill_in_exchange_service_price(driver):
     additional.fill_text_field(driver, value, text)
     driver.find_element(By.ID, value).send_keys(Keys.ENTER)
     assert additional.get_property_value(driver, value, "id") == text + ".0000", "Wrong Service Price Value!"
-    assert additional.get_property_value(driver, data.ex_mgm_id, "id") == "45.00", "MGM Value recalculated incorrectly!!"
-    assert additional.get_property_value(driver, data.ex_mgm_percent_id, "id") == "50.00", "MGM Price Value recalculated incorrectly!!"
+    # assert additional.get_property_value(driver, data.ex_mgm_id, "id") == "45.00", "MGM Value recalculated incorrectly!!"
+    assert float(additional.get_property_value(driver, data.ex_mgm_id, "id")) == round(float(additional.get_property_value(driver, data.ex_total_price_id, "id")) - float(
+        additional.get_property_value(driver, data.ex_cost_total_id, "id")), 4), "MGM Value recalculated incorrectly!!"
+    # assert additional.get_property_value(driver, data.ex_mgm_percent_id, "id") == "50.00", "MGM Price Value recalculated incorrectly!!"
+    assert float(additional.get_property_value(driver, data.ex_mgm_percent_id, "id")) == round(
+        (float(additional.get_property_value(driver, data.ex_total_price_id, "id")) - float(
+            additional.get_property_value(driver, data.ex_cost_total_id, "id"))) / float(
+            additional.get_property_value(driver, data.ex_cost_total_id, "id")) * 100,
+        2), "MGM Percent Value recalculated incorrectly!!"
 
 
 def fill_in_exchange_ber_price(driver):
@@ -701,7 +752,11 @@ def fill_in_avg_repair_cost(driver):
            round(float(additional.get_property_value(driver, value, "id")) / float(
                additional.get_property_value(driver, data.rfq_pn_rate_id, "id")), 4), \
         "Avg Repair price value recalculated incorrectly!!"
-    assert additional.get_property_value(driver, data.repair_mgm_id, "id") == "-1.85", "MGM Value recalculated incorrectly!!"
+    # assert additional.get_property_value(driver, data.repair_mgm_id, "id") == "-1.85", "MGM Value recalculated incorrectly!!"
+    assert float(additional.get_property_value(driver, data.repair_mgm_id, "id")) == round(
+        float(additional.get_property_value(driver, data.repair_b_check_price_id, "id")) - float(
+            additional.get_property_value(driver, data.repair_b_check_cost_id, "id")),2), \
+        "MGM Value recalculated incorrectly!!"
 
 
 def fill_in_max_repair_cost(driver):
@@ -750,13 +805,30 @@ def fill_in_avg_repair_price(driver):
     additional.fill_text_field(driver, value, text)
     driver.find_element(By.ID, value).send_keys(Keys.ENTER)
     assert additional.get_property_value(driver, value, "id") == text + ".0000", "Wrong Avg Repair Price Value!"
-    assert additional.get_property_value(driver, data.repair_b_check_price_id, "id") == "7.0028", "Repair B-Check Price Value recalculated incorrectly!"
-    assert additional.get_property_value(driver, data.repair_max_price_id,
-                                         "id") == "8.4034", "Repair Max Price Value recalculated incorrectly!"
-    assert additional.get_property_value(driver, data.repair_mgm_id,
-                                         "id") == "-18.00", "Repair MGM Value recalculated incorrectly!"
-    assert additional.get_property_value(driver, data.repair_mgm_percent_id,
-                                         "id") == "-72.00", "Repair MGM Percent Value recalculated incorrectly!"
+    # assert additional.get_property_value(driver, data.repair_b_check_price_id, "id") == "7.0028", "Repair B-Check Price Value recalculated incorrectly!"
+    assert float(additional.get_property_value(driver, data.repair_b_check_price_id, "id")) == round(
+        float(additional.get_property_value(driver, data.repair_b_check_cost_id, "id")) / float(
+            additional.get_property_value(driver, data.rfq_pn_rate_id, "id")), 4), \
+        "Repair B-Check Price Value recalculated incorrectly!"
+
+
+    # assert additional.get_property_value(driver, data.repair_max_price_id, "id") == "8.4034", "Repair Max Price Value recalculated incorrectly!"
+    assert float(additional.get_property_value(driver, data.repair_max_price_id, "id")) == round(
+        float(additional.get_property_value(driver, data.repair_max_cost_id, "id")) / float(
+        additional.get_property_value(driver, data.rfq_pn_rate_id, "id")), 4), "Repair Max Price Value recalculated incorrectly!"
+
+    # assert additional.get_property_value(driver, data.repair_mgm_id, "id") == "-18.00", "Repair MGM Value recalculated incorrectly!"
+
+    assert float(additional.get_property_value(driver, data.repair_mgm_id, "id")) == float(
+        additional.get_property_value(driver, data.repair_avg_repair_price_id, "id")) - float(
+        additional.get_property_value(driver, data.repair_avg_repair_cost_id, "id")), "Repair MGM Value recalculated incorrectly!"
+
+    # assert additional.get_property_value(driver, data.repair_mgm_percent_id, "id") == "-72.00", "Repair MGM Percent Value recalculated incorrectly!"
+
+    assert float(additional.get_property_value(driver, data.repair_mgm_percent_id, "id")) == round(
+        (float(additional.get_property_value(driver, data.repair_avg_repair_price_id, "id")) - float(
+            additional.get_property_value(driver, data.repair_avg_repair_cost_id, "id")))/ float(
+        additional.get_property_value(driver, data.repair_avg_repair_cost_id, "id")) * 100, 2), "Repair MGM Percent Value recalculated incorrectly!"
 
 
 def fill_in_max_repair_price(driver):
@@ -783,22 +855,23 @@ def click_save_rfq(driver):
 def save_and_quote(driver, url):
     value = data.rfq_save_button_id
     action = data.rfq_save_and_quote_id
-    quote = data.creqte_new_quote_button
-
-    time.sleep(3)
+    quote = data.create_new_quote_button
+    #
+    # time.sleep(3)
     driver.find_element(By.ID, value).click()
     additional.wait_element(driver, action, 'id')
     driver.find_element(By.ID, action).click()
     additional.wait_element(driver, quote, 'xpath')
     time.sleep(5)
-
+    #
     #   url_before = driver.current_url
 
+    additional.wait_element(driver, quote, 'xpath')
     driver.find_element(By.XPATH, quote).click()
 
     # index = re.search("\d", driver.current_url).start()
     # new_url = driver.current_url[0:index]
     # quotedetailsurl = 'http://crmqa.bai-inc.eu/index.php?module=Quotes&view=Detail&record='
     # additional.wait_new_page(driver, new_url)
-    time.sleep(2)
-    assert driver.current_url.split('=')[1] == "Quotes&view"
+    time.sleep(5)
+    assert driver.current_url.split('=')[1] == "Quotes&view", "Wrong Quote Url"
